@@ -29,7 +29,7 @@ export default function Index({ params }) {
             </button>
           </Link>
         </div>
-        <footer className="mt-6 text-center text-slate-400 text-sm">
+        <footer className="mt-6 text-center text-zinc-400 text-sm tracking-tighter">
           {"© "}
           {new Date().getFullYear()}{" "}
           <Link
