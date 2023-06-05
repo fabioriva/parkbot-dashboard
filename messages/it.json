@@ -1,0 +1,154 @@
+{
+  "Common": {
+    "device-ce-0": "Entrata in corso.",
+    "device-ce-1": "Tessera {card} in entrata.",
+    "device-ce-2": "Entrata tessera {card}, stallo {stall}.",
+    "device-cu-0": "Uscita in corso.",
+    "device-cu-1": "Tessera {card} in uscita.",
+    "device-cu-2": "Uscita tessera {card}, stallo {stall}.",
+    "device-auto": "In attesa di richiesta operazione.",
+    "device-man": "Modalità manuale inserita.",
+    "device-mode": "Modalità di funzionamento",
+    "mode-data-edit": "Salva dati",
+    "mode-data-read": "Lettura dati",
+    "mode-eme-1": "Emergenza 1",
+    "mode-eme-2": "Emergenza 2",
+    "mode-no": "Nessuna funzione",
+    "mode-step": "Passo Passo",
+    "mode-preset": "Preset",
+    "mode-auto": "Automatico",
+    "mode-man": "Manuale",
+    "op-id-1": "Allarme {id} attivo",
+    "op-id-2": "Allarme {id} annullato",
+    "op-id-3": "Cambio funzione {id} - {label}",
+    "op-id-4": "Modificato PIN per tessera {card}",
+    "op-id-5": "Entrata {card}, stallo {stall}",
+    "op-id-6": "Uscita {card}, stallo {stall}",
+    "op-id-7": "Trasferimento vettura {card} in stallo {stall}",
+    "op-id-8": "Trasferimento vettura {card} da stallo {stall}",
+    "op-id-9": "Prenotato stallo {stall}",
+    "op-id-10": "Richiesta di uscita per tessera {card}",
+    "op-id-11": "Richiesta di entrata per tessera {card}"
+  },
+  "DateRangePicker": {
+    "dateRangeDropdownPlaceholder": "Selezionare",
+    "dateRangePlaceholder": "Selezionare un intervallo di date",
+    "dateRangeOptionToday": "Oggi",
+    "dateRangeOptionWeekly": "Ultimi 7 giorni",
+    "dateRangeOptionMonthly": "Ultimi 30 giorni"
+  },
+  "Error": {
+    "title": "Fetch error",
+    "callout": "Risorsa non disponibile"
+  },
+  "Exit": {
+    "buttonExit": "Uscita",
+    "dialogTitle": "Chiamat di uscita",
+    "dialogText": "Inserisci un numero di tessera {min} - {max}",
+    "dialogTextInput": "Inserisci un numero di tessera {min} - {max}",
+    "dialogCancel": "Annulla",
+    "dialogConfirm": "Conferma",
+    "errorText": "Nuomero di tessera fuori campo"
+  },
+  "History": {
+    "title": "Storico delle operazioni",
+    "search": "Ricerca per tessera, stallo o dispositivo...",
+    "subtitle": "Dal {from} al {to}. Registrazioni {count}."
+  },
+  "Home": {
+    "title": "Pagina iniziale",
+    "cards-title": "Users (Tags)",
+    "cards-info": "Visualizzazione tessere.",
+    "dashboard-title": "Dashboard",
+    "dashboard-info": "Pannello di controllo.",
+    "history-title": "System logs",
+    "history-info": "Storico delle operazioni.",
+    "map-title": "Parking map",
+    "map-info": "Visualizzazione grafica la situazione dei posti auto.",
+    "overview-title": "System overview",
+    "overview-info": "Visualizzazione delle operazioni del sistema in tempo reale. Visualizzazione delle operazioni del sistema in tempo reale.",
+    "racks-title": "PLC I/O",
+    "racks-info": "Visualizza lo stato di tutti gli I/O del siistema.",
+    "statistics-title": "Operations statistics",
+    "statistics-info": "Grafici."
+  },
+  "Index": {
+    "main": "La strumento web per monitorare i tuoi sistemi di parcheggio robotizzato.",
+    "title": "Gestici il tuo sistema più velocemente."
+  },
+  "Layout": {
+    "Header": {
+      "alarms": "{numAlarms, plural, =0 {Nessun allarme attivo} =1 {C'è 1 allarme attivo} other {Ci sono # allarmi attivi}}",
+      "entries": "{numEntries, plural, =0 {Nessuna operazione di entrata in corso} =1 {1 operazione di entrata in corso} other {# operazioni di entrata in corso}}",
+      "exits": "{numExits, plural, =0 {Nessuna operazione di uscita in corso} =1 {1 operazione di uscita in corso} other {# operazioni di uscita in corso}}",
+      "cars": "{numCars, plural, =0 {Nessuna vettura parcheggiata} =1 {Una sola vettura parcheggiata} other {Ci sono # vetture parcheggiate}}",
+      "Menu": {
+        "dashboard": "Dashboard",
+        "overview": "Operazioni",
+        "map": "Mappa",
+        "cards": "Tessere",
+        "racks": "PLC I/O",
+        "history": "Storico",
+        "statistics": "Statistiche",
+        "logout": "Esci"
+      }
+    }
+  },
+  "LocaleSwitcher": {
+    "switchLocale": "Switch to {locale, select, en {Inglese} other {Sconosciuto}"
+  },
+  "Map": {
+    "title": "Mappa del parcheggio",
+    "stallEmpty": "Posto {nr} libero",
+    "stallBusy": "Posto {nr} occupato con tessera {card}{br}dal {date}",
+    "stallLock": "Posto {nr} bloccato{br}dal {date}",
+    "dialogTitle": "Modifica stallo",
+    "dialogText": "Vuoi modificare lo stato dello stallo numero {nr}?",
+    "dialogTextInput": "Inserisci un numero di tessera {min} - {max}",
+    "dialogCancel": "Annulla",
+    "dialogCard": "Tessera",
+    "dialogClear": "Libera",
+    "dialogLock": "Blocca"
+  },
+  "Occupancy": {
+    "title": "Occupazione",
+    "subtitle": "Posti auto {total}",
+    "busy": "Occupati",
+    "free": "Liberi",
+    "lock": "Bloccati"
+  },
+  "Queue": {
+    "title": "Coda di uscita",
+    "subtitle": "{numOp, plural, =0 {Nessuna chiamata in attesa} =1 {Una chiamata in attesa} other {# chiamate in attesa}}",
+    "itemTextOne": "{id}° chiamata",
+    "itemTextTwo": "Tessera {card} in uscita da stallo {stall}",
+    "Delete": {
+      "dialogTitle": "Annulla chiamata",
+      "dialogText": "Elimina la tessera {card} dalla coda?",
+      "dialogCancel": "Annulla",
+      "dialogConfirm": "Conferma"
+    }
+  },
+  "Statistics": {
+    "title": "Operazioni di parcheggio",
+    "dropdownItemDaily": "Giornaliero",
+    "dropdownItemWeekly": "Settimanale",
+    "dropdownItemMonthly": "Mensile",
+    "dropdownItemYearly": "Annuale",
+    "toggleItemStandard": "Standard",
+    "toggleItemStacked": "Stacked",
+    "Table": {
+      "entries": "Entries {nr}",
+      "exits": "Exits {nr}",
+      "total": "Total {nr}",
+      "headerEntries": "Entrate",
+      "headerExits": "Uscite",
+      "headerTotal": "Totale"
+    }
+  },
+  "Tags": {
+    "card": "Tessera # {nr}",
+    "search": "Cerca tag per PIN o numero...",
+    "valid": "Entrata dalle {from} alle {to}"
+  }
+}

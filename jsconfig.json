@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/maps/*": ["./src/app/[locale]/[aps]/map/components/*"]
+    }
+  }
+}

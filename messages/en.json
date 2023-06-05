@@ -1,0 +1,154 @@
+{
+  "Common": {
+    "device-ce-0": "Entry in progress.",
+    "device-ce-1": "Entering card {card}.",
+    "device-ce-2": "Entering card {card}, stall {stall}.",
+    "device-cu-0": "Exit in progress.",
+    "device-cu-1": "Exiting card {card}.",
+    "device-cu-2": "Exiting card {card}, stall {stall}.",
+    "device-auto": "Waiting for operation request.",
+    "device-man": "Manual mode activated.",
+    "device-mode": "Function mode",
+    "mode-data-edit": "Data edit",
+    "mode-data-read": "Data read",
+    "mode-eme-1": "Emergency 1",
+    "mode-eme-2": "Emergency 2",
+    "mode-no": "No function",
+    "mode-step": "Step by Step",
+    "mode-preset": "Preset",
+    "mode-auto": "Automatic",
+    "mode-man": "Manual mode",
+    "op-id-1": "Alarm {id} active",
+    "op-id-2": "Alarm {id} cleared",
+    "op-id-3": "Switch to mode {id} - {label}",
+    "op-id-4": "PIN changed for card {card}",
+    "op-id-5": "Parked car {card}, stall {stall}",
+    "op-id-6": "Unparked car {card}, stall {stall}",
+    "op-id-7": "Moved car {card} in stall {stall}",
+    "op-id-8": "Moved car {card} from stall {stall}",
+    "op-id-9": "Reserved stall {stall}",
+    "op-id-10": "Exit request for card {card}",
+    "op-id-11": "Entry request for card {card}"
+  },
+  "DateRangePicker": {
+    "dateRangeDropdownPlaceholder": "Select",
+    "dateRangePlaceholder": "Select a date range",
+    "dateRangeOptionToday": "Today",
+    "dateRangeOptionWeekly": "Last 7 days",
+    "dateRangeOptionMonthly": "Last 30 days"
+  },
+  "Error": {
+    "title": "Fetch error",
+    "callout": "Resource not available"
+  },
+  "Exit": {
+    "buttonExit": "Exit",
+    "dialogTitle": "Exit call",
+    "dialogText": "Insert card number {min} - {max}",
+    "dialogTextInput": "Insert card number {min} - {max}",
+    "dialogCancel": "Cancel",
+    "dialogConfirm": "Confirm",
+    "errorText": "Card number out of range"
+  },
+  "History": {
+    "title": "Operations history",
+    "search": "Search by card, stall or device...",
+    "subtitle": "From {from} to {to}. Logs {count}."
+  },
+  "Home": {
+    "title": "Home page",
+    "cards-title": "Users (Tags)",
+    "cards-info": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+    "dashboard-title": "Dashboard",
+    "dashboard-info": "",
+    "history-title": "System logs",
+    "history-info": "",
+    "map-title": "Parking map",
+    "map-info": "",
+    "overview-title": "System overview",
+    "overview-info": "",
+    "racks-title": "PLC I/O",
+    "racks-info": "",
+    "statistics-title": "Operations statistics",
+    "statistics-info": ""
+  },
+  "Index": {
+    "main": "The web solution to monitor your robotic parking systems",
+    "title": "Run your system faster"
+  },
+  "Layout": {
+    "Header": {
+      "alarms": "{numAlarms, plural, =0 {No alarms} =1 {1 active alarm} other {There are # active alarms}}",
+      "entries": "{numEntries, plural, =0 {No entry operations in progress} =1 {1 entry operation in progress} other {There are # entry operations in progress}}",
+      "exits": "{numExits, plural, =0 {No exit operations in progress} =1 {1 exit operation in progress} other {There are # exit operations in progress}}",
+      "cars": "{numCars, plural, =0 {No cars parked} =1 {Only one car parked} other {There are # cars parked}}",
+      "Menu": {
+        "dashboard": "Dashboard",
+        "overview": "Overview",
+        "map": "Map",
+        "cards": "Tags",
+        "racks": "PLC I/O",
+        "history": "Logs",
+        "statistics": "Statistics",
+        "logout": "Logout"
+      }
+    }
+  },
+  "LocaleSwitcher": {
+    "switchLocale": "Switch to {locale, select, en {English} other {Unknown}"
+  },
+  "Map": {
+    "title": "Parking map",
+    "stallEmpty": "Slot {nr} free",
+    "stallBusy": "Slot {nr} busy with card {card}{br}since {date}",
+    "stallLock": "Slot {nr} locked{br}since {date}",
+    "dialogTitle": "Edit stall",
+    "dialogText": "Edit stall number {nr}?",
+    "dialogTextInput": "Insert card number {min} - {max}",
+    "dialogCancel": "Cancel",
+    "dialogCard": "Card",
+    "dialogClear": "Clear",
+    "dialogLock": "Lock"
+  },
+  "Occupancy": {
+    "title": "Parking occupancy",
+    "subtitle": "Total parking spaces {total}",
+    "busy": "Busy",
+    "free": "Vacant",
+    "lock": "Locked"
+  },
+  "Queue": {
+    "title": "Exit queue",
+    "subtitle": "{numOp, plural, =0 {No waiting calls} =1 {One call waiting} other {# calls waiting}}",
+    "itemTextOne": "{id}° call",
+    "itemTextTwo": "Card {card} from stall {stall}",
+    "Delete": {
+      "dialogTitle": "Cancel call",
+      "dialogText": "Delete card {card} from the queue?",
+      "dialogCancel": "Cancel",
+      "dialogConfirm": "Confirm"
+    }
+  },
+  "Statistics": {
+    "title": "Operations statistics",
+    "dropdownItemDaily": "Daily",
+    "dropdownItemWeekly": "Weekly",
+    "dropdownItemMonthly": "Monthly",
+    "dropdownItemYearly": "Yearly",
+    "toggleItemStandard": "Standard",
+    "toggleItemStacked": "Stacked",
+    "Table": {
+      "entries": "Entries {nr}",
+      "exits": "Exits {nr}",
+      "total": "Total {nr}",
+      "headerEntries": "Entries",
+      "headerExits": "Exits",
+      "headerTotal": "Total"
+    }
+  },
+  "Tags": {
+    "card": "Card # {nr}",
+    "search": "Search tag by PIN or number...",
+    "valid": "entrance from {from} to {to}"
+  }
+}
