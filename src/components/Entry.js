@@ -4,7 +4,7 @@ import { Button, Flex, Text, TextInput } from "@tremor/react";
 import Dialog from "@/components/Dialog";
 
 export default function Exit({ action, aps, token, user }) {
-  console.log(action);
+  // console.log(action);
   const t = useTranslations("Exit");
 
   const [isOpen, setIsOpen] = useState(false);

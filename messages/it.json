@@ -43,7 +43,7 @@
   },
   "Exit": {
     "buttonExit": "Uscita",
-    "dialogTitle": "Chiamat di uscita",
+    "dialogTitle": "Chiamata di uscita",
     "dialogText": "Inserisci un numero di tessera {min} - {max}",
     "dialogTextInput": "Inserisci un numero di tessera {min} - {max}",
     "dialogCancel": "Annulla",
