@@ -15,5 +15,7 @@ export default async function Page({ params }) {
     return <Error />;
   }
   const { payload } = await verifyAuth(token);
-  return <Dashboard aps={params.aps} json={json} user={payload} />;
+  return (
+    <Dashboard aps={params.aps} json={json} token={token} user={payload} />
+  );
 }

@@ -4,6 +4,7 @@ import { Button, Flex, Text, TextInput } from "@tremor/react";
 import Dialog from "@/components/Dialog";
 
 export default function Exit({ action, aps, token, user }) {
+  console.log(action);
   const t = useTranslations("Exit");
 
   const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +46,7 @@ export default function Exit({ action, aps, token, user }) {
         className="mt-6 min-w-full"
         onClick={handleOpen}
         disabled={
-          !user.rights.some((right) => right === "exit") ||
+          !user.rights.some((right) => right === "entry") ||
           !action.enable.status
         }
       >

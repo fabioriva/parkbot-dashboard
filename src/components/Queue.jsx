@@ -82,10 +82,10 @@ export default function Queue({ aps, data, token, user }) {
         ))}
       </List>
       <Dialog isOpen={isOpen} title={t("Delete.dialogTitle")}>
-        <div className="mt-2">
+        <div className="mt-3">
           <Text>{t("Delete.dialogText", { card: queueItem.card })}</Text>
         </div>
-        <Flex justifyContent="end" className="space-x-3 mt-2">
+        <Flex justifyContent="end" className="space-x-3 mt-6">
           <Button
             // size="xs"
             variant="secondary"

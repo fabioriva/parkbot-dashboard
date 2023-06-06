@@ -19,11 +19,18 @@ export default function Overview({ aps, json, token, user }) {
       <Col numColSpanLg={2}>
         <Grid numColsMd={1} numColsLg={3} className="gap-6 items-stretch">
           {overview.devices.map((item, key) => (
-            <Device data={item} key={key} advanced />
+            <Device
+              advanced
+              aps={aps}
+              data={item}
+              token={token}
+              user={user}
+              key={key}
+            />
           ))}
         </Grid>
       </Col>
-      <Queue aps={aps} data={overview.exitQueue} user={user} token={token} />
+      <Queue aps={aps} data={overview.exitQueue} token={token} user={user} />
     </Grid>
   );
 }

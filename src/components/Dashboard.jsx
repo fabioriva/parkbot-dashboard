@@ -30,7 +30,7 @@ function ViewMore({ aps, role, roles }) {
   );
 }
 
-export default function Dashboard({ aps, json, user }) {
+export default function Dashboard({ aps, json, token, user }) {
   // console.log(json);
   const [dashboard, setDashboard] = useState(json);
   const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/dashboard`;
@@ -44,7 +44,7 @@ export default function Dashboard({ aps, json, user }) {
     <Fragment>
       <Grid numCols={1} numColsSm={2} numColsLg={4} className="gap-3">
         {dashboard.system.devices.map((item, key) => (
-          <Device data={item} key={key} />
+          <Device aps={aps} data={item} token={token} user={user} key={key} />
         ))}
       </Grid>
       <div className="my-3" />

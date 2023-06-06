@@ -13,7 +13,7 @@
     "mode-data-read": "Data read",
     "mode-eme-1": "Emergency 1",
     "mode-eme-2": "Emergency 2",
-    "mode-no": "No function",
+    "mode-no": "---",
     "mode-step": "Step by Step",
     "mode-preset": "Preset",
     "mode-auto": "Automatic",
