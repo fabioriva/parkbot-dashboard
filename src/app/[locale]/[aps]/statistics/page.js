@@ -2,7 +2,7 @@ import { cookies } from "next/headers";
 import { format, subDays } from "date-fns";
 import Error from "@/components/Error";
 // import Statistics from "@/components/Statistics";
-import Statistics from "@/components/StatisticsByRange";
+import Statistics from "@/components/Statistics";
 import fetch from "@/lib/fetch";
 
 export default async function Page({ params }) {
@@ -15,7 +15,7 @@ export default async function Page({ params }) {
   const strFrom = format(subDays(new Date(), 1), "yyyy-MM-dd");
   const strTo = format(new Date(), "yyyy-MM-dd");
   const query = `dateFrom=${strFrom}&dateTo=${strTo}`;
-  const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${params.aps}/statisticsByRange?${query}`;
+  const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${params.aps}/statistics?${query}`;
   const json = await fetch(url, {
     cache: "no-store",
     headers: { Authorization: "Bearer " + token },
