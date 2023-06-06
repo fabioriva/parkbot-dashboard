@@ -13,14 +13,14 @@ export default function Index({ params }) {
           <span className="font-extrabold text-7xl sm:text-9xl text-transparent bg-clip-text bg-gradient-to-br from-blue-500 to-blue-800 tracking-tight">
             Parkbot
           </span>
-          <p className="py-6 font-bold text-3xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-slate-50 to-slate-400 tracking-tighter">
-            The robotic parking management tool.
+          <p className="py-6 font-bold text-3xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-slate-50 to-slate-400 tracking-tighter">
+            {t("title")}
           </p>
         </div>
         <div className="max-w-sm">
           <Link href="/signin">
             <button className="w-32 bg-slate-50 hover:bg-slate-950 border hover:border-slate-50 hover:text-slate-50 font-semibold text-base m-6 p-3 rounded-lg">
-              Get started
+              {t("start")}
             </button>
           </Link>
           <Link href="https://www.sotefin.com/">

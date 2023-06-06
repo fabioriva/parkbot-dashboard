@@ -15,9 +15,8 @@ export async function middleware(request) {
   const handleI18nRouting = createIntlMiddleware(i18n);
   const response = handleI18nRouting(request);
   const segments = request.nextUrl.pathname.split("/");
-  // Check protected pages
-  // if (segments.length > 2) {
   const aps = apsList.find((item) => item.ns === segments[2]);
+  // Check protected pages
   if (aps) {
     // get token
     const token = request.cookies.get(process.env.USER_TOKEN);
@@ -27,16 +26,10 @@ export async function middleware(request) {
       console.error(e)
     );
     if (!verified) return redirect(request);
-    // const [_aps, _page] = segments.slice(-2);
-    // const [_aps, _page] = segments.slice(2, 4);
-    // console.log("💀", _aps, _page);
     // verify aps
-    // const aps = apsList.find((item) => item.ns === _aps);
-    // if (!aps || aps.ns !== verified.payload.aps) return redirect(request);
     if (verified.payload.aps !== aps.ns) return redirect(request);
     // verify page role
     if (
-      // _page !== "home" &&
       segments[3] !== "home" &&
       !verified.payload.roles.some((role) => role === segments[3]) // _page)
     )
