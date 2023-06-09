@@ -6,7 +6,7 @@ export function getLog(log, t) {
     case 2:
       return t("op-id-2", { id: alarm.id });
     case 3:
-      return t("op-id-3", { id: mode.id, label: mode.key });
+      return t("op-id-3", { id: mode.id, label: t(mode.key) });
     case 4:
       return t("op-id-4", { card });
     case 5:
