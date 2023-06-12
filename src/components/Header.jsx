@@ -5,7 +5,7 @@ import { Flex } from "@tremor/react";
 import Info from "@/components/HeaderInfo";
 import Title from "@/components/HeaderTitle";
 import Toast from "@/components/Toast";
-import User from "@/components/UserMenu";
+import User from "@/components/Menu";
 import { useInfo } from "@/hooks/useWebSocket";
 
 export default function Header({ aps, payload }) {

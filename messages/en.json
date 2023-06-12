@@ -108,7 +108,12 @@
     "dialogCancel": "Cancel",
     "dialogCard": "Card",
     "dialogClear": "Clear",
-    "dialogLock": "Lock"
+    "dialogLock": "Lock",
+    "SelectView": {
+      "card": "Card number",
+      "number": "Stall number",
+      "size": "Car size"
+    }
   },
   "Occupancy": {
     "title": "Parking occupancy",

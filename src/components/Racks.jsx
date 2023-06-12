@@ -10,7 +10,7 @@ export default function Racks({ aps, data }) {
   // console.log(data);
   // ADD PROP ONLINE IF ONLINE EMERALD ELSE RED
   return (
-    <Grid numColsSm={2} numColsMd={3} numColsLg={4} className="gap-6 mt-6">
+    <Grid numItemsSm={2} numItemsMd={3} numItemsLg={4} className="gap-6 mt-6">
       {data.map((item, key) => (
         <Link href={`/${aps}/racks/${key}`} key={key}>
           <Card

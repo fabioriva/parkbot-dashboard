@@ -78,9 +78,9 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
             onClick={handleOpen}
           >
             {view === "1"
-              ? stall.nr
-              : view === "2"
               ? stall.status
+              : view === "2"
+              ? stall.nr
               : view === "3"
               ? stall.size
               : "---"}
@@ -149,7 +149,7 @@ const Level = ({ aps, definitions, level, token, user, view }) => {
         {level.label}: {level.min} - {level.max}
       </Text>
       <div
-        className="relative bg-slate-200 shadow-md w-full l"
+        className="relative bg-transparent shadow-md w-full l"
         id={"l-" + level.nr}
       >
         {level.elevators.map((el, i) => (

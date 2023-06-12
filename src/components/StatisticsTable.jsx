@@ -10,8 +10,10 @@ import {
   Text,
 } from "@tremor/react";
 
-export default function Statistics({ colors, data }) {
+export default function Statistics({ data }) {
   const t = useTranslations("Statistics.Table");
+
+  const colors = ["sky", "violet", "fuchsia"];
 
   return (
     <div className="mt-3">

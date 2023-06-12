@@ -1,8 +1,9 @@
 {
-  "workbench.colorTheme": "Modern Dark",
+  "workbench.colorTheme": "Default Dark Modern",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "files.associations": {
     "*.js": "javascriptreact"
-  }
+  },
+  "prettier.prettierPath": "./node_modules/prettier"
 }

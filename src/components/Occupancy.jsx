@@ -4,12 +4,15 @@ import {
   Flex,
   Text,
   Title,
-  Toggle,
-  ToggleItem,
   Legend,
   List,
   ListItem,
   Icon,
+  TabList,
+  Tab,
+  TabGroup,
+  TabPanels,
+  TabPanel,
 } from "@tremor/react";
 import {
   ChartPieIcon,
@@ -53,56 +56,60 @@ export default function Occupancy({ occupancy }) {
   ];
 
   return (
-    <>
+    <TabGroup>
       <Flex className="space-x-8" justifyContent="between" alignItems="center">
         <div>
           <Title>{t("title")}</Title>
           <Text>{t("subtitle", { total })}</Text>
         </div>
-        <Toggle
-          defaultValue="chart"
-          color="gray"
-          onValueChange={(value) => setSelectedView(value)}
-        >
-          <ToggleItem value="chart" icon={ChartPieIcon} />
-          <ToggleItem value="list" icon={ListBulletIcon} />
-        </Toggle>
+        <TabList variant="solid">
+          <Tab icon={ChartPieIcon} />
+          <Tab icon={ListBulletIcon} />
+        </TabList>
       </Flex>
-      {selectedView === "chart" ? (
-        <>
-          <Legend categories={texts} colors={colors} className="mt-3" />
-          <DonutChart
-            className="mt-6"
-            data={occupancy}
-            category="value"
-            index="id"
-            colors={colors}
-            label={total}
-            showLabel
-            showAnimation
-            // variant="Pie"
-          />
-        </>
-      ) : (
-        <List className="mt-6">
-          {occupancy.map((item, key) => (
-            <ListItem key={key}>
-              <Flex justifyContent="start" className="truncate space-x-4">
-                <Icon
-                  variant="light"
-                  icon={categories.find((ico) => ico.id === item.id)?.icon}
-                  color={categories.find((ico) => ico.id === item.id)?.color}
-                  size="md"
-                />
-                <Text className="capitalize">
-                  {categories.find((ico) => ico.id === item.id)?.text}
-                </Text>
-              </Flex>
-              <Text>{item.value}</Text>
-            </ListItem>
-          ))}
-        </List>
-      )}
-    </>
+
+      <TabPanels>
+        <TabPanel>
+          <div className="mt-10">
+            <Legend categories={texts} colors={colors} className="mt-3" />
+            <DonutChart
+              className="mt-6"
+              data={occupancy}
+              category="value"
+              index="id"
+              colors={colors}
+              label={total}
+              showLabel
+              showAnimation
+              // variant="Pie"
+            />
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="mt-10">
+            <List className="mt-6">
+              {occupancy.map((item, key) => (
+                <ListItem key={key}>
+                  <Flex justifyContent="start" className="truncate space-x-4">
+                    <Icon
+                      variant="light"
+                      icon={categories.find((ico) => ico.id === item.id)?.icon}
+                      color={
+                        categories.find((ico) => ico.id === item.id)?.color
+                      }
+                      size="md"
+                    />
+                    <Text className="capitalize">
+                      {categories.find((ico) => ico.id === item.id)?.text}
+                    </Text>
+                  </Flex>
+                  <Text>{item.value}</Text>
+                </ListItem>
+              ))}
+            </List>
+          </div>
+        </TabPanel>
+      </TabPanels>
+    </TabGroup>
   );
 }

@@ -15,8 +15,8 @@ export default function History({ aps, data, token }) {
 
   useEffect(() => {
     async function handleQuery() {
-      const strFrom = format(startOfDay(dateRange[0]), "yyyy-MM-dd HH:mm:ss");
-      const strTo = format(endOfDay(dateRange[1]), "yyyy-MM-dd HH:mm:ss");
+      const strFrom = format(startOfDay(dateRange.from), "yyyy-MM-dd HH:mm:ss");
+      const strTo = format(endOfDay(dateRange.to), "yyyy-MM-dd HH:mm:ss");
       const filter = "a";
       const query = `system=0&dateFrom=${strFrom}&dateTo=${strTo}&filter=${filter}&device=0&number=0`;
       const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/history?${query}`;
@@ -28,7 +28,7 @@ export default function History({ aps, data, token }) {
       // console.log(json);
       setHistory(json);
     }
-    if (isValid(dateRange[0]) && isValid(dateRange[1])) {
+    if (isValid(dateRange.from) && isValid(dateRange.to)) {
       handleQuery();
     }
   }, [dateRange, aps, token]);

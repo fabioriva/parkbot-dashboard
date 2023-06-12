@@ -49,7 +49,7 @@ export default function Signin({ params }) {
             height={64}
             width={64}
           />
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight">
             Sign in to your Parkbot account
           </h2>
         </div>
@@ -64,7 +64,7 @@ export default function Signin({ params }) {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-sm font-medium leading-6"
               >
                 Username
               </label>
@@ -85,7 +85,7 @@ export default function Signin({ params }) {
               <div className="flex items-center justify-between">
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-sm font-medium leading-6"
                 >
                   Password
                 </label>

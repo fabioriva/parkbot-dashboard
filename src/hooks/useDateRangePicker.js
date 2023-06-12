@@ -4,10 +4,10 @@ import { useTranslations } from "next-intl";
 import { DateRangePicker } from "@tremor/react";
 
 export function useDateRangePicker() {
-  const [dateRange, setDateRange] = useState([
-    subDays(new Date(), 1),
-    new Date(),
-  ]);
+  const [dateRange, setDateRange] = useState({
+    from: subDays(new Date(), 1),
+    to: new Date(),
+  });
 
   const t = useTranslations("DateRangePicker");
 
@@ -15,7 +15,7 @@ export function useDateRangePicker() {
     <DateRangePicker
       className="max-w-sm"
       // locale={it}
-      maxDate={addDays(dateRange[0], 30)}
+      maxDate={addDays(dateRange.from, 30)}
       options={[
         {
           value: "tdy",
@@ -35,7 +35,7 @@ export function useDateRangePicker() {
           endDate: new Date(),
         },
       ]}
-      dropdownPlaceholder={t("dateRangeDropdownPlaceholder")}
+      selectPlacehoder={t("dateRangeDropdownPlaceholder")}
       placeholder={t("dateRangePlaceholder")}
       value={dateRange}
       onValueChange={setDateRange}

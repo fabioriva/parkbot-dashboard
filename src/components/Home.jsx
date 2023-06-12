@@ -13,7 +13,7 @@ export default function Home({ aps, user }) {
   const t = useTranslations("Home");
 
   return (
-    <Grid numColsSm={2} numColsLg={4} className="gap-6 items-start">
+    <Grid numItemsSm={2} numItemsLg={4} className="gap-6 items-start">
       {pages
         // .filter((item) => item.role !== "home")
         .map((item) => (

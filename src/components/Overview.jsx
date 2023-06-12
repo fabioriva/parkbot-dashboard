@@ -15,9 +15,9 @@ export default function Overview({ aps, json, token, user }) {
   useEffect(() => setOverview(data), [data]);
 
   return (
-    <Grid numColsSm={1} numColsLg={3} className="gap-6">
+    <Grid numItemsSm={1} numItemsLg={3} className="gap-6">
       <Col numColSpanLg={2}>
-        <Grid numColsMd={1} numColsLg={3} className="gap-6 items-stretch">
+        <Grid numItemsMd={1} numItemsLg={3} className="gap-6 items-stretch">
           {overview.devices.map((item, key) => (
             <Device
               advanced

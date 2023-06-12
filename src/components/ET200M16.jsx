@@ -15,7 +15,7 @@ function Bit({ item, nr }) {
     <div className="cursor-default">
       <Tooltip tooltip={tooltip}>
         <span
-          className="absolute h-[18px] w-[45px] bg-white border-b border-slate-100 pl-1 text-left text-xs"
+          className="absolute h-[18px] w-[45px] bg-white border-b border-slate-100 pl-1 text-left text-[0.7rem] text-slate-950"
           id={"id-".concat(nr, bit)}
         >
           {label}
@@ -23,10 +23,13 @@ function Bit({ item, nr }) {
       </Tooltip>
       <Tooltip tooltip={tooltip}>
         <span
-          className={clsx("absolute h-[18px] w-[12px] text-center text-xs", {
-            "bg-slate-200": !status,
-            "bg-green-500": status,
-          })}
+          className={clsx(
+            "absolute h-[18px] w-[12px] text-center text-xs text-slate-950",
+            {
+              "bg-slate-200": !status,
+              "bg-green-500": status,
+            }
+          )}
           id={"st-".concat(nr, bit)}
         >
           {bit}

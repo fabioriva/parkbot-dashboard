@@ -7,7 +7,7 @@ export default function Map(props) {
   // console.log(props);
   const { Levels, Occupancy, View } = useMap(props);
   return (
-    <Grid numColsLg={3} className="gap-6">
+    <Grid numItemsLg={3} className="gap-6">
       <Col numColSpan={1} numColSpanLg={2}>
         <Card className="p-3 sm:p-6">
           <Flex>
@@ -16,7 +16,7 @@ export default function Map(props) {
             </div>
             {View}
           </Flex>
-          <Grid numCols={1} numColsMd={2} numColsLg={3} className="gap-6 mt-3">
+          <Grid numItems={1} numItemsMd={2} numItemsLg={3} className="gap-6 mt-3">
             {Levels.map((level) => level)}
           </Grid>
           <style jsx global>

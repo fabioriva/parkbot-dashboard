@@ -19,7 +19,7 @@ export default function Index({ params }) {
         </div>
         <div className="max-w-sm">
           <Link href="/signin">
-            <button className="w-32 bg-slate-50 hover:bg-slate-950 border hover:border-slate-50 hover:text-slate-50 font-semibold text-base m-6 p-3 rounded-lg">
+            <button className="w-32 bg-slate-50 text-slate-950 hover:bg-slate-950 border hover:border-slate-50 hover:text-slate-50 font-semibold text-base m-6 p-3 rounded-lg">
               {t("start")}
             </button>
           </Link>

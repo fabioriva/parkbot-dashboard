@@ -73,7 +73,7 @@
     "statistics-info": "Grafici."
   },
   "Index": {
-    "title": "Lo strumento di monitoraggio dei parcheggi robotizzati",
+    "title": "Lo strumento per monitorare i parcheggi automatici",
     "start": "Inizia"
   },
   "Layout": {
@@ -108,7 +108,12 @@
     "dialogCancel": "Annulla",
     "dialogCard": "Tessera",
     "dialogClear": "Libera",
-    "dialogLock": "Blocca"
+    "dialogLock": "Blocca",
+    "SelectView": {
+      "card": "Numero tessera",
+      "number": "Numero stallo",
+      "size": "Dimensione vettura"
+    }
   },
   "Occupancy": {
     "title": "Occupazione",

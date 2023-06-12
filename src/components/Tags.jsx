@@ -20,10 +20,10 @@ function Tag({ item }) {
 
   return (
     <Card
-      className={clsx("hover:cursor-pointer", {
-        "hover:bg-amber-50": item.stall !== 0,
-        "hover:bg-indigo-50": item.stall === 0,
-      })}
+      // className={clsx("hover:cursor-pointer", {
+      //   "hover:bg-amber-50": item.stall !== 0,
+      //   "hover:bg-indigo-50": item.stall === 0,
+      // })}
       decoration="left"
       decorationColor={item.stall === 0 ? "indigo" : "amber"}
     >
@@ -76,7 +76,7 @@ export default function Tags(props) {
           setResults(fuse.search(value));
         }}
       />
-      <Grid numColsSm={2} numColsMd={3} numColsLg={4} className="gap-6 mt-6">
+      <Grid numItemsSm={2} numItemsMd={3} numItemsLg={4} className="gap-6 mt-6">
         {results.length === 0
           ? props.data.map((item, key) => <Tag item={item} key={key} />)
           : results.map(({ item }, key) => <Tag item={item} key={key} />)}

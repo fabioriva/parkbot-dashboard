@@ -42,13 +42,13 @@ export default function Dashboard({ aps, json, token, user }) {
 
   return (
     <Fragment>
-      <Grid numCols={1} numColsSm={2} numColsLg={4} className="gap-3">
+      <Grid numItems={1} numItemsSm={2} numItemsLg={4} className="gap-3">
         {dashboard.system.devices.map((item, key) => (
           <Device aps={aps} data={item} token={token} user={user} key={key} />
         ))}
       </Grid>
       <div className="my-3" />
-      <Grid numColsMd={2} numColsLg={4} className="gap-3">
+      <Grid numItemsMd={2} numItemsLg={4} className="gap-3">
         <Card className="p-3 sm:p-6 self-start">
           <Occupancy occupancy={dashboard.occupancy} />
           <ViewMore aps={aps} role="map" roles={user.roles} />
