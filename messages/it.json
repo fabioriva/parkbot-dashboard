@@ -154,6 +154,7 @@
   "Tags": {
     "card": "Tessera # {nr}",
     "search": "Cerca tag per PIN o numero...",
+    "stall": "Parcheggiata nel posto {nr}",
     "valid": "Entrata dalle {from} alle {to}"
   }
 }

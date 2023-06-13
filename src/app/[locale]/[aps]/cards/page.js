@@ -13,5 +13,5 @@ export default async function Page({ params }) {
   if (!json) {
     return <Error />;
   }
-  return <Tags aps={params.aps} data={json} />;
+  return <Tags aps={params.aps} json={json} />;
 }

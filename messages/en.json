@@ -154,6 +154,7 @@
   "Tags": {
     "card": "Card # {nr}",
     "search": "Search tag by PIN or number...",
-    "valid": "entrance from {from} to {to}"
+    "stall": "Parked in slot {nr}",
+    "valid": "Enter from {from} to {to}"
   }
 }

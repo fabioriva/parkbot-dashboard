@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { MagnifyingGlassIcon, TagIcon } from "@heroicons/react/24/solid";
 import {
@@ -14,6 +14,7 @@ import {
   Flex,
   Grid,
 } from "@tremor/react";
+import { useData } from "@/hooks/useWebSocket";
 
 function Tag({ item }) {
   const t = useTranslations("Tags");
@@ -25,14 +26,14 @@ function Tag({ item }) {
       //   "hover:bg-indigo-50": item.stall === 0,
       // })}
       decoration="left"
-      decorationColor={item.stall === 0 ? "indigo" : "amber"}
+      decorationColor={item.status === 0 ? "indigo" : "amber"}
     >
       <Flex justifyContent="start" className="space-x-4">
         <Icon
           icon={TagIcon}
           variant="light"
           size="xl"
-          color={item.stall === 0 ? "indigo" : "amber"}
+          color={item.status === 0 ? "indigo" : "amber"}
         />
         <div className="truncate">
           <Text>
@@ -45,7 +46,9 @@ function Tag({ item }) {
           >
             <Metric>{item.code}</Metric>
             <Text className="truncate">
-              {t("valid", { from: item.from, to: item.to })}
+              {item.status === 0
+                ? t("valid", { from: item.from, to: item.to })
+                : t("stall", { nr: item.status })}
             </Text>
           </Flex>
         </div>
@@ -54,9 +57,17 @@ function Tag({ item }) {
   );
 }
 
-export default function Tags(props) {
-  const [results, setResults] = useState([]);
+export default function Tags({ aps, json }) {
   const t = useTranslations("Tags");
+
+  const [cards, setCards] = useState(json);
+  const [results, setResults] = useState([]);
+
+  const url = `${process.env.NEXT_PUBLIC_WEBSOCK_URL}/${aps}/cards`;
+  const { data, loading } = useData(url, {
+    initialData: cards,
+  });
+  useEffect(() => setCards(data), [data]);
 
   return (
     <Fragment>
@@ -72,13 +83,13 @@ export default function Tags(props) {
             // Search in `code` and in `nr` array
             keys: ["code", "nr"],
           };
-          const fuse = new Fuse(props.data, options);
+          const fuse = new Fuse(cards, options);
           setResults(fuse.search(value));
         }}
       />
       <Grid numItemsSm={2} numItemsMd={3} numItemsLg={4} className="gap-6 mt-6">
         {results.length === 0
-          ? props.data.map((item, key) => <Tag item={item} key={key} />)
+          ? cards.map((item, key) => <Tag item={item} key={key} />)
           : results.map(({ item }, key) => <Tag item={item} key={key} />)}
       </Grid>
     </Fragment>
