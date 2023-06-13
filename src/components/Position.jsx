@@ -42,7 +42,7 @@ export default function Position({ item }) {
       <ProgressBar
         className="mt-1"
         // color={barColor}
-        percentageValue={percentage}
+        value={percentage}
         showAnimation={false}
       />
     </div>
