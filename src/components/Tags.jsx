@@ -21,10 +21,6 @@ function Tag({ item }) {
 
   return (
     <Card
-      // className={clsx("hover:cursor-pointer", {
-      //   "hover:bg-amber-50": item.stall !== 0,
-      //   "hover:bg-indigo-50": item.stall === 0,
-      // })}
       decoration="left"
       decorationColor={item.status === 0 ? "indigo" : "amber"}
     >

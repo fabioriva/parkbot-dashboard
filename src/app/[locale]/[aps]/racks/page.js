@@ -13,5 +13,5 @@ export default async function Page({ params }) {
   if (!json) {
     return <Error />;
   }
-  return <Racks aps={params.aps} data={json} />;
+  return <Racks aps={params.aps} json={json} />;
 }
