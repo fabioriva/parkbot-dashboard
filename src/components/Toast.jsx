@@ -68,5 +68,25 @@ export default function Toast({ message }) {
     }
   }, [message, t]);
 
-  return <Toaster />;
+  return (
+    <Toaster
+      toastOptions={{
+        style: {
+          background: "black",
+          borderRadius: "0.25rem" /* 4px */,
+          color: "white",
+        },
+        success: {
+          style: {
+            background: "green",
+          },
+        },
+        error: {
+          style: {
+            background: "red",
+          },
+        },
+      }}
+    />
+  );
 }

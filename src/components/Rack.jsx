@@ -25,7 +25,7 @@ export default function Rack(props) {
   return (
     <Suspense fallback={<Loading />}>
       <div
-        className="overflow-scroll relative bg-white shadow w-full h-96 flex items-center justify-center"
+        className="overflow-scroll relative bg-transparent shadow w-full h-96 flex items-center justify-center"
         id={`rack-${rack.nr}`}
       >
         <span className="text-2xl">Simatic PLC Rack {props.nr}</span>
