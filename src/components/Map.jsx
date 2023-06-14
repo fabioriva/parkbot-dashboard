@@ -149,7 +149,7 @@ const Level = ({ aps, definitions, level, token, user, view }) => {
         {level.label}: {level.min} - {level.max}
       </Text>
       <div
-        className="relative bg-transparent shadow-md w-full l"
+        className="relative bg-transparent border border-dotted border-white w-full l"
         id={"l-" + level.nr}
       >
         {level.elevators.map((el, i) => (
