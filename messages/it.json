@@ -90,7 +90,8 @@
         "racks": "PLC I/O",
         "history": "Storico",
         "statistics": "Statistiche",
-        "logout": "Esci"
+        "logout": "Esci",
+        "selectPlaceholder": "Vai alla pagina"
       }
     }
   },
@@ -133,6 +134,14 @@
       "dialogCancel": "Annulla",
       "dialogConfirm": "Conferma"
     }
+  },
+  "Signin": {
+    "title": "Accedi al tuo account Parkbot",
+    "username": "Nome utente",
+    "password": "Password",
+    "forgot": "Password dimenticata?",
+    "signin": "Accedi",
+    "agree": "Facendo clic su Accedi, accetti i termini di utilizzo."
   },
   "Statistics": {
     "title": "Operazioni di parcheggio",

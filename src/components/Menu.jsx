@@ -16,7 +16,7 @@ export default function Menu({ aps, user }) {
     <Select
       className="max-w-xs ml-3"
       // defaultValue="dashboard"
-      placeholder="Go to page"
+      placeholder={t("selectPlaceholder")}
     >
       {pages.map((item, key) => (
         <SelectItem

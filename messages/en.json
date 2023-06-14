@@ -90,7 +90,8 @@
         "racks": "PLC I/O",
         "history": "Logs",
         "statistics": "Statistics",
-        "logout": "Logout"
+        "logout": "Logout",
+        "selectPlaceholder": "Go to page"
       }
     }
   },
@@ -133,6 +134,14 @@
       "dialogCancel": "Cancel",
       "dialogConfirm": "Confirm"
     }
+  },
+  "Signin": {
+    "title": "Sign in to your Parkbot account",
+    "username": "Username",
+    "password": "Password",
+    "forgot": "Forgot password?",
+    "signin": "Sign in",
+    "agree": "By clicking Sign in, you agree to the terms of use."
   },
   "Statistics": {
     "title": "Operations statistics",
