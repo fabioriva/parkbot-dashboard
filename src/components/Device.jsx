@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
-import { CheckIcon, WrenchIcon } from "@heroicons/react/24/solid";
+import { WrenchIcon } from "@heroicons/react/24/solid";
 import { Badge, Card, Title, Tracker, Text, Flex } from "@tremor/react";
 import Entry from "@/components/Entry";
 import Position from "@/components/Position";
@@ -9,10 +9,6 @@ import { getInfo } from "@/lib/localize";
 
 const Info = ({ children, color, input }) => (
   <Badge
-    // className={clsx({
-    //   [`bg-${color}-100 text-${color}-600`]: input.status,
-    //   [`bg-slate-100 text-slate-600`]: !input.status,
-    // })}
     color={input.status ? color : "slate"}
     tooltip={`${input.addr} ${input.label} ${input.status ? "ON" : "OFF"}`}
   >
@@ -30,14 +26,14 @@ export default function Device({ advanced, aps, data, token, user }) {
     <Card className="self-start">
       <Flex>
         <Title>{name}</Title>
+        <Badge
+          color={mode.id !== 8 ? "yellow" : "blue"}
+          icon={mode.id !== 8 && WrenchIcon}
+          tooltip={t("device-mode")}
+        >
+          {t(mode.key)}
+        </Badge>
         <div className="flex items-center justify-center space-x-1">
-          <Badge
-            color={mode.id !== 8 ? "yellow" : "blue"}
-            icon={mode.id !== 8 ? WrenchIcon : CheckIcon}
-            tooltip={t("device-mode")}
-          >
-            {t(mode.key)}
-          </Badge>
           <Info color="red" input={LA}>
             LA
           </Info>
