@@ -24,7 +24,6 @@ export default function HeaderInfo({
   return (
     <>
       <Badge
-        className="sm:ml-3"
         icon={alarms > 0 ? BellAlertIcon : BellSlashIcon}
         color={alarms > 0 ? "red" : "emerald"}
         tooltip={t("alarms", { numAlarms: alarms })}
@@ -33,7 +32,7 @@ export default function HeaderInfo({
       </Badge>
       <Link href={`${aps.ns}/overview`}>
         <Badge
-          className="sm:ml-3 cursor-pointer "
+          className="cursor-pointer"
           icon={UserPlusIcon}
           color="sky"
           tooltip={t("entries", { numEntries: entries })}
@@ -43,7 +42,7 @@ export default function HeaderInfo({
       </Link>
       <Link href={`${aps.ns}/overview`}>
         <Badge
-          className="sm:ml-3 cursor-pointer"
+          className="cursor-pointer"
           icon={UserMinusIcon}
           color="violet"
           tooltip={t("exits", { numExits: exits })}
@@ -53,7 +52,7 @@ export default function HeaderInfo({
       </Link>
       <Link href={`${aps.ns}/map`}>
         <Badge
-          className="sm:ml-3 cursor-pointer"
+          className="cursor-pointer"
           icon={UserIcon}
           color="amber"
           tooltip={t("cars", { numCars: cars })}
@@ -62,7 +61,6 @@ export default function HeaderInfo({
         </Badge>
       </Link>
       <Badge
-        className="sm:ml-3"
         icon={comm ? SignalIcon : SignalSlashIcon}
         color={comm ? "emerald" : "red"}
         tooltip={comm ? "ONLINE" : "OFFLINE"}
