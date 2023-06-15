@@ -24,6 +24,7 @@ export default function Signin({ params }) {
         <Form
           locales={{
             forgot: t("forgot"),
+            message: t("message"),
             password: t("password"),
             signin: t("signin"),
             username: t("username"),

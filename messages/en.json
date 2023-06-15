@@ -1,5 +1,25 @@
 {
-  "Common": {
+  "Log": {
+    "al-fc": "AL{id} {motor} sensors {name1} {name2}",
+    "al-th": "AL{id} {motor} thermic {name}",
+    "al-to": "AL{id} {motor} motor time out",
+
+    "barrier-e": "entry barrier",
+    "barrier-u": "exit barrier",
+    "door-e": "entry door",
+    "door-u": "exit door",
+    "el-h": "traveling",
+    "el-r": "rotation",
+    "el-v": "hoisting",
+    "flap": "{numMotor, plural, =0 {flap} other {flap #}}",
+    "lock-r": "rotation locking pin",
+    "lock-v": "locking pin",
+    "sil-ch": "Silomat front centering",
+    "sil-cv": "Silomat back centering",
+    "sil-h": "Silomat traveling",
+    "sil-v": "Silomat hoisting",
+    "tt-r": "turntable rotation",
+
     "device-ce-0": "Entry in progress.",
     "device-ce-1": "Entering card {card}.",
     "device-ce-2": "Entering card {card}, stall {stall}.",
@@ -140,6 +160,7 @@
     "username": "Username",
     "password": "Password",
     "forgot": "Forgot password?",
+    "message": "These credentials do not match our records.",
     "signin": "Sign in",
     "agree": "By clicking Sign in, you agree to the terms of use."
   },

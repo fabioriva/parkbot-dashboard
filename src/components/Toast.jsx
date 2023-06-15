@@ -4,7 +4,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { getLog } from "@/lib/localize";
 
 export default function Toast({ message }) {
-  const t = useTranslations("Common");
+  const t = useTranslations("Log");
 
   useEffect(() => {
     // console.log(message);
@@ -19,12 +19,14 @@ export default function Toast({ message }) {
           return;
         case 3:
           toast(getLog(message, t), {
-            icon: "🪪",
-          });
-        case 4:
-          toast(getLog(message, t), {
             icon: "🔧",
           });
+          return;
+        case 4:
+          toast(getLog(message, t), {
+            icon: "🪪",
+          });
+          return;
         case 5:
           toast(getLog(message, t), {
             icon: "🚗",

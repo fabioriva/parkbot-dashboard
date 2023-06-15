@@ -1,8 +1,36 @@
+export function getAlarm(log, t) {
+  // console.log(log);
+  const { id, key, query } = log.alarm;
+  switch (key) {
+    case "al-fc":
+      return t("al-fc", {
+        id,
+        name1: query.name1,
+        name2: query.name2,
+        motor: t(query.motor, { numMotor: query.numMotor }),
+      });
+    case "al-th":
+      return t("al-th", {
+        id,
+        name: query.name,
+        motor: t(query.motor),
+      });
+    case "al-to":
+      return t("al-to", {
+        id,
+        motor: t(query.motor, { numMotor: query.numMotor }),
+      });
+    default:
+      return t("op-id-1", { id: log.alarm.id });
+  }
+}
+
 export function getLog(log, t) {
   const { alarm, card, operation, mode, stall } = log;
   switch (operation.id) {
     case 1:
-      return t("op-id-1", { id: alarm.id });
+      // return t("op-id-1", { id: alarm.id });
+      return getAlarm(log, t);
     case 2:
       return t("op-id-2", { id: alarm.id });
     case 3:

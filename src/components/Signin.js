@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 export default function Signin({ locales }) {
   const router = useRouter();
   const [error, setError] = useState(null);
-  const { forgot, password, signin, username } = locales;
+  const { forgot, message, password, signin, username } = locales;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -34,7 +34,7 @@ export default function Signin({ locales }) {
         throw new Error();
       }
     } catch (e) {
-      setError("These credentials do not match our records.");
+      setError(message);
     }
   };
 

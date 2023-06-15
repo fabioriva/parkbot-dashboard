@@ -9,11 +9,11 @@ import { getInfo } from "@/lib/localize";
 
 const Info = ({ children, color, input }) => (
   <Badge
-    className={clsx({
-      [`bg-${color}-100 text-${color}-600`]: input.status,
-      [`bg-slate-100 text-slate-600`]: !input.status,
-    })}
-    // color={color}
+    // className={clsx({
+    //   [`bg-${color}-100 text-${color}-600`]: input.status,
+    //   [`bg-slate-100 text-slate-600`]: !input.status,
+    // })}
+    color={input.status ? color : "slate"}
     tooltip={`${input.addr} ${input.label} ${input.status ? "ON" : "OFF"}`}
   >
     {children}
@@ -25,8 +25,7 @@ export default function Device({ advanced, aps, data, token, user }) {
   const { card, mode, motor, name, operation, size, stall, step, steps } =
     data.a;
   const [LS, LC, LA] = data.c;
-  const t = useTranslations("Common");
-
+  const t = useTranslations("Log");
   return (
     <Card className="self-start">
       <Flex>
