@@ -81,7 +81,7 @@ export default function Position({ item }) {
   return (
     <div className="mt-3">
       <Flex>
-        <Text className="w-full">{item.name}</Text>
+        <div className="text-white">{item.name}</div>
         <Flex className="space-x-2" justifyContent="end">
           <Text>
             {item.position}&nbsp;&rarr;&nbsp;{item.destination}

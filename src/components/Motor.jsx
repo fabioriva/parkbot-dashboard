@@ -7,7 +7,7 @@ export default function Motor({ item }) {
   return (
     <Card className="mt-3 p-3">
       <Flex>
-        <Text>{item.name}</Text>
+        <div className="text-sm">{item.name}</div>
         <Text>{item.status}</Text>
       </Flex>
       <div class="grid grid-cols-6 gap-3 mt-3">
