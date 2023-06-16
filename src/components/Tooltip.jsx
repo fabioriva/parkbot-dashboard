@@ -47,7 +47,7 @@ export default function Tooltip({ children, tooltip }) {
       {isOpen && (
         <div
           ref={refs.setFloating}
-          className="bg-slate-800 text-white p-1.5 rounded z-10"
+          className="bg-slate-800 text-white p-1.5 rounded-md z-10"
           style={{
             position: strategy,
             top: y ?? 0,

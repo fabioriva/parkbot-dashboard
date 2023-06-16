@@ -1,13 +1,23 @@
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import { WrenchIcon } from "@heroicons/react/24/solid";
-import { Badge, Card, Title, Tracker, Text, Flex } from "@tremor/react";
+import {
+  Badge,
+  // Callout,
+  Card,
+  Flex,
+  Title,
+  // Tracker,
+  // Text,
+} from "@tremor/react";
 import Entry from "@/components/Entry";
-import Position from "@/components/Position";
-import Silomat from "@/components/Silomat";
+// import Position from "@/components/Position";
+// import Silomat from "@/components/Silomat";
+import Info from "@/components/DeviceInfo";
+import View from "@/components/DeviceView";
 import { getInfo } from "@/lib/localize";
 
-const Info = ({ children, color, input }) => (
+const Led = ({ children, color, input }) => (
   <Badge
     color={input.status ? color : "slate"}
     tooltip={`${input.addr} ${input.label} ${input.status ? "ON" : "OFF"}`}
@@ -23,45 +33,33 @@ export default function Device({ advanced, aps, data, token, user }) {
   const [LS, LC, LA] = data.c;
   const t = useTranslations("Log");
   return (
-    <Card className="self-start">
+    <Card className="p-3 self-start">
       <Flex>
         <Title>{name}</Title>
         <Badge
           color={mode.id !== 8 ? "yellow" : "blue"}
           icon={mode.id !== 8 && WrenchIcon}
-          tooltip={t("device-mode")}
+          // tooltip={t("device-mode")}
         >
           {t(mode.key)}
         </Badge>
         <div className="flex items-center justify-center space-x-1">
-          <Info color="red" input={LA}>
+          <Led color="red" input={LA}>
             LA
-          </Info>
-          <Info color="yellow" input={LC}>
+          </Led>
+          <Led color="yellow" input={LC}>
             LC
-          </Info>
-          <Info color="green" input={LS}>
+          </Led>
+          <Led color="green" input={LS}>
             LS
-          </Info>
+          </Led>
         </div>
       </Flex>
-      <Flex>
-        <Text className="mt-4">{getInfo(data.a, t)}</Text>
-      </Flex>
-      {steps !== undefined && steps.length > 0 && (
-        <Tracker data={steps} className="mt-3" />
-      )}
-      {advanced && motor === 0 && data.b.length > 0 && (
-        <div className={clsx("mt-6", { "opacity-25": data.a.operation === 0 })}>
-          {data.b.map((item, key) => (
-            <Position item={item} key={key} />
-          ))}
-        </div>
-      )}
-      {advanced && motor === 1 && data.e.length > 0 && (
-        <Silomat data={data.e} />
-      )}
-
+      {/* <Flex>
+        <Text className="mt-3">{getInfo(data.a, t)}</Text>
+      </Flex> */}
+      <Info device={data.a} />
+      {advanced && <View data={data} />}
       {data.d.map((item, key) => (
         <Entry aps={aps} action={item} token={token} user={user} key={key} />
       ))}
