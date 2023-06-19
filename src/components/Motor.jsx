@@ -10,7 +10,7 @@ import Io from "@/components/DeviceIo";
 import Position from "@/components/Position";
 
 export default function Motor({ item }) {
-  // console.log(item);
+  console.log(item);
   return (
     <Accordion>
       <AccordionHeader>
@@ -25,14 +25,12 @@ export default function Motor({ item }) {
         </Flex>
       </AccordionHeader>
       <AccordionBody>
-        <div class="grid grid-cols-6 gap-3">
-          {item.io.map((item, key) => (
-            <Io item={item} key={key} />
-          ))}
+        <div className="grid grid-cols-6 gap-3">
+          {item.io !== undefined &&
+            item.io.map((item, key) => <Io item={item} key={key} />)}
         </div>
-        {item.encoders.map((item, key) => (
-          <Position item={item} key={key} />
-        ))}
+        {item.encoders !== undefined &&
+          item.encoders.map((item, key) => <Position item={item} key={key} />)}
       </AccordionBody>
     </Accordion>
     // <Card className="mt-3 p-3">

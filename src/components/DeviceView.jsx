@@ -14,12 +14,12 @@ export default function View({ data }) {
   return (
     <TabGroup>
       <TabList className="mt-3">
-        {data.main.length > 0 && <Tab>Main</Tab>}
+        {data.main !== undefined && data.main.length > 0 && <Tab>Main</Tab>}
         {data.silomat !== undefined && <Tab>Silomat</Tab>}
-        {data.more.length > 0 && <Tab>More</Tab>}
+        {data.more !== undefined && data.more.length > 0 && <Tab>More</Tab>}
       </TabList>
       <TabPanels>
-        {data.main.length > 0 && (
+        {data.main !== undefined && data.main.length > 0 && (
           <TabPanel>
             <AccordionList className="max-w-full mx-auto mt-3">
               {data.main.map((item, key) => (
@@ -38,7 +38,7 @@ export default function View({ data }) {
             </AccordionList>
           </TabPanel>
         )}
-        {data.more.length > 0 && (
+        {data.more !== undefined && data.more.length > 0 && (
           <TabPanel>
             <AccordionList className="max-w-full mx-auto mt-3">
               {data.more.map((item, key) => (

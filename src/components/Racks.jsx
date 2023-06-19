@@ -19,32 +19,31 @@ export default function Racks({ aps, json }) {
 
   return (
     <Grid numItemsSm={2} numItemsMd={3} numItemsLg={4} className="gap-6 mt-6">
-      {data.map((item, key) => (
-        <Link href={`/${aps}/racks/${key}`} key={key}>
-          <Card
-            className={clsx("max-w-sm mx-auto", {
-              "hover:bg-emerald-50": item.online.status,
-              "hover:bg-rose-50": !item.online.status,
-            })}
-            decoration="left"
-            decorationColor={item.online.status ? "emerald" : "rose"}
-          >
-            <Flex>
-              <div className="truncate">
-                <Text>PLC Rack # {item.nr}</Text>
-                <Metric>{item.title}</Metric>
-              </div>
-              <Badge color={item.online.status ? "emerald" : "rose"}>
-                {item.online.status ? (
-                  <span>ONLINE</span>
-                ) : (
-                  <span>OFFLINE</span>
-                )}
-              </Badge>
-            </Flex>
-          </Card>
-        </Link>
-      ))}
+      {data.map((item, key) => {
+        const status = item.online !== undefined ? item.online.status : true;
+        return (
+          <Link href={`/${aps}/racks/${key}`} key={key}>
+            <Card
+              className={clsx("max-w-sm mx-auto", {
+                // "hover:bg-emerald-50": status,
+                // "hover:bg-rose-50": !status,
+              })}
+              decoration="left"
+              decorationColor={status ? "emerald" : "rose"}
+            >
+              <Flex>
+                <div className="truncate">
+                  <Text>PLC Rack # {item.nr}</Text>
+                  <Metric>{item.title}</Metric>
+                </div>
+                <Badge color={status ? "emerald" : "rose"}>
+                  {status ? <span>ONLINE</span> : <span>OFFLINE</span>}
+                </Badge>
+              </Flex>
+            </Card>
+          </Link>
+        );
+      })}
     </Grid>
   );
 }

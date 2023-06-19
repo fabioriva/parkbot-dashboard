@@ -12,7 +12,7 @@ const initialState = {
 function reducer(state, action) {
   switch (action.type) {
     case "start":
-      console.log("started!!!!!!!!!!", state, action);
+      // console.log("start", state, action);
       return {
         ...state,
         isRunning: true,
@@ -21,17 +21,19 @@ function reducer(state, action) {
         position: action.position,
         percent: 0,
       };
-    // case "stop":
-    //   return { ...state, isRunning: false };
-    // case "reset":
-    //   return { isRunning: false, distance: 0 };
+    case "reset":
+      return initialState;
+
     case "tick":
-      console.log("running!!!!!!!!!!", state, action);
+      // console.log("tick", state, action);
+      const actual = Math.abs(state.destination - action.position);
+      const percent =
+        // action.position === 0
+        // ? 0
+        actual <= 10 ? 100 : 100 - Math.round((actual * 100) / state.distance);
       return {
         ...state,
-        percent:
-          (Math.abs(state.destination - action.position) / state.distance) *
-          100,
+        percent,
       };
     default:
       throw new Error();
@@ -76,7 +78,11 @@ export default function Position({ item }) {
     [destination]
   );
 
-  useEffect(() => dispatch({ type: "tick", position }), [position]);
+  useEffect(() => {
+    position === 0
+      ? dispatch({ type: "reset" })
+      : dispatch({ type: "tick", position });
+  }, [position]);
 
   return (
     <div className="mt-3">
