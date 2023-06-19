@@ -10,22 +10,22 @@ export default function Info({ device }) {
   return (
     <div className="mt-6">
       {mode.id !== 8 && (
-        <Callout className="mt-3" title="Manual mode" color="yellow">
+        <Callout className="mt-3" title={t("mode-man")} color="yellow">
           {t("device-man")}
         </Callout>
       )}
       {mode.id === 8 && operation === 0 && (
-        <Callout className="mt-3" title="System ready" color="emerald">
+        <Callout className="mt-3" title={t("device-ready")} color="emerald">
           {t("device-auto")}
         </Callout>
       )}
       {mode.id === 8 && operation === 1 && (
-        <Callout className="mt-3" title="Entry in progress" color="blue">
+        <Callout className="mt-3" title={t("device-ce-0")} color="blue">
           {getInfo(device, t)}
         </Callout>
       )}
       {mode.id === 8 && operation === 2 && (
-        <Callout className="mt-3" title="Exit in progress" color="sky">
+        <Callout className="mt-3" title={t("device-cu-0")} color="sky">
           {getInfo(device, t)}
         </Callout>
       )}

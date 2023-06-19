@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import {
   Accordion,
   AccordionHeader,
@@ -11,13 +12,15 @@ import Position from "@/components/Position";
 
 export default function Motor({ item }) {
   // console.log(item);
+  const t = useTranslations("Log");
+
   return (
     <Accordion defaultOpen>
       <AccordionHeader>
         <Flex>
-          <div className="text-sm">{item.name}</div>
+          <div className="text-sm">{t(item.name)}</div>
           <Text>
-            {item.status}
+            {t(item.status)}
             {item.drive !== undefined && (
               <span className="ml-3 text-slate-50">{item.drive.speed}Hz</span>
             )}
