@@ -10,9 +10,9 @@ import Io from "@/components/DeviceIo";
 import Position from "@/components/Position";
 
 export default function Motor({ item }) {
-  console.log(item);
+  // console.log(item);
   return (
-    <Accordion>
+    <Accordion defaultOpen>
       <AccordionHeader>
         <Flex>
           <div className="text-sm">{item.name}</div>

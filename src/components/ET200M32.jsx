@@ -307,7 +307,7 @@ function Byte({ byte, nr }) {
   return (
     <div>
       <span
-        className="absolute bg-[#c0dcec] h-[16px] w-[57px] flex items-center justify-center text-xs"
+        className="absolute bg-[#c0dcec] h-[16px] w-[57px] flex items-center justify-center text-xs text-blue-500"
         id={"label-" + nr}
       >
         {label}
