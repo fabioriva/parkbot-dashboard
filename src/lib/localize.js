@@ -1,6 +1,6 @@
-export function getAlarm(log, t) {
+export function getAlarm(alarm, t) {
   // console.log(log);
-  const { id, key, query } = log.alarm;
+  const { id, key, query } = alarm;
   switch (key) {
     case "al-fc":
       return t("al-fc", {
@@ -21,7 +21,7 @@ export function getAlarm(log, t) {
         motor: t(query.motor, { numMotor: query.numMotor }),
       });
     default:
-      return t("op-id-1", { id: log.alarm.id });
+      return t("op-id-1", { id });
   }
 }
 
@@ -30,7 +30,7 @@ export function getLog(log, t) {
   switch (operation.id) {
     case 1:
       // return t("op-id-1", { id: alarm.id });
-      return getAlarm(log, t);
+      return getAlarm(log.alarm, t);
     case 2:
       return t("op-id-2", { id: alarm.id });
     case 3:

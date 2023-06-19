@@ -58,7 +58,7 @@ export default function Device({ advanced, aps, data, token, user }) {
       {/* <Flex>
         <Text className="mt-3">{getInfo(data.a, t)}</Text>
       </Flex> */}
-      <Info device={data.a} />
+      <Info alarms={data.alarms} device={data.a} />
       {advanced && <View data={data} />}
       {data.d.map((item, key) => (
         <Entry aps={aps} action={item} token={token} user={user} key={key} />

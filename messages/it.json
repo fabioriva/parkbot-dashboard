@@ -1,19 +1,21 @@
 {
   "Log": {
-    "al-fc": "AL{id} {motor} sensors {name1} {name2}",
-    "al-th": "AL{id} {motor} thermic {name}",
-    "al-to": "AL{id} {motor} motor time out",
+    "al-active": "Allarmi attivi {count}",
+    "al-fc": "AL{id} {motor} sensori {name1} {name2}",
+    "al-th": "AL{id} termica {motor} {name}",
+    "al-to": "AL{id} time out motore {motor}",
 
-    "mot-barrier": "{nr, plural, =0 {barriera} other {barriera #}}",
-    "mot-door": "{nr, plural, =0 {porta} other {porta #}}",
-    "mot-flap": "{nr, plural, =0 {clappa} other {clappa #}}",
-    "mot-lock": "{nr, plural, =0 {martinetto} other {martinetto #}}",
+    "mot-barrier": "barriera",
+    "mot-door": "porta",
+    "mot-flap": "clappa",
+    "mot-lock": "martinetto",
     "mot-hoisting": "sollevamento",
     "mot-rotation": "rotazione",
     "mot-traveling": "traslazione",
     "mot-center-h": "centratore posteriore",
     "mot-center-v": "centratore anteriore",
 
+    "mov-idle": "stop",
     "mov-up": "salita",
     "mov-down": "discesa",
     "mov-lock": "blocca",
@@ -44,6 +46,7 @@
     "sil-pos-closed": "chiuso",
     "sil-pos-opened": "aperto",
 
+    "mot-flap-nr": "{nr, plural, =0 {flap} other {flap #}}",
     "barrier-e": "entry barrier",
     "barrier-u": "exit barrier",
     "door-e": "entry door",

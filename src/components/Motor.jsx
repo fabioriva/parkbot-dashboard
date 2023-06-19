@@ -15,7 +15,7 @@ export default function Motor({ item }) {
   const t = useTranslations("Log");
 
   return (
-    <Accordion defaultOpen>
+    <Accordion>
       <AccordionHeader>
         <Flex>
           <div className="text-sm">{t(item.name)}</div>
