@@ -51,7 +51,6 @@
     "el-h": "traveling",
     "el-r": "rotation",
     "el-v": "hoisting",
-    "flap": "{numMotor, plural, =0 {flap} other {flap #}}",
     "lock-r": "rotation locking pin",
     "lock-v": "locking pin",
     "sil-ch": "Silomat front centering",
