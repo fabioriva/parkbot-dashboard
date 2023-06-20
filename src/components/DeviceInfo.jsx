@@ -17,7 +17,12 @@ export default function Info({ alarms, device }) {
           >
             {alarms.map((item, key) => {
               // console.log(item);
-              return <div key={key}>{getAlarm(item, t)}</div>;
+              return (
+                <span key={key}>
+                  {getAlarm(item, t)}
+                  <br />
+                </span>
+              );
             })}
           </Callout>
         </div>
