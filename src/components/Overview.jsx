@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Grid, Col } from "@tremor/react";
 import Device from "@/components/Device";
+// import Drive from "@/components/Drive";
 import Queue from "@/components/Queue";
 import { useData } from "@/hooks/useWebSocket";
 
@@ -28,6 +29,9 @@ export default function Overview({ aps, json, token, user }) {
               key={key}
             />
           ))}
+          {/* {overview.drives.map((item, key) => (
+            <Drive item={item} key={key} />
+          ))} */}
         </Grid>
       </Col>
       <Queue aps={aps} data={overview.exitQueue} token={token} user={user} />

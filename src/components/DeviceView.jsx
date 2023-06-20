@@ -6,6 +6,7 @@ import {
   TabPanel,
   AccordionList,
 } from "@tremor/react";
+// import Drive from "@/components/Drive";
 import Motor from "@/components/Motor";
 // import Silomat from "@/components/Silomat";
 
@@ -14,21 +15,34 @@ export default function View({ data }) {
   return (
     <TabGroup>
       <TabList className="mt-3">
-        {data.main !== undefined && data.main.length > 0 && <Tab>Main</Tab>}
+        {data.motors !== undefined && data.motors.length > 0 && (
+          <Tab>Motors</Tab>
+        )}
+        {/* {data.more !== undefined && data.more.length > 0 && <Tab>More</Tab>} */}
         {data.silomat !== undefined && <Tab>Silomat</Tab>}
-        {data.more !== undefined && data.more.length > 0 && <Tab>More</Tab>}
+        {/* {data.drives !== undefined && data.drives.length > 0 && (
+          <Tab>Drives</Tab>
+        )} */}
       </TabList>
       <TabPanels>
-        {data.main !== undefined && data.main.length > 0 && (
+        {data.motors !== undefined && data.motors.length > 0 && (
           <TabPanel>
             <AccordionList className="max-w-full mx-auto mt-3">
-              {data.main.map((item, key) => (
+              {data.motors.map((item, key) => (
                 <Motor item={item} key={key} />
               ))}
             </AccordionList>
           </TabPanel>
         )}
-
+        {/* {data.more !== undefined && data.more.length > 0 && (
+          <TabPanel>
+            <AccordionList className="max-w-full mx-auto mt-3">
+              {data.more.map((item, key) => (
+                <Motor item={item} key={key} />
+              ))}
+            </AccordionList>
+          </TabPanel>
+        )} */}
         {data.silomat !== undefined && (
           <TabPanel>
             <AccordionList className="max-w-full mx-auto mt-3">
@@ -38,15 +52,15 @@ export default function View({ data }) {
             </AccordionList>
           </TabPanel>
         )}
-        {data.more !== undefined && data.more.length > 0 && (
+        {/* {data.drives !== undefined && data.drives.length > 0 && (
           <TabPanel>
             <AccordionList className="max-w-full mx-auto mt-3">
-              {data.more.map((item, key) => (
-                <Motor item={item} key={key} />
+              {data.drives.map((item, key) => (
+                <Drive item={item} key={key} />
               ))}
             </AccordionList>
           </TabPanel>
-        )}
+        )} */}
         {/* <TabPanel>
           <div className="mt-3">
             {data.b.map((item, key) => (
