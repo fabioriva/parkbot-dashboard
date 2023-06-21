@@ -1,7 +1,14 @@
 import { useState } from "react";
+import { useParams } from "next/navigation";
 import { addDays, subDays } from "date-fns";
+import { enUS, it } from "date-fns/locale";
 import { useTranslations } from "next-intl";
 import { DateRangePicker } from "@tremor/react";
+
+const locales = {
+  en: enUS,
+  it,
+};
 
 export function useDateRangePicker() {
   const [dateRange, setDateRange] = useState({
@@ -9,35 +16,36 @@ export function useDateRangePicker() {
     to: new Date(),
   });
 
+  const params = useParams();
   const t = useTranslations("DateRangePicker");
 
   const dateRangePicker = (
     <DateRangePicker
       className="max-w-sm"
-      // locale={it}
+      locale={locales[params.locale]}
       maxDate={addDays(dateRange.from, 30)}
-      options={[
-        {
-          value: "tdy",
-          text: t("dateRangeOptionToday"),
-          startDate: new Date(),
-        },
-        {
-          value: "w",
-          text: t("dateRangeOptionWeekly"),
-          startDate: subDays(new Date(), 7),
-          endDate: new Date(),
-        },
-        {
-          value: "t",
-          text: t("dateRangeOptionMonthly"),
-          startDate: subDays(new Date(), 30),
-          endDate: new Date(),
-        },
-      ]}
-      selectPlacehoder={t("dateRangeDropdownPlaceholder")}
+      // options={[
+      //   {
+      //     value: "tdy",
+      //     text: t("dateRangeOptionToday"),
+      //     startDate: new Date(),
+      //   },
+      //   {
+      //     value: "w",
+      //     text: t("dateRangeOptionWeekly"),
+      //     startDate: subDays(new Date(), 7),
+      //     endDate: new Date(),
+      //   },
+      //   {
+      //     value: "t",
+      //     text: t("dateRangeOptionMonthly"),
+      //     startDate: subDays(new Date(), 30),
+      //     endDate: new Date(),
+      //   },
+      // ]}
+      selectPlaceholder={t("dateRangeDropdownPlaceholder")}
       placeholder={t("dateRangePlaceholder")}
-      value={dateRange}
+      defaultValue={dateRange}
       onValueChange={setDateRange}
     />
   );

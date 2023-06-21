@@ -1,35 +1,15 @@
 import { useTranslations } from "next-intl";
 import {
-  // ArrowDownIcon,
-  // ArrowDownTrayIcon,
-  // ArrowsRightLeftIcon,
-  // ArrowUpIcon,
-  // ArrowUpTrayIcon,
   ArrowPathIcon,
-  // ArrowsUpDownIcon,
   BellAlertIcon,
   BellSlashIcon,
   BookmarkIcon,
-  // EllipsisHorizontalIcon,
-  // IdentificationIcon,
   TagIcon,
-  // UserIcon,
   UserMinusIcon,
   UserPlusIcon,
   WrenchScrewdriverIcon,
 } from "@heroicons/react/24/solid";
-import {
-  // Badge,
-  Bold,
-  // Card,
-  Flex,
-  Icon,
-  List,
-  ListItem,
-  Text,
-  // Title,
-  // Subtitle,
-} from "@tremor/react";
+import { Bold, Flex, Icon, List, ListItem, Text } from "@tremor/react";
 import { getLog } from "@/lib/localize";
 
 const icons = [
@@ -137,7 +117,7 @@ export default function HistoryList({ data }) {
           ))}
         </List>
       ) : (
-        <Text className="text-center">No data</Text>
+        <Text className="p-10 text-center">No data</Text>
       )}
     </>
   );
