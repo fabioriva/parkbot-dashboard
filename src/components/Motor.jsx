@@ -20,10 +20,8 @@ export default function Motor({ item }) {
       <AccordionHeader>
         <Flex className="text-left">
           <div className="text-sm grow">{t(item.name)}</div>
-          {item.drive !== undefined && (
-            <div className="text-sm px-3">{item.drive.speed}Hz</div>
-          )}
-          <Text>{t(item.status)}</Text>
+          {item.drive !== undefined && <span className="text-sm px-3">{item.drive.speed}&nbsp;Hz</span>}
+          <Text className="text-right w-[30%]">{t(item.status)}</Text>
         </Flex>
       </AccordionHeader>
       <AccordionBody>

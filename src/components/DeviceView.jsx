@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   TabList,
   Tab,
@@ -12,8 +13,14 @@ import Motor from "@/components/Motor";
 
 export default function View({ data }) {
   // console.log(data);
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    console.log(data.a);
+    setIndex(data.a.motor);
+  }, [data.a.motor]);
+
   return (
-    <TabGroup>
+    <TabGroup index={index} onIndexChange={(index) => setIndex(index)}>
       <TabList className="mt-3">
         {data.motors !== undefined && data.motors.length > 0 && (
           <Tab>Motors</Tab>
