@@ -71,6 +71,7 @@
     "device-auto": "Waiting for operation request.",
     "device-man": "Manual mode activated.",
     "device-mode": "Function mode",
+    "device-motors": "Motors",
     "device-ready": "Device ready",
     "mode-data-edit": "Data edit",
     "mode-data-read": "Data read",
@@ -92,6 +93,11 @@
     "op-id-9": "Reserved stall {stall}",
     "op-id-10": "Exit request for card {card}",
     "op-id-11": "Entry request for card {card}"
+  },
+  "Dashboard": {
+    "kpi-activity": "Recent activity",
+    "kpi-operations": "Today's operations",
+    "button-more": "View more"
   },
   "DateRangePicker": {
     "dateRangeDropdownPlaceholder": "Select",

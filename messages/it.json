@@ -71,6 +71,7 @@
     "device-auto": "In attesa di richiesta operazione.",
     "device-man": "Modalità manuale inserita.",
     "device-mode": "Modalità di funzionamento",
+    "device-motors": "Motori",
     "device-ready": "Dispositivo pronto",
     "mode-data-edit": "Salva dati",
     "mode-data-read": "Lettura dati",
@@ -92,6 +93,11 @@
     "op-id-9": "Prenotato stallo {stall}",
     "op-id-10": "Richiesta di uscita per tessera {card}",
     "op-id-11": "Richiesta di entrata per tessera {card}"
+  },
+  "Dashboard": {
+    "kpi-activity": "Attività recente",
+    "kpi-operations": "Operazioni giornaliere",
+    "button-more": "Visualizza"
   },
   "DateRangePicker": {
     "dateRangeDropdownPlaceholder": "Selezionare",

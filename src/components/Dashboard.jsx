@@ -2,6 +2,7 @@
 
 import { Fragment, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { Grid, Col, Flex, Button, Card, Title } from "@tremor/react";
 import BarChart from "@/components/OperationsBarChart";
@@ -15,6 +16,8 @@ import useSWR from "swr";
 
 function ViewMore({ aps, role, roles }) {
   const router = useRouter();
+  const t = useTranslations("Dashboard");
+
   return (
     <Flex className="mt-6 pt-4 border-t">
       <Button
@@ -25,7 +28,7 @@ function ViewMore({ aps, role, roles }) {
         disabled={!roles.some((role) => role === role)}
         onClick={() => router.push(`/${aps}/${role}`)}
       >
-        View more
+        {t("button-more")}
       </Button>
     </Flex>
   );
@@ -33,6 +36,8 @@ function ViewMore({ aps, role, roles }) {
 
 export default function Dashboard({ aps, json, token, user }) {
   // console.log(json);
+  const t = useTranslations("Dashboard");
+
   const [dashboard, setDashboard] = useState(json);
   const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/dashboard`;
   const { data } = useSWR(url, fetcher, {
@@ -55,13 +60,13 @@ export default function Dashboard({ aps, json, token, user }) {
           <ViewMore aps={aps} role="map" roles={user.roles} />
         </Card>
         <Card className="p-3 sm:p-6 self-start">
-          <Title className="mb-3">Recent activity</Title>
+          <Title className="mb-3">{t("kpi-activity")}</Title>
           <HistoryList data={dashboard.activity.documents} />
           <ViewMore aps={aps} role="history" roles={user.roles} />
         </Card>
         <Col numColSpanMd={2}>
           <Card className="p-3 sm:p-6 self-start">
-            <Title className="mb-3">Daily operations</Title>
+            <Title className="mb-3">{t("kpi-operations")}</Title>
             <BarChart data={dashboard.operations[0].data} stacked={true} />
             <ViewMore aps={aps} role="statistics" roles={user.roles} />
           </Card>

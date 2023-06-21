@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import {
   TabList,
   Tab,
@@ -10,6 +11,8 @@ import {
 import Motor from "@/components/Motor";
 
 export default function View({ data }) {
+  const t = useTranslations("Log");
+
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -21,7 +24,7 @@ export default function View({ data }) {
     <TabGroup index={index} onIndexChange={(index) => setIndex(index)}>
       <TabList className="mt-3">
         {data.motors !== undefined && data.motors.length > 0 && (
-          <Tab>Motors</Tab>
+          <Tab>{t("device-motors")}</Tab>
         )}
         {data.silomat !== undefined && <Tab>Silomat</Tab>}
       </TabList>

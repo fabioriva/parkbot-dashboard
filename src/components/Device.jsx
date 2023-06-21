@@ -1,4 +1,4 @@
-import clsx from "clsx";
+// import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import { WrenchIcon } from "@heroicons/react/24/solid";
 import { Badge, Card, Flex, Title } from "@tremor/react";
@@ -18,10 +18,11 @@ const Led = ({ children, color, input }) => (
 
 export default function Device({ advanced, aps, data, token, user }) {
   // console.log(data);
+  const t = useTranslations("Log");
   const { card, mode, motor, name, operation, size, stall, step, steps } =
     data.a;
   const [LS, LC, LA] = data.c;
-  const t = useTranslations("Log");
+
   return (
     <Card className="p-3 self-start">
       <Flex>
