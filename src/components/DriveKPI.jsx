@@ -51,7 +51,7 @@ export default function Drive({ item }) {
       <Flex justifyContent="between" className="mt-1">
         <Text>0</Text>
         <Text>status word</Text>
-        <Text>16</Text>
+        <Text>15</Text>
       </Flex>
       <Tracker data={statusWord} className="h-[0.5rem] mt-1" />
     </div>
