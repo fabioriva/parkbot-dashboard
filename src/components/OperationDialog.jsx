@@ -3,9 +3,9 @@ import { useTranslations } from "next-intl";
 import { Button, Flex, Text, TextInput } from "@tremor/react";
 import Dialog from "@/components/Dialog";
 
-export default function Exit({ action, aps, token, user }) {
+export default function Exit({ action, id, aps, token, user }) {
   // console.log(action);
-  const t = useTranslations("Exit");
+  const t = useTranslations("OperationDialog");
 
   const [isOpen, setIsOpen] = useState(false);
   const [error, setError] = useState({ status: false, message: "" });
@@ -13,7 +13,7 @@ export default function Exit({ action, aps, token, user }) {
 
   const handleConfirm = async () => {
     const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/system/operation`;
-    console.log(url, token);
+    console.log(action, id, url, token);
     const res = await fetch(url, {
       method: "POST",
       // withCredentials: true,
@@ -22,7 +22,7 @@ export default function Exit({ action, aps, token, user }) {
         Authorization: "Bearer " + token,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ card: value, id: 0 }),
+      body: JSON.stringify({ card: value, id }),
     });
     console.log(res);
     setIsOpen(false);
@@ -40,19 +40,24 @@ export default function Exit({ action, aps, token, user }) {
     setIsOpen(true);
   };
 
+  const operation = id === 0 ? "exit" : "entry";
+
   return (
     <Fragment>
       <Button
         className="mt-6 min-w-full"
         onClick={handleOpen}
         disabled={
-          !user.rights.some((right) => right === "entry") ||
+          !user.rights.some((right) => right === operation) ||
           !action.enable.status
         }
       >
-        {t("buttonExit")}
+        {t("button", { operation: t(operation) })}
       </Button>
-      <Dialog isOpen={isOpen} title={t("dialogTitle")}>
+      <Dialog
+        isOpen={isOpen}
+        title={t("dialogTitle", { operation: t(operation) })}
+      >
         <div className="mt-3">
           <Text>{t("dialogText", { min: action.min, max: action.max })}</Text>
         </div>

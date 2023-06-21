@@ -15,7 +15,7 @@ import {
   Text,
 } from "@tremor/react";
 import Dialog from "@/components/Dialog";
-import Exit from "@/components/Exit";
+import Exit from "@/components/OperationDialog";
 
 export default function Queue({ aps, data, token, user }) {
   // console.log(data);
@@ -102,7 +102,13 @@ export default function Queue({ aps, data, token, user }) {
           </Button>
         </Flex>
       </Dialog>
-      <Exit aps={aps} action={data.exitButton} token={token} user={user} />
+      <Exit
+        aps={aps}
+        action={data.exitButton}
+        id={0}
+        token={token}
+        user={user}
+      />
     </Card>
   );
 }

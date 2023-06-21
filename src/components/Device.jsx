@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 import { WrenchIcon } from "@heroicons/react/24/solid";
 import { Badge, Card, Flex, Title } from "@tremor/react";
-import Entry from "@/components/Entry";
+import Entry from "@/components/OperationDialog";
 import Info from "@/components/DeviceInfo";
 import View from "@/components/DeviceView";
 import { getInfo } from "@/lib/localize";
@@ -17,7 +17,7 @@ const Led = ({ children, color, input }) => (
 );
 
 export default function Device({ advanced, aps, data, token, user }) {
-  // console.log(data);
+  console.log(data);
   const t = useTranslations("Log");
   const { card, mode, motor, name, operation, size, stall, step, steps } =
     data.a;
@@ -49,7 +49,14 @@ export default function Device({ advanced, aps, data, token, user }) {
       <Info alarms={data.alarms} device={data.a} />
       {advanced && <View data={data} />}
       {data.d.map((item, key) => (
-        <Entry aps={aps} action={item} token={token} user={user} key={key} />
+        <Entry
+          aps={aps}
+          action={item}
+          id={data.a.id}
+          token={token}
+          user={user}
+          key={key}
+        />
       ))}
     </Card>
   );

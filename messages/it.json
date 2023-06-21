@@ -110,9 +110,11 @@
     "title": "Fetch error",
     "callout": "Risorsa non disponibile"
   },
-  "Exit": {
-    "buttonExit": "Uscita",
-    "dialogTitle": "Chiamata di uscita",
+  "OperationDialog": {
+    "button": "{operation}",
+    "entry": "Entrata",
+    "exit": "Uscita",
+    "dialogTitle": "{operation}",
     "dialogText": "Inserisci un numero di tessera {min} - {max}",
     "dialogTextInput": "Inserisci un numero di tessera {min} - {max}",
     "dialogCancel": "Annulla",

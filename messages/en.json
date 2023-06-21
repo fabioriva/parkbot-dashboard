@@ -110,9 +110,11 @@
     "title": "Fetch error",
     "callout": "Resource not available"
   },
-  "Exit": {
-    "buttonExit": "Exit",
-    "dialogTitle": "Exit call",
+  "OperationDialog": {
+    "button": "{operation}",
+    "entry": "Entry",
+    "exit": "Exit",
+    "dialogTitle": "{operation} call",
     "dialogText": "Insert card number {min} - {max}",
     "dialogTextInput": "Insert card number {min} - {max}",
     "dialogCancel": "Cancel",
