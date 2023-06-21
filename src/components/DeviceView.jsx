@@ -15,10 +15,7 @@ export default function View({ data }) {
 
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    console.log(data.a);
-    setIndex(data.a.motor);
-  }, [data.a.motor]);
+  useEffect(() => setIndex(data.a.motor), [data.a.motor]); // automatically change Tab
 
   return (
     <TabGroup index={index} onIndexChange={(index) => setIndex(index)}>
