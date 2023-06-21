@@ -4,6 +4,5 @@
   "editor.formatOnSave": true,
   "files.associations": {
     "*.js": "javascriptreact"
-  },
-  "prettier.prettierPath": "./node_modules/prettier"
+  }
 }
