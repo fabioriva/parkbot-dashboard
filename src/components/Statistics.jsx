@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Card, Text, Title, Flex, Tab, TabList, TabGroup } from "@tremor/react";
 import BarChart from "@/components/OperationsBarChart";
-import Table from "@/components/StatisticsTable";
+// import Table from "@/components/StatisticsTable";
 import { useDateRangePicker } from "@/hooks/useDateRangePicker";
 
 export default function Statistics({ aps, data, token }) {
@@ -62,7 +62,10 @@ export default function Statistics({ aps, data, token }) {
         {dateRangePicker}
         <Title className="mt-6 grow">{t("title")}</Title>
         <Text>{operations.query.date}</Text>
-        <Table data={operations.data} />
+        {/* <Table data={operations.data} /> */}
+        <div className="mt-6">
+          <BarChart data={operations.data} layout="vertical" stacked={true} />
+        </div>
       </div>
     </Card>
   );
