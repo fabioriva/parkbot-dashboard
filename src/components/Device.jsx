@@ -1,18 +1,8 @@
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import { WrenchIcon } from "@heroicons/react/24/solid";
-import {
-  Badge,
-  // Callout,
-  Card,
-  Flex,
-  Title,
-  // Tracker,
-  // Text,
-} from "@tremor/react";
+import { Badge, Card, Flex, Title } from "@tremor/react";
 import Entry from "@/components/Entry";
-// import Position from "@/components/Position";
-// import Silomat from "@/components/Silomat";
 import Info from "@/components/DeviceInfo";
 import View from "@/components/DeviceView";
 import { getInfo } from "@/lib/localize";
@@ -55,9 +45,6 @@ export default function Device({ advanced, aps, data, token, user }) {
           </Led>
         </div>
       </Flex>
-      {/* <Flex>
-        <Text className="mt-3">{getInfo(data.a, t)}</Text>
-      </Flex> */}
       <Info alarms={data.alarms} device={data.a} />
       {advanced && <View data={data} />}
       {data.d.map((item, key) => (

@@ -1,11 +1,4 @@
-import {
-  Badge,
-  Flex,
-  Tracker,
-  Text,
-  Title,
-  // Metric,
-} from "@tremor/react";
+import { Badge, Flex, Tracker, Text, Title } from "@tremor/react";
 
 export default function Drive({ item }) {
   // console.log(item);
