@@ -4,11 +4,14 @@ import { format, isValid, endOfDay, startOfDay } from "date-fns";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Card, Text, Title, Flex } from "@tremor/react";
-import HistoryList from "@/components/HistoryList";
+import List from "@/components/HistoryList";
+import Table from "@/components/HistoryTable";
 import { useDateRangePicker } from "@/hooks/useDateRangePicker";
 import { useFuzzySearch } from "@/hooks/useFuzzySearch";
 
 export default function History({ aps, data, token }) {
+  const t = useTranslations("History");
+
   const [history, setHistory] = useState(data);
 
   const { dateRange, dateRangePicker } = useDateRangePicker();
@@ -32,8 +35,6 @@ export default function History({ aps, data, token }) {
       handleQuery();
     }
   }, [dateRange, aps, token]);
-
-  const t = useTranslations("History");
 
   const { results, textInput } = useFuzzySearch(
     history.query,
@@ -73,7 +74,7 @@ export default function History({ aps, data, token }) {
         </Text>
       </div>
       <div className="my-3">{textInput}</div>
-      <HistoryList
+      <Table
         data={
           results.length === 0 ? history.query : results.map(({ item }) => item)
         }

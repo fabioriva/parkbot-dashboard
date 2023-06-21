@@ -59,7 +59,7 @@ export default function Statistics({ data }) {
           </TableBody>
         </Table>
       ) : (
-        <Text className="border p-10 text-center">No data</Text>
+        <Text className="border border-dotted p-10 text-center">No data</Text>
       )}
     </div>
   );
