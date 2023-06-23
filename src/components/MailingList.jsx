@@ -14,12 +14,12 @@ import {
   Bold,
   Button,
 } from "@tremor/react";
-import Dialog from "@/components/Dialog";
+import Confirm from "@/components/ConfirmDialog";
 import fetcher from "@/lib/fetch";
 import useSWR from "swr";
 
 export default function MailingList({ aps, json, token, user }) {
-  console.log(json, user);
+  // console.log(json, user);
   const t = (t) => t;
   const [isOpen, setIsOpen] = useState(false);
   const [notifications, setNotifications] = useState(json);
@@ -37,6 +37,7 @@ export default function MailingList({ aps, json, token, user }) {
 
   const handleConfirm = async () => {
     const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/mailingList/remove`;
+    console.log(url);
     // const res = await fetch(url, {
     //   method: "POST",
     //   headers: {
@@ -110,27 +111,14 @@ export default function MailingList({ aps, json, token, user }) {
           </ListItem>
         ))}
       </List>
-      <Dialog isOpen={isOpen} title={t("Delete.dialogTitle")}>
-        <div className="mt-3">
-          <Text>{t("Delete.dialogText", { card: 12 })}</Text>
-        </div>
-        <Flex justifyContent="end" className="space-x-3 mt-6">
-          <Button
-            // size="xs"
-            variant="secondary"
-            onClick={handleCancel}
-          >
-            {t("Delete.dialogCancel")}
-          </Button>
-          <Button
-            // size="xs"
-            variant="primary"
-            onClick={handleConfirm}
-          >
-            {t("Delete.dialogConfirm")}
-          </Button>
-        </Flex>
-      </Dialog>
+      <Confirm
+        handleCancel={handleCancel}
+        handleConfirm={handleConfirm}
+        isOpen={isOpen}
+        title="MY title"
+      >
+        <Text>Are you sure?</Text>
+      </Confirm>
     </Card>
   );
 }

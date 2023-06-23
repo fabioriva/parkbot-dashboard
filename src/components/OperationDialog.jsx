@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { Button, Flex, Text, TextInput } from "@tremor/react";
 import Dialog from "@/components/Dialog";
 
-export default function Exit({ action, id, aps, token, user }) {
+export default function Operation({ action, id, aps, token, user }) {
   // console.log(action);
   const t = useTranslations("OperationDialog");
 
@@ -75,7 +75,7 @@ export default function Exit({ action, id, aps, token, user }) {
           value={value}
           onChange={handleOnChange}
         />
-        <Flex justifyContent="end" className="space-x-1.5 mt-6">
+        <Flex justifyContent="end" className="space-x-3 mt-6">
           <Button variant="secondary" onClick={() => setIsOpen(false)}>
             {t("dialogCancel")}
           </Button>

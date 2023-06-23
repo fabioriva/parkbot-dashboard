@@ -14,7 +14,7 @@ import {
   Title,
   Text,
 } from "@tremor/react";
-import Dialog from "@/components/Dialog";
+import Confirm from "@/components/ConfirmDialog";
 import Exit from "@/components/OperationDialog";
 
 export default function Queue({ aps, data, token, user }) {
@@ -24,7 +24,7 @@ export default function Queue({ aps, data, token, user }) {
 
   const handleCancel = () => {
     setIsOpen(false);
-    setQueueItem({ card: 0, index: 0 });
+    // setQueueItem({ card: 0, index: 0 });
   };
 
   const handleConfirm = async () => {
@@ -81,27 +81,14 @@ export default function Queue({ aps, data, token, user }) {
           </ListItem>
         ))}
       </List>
-      <Dialog isOpen={isOpen} title={t("Delete.dialogTitle")}>
-        <div className="mt-3">
-          <Text>{t("Delete.dialogText", { card: queueItem.card })}</Text>
-        </div>
-        <Flex justifyContent="end" className="space-x-3 mt-6">
-          <Button
-            // size="xs"
-            variant="secondary"
-            onClick={handleCancel}
-          >
-            {t("Delete.dialogCancel")}
-          </Button>
-          <Button
-            // size="xs"
-            variant="primary"
-            onClick={handleConfirm}
-          >
-            {t("Delete.dialogConfirm")}
-          </Button>
-        </Flex>
-      </Dialog>
+      <Confirm
+        handleCancel={handleCancel}
+        handleConfirm={handleConfirm}
+        isOpen={isOpen}
+        title={t("Delete.dialogTitle")}
+      >
+        <Text>{t("Delete.dialogText", { card: queueItem.card })}</Text>
+      </Confirm>
       <Exit
         aps={aps}
         action={data.exitButton}
