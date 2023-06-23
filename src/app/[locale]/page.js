@@ -10,6 +10,11 @@ export default function Index({ params }) {
     <body className={inter.className}>
       <main className="flex flex-col items-center justify-center min-h-screen bg-slate-950">
         <div className="text-center">
+          <div className="max-w-sm mx-auto mb-10 py-1 border border-blue-500 rounded-full">
+            <span className="text-sm text-slate-500 tracking-tighter">
+              UI redisigned from ground up. Dark mode by default.
+            </span>
+          </div>
           <span className="font-extrabold text-7xl sm:text-9xl text-transparent bg-clip-text bg-gradient-to-br from-blue-500 to-blue-800 tracking-tight">
             Parkbot
           </span>
@@ -24,12 +29,12 @@ export default function Index({ params }) {
             </button>
           </Link>
           <Link href="https://www.sotefin.com/">
-            <button className="w-32 bg-slate-950 border border-slate-400 hover:border-slate-50 text-slate-400 hover:text-slate-50 font-semibold text-base m-6 p-3 rounded-lg">
+            <button className="w-32 bg-slate-950 border border-slate-400 hover:border-slate-50 text-slate-500 hover:text-slate-50 font-semibold text-base m-6 p-3 rounded-lg">
               Sotefin
             </button>
           </Link>
         </div>
-        <footer className="mt-6 text-center text-zinc-400 text-sm tracking-tighter">
+        <footer className="mt-6 text-center text-slate-500 text-sm tracking-tighter">
           {"© "}
           {new Date().getFullYear()}{" "}
           <Link
