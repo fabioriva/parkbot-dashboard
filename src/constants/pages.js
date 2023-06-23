@@ -6,7 +6,7 @@ import {
   HomeIcon,
   ListBulletIcon,
   // TagIcon,
-  // UsersIcon,
+  UsersIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/solid";
 
@@ -45,6 +45,11 @@ const categories = [
     color: "indigo",
     icon: ChartBarIcon,
     role: "statistics",
+  },
+  {
+    color: "green",
+    icon: UsersIcon,
+    role: "notifications",
   },
 ];
 

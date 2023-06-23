@@ -218,6 +218,7 @@
         "racks": "PLC I/O",
         "history": "Storico",
         "statistics": "Statistiche",
+        "notifications": "Notifiche",
         "logout": "Esci",
         "selectPlaceholder": "Vai alla pagina"
       }
