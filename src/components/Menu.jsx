@@ -26,7 +26,13 @@ export default function Menu({ aps, user }) {
           onClick={() => router.push(`/${aps.ns}/${item.role}`)}
           key={key}
         >
-          {t(item.role)}
+          <span
+            className={
+              !user.roles.some((role) => role === item.role) && "text-slate-500"
+            }
+          >
+            {t(item.role)}
+          </span>
         </SelectItem>
       ))}
       <SelectItem icon={ArrowLeftOnRectangleIcon} onClick={handleLogout}>
