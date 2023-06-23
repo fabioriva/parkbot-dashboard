@@ -12,6 +12,7 @@ import {
   Badge,
 } from "@tremor/react";
 // import Pagination from "@/components/HistoryTablePagination";
+import { getAlarm, getInfo } from "@/lib/localize";
 
 export default function HistoryTable({ data }) {
   // console.log(data);
@@ -83,7 +84,10 @@ export default function HistoryTable({ data }) {
                       ({item.mode.id})&nbsp;{t(item.mode.key)}
                     </TableCell>
                     <TableCell className="py-3">
-                      {t(item.operation.key)}
+                      {/* {t(item.operation.key)} */}
+                      {item.alarm !== undefined
+                        ? getAlarm(item.alarm, t)
+                        : t(item.operation.key)}
                     </TableCell>
                     <TableCell className="py-3">
                       {item.alarm !== undefined && (

@@ -19,6 +19,7 @@ export default function Info({ alarms, device }) {
               // console.log(item);
               return (
                 <span key={key}>
+                  AL{item.id}&nbsp;
                   {getAlarm(item, t)}
                   <br />
                 </span>

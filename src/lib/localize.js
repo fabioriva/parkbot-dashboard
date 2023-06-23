@@ -1,5 +1,4 @@
 export function getAlarm(alarm, t) {
-  // console.log(log);
   const { id, key, query } = alarm;
   switch (key) {
     case "al-fc":
@@ -21,7 +20,8 @@ export function getAlarm(alarm, t) {
         motor: t(query.motor, { numMotor: query.numMotor }),
       });
     default:
-      return t("op-id-1", { id });
+      // return t("op-id-1", { id });
+      return t(key, query);
   }
 }
 
