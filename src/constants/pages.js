@@ -1,13 +1,14 @@
 import {
   ChartBarIcon,
   CpuChipIcon,
+  EnvelopeIcon,
   EyeIcon,
   MapIcon,
   HomeIcon,
   ListBulletIcon,
   // TagIcon,
   UsersIcon,
-  UserGroupIcon,
+  // UserGroupIcon,
 } from "@heroicons/react/24/solid";
 
 const categories = [
@@ -28,7 +29,7 @@ const categories = [
   },
   {
     color: "lime",
-    icon: UserGroupIcon,
+    icon: UsersIcon,
     role: "cards",
   },
   {
@@ -48,7 +49,7 @@ const categories = [
   },
   {
     color: "green",
-    icon: UsersIcon,
+    icon: EnvelopeIcon,
     role: "notifications",
   },
 ];
