@@ -17,7 +17,7 @@ const Led = ({ children, color, input }) => (
 );
 
 export default function Device({ advanced, aps, data, token, user }) {
-  console.log(data);
+  // console.log(data);
   const t = useTranslations("Log");
   const { card, mode, motor, name, operation, size, stall, step, steps } =
     data.a;

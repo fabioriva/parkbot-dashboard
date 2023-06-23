@@ -21,7 +21,7 @@ const data = [
 ];
 
 export default function Drive({ item }) {
-  console.log(item);
+  // console.log(item);
   const { enable } = item;
   return (
     <Card className="max-w-sm">

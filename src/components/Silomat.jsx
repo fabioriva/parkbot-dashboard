@@ -20,10 +20,9 @@ const Sensor = ({ name, sensor }) => (
 );
 
 export default function Silomat({ data }) {
-  console.log(data);
+  // console.log(data);
   const inputs = data.slice(0, 8);
   const outputs = data.slice(8);
-  console.log(inputs, outputs);
 
   return (
     <Card className="mt-3 p-3">
