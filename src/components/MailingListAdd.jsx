@@ -1,15 +1,27 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { UserPlusIcon } from "@heroicons/react/24/solid";
+import {
+  EnvelopeIcon,
+  UserIcon,
+  UserPlusIcon,
+} from "@heroicons/react/24/solid";
 import { Flex, TextInput, Button } from "@tremor/react";
+
+const initialState = {
+  error: false,
+  errorMessage: "",
+  isValid: false,
+  value: "",
+};
 
 export default function MailingList({ aps, disabled, token }) {
   const t = useTranslations("MailingList");
 
-  const [recipient, setRecipient] = useState({ name: "", email: "" });
+  const [mail, setMail] = useState(initialState);
+  const [name, setName] = useState(initialState);
+
   const handleAddItem = async () => {
     const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/mailingList/add`;
-    // console.log(url, recipient);
     const res = await fetch(url, {
       method: "POST",
       // withCredentials: true,
@@ -18,9 +30,49 @@ export default function MailingList({ aps, disabled, token }) {
         Authorization: "Bearer " + token,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(recipient),
+      body: JSON.stringify({ mail: mail.value, name: name.value }),
     });
-    console.log(res);
+    // console.log(res);
+    setMail(initialState);
+    setName(initialState);
+  };
+
+  const handleMail = (e) => {
+    const pattern =
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    pattern.test(e.target.value)
+      ? setMail({
+          ...mail,
+          error: false,
+          errorMessage: "",
+          isValid: true,
+          value: e.target.value,
+        })
+      : setMail({
+          ...mail,
+          error: true,
+          errorMessage: "xxx",
+          isValid: false,
+          value: e.target.value,
+        });
+  };
+
+  const handleName = (e) => {
+    e.target.value.length > 0
+      ? setName({
+          ...name,
+          error: false,
+          errorMessage: "",
+          isValid: true,
+          value: e.target.value,
+        })
+      : setName({
+          ...name,
+          error: true,
+          errorMessage: "yyy",
+          isValid: false,
+          value: e.target.value,
+        });
   };
 
   return (
@@ -28,22 +80,28 @@ export default function MailingList({ aps, disabled, token }) {
       <TextInput
         className="max-w-sm"
         placeholder={t("namePlaceholder")}
+        icon={UserIcon}
         type="text"
-        value={recipient.name}
-        onChange={(e) => setRecipient({ ...recipient, name: e.target.value })}
+        error={name.error}
+        errorMessage={name.errorMessage}
+        value={name.value}
+        onChange={handleName}
       />
       <TextInput
         className="max-w-sm"
         placeholder={t("mailPlaceholder")}
+        icon={EnvelopeIcon}
         type="email"
-        value={recipient.email}
-        onChange={(e) => setRecipient({ ...recipient, email: e.target.value })}
+        error={mail.error}
+        errorMessage={mail.errorMessage}
+        value={mail.value}
+        onChange={handleMail}
       />
       <Button
         icon={UserPlusIcon}
-        variant="light"
+        // variant="light"
         onClick={handleAddItem}
-        disabled={disabled}
+        disabled={disabled || !mail.isValid || !name.isValid}
       >
         {t("add")}
       </Button>

@@ -59,36 +59,19 @@ export default function MailingList({ aps, json, token, user }) {
   };
 
   return (
-    <Card>
-      {/* Desktop */}
-      <Flex className="hidden sm:inline-flex">
+    <Card className="p-3 sm:p-6">
+      <div className="flex flex-col md:flex-row gap-3">
         <div className="w-full">
           <Title>{t("title")}</Title>
           <Text className="truncate">
             {t("count", { nr: mailingList.length, max: LIST_MAX })}
           </Text>
         </div>
-        <Flex justifyContent="end" className="space-x-3">
-          <AddItem
-            aps={aps}
-            disabled={mailingList.length >= LIST_MAX}
-            token={token}
-          />
-        </Flex>
-      </Flex>
-      {/* Mobile */}
-      <div className="block sm:hidden">
-        <Title>{t("title")}</Title>
-        <Text className="truncate">
-          {t("count", { nr: mailingList.length, max: LIST_MAX })}
-        </Text>
-        <div className="mt-3 space-y-3">
-          <AddItem
-            aps={aps}
-            disabled={mailingList.length >= LIST_MAX}
-            token={token}
-          />
-        </div>
+        <AddItem
+          aps={aps}
+          disabled={mailingList.length >= LIST_MAX}
+          token={token}
+        />
       </div>
       <List className="mt-6">
         {mailingList.length > 0 &&
