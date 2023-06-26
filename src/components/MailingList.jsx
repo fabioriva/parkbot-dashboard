@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { TrashIcon, UserIcon, UserPlusIcon } from "@heroicons/react/24/solid";
 import {
   Card,
@@ -21,8 +22,8 @@ import useSWR from "swr";
 const LIST_MAX = 3;
 
 export default function MailingList({ aps, json, token, user }) {
-  // console.log(json, user);
-  const t = (t) => t;
+  const t = useTranslations("MailingList");
+
   const [isOpen, setIsOpen] = useState(false);
   const [mailingList, setMailingList] = useState(json);
   const [recipient, setRecipient] = useState({});
@@ -59,25 +60,37 @@ export default function MailingList({ aps, json, token, user }) {
 
   return (
     <Card>
-      <Flex>
-        <div>
+      {/* Desktop */}
+      <Flex className="hidden sm:inline-flex">
+        <div className="w-full">
           <Title>{t("title")}</Title>
-          <Text className="hidden sm:block truncate">
-            Recipients count: 1 (Max 3)
-            {/* {t("subtitle", {
-              from: history.dateFrom,
-              to: history.dateTo,
-              count: history.count,
-            })} */}
+          <Text className="truncate">
+            {t("count", { nr: mailingList.length, max: LIST_MAX })}
           </Text>
         </div>
-        <AddItem
-          aps={aps}
-          disabled={mailingList.length >= LIST_MAX}
-          token={token}
-        />
+        <Flex justifyContent="end" className="space-x-3">
+          <AddItem
+            aps={aps}
+            disabled={mailingList.length >= LIST_MAX}
+            token={token}
+          />
+        </Flex>
       </Flex>
-      <List className="mt-3">
+      {/* Mobile */}
+      <div className="block sm:hidden">
+        <Title>{t("title")}</Title>
+        <Text className="truncate">
+          {t("count", { nr: mailingList.length, max: LIST_MAX })}
+        </Text>
+        <div className="mt-3 space-y-3">
+          <AddItem
+            aps={aps}
+            disabled={mailingList.length >= LIST_MAX}
+            token={token}
+          />
+        </div>
+      </div>
+      <List className="mt-6">
         {mailingList.length > 0 &&
           mailingList.map((item, key) => (
             <ListItem key={key}>
@@ -101,7 +114,7 @@ export default function MailingList({ aps, json, token, user }) {
                   variant="light"
                   onClick={() => handleOpen(item)}
                 >
-                  Delete
+                  {t("delete")}
                 </Button>
               </Flex>
             </ListItem>
@@ -111,9 +124,9 @@ export default function MailingList({ aps, json, token, user }) {
         handleCancel={handleCancel}
         handleConfirm={handleRemoveItem}
         isOpen={isOpen}
-        title="MY title"
+        title={t("Delete.title")}
       >
-        <Text>Are you sure?</Text>
+        <Text>{t("Delete.text")}</Text>
       </Confirm>
     </Card>
   );

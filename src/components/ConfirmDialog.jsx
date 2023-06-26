@@ -1,4 +1,3 @@
-// import { Fragment, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Button, Flex } from "@tremor/react";
 import Dialog from "@/components/Dialog";
@@ -10,8 +9,7 @@ export default function Confirm({
   isOpen,
   title,
 }) {
-  const t = useTranslations("Queue");
-  // const [confirm, setConfirm] = useState(1);
+  const t = useTranslations("Confirm");
 
   return (
     <Dialog isOpen={isOpen} title={title}>
@@ -22,14 +20,14 @@ export default function Confirm({
           variant="secondary"
           onClick={handleCancel}
         >
-          {t("Delete.dialogCancel")}
+          {t("cancel")}
         </Button>
         <Button
           // size="xs"
           variant="primary"
           onClick={handleConfirm}
         >
-          {t("Delete.dialogConfirm")}
+          {t("confirm")}
         </Button>
       </Flex>
     </Dialog>

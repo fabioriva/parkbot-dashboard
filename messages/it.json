@@ -151,6 +151,10 @@
     "op-req-entry": "Richiesta di entrata",
     "op-req-exit": "Richiesta di uscita"
   },
+  "Confirm": {
+    "cancel": "Annulla",
+    "confirm": "Conferma"
+  },
   "Dashboard": {
     "kpi-activity": "Attività recente",
     "kpi-operations": "Operazioni giornaliere",
@@ -243,6 +247,18 @@
       "card": "Numero tessera",
       "number": "Numero stallo",
       "size": "Dimensione vettura"
+    }
+  },
+  "MailingList": {
+    "title": "Lista di distribuzione",
+    "count": "Destinatari: {nr} (Max {max})",
+    "delete": "Elimina",
+    "namePlaceholder": "Inserisci un nome",
+    "mailPlaceholder": "Insersci un indirizzo e-mail",
+    "add": "Aggiungi destinatario",
+    "Delete": {
+      "title": "Elimina destinatario",
+      "text": "Vuoi eliminare questo destinatario dalla lista?"
     }
   },
   "Occupancy": {

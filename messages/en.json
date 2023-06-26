@@ -151,6 +151,10 @@
     "op-req-entry": "Entry request",
     "op-req-exit": "Exit request"
   },
+  "Confirm": {
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
   "Dashboard": {
     "kpi-activity": "Recent activity",
     "kpi-operations": "Today's operations",
@@ -243,6 +247,18 @@
       "card": "Card number",
       "number": "Stall number",
       "size": "Car size"
+    }
+  },
+  "MailingList": {
+    "title": "Mailing list",
+    "count": "Recipients count: {nr} (Max {max})",
+    "delete": "Delete",
+    "namePlaceholder": "Insert a name",
+    "mailPlaceholder": "Insert a vailid e-mail address",
+    "add": "Add recipient",
+    "Delete": {
+      "title": "Delete recipient",
+      "text": "Do you want to delete this recipient from the list?"
     }
   },
   "Occupancy": {

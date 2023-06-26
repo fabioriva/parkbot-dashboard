@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { UserPlusIcon } from "@heroicons/react/24/solid";
 import { Flex, TextInput, Button } from "@tremor/react";
 
 export default function MailingList({ aps, disabled, token }) {
+  const t = useTranslations("MailingList");
+
   const [recipient, setRecipient] = useState({ name: "", email: "" });
   const handleAddItem = async () => {
     const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/mailingList/add`;
@@ -21,17 +24,17 @@ export default function MailingList({ aps, disabled, token }) {
   };
 
   return (
-    <Flex justifyContent="end" className="space-x-3">
+    <>
       <TextInput
-        className="max-w-xs"
-        placeholder="mailing list name"
+        className="max-w-sm"
+        placeholder={t("namePlaceholder")}
         type="text"
         value={recipient.name}
         onChange={(e) => setRecipient({ ...recipient, name: e.target.value })}
       />
       <TextInput
-        className="max-w-xs"
-        placeholder="e-mail address"
+        className="max-w-sm"
+        placeholder={t("mailPlaceholder")}
         type="email"
         value={recipient.email}
         onChange={(e) => setRecipient({ ...recipient, email: e.target.value })}
@@ -42,8 +45,8 @@ export default function MailingList({ aps, disabled, token }) {
         onClick={handleAddItem}
         disabled={disabled}
       >
-        Add recipient
+        {t("add")}
       </Button>
-    </Flex>
+    </>
   );
 }
