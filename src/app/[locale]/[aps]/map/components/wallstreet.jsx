@@ -16,12 +16,12 @@ export default function Map(props) {
             <Title>{t("title")}</Title>
             {View}
           </Flex>
-          <Grid numItems={1} className="gap-6 mt-3">
+          <Grid numItems={1} className="gap-3 mt-3">
             {Levels.reverse().map((level) => level)}
           </Grid>
           <style jsx global>{`
             .l {
-              height: 100px;
+              height: 98px;
               width: 784px;
             }
             /* Level P1 */
@@ -50,39 +50,39 @@ export default function Map(props) {
               left: 248px;
             }
             #s-7 {
-              top: 34px;
+              top: 33px;
               left: 43px;
             }
             #s-8 {
-              top: 34px;
+              top: 33px;
               left: 84px;
             }
             #s-9 {
-              top: 34px;
+              top: 33px;
               left: 166px;
             }
             #s-10 {
-              top: 34px;
+              top: 33px;
               left: 207px;
             }
             #s-11 {
-              top: 34px;
+              top: 33px;
               left: 248px;
             }
             #s-12 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-13 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-14 {
-              top: 66px;
+              top: 64px;
               left: 166px;
             }
             #s-15 {
-              top: 66px;
+              top: 64px;
               left: 207px;
             }
             /* Level P2 */
@@ -111,39 +111,39 @@ export default function Map(props) {
               left: 248px;
             }
             #s-45 {
-              top: 34px;
+              top: 33px;
               left: 43px;
             }
             #s-46 {
-              top: 34px;
+              top: 33px;
               left: 84px;
             }
             #s-47 {
-              top: 34px;
+              top: 33px;
               left: 166px;
             }
             #s-48 {
-              top: 34px;
+              top: 33px;
               left: 207px;
             }
             #s-49 {
-              top: 34px;
+              top: 33px;
               left: 248px;
             }
             #s-50 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-51 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-52 {
-              top: 66px;
+              top: 64px;
               left: 166px;
             }
             #s-53 {
-              top: 66px;
+              top: 64px;
               left: 207px;
             }
             /* Level P3 */
@@ -172,39 +172,39 @@ export default function Map(props) {
               left: 248px;
             }
             #s-83 {
-              top: 34px;
+              top: 33px;
               left: 43px;
             }
             #s-84 {
-              top: 34px;
+              top: 33px;
               left: 84px;
             }
             #s-85 {
-              top: 34px;
+              top: 33px;
               left: 166px;
             }
             #s-86 {
-              top: 34px;
+              top: 33px;
               left: 207px;
             }
             #s-87 {
-              top: 34px;
+              top: 33px;
               left: 248px;
             }
             #s-88 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-89 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-90 {
-              top: 66px;
+              top: 64px;
               left: 166px;
             }
             #s-91 {
-              top: 66px;
+              top: 64px;
               left: 207px;
             }
             /* Level P4 */
@@ -233,39 +233,39 @@ export default function Map(props) {
               left: 248px;
             }
             #s-121 {
-              top: 34px;
+              top: 33px;
               left: 43px;
             }
             #s-122 {
-              top: 34px;
+              top: 33px;
               left: 84px;
             }
             #s-123 {
-              top: 34px;
+              top: 33px;
               left: 166px;
             }
             #s-124 {
-              top: 34px;
+              top: 33px;
               left: 207px;
             }
             #s-125 {
-              top: 34px;
+              top: 33px;
               left: 248px;
             }
             #s-126 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-127 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-128 {
-              top: 66px;
+              top: 64px;
               left: 166px;
             }
             #s-129 {
-              top: 66px;
+              top: 64px;
               left: 207px;
             }
             /* Level P5 */
@@ -294,39 +294,39 @@ export default function Map(props) {
               left: 248px;
             }
             #s-159 {
-              top: 34px;
+              top: 33px;
               left: 43px;
             }
             #s-160 {
-              top: 34px;
+              top: 33px;
               left: 84px;
             }
             #s-161 {
-              top: 34px;
+              top: 33px;
               left: 166px;
             }
             #s-162 {
-              top: 34px;
+              top: 33px;
               left: 207px;
             }
             #s-163 {
-              top: 34px;
+              top: 33px;
               left: 248px;
             }
             #s-164 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-165 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-166 {
-              top: 66px;
+              top: 64px;
               left: 166px;
             }
             #s-167 {
-              top: 66px;
+              top: 64px;
               left: 207px;
             }
             /* Level P6 */
@@ -355,39 +355,39 @@ export default function Map(props) {
               left: 248px;
             }
             #s-197 {
-              top: 34px;
+              top: 33px;
               left: 43px;
             }
             #s-198 {
-              top: 34px;
+              top: 33px;
               left: 84px;
             }
             #s-199 {
-              top: 34px;
+              top: 33px;
               left: 166px;
             }
             #s-200 {
-              top: 34px;
+              top: 33px;
               left: 207px;
             }
             #s-201 {
-              top: 34px;
+              top: 33px;
               left: 248px;
             }
             #s-202 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-203 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-204 {
-              top: 66px;
+              top: 64px;
               left: 166px;
             }
             #s-205 {
-              top: 66px;
+              top: 64px;
               left: 207px;
             }
             /* Level P7 */
@@ -412,35 +412,35 @@ export default function Map(props) {
               left: 207px;
             }
             #s-233 {
-              top: 34px;
+              top: 33px;
               left: 43px;
             }
             #s-234 {
-              top: 34px;
+              top: 33px;
               left: 84px;
             }
             #s-235 {
-              top: 34px;
+              top: 33px;
               left: 166px;
             }
             #s-236 {
-              top: 34px;
+              top: 33px;
               left: 207px;
             }
             #s-237 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-238 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-239 {
-              top: 66px;
+              top: 64px;
               left: 166px;
             }
             #s-240 {
-              top: 66px;
+              top: 64px;
               left: 207px;
             }
             /* Level P8 */
@@ -465,29 +465,29 @@ export default function Map(props) {
               left: 207px;
             }
             #s-261 {
-              top: 34px;
+              top: 33px;
               left: 43px;
             }
             #s-262 {
-              top: 34px;
+              top: 33px;
               left: 84px;
             }
             #s-263 {
-              top: 66px;
+              top: 64px;
               left: 166px;
             }
             #s-264 {
-              top: 66px;
+              top: 64px;
               left: 207px;
             }
             /* Transfer stalls */
             #s-271 {
-              top: 66px;
+              top: 64px;
               left: 43px;
               border: 2px solid #ffff00;
             }
             #s-272 {
-              top: 34px;
+              top: 33px;
               left: 186px;
               border: 2px solid #ffff00;
             }
@@ -514,31 +514,31 @@ export default function Map(props) {
               left: 494px;
             }
             #s-20 {
-              top: 34px;
+              top: 33px;
               left: 330px;
             }
             #s-21 {
-              top: 34px;
+              top: 33px;
               left: 371px;
             }
             #s-22 {
-              top: 34px;
+              top: 33px;
               left: 453px;
             }
             #s-23 {
-              top: 34px;
+              top: 33px;
               left: 494px;
             }
             #s-24 {
-              top: 66px;
+              top: 64px;
               left: 371px;
             }
             #s-25 {
-              top: 66px;
+              top: 64px;
               left: 453px;
             }
             #s-26 {
-              top: 66px;
+              top: 64px;
               left: 494px;
             }
             /* Level P2 */
@@ -559,31 +559,31 @@ export default function Map(props) {
               left: 494px;
             }
             #s-58 {
-              top: 34px;
+              top: 33px;
               left: 330px;
             }
             #s-59 {
-              top: 34px;
+              top: 33px;
               left: 371px;
             }
             #s-60 {
-              top: 34px;
+              top: 33px;
               left: 453px;
             }
             #s-61 {
-              top: 34px;
+              top: 33px;
               left: 494px;
             }
             #s-62 {
-              top: 66px;
+              top: 64px;
               left: 371px;
             }
             #s-63 {
-              top: 66px;
+              top: 64px;
               left: 453px;
             }
             #s-64 {
-              top: 66px;
+              top: 64px;
               left: 494px;
             }
             /* Level P3 */
@@ -604,31 +604,31 @@ export default function Map(props) {
               left: 494px;
             }
             #s-96 {
-              top: 34px;
+              top: 33px;
               left: 330px;
             }
             #s-97 {
-              top: 34px;
+              top: 33px;
               left: 371px;
             }
             #s-98 {
-              top: 34px;
+              top: 33px;
               left: 453px;
             }
             #s-99 {
-              top: 34px;
+              top: 33px;
               left: 494px;
             }
             #s-100 {
-              top: 66px;
+              top: 64px;
               left: 371px;
             }
             #s-101 {
-              top: 66px;
+              top: 64px;
               left: 453px;
             }
             #s-102 {
-              top: 66px;
+              top: 64px;
               left: 494px;
             }
             /* Level P4 */
@@ -649,31 +649,31 @@ export default function Map(props) {
               left: 494px;
             }
             #s-134 {
-              top: 34px;
+              top: 33px;
               left: 330px;
             }
             #s-135 {
-              top: 34px;
+              top: 33px;
               left: 371px;
             }
             #s-136 {
-              top: 34px;
+              top: 33px;
               left: 453px;
             }
             #s-137 {
-              top: 34px;
+              top: 33px;
               left: 494px;
             }
             #s-138 {
-              top: 66px;
+              top: 64px;
               left: 371px;
             }
             #s-139 {
-              top: 66px;
+              top: 64px;
               left: 453px;
             }
             #s-140 {
-              top: 66px;
+              top: 64px;
               left: 494px;
             }
             /* Level P5 */
@@ -694,31 +694,31 @@ export default function Map(props) {
               left: 494px;
             }
             #s-172 {
-              top: 34px;
+              top: 33px;
               left: 330px;
             }
             #s-173 {
-              top: 34px;
+              top: 33px;
               left: 371px;
             }
             #s-174 {
-              top: 34px;
+              top: 33px;
               left: 453px;
             }
             #s-175 {
-              top: 34px;
+              top: 33px;
               left: 494px;
             }
             #s-176 {
-              top: 66px;
+              top: 64px;
               left: 371px;
             }
             #s-177 {
-              top: 66px;
+              top: 64px;
               left: 453px;
             }
             #s-178 {
-              top: 66px;
+              top: 64px;
               left: 494px;
             }
             /* Level P6 */
@@ -735,31 +735,31 @@ export default function Map(props) {
               left: 494px;
             }
             #s-209 {
-              top: 34px;
+              top: 33px;
               left: 330px;
             }
             #s-210 {
-              top: 34px;
+              top: 33px;
               left: 371px;
             }
             #s-211 {
-              top: 34px;
+              top: 33px;
               left: 453px;
             }
             #s-212 {
-              top: 34px;
+              top: 33px;
               left: 494px;
             }
             #s-213 {
-              top: 66px;
+              top: 64px;
               left: 371px;
             }
             #s-214 {
-              top: 66px;
+              top: 64px;
               left: 453px;
             }
             #s-215 {
-              top: 66px;
+              top: 64px;
               left: 494px;
             }
             /* Level P7 */
@@ -772,19 +772,19 @@ export default function Map(props) {
               left: 453px;
             }
             #s-243 {
-              top: 34px;
+              top: 33px;
               left: 371px;
             }
             #s-244 {
-              top: 34px;
+              top: 33px;
               left: 453px;
             }
             #s-245 {
-              top: 66px;
+              top: 64px;
               left: 371px;
             }
             #s-246 {
-              top: 66px;
+              top: 64px;
               left: 453px;
             }
             /* Level P8 */
@@ -793,21 +793,21 @@ export default function Map(props) {
               left: 371px;
             }
             #s-266 {
-              top: 34px;
+              top: 33px;
               left: 371px;
             }
             #s-267 {
-              top: 66px;
+              top: 64px;
               left: 453px;
             }
             /* Transfer stalls */
             #s-273 {
-              top: 66px;
+              top: 64px;
               left: 330px;
               border: 2px solid #ffff00;
             }
             #s-274 {
-              top: 34px;
+              top: 33px;
               left: 453px;
               border: 2px solid #ffff00;
             }
@@ -834,35 +834,35 @@ export default function Map(props) {
               left: 740px;
             }
             #s-31 {
-              top: 34px;
+              top: 33px;
               left: 576px;
             }
             #s-32 {
-              top: 34px;
+              top: 33px;
               left: 617px;
             }
             #s-33 {
-              top: 34px;
+              top: 33px;
               left: 699px;
             }
             #s-34 {
-              top: 34px;
+              top: 33px;
               left: 740px;
             }
             #s-35 {
-              top: 66px;
+              top: 64px;
               left: 576px;
             }
             #s-36 {
-              top: 66px;
+              top: 64px;
               left: 617px;
             }
             #s-37 {
-              top: 66px;
+              top: 64px;
               left: 699px;
             }
             #s-38 {
-              top: 66px;
+              top: 64px;
               left: 740px;
             }
             /* Level P2 */
@@ -883,35 +883,35 @@ export default function Map(props) {
               left: 740px;
             }
             #s-69 {
-              top: 34px;
+              top: 33px;
               left: 576px;
             }
             #s-70 {
-              top: 34px;
+              top: 33px;
               left: 617px;
             }
             #s-71 {
-              top: 34px;
+              top: 33px;
               left: 699px;
             }
             #s-72 {
-              top: 34px;
+              top: 33px;
               left: 740px;
             }
             #s-73 {
-              top: 66px;
+              top: 64px;
               left: 576px;
             }
             #s-74 {
-              top: 66px;
+              top: 64px;
               left: 617px;
             }
             #s-75 {
-              top: 66px;
+              top: 64px;
               left: 699px;
             }
             #s-76 {
-              top: 66px;
+              top: 64px;
               left: 740px;
             }
             /* Level P3 */
@@ -932,35 +932,35 @@ export default function Map(props) {
               left: 740px;
             }
             #s-107 {
-              top: 34px;
+              top: 33px;
               left: 576px;
             }
             #s-108 {
-              top: 34px;
+              top: 33px;
               left: 617px;
             }
             #s-109 {
-              top: 34px;
+              top: 33px;
               left: 699px;
             }
             #s-110 {
-              top: 34px;
+              top: 33px;
               left: 740px;
             }
             #s-111 {
-              top: 66px;
+              top: 64px;
               left: 576px;
             }
             #s-112 {
-              top: 66px;
+              top: 64px;
               left: 617px;
             }
             #s-113 {
-              top: 66px;
+              top: 64px;
               left: 699px;
             }
             #s-114 {
-              top: 66px;
+              top: 64px;
               left: 740px;
             }
             /* Level P4 */
@@ -981,35 +981,35 @@ export default function Map(props) {
               left: 740px;
             }
             #s-145 {
-              top: 34px;
+              top: 33px;
               left: 576px;
             }
             #s-146 {
-              top: 34px;
+              top: 33px;
               left: 617px;
             }
             #s-147 {
-              top: 34px;
+              top: 33px;
               left: 699px;
             }
             #s-148 {
-              top: 34px;
+              top: 33px;
               left: 740px;
             }
             #s-149 {
-              top: 66px;
+              top: 64px;
               left: 576px;
             }
             #s-150 {
-              top: 66px;
+              top: 64px;
               left: 617px;
             }
             #s-151 {
-              top: 66px;
+              top: 64px;
               left: 699px;
             }
             #s-152 {
-              top: 66px;
+              top: 64px;
               left: 740px;
             }
             /* Level P5 */
@@ -1030,35 +1030,35 @@ export default function Map(props) {
               left: 740px;
             }
             #s-183 {
-              top: 34px;
+              top: 33px;
               left: 576px;
             }
             #s-184 {
-              top: 34px;
+              top: 33px;
               left: 617px;
             }
             #s-185 {
-              top: 34px;
+              top: 33px;
               left: 699px;
             }
             #s-186 {
-              top: 34px;
+              top: 33px;
               left: 740px;
             }
             #s-187 {
-              top: 66px;
+              top: 64px;
               left: 576px;
             }
             #s-188 {
-              top: 66px;
+              top: 64px;
               left: 617px;
             }
             #s-189 {
-              top: 66px;
+              top: 64px;
               left: 699px;
             }
             #s-190 {
-              top: 66px;
+              top: 64px;
               left: 740px;
             }
             /* Level P6 */
@@ -1079,35 +1079,35 @@ export default function Map(props) {
               left: 740px;
             }
             #s-220 {
-              top: 34px;
+              top: 33px;
               left: 576px;
             }
             #s-221 {
-              top: 34px;
+              top: 33px;
               left: 617px;
             }
             #s-222 {
-              top: 34px;
+              top: 33px;
               left: 699px;
             }
             #s-223 {
-              top: 34px;
+              top: 33px;
               left: 740px;
             }
             #s-224 {
-              top: 66px;
+              top: 64px;
               left: 576px;
             }
             #s-225 {
-              top: 66px;
+              top: 64px;
               left: 617px;
             }
             #s-226 {
-              top: 66px;
+              top: 64px;
               left: 699px;
             }
             #s-227 {
-              top: 66px;
+              top: 64px;
               left: 740px;
             }
             /* Level P7 */
@@ -1124,27 +1124,27 @@ export default function Map(props) {
               left: 699px;
             }
             #s-250 {
-              top: 34px;
+              top: 33px;
               left: 576px;
             }
             #s-251 {
-              top: 34px;
+              top: 33px;
               left: 617px;
             }
             #s-252 {
-              top: 34px;
+              top: 33px;
               left: 699px;
             }
             #s-253 {
-              top: 66px;
+              top: 64px;
               left: 576px;
             }
             #s-254 {
-              top: 66px;
+              top: 64px;
               left: 617px;
             }
             #s-255 {
-              top: 66px;
+              top: 64px;
               left: 699px;
             }
             /* Level P8 */
@@ -1153,21 +1153,21 @@ export default function Map(props) {
               left: 699px;
             }
             #s-269 {
-              top: 66px;
+              top: 64px;
               left: 576px;
             }
             #s-270 {
-              top: 66px;
+              top: 64px;
               left: 617px;
             }
             /* Transfer stalls */
             #s-275 {
-              top: 34px;
+              top: 33px;
               left: 596px;
               border: 2px solid #ffff00;
             }
             #s-276 {
-              top: 34px;
+              top: 33px;
               left: 699px;
               border: 2px solid #ffff00;
             }
