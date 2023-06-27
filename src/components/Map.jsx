@@ -106,7 +106,7 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
           value={value}
           onChange={handleOnChange}
         />
-        <Flex justifyContent="end" className="space-x-1.5 mt-6">
+        <Flex justifyContent="end" className="space-x-3 mt-6">
           <Button variant="secondary" onClick={() => setIsOpen(false)}>
             {t("dialogCancel")}
           </Button>
