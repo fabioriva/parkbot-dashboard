@@ -74,11 +74,24 @@ export default function History({ aps, data, token }) {
         </Text>
       </div>
       <div className="my-3">{textInput}</div>
-      <Table
-        data={
-          results.length === 0 ? history.query : results.map(({ item }) => item)
-        }
-      />
+      <div className="block sm:hidden">
+        <List
+          data={
+            results.length === 0
+              ? history.query
+              : results.map(({ item }) => item)
+          }
+        />
+      </div>
+      <div className="hidden sm:block">
+        <Table
+          data={
+            results.length === 0
+              ? history.query
+              : results.map(({ item }) => item)
+          }
+        />
+      </div>
     </Card>
   );
 }
