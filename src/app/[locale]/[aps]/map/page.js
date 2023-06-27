@@ -8,7 +8,7 @@ import fetch from "@/lib/fetch";
 const mapList = {
   alumim: lazy(() => import("@/maps/alumim")),
   "18017K": lazy(() => import("@/maps/18017K")),
-  // bmc: lazy(() => import("src/maps/bmc")),
+  bmc: lazy(() => import("@/maps/bmc")),
   // chandan: lazy(() => import("src/maps/chandan")),
   // chiattone: lazy(() => import("src/maps/chiattone")),
   // donini: lazy(() => import("src/maps/donini")),
