@@ -20,25 +20,25 @@ export default function Map(props) {
             numItems={1}
             numItemsMd={3}
             numItemsLg={5}
-            className="gap-6 mt-3"
+            className="gap-3 mt-3"
           >
             {Levels.reverse().map((level) => level)}
           </Grid>
           <style jsx global>{`
             .l {
-              height: 100px;
+              height: 98px;
               width: 169px;
             }
-            #el-1 {
+            #el-3 {
               top: 33px;
               left: 2px;
             }
-            #el-2 {
+            #el-4 {
               top: 33px;
               left: 125px;
             }
             #s-1 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-2 {
@@ -46,7 +46,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-3 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-4 {
@@ -54,7 +54,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-5 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-6 {
@@ -62,7 +62,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-7 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-8 {
@@ -70,7 +70,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-9 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-10 {
@@ -78,7 +78,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-11 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-12 {
@@ -86,7 +86,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-13 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-14 {
@@ -94,7 +94,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-15 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-16 {
@@ -102,7 +102,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-17 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-18 {
@@ -110,7 +110,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-19 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-20 {
@@ -118,7 +118,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-21 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-22 {
@@ -126,7 +126,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-23 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-24 {
@@ -134,7 +134,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-25 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-26 {
@@ -142,7 +142,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-27 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-28 {
@@ -150,7 +150,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-29 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-30 {
@@ -158,7 +158,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-31 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-32 {
@@ -166,7 +166,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-33 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-34 {
@@ -174,7 +174,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-35 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-36 {
@@ -182,7 +182,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-37 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-38 {
@@ -190,7 +190,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-39 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-40 {
@@ -198,7 +198,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-41 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-42 {
@@ -206,7 +206,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-43 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-44 {
@@ -214,7 +214,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-45 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-46 {
@@ -222,7 +222,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-47 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-48 {
@@ -230,7 +230,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-49 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-50 {
@@ -238,7 +238,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-51 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-52 {
@@ -246,7 +246,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-53 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-54 {
@@ -254,7 +254,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-55 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-56 {
@@ -262,7 +262,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-57 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-58 {
@@ -270,7 +270,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-59 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-60 {
@@ -278,7 +278,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-61 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-62 {
@@ -286,7 +286,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-63 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-64 {
@@ -294,7 +294,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-65 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-66 {
@@ -302,7 +302,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-67 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-68 {
@@ -310,7 +310,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-69 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-70 {
@@ -318,7 +318,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-71 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-72 {
@@ -326,7 +326,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-73 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-74 {
@@ -334,7 +334,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-75 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-76 {
@@ -342,7 +342,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-77 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-78 {
@@ -350,7 +350,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-79 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-80 {
@@ -358,7 +358,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-81 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-82 {
@@ -366,7 +366,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-83 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-84 {
@@ -374,7 +374,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-85 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-86 {
@@ -382,7 +382,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-87 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-88 {
@@ -390,7 +390,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-89 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-90 {
@@ -398,7 +398,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-91 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-92 {
@@ -406,7 +406,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-93 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-94 {
@@ -414,7 +414,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-95 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-96 {
@@ -422,7 +422,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-97 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-98 {
@@ -430,7 +430,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-99 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-100 {
@@ -438,7 +438,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-101 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-102 {
@@ -446,7 +446,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-103 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-104 {
@@ -454,7 +454,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-105 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-106 {
@@ -462,7 +462,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-107 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-108 {
@@ -470,7 +470,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-109 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-110 {
@@ -478,7 +478,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-111 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-112 {
@@ -486,7 +486,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-113 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-114 {
@@ -494,7 +494,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-115 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-116 {
@@ -502,7 +502,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-117 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-118 {
@@ -510,7 +510,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-119 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-120 {
@@ -518,7 +518,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-121 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-122 {
@@ -526,7 +526,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-123 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-124 {
@@ -534,7 +534,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-125 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-126 {
@@ -542,7 +542,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-127 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-128 {
@@ -550,7 +550,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-129 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-130 {
@@ -558,7 +558,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-131 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-132 {
@@ -566,7 +566,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-133 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-134 {
@@ -574,7 +574,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-135 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-136 {
@@ -582,7 +582,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-137 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-138 {
@@ -590,7 +590,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-139 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-140 {
@@ -598,7 +598,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-141 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-142 {
@@ -606,7 +606,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-143 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-144 {
@@ -614,7 +614,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-145 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-146 {
@@ -622,7 +622,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-147 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-148 {
@@ -630,7 +630,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-149 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-150 {
@@ -638,7 +638,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-151 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-152 {
@@ -646,7 +646,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-153 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-154 {
@@ -654,7 +654,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-155 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-156 {
@@ -662,7 +662,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-157 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-158 {
@@ -670,7 +670,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-159 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-160 {
@@ -678,7 +678,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-161 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-162 {
@@ -686,7 +686,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-163 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-164 {
@@ -694,7 +694,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-165 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-166 {
@@ -702,7 +702,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-167 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-168 {
@@ -710,7 +710,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-169 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-170 {
@@ -718,7 +718,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-171 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-172 {
@@ -726,7 +726,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-173 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-174 {
@@ -734,7 +734,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-175 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-176 {
@@ -742,7 +742,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-177 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-178 {
@@ -750,7 +750,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-179 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-180 {
@@ -758,7 +758,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-181 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-182 {
@@ -766,7 +766,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-183 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-184 {
@@ -774,7 +774,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-185 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-186 {
@@ -782,7 +782,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-187 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-188 {
@@ -790,7 +790,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-189 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-190 {
@@ -798,7 +798,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-191 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-192 {
@@ -806,7 +806,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-193 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-194 {
@@ -814,7 +814,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-195 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-196 {
@@ -822,7 +822,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-197 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-198 {
@@ -830,7 +830,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-199 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-200 {
@@ -838,7 +838,7 @@ export default function Map(props) {
               left: 125px;
             }
             #s-201 {
-              top: 66px;
+              top: 64px;
               left: 2px;
             }
             #s-202 {
@@ -846,7 +846,7 @@ export default function Map(props) {
               left: 2px;
             }
             #s-203 {
-              top: 66px;
+              top: 64px;
               left: 43px;
             }
             #s-204 {
@@ -854,7 +854,7 @@ export default function Map(props) {
               left: 43px;
             }
             #s-205 {
-              top: 66px;
+              top: 64px;
               left: 84px;
             }
             #s-206 {
@@ -862,7 +862,7 @@ export default function Map(props) {
               left: 84px;
             }
             #s-207 {
-              top: 66px;
+              top: 64px;
               left: 125px;
             }
             #s-208 {
