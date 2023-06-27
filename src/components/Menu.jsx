@@ -7,17 +7,14 @@ import pages from "@/constants/pages";
 export default function Menu({ aps, user }) {
   const router = useRouter();
   const t = useTranslations("Layout.Header.Menu");
+
   const handleLogout = () => {
     window.localStorage.setItem("logout", Date.now());
     fetch("/api/signout", { method: "POST" }).then(() => router.refresh());
   };
 
   return (
-    <Select
-      className="max-w-xs ml-3"
-      // defaultValue="dashboard"
-      placeholder={t("selectPlaceholder")}
-    >
+    <Select className="max-w-xs ml-3" placeholder={t("selectPlaceholder")}>
       {pages.map((item, key) => (
         <SelectItem
           disabled={!user.roles.some((role) => role === item.role)}
