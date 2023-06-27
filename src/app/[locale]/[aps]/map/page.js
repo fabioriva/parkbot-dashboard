@@ -30,7 +30,7 @@ const mapList = {
   // trumpeldor: lazy(() => import("src/maps/trumpeldor")),
   // vl: lazy(() => import("src/maps/vl")),
   wallstreet: lazy(() => import("@/maps/wallstreet")),
-  // washingtonblvd: lazy(() => import("src/maps/washingtonblvd")),
+  washingtonblvd: lazy(() => import("@/maps/8888")),
   // xian: lazy(() => import("src/maps/xian")),
 };
 

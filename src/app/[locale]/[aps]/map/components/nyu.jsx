@@ -14,7 +14,7 @@ export default function Map(props) {
         <Card className="p-3 sm:p-6">
           <Flex>
             <Title>{t("title")}</Title>
-            {View}top: 34px;
+            {View}
           </Flex>
           <Grid numItems={1} className="gap-6 mt-3">
             {Levels.reverse().map((level) => level)}
@@ -503,7 +503,7 @@ export default function Map(props) {
           #s-111 {
             top: 2px;
             left: 289px;
-          }
+          } 
           #s-112 {
             top: 130px;
             left: 330px;
