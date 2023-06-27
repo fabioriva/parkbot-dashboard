@@ -253,8 +253,10 @@
     "title": "Mailing list",
     "count": "Recipients count: {nr} (Max {max})",
     "delete": "Delete",
-    "namePlaceholder": "Insert a name",
     "mailPlaceholder": "Insert a vailid e-mail address",
+    "namePlaceholder": "Insert a name",
+    "mailError": "e-mail address is not valid",
+    "nameError": "a name is required",
     "add": "Add recipient",
     "Delete": {
       "title": "Delete recipient",

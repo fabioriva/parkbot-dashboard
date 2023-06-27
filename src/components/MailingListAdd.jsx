@@ -51,7 +51,7 @@ export default function MailingList({ aps, disabled, token }) {
       : setMail({
           ...mail,
           error: true,
-          errorMessage: "xxx",
+          errorMessage: t("xxx"),
           isValid: false,
           value: e.target.value,
         });
@@ -69,7 +69,7 @@ export default function MailingList({ aps, disabled, token }) {
       : setName({
           ...name,
           error: true,
-          errorMessage: "yyy",
+          errorMessage: t("yyy"),
           isValid: false,
           value: e.target.value,
         });

@@ -255,6 +255,8 @@
     "delete": "Elimina",
     "namePlaceholder": "Inserisci un nome",
     "mailPlaceholder": "Insersci un indirizzo e-mail",
+    "mailError": "indirizzo e-mail non valido",
+    "nameError": "inserire un nome",
     "add": "Aggiungi destinatario",
     "Delete": {
       "title": "Elimina destinatario",
