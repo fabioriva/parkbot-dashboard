@@ -67,8 +67,8 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
               "bg-red-500": stall.status !== 0,
               "bg-emerald-500": stall.status === stallStatus.FREE,
               "bg-violet-500": stall.status === stallStatus.LOCK,
-              "bg-yellow-500": stall.status === stallStatus.PAPA,
-              "bg-blue-500": stall.status === stallStatus.RSVD,
+              "bg-sky-500": stall.status === stallStatus.PAPA,
+              "bg-yellow-500": stall.status === stallStatus.RSVD,
             }
           )}
           id={"s-" + stall.nr}
