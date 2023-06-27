@@ -151,14 +151,17 @@
     "op-req-entry": "Richiesta di entrata",
     "op-req-exit": "Richiesta di uscita"
   },
+  "Buttons": {
+    "button-back": "Indietro",
+    "button-more": "Visualizza"
+  },
   "Confirm": {
     "cancel": "Annulla",
     "confirm": "Conferma"
   },
   "Dashboard": {
     "kpi-activity": "Attività recente",
-    "kpi-operations": "Operazioni giornaliere",
-    "button-more": "Visualizza"
+    "kpi-operations": "Operazioni giornaliere"
   },
   "DateRangePicker": {
     "dateRangeDropdownPlaceholder": "Selezionare",

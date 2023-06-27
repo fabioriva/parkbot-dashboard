@@ -16,7 +16,7 @@ import useSWR from "swr";
 
 function ViewMore({ aps, role, roles }) {
   const router = useRouter();
-  const t = useTranslations("Dashboard");
+  const t = useTranslations("Buttons");
 
   return (
     <Flex className="mt-6 pt-4 border-t">
@@ -48,7 +48,7 @@ export default function Dashboard({ aps, json, token, user }) {
 
   return (
     <Fragment>
-      <Grid numItems={1} numItemsSm={2} numItemsLg={4} className="gap-3">
+      <Grid numItems={1} numItemsSm={2} numItemsLg={5} className="gap-3">
         {dashboard.system.devices.map((item, key) => (
           <Device aps={aps} data={item} token={token} user={user} key={key} />
         ))}

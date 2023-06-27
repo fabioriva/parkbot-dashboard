@@ -151,14 +151,17 @@
     "op-req-entry": "Entry request",
     "op-req-exit": "Exit request"
   },
+  "Buttons": {
+    "button-back": "Go back",
+    "button-more": "View more"
+  },
   "Confirm": {
     "cancel": "Cancel",
     "confirm": "Confirm"
   },
   "Dashboard": {
     "kpi-activity": "Recent activity",
-    "kpi-operations": "Today's operations",
-    "button-more": "View more"
+    "kpi-operations": "Today's operations"
   },
   "DateRangePicker": {
     "dateRangeDropdownPlaceholder": "Select",
