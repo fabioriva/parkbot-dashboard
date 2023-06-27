@@ -62,7 +62,7 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
       <Tooltip tooltip={tooltip}>
         <div
           className={clsx(
-            "absolute h-[30px] w-[40px] leading-[30px] text-center text-sm",
+            "absolute h-[30px] w-[40px] leading-[30px] text-center text-sm s",
             {
               "bg-red-500": stall.status !== 0,
               "bg-emerald-500": stall.status === stallStatus.FREE,
@@ -155,7 +155,7 @@ const Level = ({ aps, definitions, level, token, user, view }) => {
         {level.elevators &&
           level.elevators.map((el, i) => (
             <div
-              className="absolute h-[30px] w-[40px] leading-[30px] bg-slate-400 text-center text-sm"
+              className="absolute h-[30px] w-[40px] leading-[30px] bg-slate-400 text-center text-sm el"
               id={el.id}
               key={i}
             >
