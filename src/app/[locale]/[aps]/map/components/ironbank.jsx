@@ -3,7 +3,6 @@
 import { useTranslations } from "next-intl";
 import { Grid, Col, Flex, Card, Title } from "@tremor/react";
 import { useMap } from "@/hooks/useMap";
-// import "./ironbank.css";
 
 export default function Map(props) {
   const { Levels, Occupancy, View } = useMap(props);

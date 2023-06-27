@@ -152,15 +152,16 @@ const Level = ({ aps, definitions, level, token, user, view }) => {
         className="relative bg-transparent border border-dotted border-white w-full l"
         id={"l-" + level.nr}
       >
-        {level.elevators.map((el, i) => (
-          <div
-            className="absolute h-[30px] w-[40px] leading-[30px] bg-slate-400 text-center text-sm"
-            id={el.id}
-            key={i}
-          >
-            {el.label}
-          </div>
-        ))}
+        {level.elevators &&
+          level.elevators.map((el, i) => (
+            <div
+              className="absolute h-[30px] w-[40px] leading-[30px] bg-slate-400 text-center text-sm"
+              id={el.id}
+              key={i}
+            >
+              {el.label}
+            </div>
+          ))}
         {level.stalls.map((stall, i) => (
           <Stall
             aps={aps}

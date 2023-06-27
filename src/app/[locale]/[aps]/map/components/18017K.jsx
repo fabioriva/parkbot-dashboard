@@ -3,10 +3,8 @@
 import { useTranslations } from "next-intl";
 import { Grid, Col, Flex, Card, Title } from "@tremor/react";
 import { useMap } from "@/hooks/useMap";
-// import "./18017K.css";
 
 export default function Map(props) {
-  // console.log(props);
   const { Levels, Occupancy, View } = useMap(props);
   const t = useTranslations("Map");
 
@@ -521,7 +519,6 @@ export default function Map(props) {
             top: 34px;
             left: 207px;
           }
-          
           `}</style>
         </Card>
       </Col>
