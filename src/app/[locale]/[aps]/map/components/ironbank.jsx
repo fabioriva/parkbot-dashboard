@@ -19,7 +19,7 @@ export default function Map(props) {
           <Grid numItems={1} className="gap-6">
             {Levels.reverse().map((level) => level)}
           </Grid>
-          <style>{`
+          <style jsx global>{`
             .l {
               height: 132px;
               width: 620px;

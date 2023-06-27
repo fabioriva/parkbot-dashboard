@@ -6,7 +6,7 @@ import { verifyAuth } from "@/lib/auth";
 import fetch from "@/lib/fetch";
 
 const mapList = {
-  // alumim: lazy(() => import("src/maps/alumim")),
+  alumim: lazy(() => import("@/maps/alumim")),
   "18017K": lazy(() => import("@/maps/18017K")),
   // bmc: lazy(() => import("src/maps/bmc")),
   // chandan: lazy(() => import("src/maps/chandan")),
