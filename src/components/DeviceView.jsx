@@ -8,6 +8,7 @@ import {
   TabPanel,
   AccordionList,
 } from "@tremor/react";
+import Drive from "@/components/DriveKPI";
 import Motor from "@/components/Motor";
 
 export default function View({ data }) {
@@ -29,6 +30,9 @@ export default function View({ data }) {
         {data.motors !== undefined && data.motors.length > 0 && (
           <TabPanel>
             <AccordionList className="max-w-full mx-auto mt-3">
+              {data.drives.map((item, key) => (
+                <Drive item={item} key={key} />
+              ))}
               {data.motors.map((item, key) => (
                 <Motor item={item} key={key} />
               ))}
@@ -38,6 +42,7 @@ export default function View({ data }) {
         {data.silomat !== undefined && (
           <TabPanel>
             <AccordionList className="max-w-full mx-auto mt-3">
+              {data.silomat.drive && <Drive item={data.silomat.drive} />}
               {data.silomat.motors.map((item, key) => (
                 <Motor item={item} key={key} />
               ))}
