@@ -8,7 +8,7 @@ export default function Info({ alarms, device }) {
   const { mode, operation } = device;
   return (
     <>
-      {alarms.length > 0 ? (
+      {alarms !== undefined && alarms.length > 0 ? (
         <div className="mt-6">
           <Callout
             className="mt-3"
