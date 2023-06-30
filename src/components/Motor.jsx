@@ -25,7 +25,11 @@ export default function Motor({ item }) {
           {/* {item.drive !== undefined && (
             <span className="text-sm px-3">{item.drive.speed}&nbsp;Hz</span>
           )} */}
-          <Text className="text-right w-[30%]">{t(item.message)}</Text>
+          {item.run.status ? (
+            <div className="text-sm text-right w-[30%]">{t(item.message)}</div>
+          ) : (
+            <Text className="text-right w-[30%]">{t(item.message)}</Text>
+          )}
         </Flex>
       </AccordionHeader>
       <AccordionBody>
