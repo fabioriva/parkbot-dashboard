@@ -30,7 +30,7 @@ export default function MailingList({ aps, disabled, token }) {
         Authorization: "Bearer " + token,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ mail: mail.value, name: name.value }),
+      body: JSON.stringify({ email: mail.value, name: name.value }),
     });
     // console.log(res);
     setMail(initialState);
