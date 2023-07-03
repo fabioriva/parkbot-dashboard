@@ -11,7 +11,7 @@ export default function Index({ params }) {
       <main className="flex flex-col items-center justify-center min-h-screen bg-slate-950">
         <div className="text-center">
           <div className="w-max mx-auto mb-10 py-1 border border-blue-500 rounded-full">
-            <span className="px-3 text-sm text-slate-500 tracking-tighter">
+            <span className="px-3 text-sm text-slate-100 tracking-tighter">
               UI redisigned from ground up. Dark mode by default.
             </span>
           </div>

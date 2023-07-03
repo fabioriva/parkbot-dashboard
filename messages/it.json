@@ -2,13 +2,14 @@
   "Log": {
     "al-active": "Allarmi attivi {count}",
     "al-fc": "{motor} sensori {name1} {name2}",
+    "al-iv": "Inverter {{nr}}",
+    "al-pn": "Profinet nodo {{name}}",
     "al-th": "termica protezione {motor} {name}",
     "al-to": "time out motore {motor}",
 
     "al-fs": "Safety {{name}}",
     "al-id": "Allarme AL{{id}}",
-    "al-iv": "Inverter {{nr}}",
-    "al-pn": "Profinet nodo {{name}}",
+
     "al-tl": "Contattore {{name}}",
     "al-fal": "Allarme antincendio",
     "al-sil-01": "Time out traslazione Silomat",

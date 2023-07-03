@@ -16,13 +16,19 @@ export default function Map(props) {
             <Title>{t("title")}</Title>
             {View}
           </Flex>
-          <Grid numItems={1} className="gap-6">
+          <Grid numItems={1} className="gap-4">
             {Levels.reverse().map((level) => level)}
           </Grid>
           <style jsx global>{`
             .l {
               height: 132px;
               width: 620px;
+            }
+            #l-3 {
+              height: 100px;
+            }
+            #l-4 {
+              height: 100px;
             }
             /* Level B3 */
             #s-1 {
