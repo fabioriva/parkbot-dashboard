@@ -7,8 +7,12 @@ import {
   TabPanels,
   TabPanel,
   AccordionList,
+  Accordion,
+  AccordionHeader,
+  AccordionBody,
 } from "@tremor/react";
 import Drive from "@/components/DriveKPI";
+import Io from "@/components/DeviceIo";
 import Motor from "@/components/Motor";
 
 export default function View({ data }) {
@@ -25,6 +29,7 @@ export default function View({ data }) {
           <Tab>{t("device-motors")}</Tab>
         )}
         {data.silomat !== undefined && <Tab>Silomat</Tab>}
+        {data.vg !== undefined && <Tab>Garage</Tab>}
       </TabList>
       <TabPanels>
         {data.motors !== undefined && data.motors.length > 0 && (
@@ -46,6 +51,39 @@ export default function View({ data }) {
               {data.silomat.motors.map((item, key) => (
                 <Motor item={item} key={key} />
               ))}
+            </AccordionList>
+          </TabPanel>
+        )}
+        {data.vg !== undefined && (
+          <TabPanel>
+            <AccordionList className="max-w-full mx-auto mt-3">
+              {data.vg.motors.map((item, key) => (
+                <Motor item={item} key={key} />
+              ))}
+              <Accordion>
+                <AccordionHeader>
+                  <div className="text-sm">light panel</div>
+                </AccordionHeader>
+                <AccordionBody>
+                  <div className="grid grid-cols-6 gap-3">
+                    {data.vg.panel.map((item, key) => (
+                      <Io item={item} key={key} />
+                    ))}
+                  </div>
+                </AccordionBody>
+              </Accordion>
+              <Accordion>
+                <AccordionHeader className="text-sm">
+                  <div>sensors</div>
+                </AccordionHeader>
+                <AccordionBody>
+                  <div className="grid grid-cols-6 gap-3">
+                    {data.vg.sensors.map((item, key) => (
+                      <Io item={item} key={key} />
+                    ))}
+                  </div>
+                </AccordionBody>
+              </Accordion>
             </AccordionList>
           </TabPanel>
         )}
