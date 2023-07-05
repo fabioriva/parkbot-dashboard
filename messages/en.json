@@ -98,8 +98,20 @@
     "sil-pos-closed": "closed",
     "sil-pos-opened": "opened",
 
+    "lp-1": "L!",
+    "lp-2": "L2",
+    "lp-3": "L3",
+    "lp-4": "L4",
+    "lp-5": "L5",
+    "lp-off": "off",
+
+    "vg-busy": "busy",
+    "vg-car": "car in position",
+    "vg-vacant": "vacant",
+
     "view-garage": "Garage",
     "view-main": "Main",
+    "view-panel": "Light panel",
     "view-sil": "Silomat",
 
     "device-ce-0": "Entry in progress.",
