@@ -39,7 +39,7 @@ export default function View({ data }) {
                   {view.bits !== undefined ? (
                     view.bits.map((item, key) => (
                       // <Drive item={item} key={key} />
-                      <Accordion>
+                      <Accordion key={key}>
                         <AccordionHeader>
                           <Flex>
                             <div className="text-sm">{t(item.name)}</div>
