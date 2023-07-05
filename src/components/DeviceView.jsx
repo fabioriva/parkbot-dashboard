@@ -58,21 +58,21 @@ export default function View({ data }) {
                       </Accordion>
                     ))
                   ) : (
-                    <Accordion />
+                    <div />
                   )}
                   {view.drives !== undefined ? (
                     view.drives.map((item, key) => (
                       <Drive item={item} key={key} />
                     ))
                   ) : (
-                    <Accordion />
+                    <div />
                   )}
                   {view.motors !== undefined ? (
                     view.motors.map((item, key) => (
                       <Motor item={item} key={key} />
                     ))
                   ) : (
-                    <Accordion />
+                    <div />
                   )}
                 </AccordionList>
               </TabPanel>
