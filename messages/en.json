@@ -98,6 +98,10 @@
     "sil-pos-closed": "closed",
     "sil-pos-opened": "opened",
 
+    "view-garage": "Garage",
+    "view-main": "Main",
+    "view-sil": "Silomat",
+
     "device-ce-0": "Entry in progress.",
     "device-ce-1": "Entering card {card}.",
     "device-ce-2": "Entering card {card}, stall {stall}.",

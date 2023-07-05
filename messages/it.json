@@ -98,6 +98,10 @@
     "sil-pos-closed": "chiuso",
     "sil-pos-opened": "aperto",
 
+    "view-garage": "Garage",
+    "view-main": "Principale",
+    "view-sil": "Silomat",
+
     "device-ce-0": "Entrata in corso.",
     "device-ce-1": "Tessera {card} in entrata.",
     "device-ce-2": "Entrata tessera {card}, stallo {stall}.",
