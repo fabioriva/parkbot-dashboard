@@ -11,7 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.18",
-    "@tremor/react": "^3.4.0",
+    "@tremor/react": "^3.4.1",
     "autoprefixer": "10.4.14",
     "clsx": "^1.2.1",
     "eslint": "8.44.0",
