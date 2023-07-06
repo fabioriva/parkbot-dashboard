@@ -24,6 +24,12 @@ export default function Map(props) {
               height: 160px;
               width: 456px;
             }
+            #l-1 {
+              height: 98px;
+            }
+            #l-2 {
+              height: 129px;
+            }
             /* Level +1 */
             #el-b1 {
               top: 64px;
