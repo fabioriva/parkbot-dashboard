@@ -9,7 +9,7 @@ export default function Confirm({
   isOpen,
   title,
 }) {
-  const t = useTranslations("Confirm");
+  const t = useTranslations("Dialog");
 
   return (
     <Dialog isOpen={isOpen} title={title}>

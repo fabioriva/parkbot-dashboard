@@ -172,10 +172,6 @@
     "button-back": "Indietro",
     "button-more": "Visualizza"
   },
-  "Confirm": {
-    "cancel": "Annulla",
-    "confirm": "Conferma"
-  },
   "Dashboard": {
     "kpi-activity": "Attività recente",
     "kpi-operations": "Operazioni giornaliere"
@@ -191,16 +187,24 @@
     "title": "Fetch error",
     "callout": "Risorsa non disponibile"
   },
-  "OperationDialog": {
-    "button": "{operation}",
-    "entry": "Entrata",
-    "exit": "Uscita",
-    "dialogTitle": "{operation}",
-    "dialogText": "Inserisci un numero di tessera {min} - {max}",
-    "dialogTextInput": "Inserisci un numero di tessera {min} - {max}",
-    "dialogCancel": "Annulla",
-    "dialogConfirm": "Conferma",
-    "errorText": "Nuomero di tessera fuori campo"
+  "Dialog": {
+    "action-entry": "Entrata",
+    "action-exit": "Uscita",
+    "action-rollback": "Rollback",
+    "cancel": "Annulla",
+    "confirm": "Conferma",
+    "Operation": {
+      "button": "{operation}",
+      "dialogTitle": "{operation}",
+      "dialogText": "Inserisci un numero di tessera {min} - {max}",
+      "dialogTextInput": "Inserisci un numero di tessera {min} - {max}",
+      "errorText": "Nuomero di tessera fuori campo"
+    },
+    "Rollback": {
+      "button": "Rollback",
+      "dialogTitle": "Rollback",
+      "dialogText": "Vuoi rimandare indietro la vettura?"
+    }
   },
   "History": {
     "title": "Storico delle operazioni",

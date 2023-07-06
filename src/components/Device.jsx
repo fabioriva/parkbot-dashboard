@@ -1,9 +1,9 @@
-// import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import { WrenchIcon } from "@heroicons/react/24/solid";
 import { Badge, Card, Flex, Title } from "@tremor/react";
 import Entry from "@/components/OperationDialog";
 import Info from "@/components/DeviceInfo";
+import Rollback from "@/components/Rollback";
 import View from "@/components/DeviceView";
 import { getInfo } from "@/lib/localize";
 
@@ -48,16 +48,33 @@ export default function Device({ advanced, aps, data, token, user }) {
       </Flex>
       <Info alarms={data.alarms} device={data.a} />
       {advanced && <View data={data} />}
-      {data.d.map((item, key) => (
-        <Entry
-          aps={aps}
-          action={item}
-          id={data.a.id}
-          token={token}
-          user={user}
-          key={key}
-        />
-      ))}
+      {advanced &&
+        data.d.map((action, key) => {
+          switch (action.key) {
+            case "action-entry":
+              return (
+                <Entry
+                  aps={aps}
+                  action={action}
+                  disabled={!user.rights.some((right) => right === "entry")}
+                  // id={data.a.id}
+                  operation="action-entry"
+                  token={token}
+                  key={key}
+                />
+              );
+            case "action-rollback":
+              return (
+                <Rollback
+                  aps={aps}
+                  action={action}
+                  disabled={!user.rights.some((right) => right === "rollback")}
+                  token={token}
+                  key={key}
+                />
+              );
+          }
+        })}
     </Card>
   );
 }

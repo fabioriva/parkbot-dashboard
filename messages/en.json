@@ -172,10 +172,6 @@
     "button-back": "Go back",
     "button-more": "View more"
   },
-  "Confirm": {
-    "cancel": "Cancel",
-    "confirm": "Confirm"
-  },
   "Dashboard": {
     "kpi-activity": "Recent activity",
     "kpi-operations": "Today's operations"
@@ -191,16 +187,24 @@
     "title": "Fetch error",
     "callout": "Resource not available"
   },
-  "OperationDialog": {
-    "button": "{operation}",
-    "entry": "Entry",
-    "exit": "Exit",
-    "dialogTitle": "{operation} call",
-    "dialogText": "Insert card number {min} - {max}",
-    "dialogTextInput": "Insert card number {min} - {max}",
-    "dialogCancel": "Cancel",
-    "dialogConfirm": "Confirm",
-    "errorText": "Card number out of range"
+  "Dialog": {
+    "action-entry": "Entry",
+    "action-exit": "Exit",
+    "action-rollback": "Rollback",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "Operation": {
+      "button": "{operation}",
+      "dialogTitle": "{operation} call",
+      "dialogText": "Insert card number {min} - {max}",
+      "dialogTextInput": "Insert card number {min} - {max}",
+      "errorText": "Card number out of range"
+    },
+    "Rollback": {
+      "button": "Rollback",
+      "dialogTitle": "Rollback",
+      "dialogText": "Do you want to send the car back?"
+    }
   },
   "History": {
     "title": "Operations history",

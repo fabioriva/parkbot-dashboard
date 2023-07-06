@@ -92,9 +92,11 @@ export default function Queue({ aps, data, token, user }) {
       <Exit
         aps={aps}
         action={data.exitButton}
-        id={0}
+        disabled={!user.rights.some((right) => right === "exit")}
+        // id={0}
+        operation="action-exit"
         token={token}
-        user={user}
+        // user={user}
       />
     </Card>
   );
