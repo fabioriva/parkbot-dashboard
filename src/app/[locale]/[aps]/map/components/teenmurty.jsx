@@ -22,7 +22,7 @@ export default function Map(props) {
             numItemsLg={6}
             className="gap-3 mt-3"
           >
-            {Levels.reverse().map((level) => level)}
+            {Levels.map((level) => level)}
           </Grid>
           <style jsx global>{`
             .l {

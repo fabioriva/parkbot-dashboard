@@ -204,7 +204,7 @@
   },
   "History": {
     "title": "Operations history",
-    "search": "Search by card, stall or device...",
+    "search": "Filter results by card, stall or device...",
     "subtitle": "From {from} to {to}. Logs {count}."
   },
   "Home": {
