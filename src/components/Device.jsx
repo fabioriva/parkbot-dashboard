@@ -3,6 +3,7 @@ import { WrenchIcon } from "@heroicons/react/24/solid";
 import { Badge, Card, Flex, Title } from "@tremor/react";
 import Entry from "@/components/OperationDialog";
 import Info from "@/components/DeviceInfo";
+import Position from "@/components/Position";
 import Rollback from "@/components/Rollback";
 import View from "@/components/DeviceView";
 import { getInfo } from "@/lib/localize";
@@ -49,6 +50,14 @@ export default function Device({ advanced, aps, data, token, user }) {
       </Flex>
       <Info alarms={data.alarms} device={data.a} />
       {/* <Info alarms={data.alarms} device={data} /> */}
+
+      {data.b !== undefined && (
+        <div className="mt-6">
+          {data.b.map((item, key) => (
+            <Position item={item} key={key} />
+          ))}
+        </div>
+      )}
       {advanced && <View data={data} />}
       {advanced &&
         data.d.map((action, key) => {
