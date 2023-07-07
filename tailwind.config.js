@@ -5,6 +5,7 @@ module.exports = {
     "./node_modules/@tremor/**/*.{js,ts,jsx,tsx}", // Tremor module
   ],
   // darkMode: "class",
+  // lightMode: "class",
   theme: {
     transparent: "transparent",
     current: "currentColor",

@@ -6,7 +6,7 @@ export default function Signin({ params }) {
   const t = useTranslations("Signin");
 
   return (
-    <div className="h-screen flex flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+    <div className="h-screen flex flex-1 flex-col justify-center px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <Image
           className="mx-auto h-[64px] w-auto"
@@ -15,12 +15,12 @@ export default function Signin({ params }) {
           height={64}
           width={64}
         />
-        <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight">
+        <h2 className="mt-6 text-center text-2xl font-bold leading-9 tracking-tight">
           {t("title")}
         </h2>
       </div>
 
-      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
         <Form
           locales={{
             forgot: t("forgot"),
