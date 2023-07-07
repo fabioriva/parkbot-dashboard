@@ -40,7 +40,7 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
 
   const handleOpen = () => {
     console.log(stall);
-    if (user.rights.some((right) => right === "exit")) {
+    if (user.rights.some((right) => right === "edit-stall")) {
       setIsOpen(true);
     }
   };
