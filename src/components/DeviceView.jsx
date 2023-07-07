@@ -23,6 +23,7 @@ export default function View({ data }) {
   const [index, setIndex] = useState(0);
 
   useEffect(() => setIndex(data.a.motor), [data.a.motor]); // automatically change Tab
+  // useEffect(() => setIndex(data.motor), [data.motor]); // automatically change Tab
 
   return (
     <TabGroup index={index} onIndexChange={(index) => setIndex(index)}>
@@ -38,7 +39,6 @@ export default function View({ data }) {
                 <AccordionList className="max-w-full mx-auto mt-3">
                   {view.bits !== undefined ? (
                     view.bits.map((item, key) => (
-                      // <Drive item={item} key={key} />
                       <Accordion key={key}>
                         <AccordionHeader>
                           <Flex>

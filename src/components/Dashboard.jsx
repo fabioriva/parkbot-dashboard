@@ -49,7 +49,7 @@ export default function Dashboard({ aps, json, token, user }) {
   return (
     <Fragment>
       <Grid numItems={1} numItemsSm={2} numItemsLg={5} className="gap-3">
-        {dashboard.system.devices.map((item, key) => (
+        {dashboard.system.devices.flat().map((item, key) => (
           <Device aps={aps} data={item} token={token} user={user} key={key} />
         ))}
       </Grid>

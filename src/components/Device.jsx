@@ -21,10 +21,11 @@ export default function Device({ advanced, aps, data, token, user }) {
   const t = useTranslations("Log");
   const { card, mode, motor, name, operation, size, stall, step, steps } =
     data.a;
+  // const { card, mode, motor, name, operation, size, stall, step, steps } = data;
   const [LS, LC, LA] = data.c;
 
   return (
-    <Card className="p-3 self-start">
+    <Card className="max-w-sm p-3 self-start">
       <Flex>
         <Title>{name}</Title>
         <Badge
@@ -47,6 +48,7 @@ export default function Device({ advanced, aps, data, token, user }) {
         </div>
       </Flex>
       <Info alarms={data.alarms} device={data.a} />
+      {/* <Info alarms={data.alarms} device={data} /> */}
       {advanced && <View data={data} />}
       {advanced &&
         data.d.map((action, key) => {

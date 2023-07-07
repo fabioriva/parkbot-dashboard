@@ -19,7 +19,7 @@ export default function Overview({ aps, json, token, user }) {
     <Grid numItemsSm={1} numItemsLg={3} className="gap-6">
       <Col numColSpanLg={2}>
         <Grid numItemsMd={1} numItemsLg={3} className="gap-6 items-stretch">
-          {overview.devices.map((item, key) => (
+          {overview.devices.flat().map((item, key) => (
             <Device
               advanced
               aps={aps}
@@ -33,6 +33,27 @@ export default function Overview({ aps, json, token, user }) {
             <Drive item={item} key={key} />
           ))} */}
         </Grid>
+        {/* <div className="space-y-6">
+          {overview.devices.map((item, key) => (
+            <Grid
+              numItemsMd={1}
+              numItemsLg={item.length}
+              className="gap-6 items-stretch"
+              key={key}
+            >
+              {item.map((device, key) => (
+                <Device
+                  advanced
+                  aps={aps}
+                  data={device}
+                  token={token}
+                  user={user}
+                  key={key}
+                />
+              ))}
+            </Grid>
+          ))}
+        </div> */}
       </Col>
       <Queue aps={aps} data={overview.exitQueue} token={token} user={user} />
     </Grid>
