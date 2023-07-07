@@ -21,7 +21,7 @@ export default function ModalDialog({ children, isOpen, title }) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-black bg-opacity-25" />
+          <div className="fixed inset-0 bg-slate-900 bg-opacity-60" />
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-y-auto">
@@ -35,7 +35,7 @@ export default function ModalDialog({ children, isOpen, title }) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-black border border-slate-50 p-6 text-left align-middle shadow-xl transition-all">
+              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-slate-50 dark:bg-slate-950 p-6 text-left align-middle shadow-xl transition-all">
                 <Dialog.Title as="h3" className="text-lg font-medium leading-6">
                   {title}
                 </Dialog.Title>
