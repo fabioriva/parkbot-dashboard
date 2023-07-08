@@ -1,24 +1,4 @@
 import { Badge, Card, Flex, Tracker, Text, Title, Metric } from "@tremor/react";
-// import Io from "@/components/DeviceIo";
-
-const data = [
-  { color: "emerald", tooltip: "Operational" },
-  { color: "emerald", tooltip: "Operational" },
-  { color: "emerald", tooltip: "Operational" },
-  { color: "emerald", tooltip: "Operational" },
-  { color: "emerald", tooltip: "Operational" },
-  { color: "emerald", tooltip: "Operational" },
-  { color: "emerald", tooltip: "Operational" },
-  { color: "emerald", tooltip: "Operational" },
-  { color: "emerald", tooltip: "Operational" },
-  { color: "emerald", tooltip: "Operational" },
-  { color: "emerald", tooltip: "Operational" },
-  { color: "emerald", tooltip: "Operational" },
-  { color: "emerald", tooltip: "Operational" },
-  { color: "emerald", tooltip: "Operational" },
-  { color: "rose", tooltip: "Downtime" },
-  { color: "emerald", tooltip: "Operational" },
-];
 
 export default function Drive({ item }) {
   // console.log(item);
