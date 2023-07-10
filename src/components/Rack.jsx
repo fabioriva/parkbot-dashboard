@@ -13,9 +13,9 @@ const componentList = {
   et200m32: lazy(() => import("src/components/ET200M32")),
   et200s16: lazy(() => import("src/components/ET200S16")),
   et200s8: lazy(() => import("src/components/ET200S08")),
-  // et200m08f: lazy(() => import("src/components/ET200M08_F")),
-  // et200m16f: lazy(() => import("src/components/ET200M16_F")),
-  // et200s8f: lazy(() => import("src/components/ET200S8_F")),
+  et200m08f: lazy(() => import("src/components/ET200M08_FS")),
+  et200m16f: lazy(() => import("src/components/ET200M16_FS")),
+  et200s8f: lazy(() => import("src/components/ET200S08_FS")),
 };
 
 function Back({ aps }) {

@@ -282,7 +282,7 @@ export default function Module({ module }) {
       className="absolute bg-[#64748b] h-[360px] w-[88px] top-1"
       id={"card-" + nr}
     >
-      <span className="absolute bottom-0 left-0 w-full text-center text-[0.65rem] text-white">
+      <span className="absolute bottom-0 left-0 w-full text-center text-[0.60rem] text-white">
         {type}
       </span>
       {bytes.map((item, key) => (
