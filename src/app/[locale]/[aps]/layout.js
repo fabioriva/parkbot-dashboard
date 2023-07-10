@@ -21,7 +21,7 @@ export default async function Layout({ children, params }) {
 
   return (
     <NextIntlClientProvider locale={params.locale} messages={messages}>
-      <main className="px-2 py-3 sm:p-6 flex flex-col min-h-screen">
+      <main className="bg-slate-100 dark:bg-slate-900 px-2 py-3 sm:p-6 flex flex-col min-h-screen">
         <Header aps={aps} payload={payload} />
         <div className="border-t my-3 py-6">{children}</div>
         <footer className="mt-auto text-center text-slate-600 text-sm">

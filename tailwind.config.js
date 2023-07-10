@@ -4,8 +4,7 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@tremor/**/*.{js,ts,jsx,tsx}", // Tremor module
   ],
-  // darkMode: "class",
-  // lightMode: "class",
+  darkMode: "class", // use the class strategy instead of the media strategy
   theme: {
     transparent: "transparent",
     current: "currentColor",
