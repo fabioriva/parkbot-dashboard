@@ -73,7 +73,7 @@ export default function History({ aps, data, token }) {
           })}
         </Text>
       </div>
-      <div className="my-3">{textInput}</div>
+      <div className="my-6">{textInput}</div>
       <div className="block sm:hidden">
         <List
           data={
