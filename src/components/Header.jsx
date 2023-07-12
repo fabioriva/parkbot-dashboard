@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Flex } from "@tremor/react";
 import Info from "@/components/HeaderInfo";
+import Mode from "@/components/ModeToggler";
 import Title from "@/components/HeaderTitle";
 import Toast from "@/components/Toast";
 import User from "@/components/Menu";
@@ -36,6 +37,7 @@ export default function Header({ aps, payload }) {
               exits={exits}
             />
           </div>
+          <Mode />
           <User aps={aps} user={payload} />
         </Flex>
       </Flex>

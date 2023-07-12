@@ -45,7 +45,7 @@ export default function Operation({ action, aps, disabled, operation, token }) {
   return (
     <Fragment>
       <Button
-        className="mt-6 min-w-full"
+        className="mt-3 min-w-full"
         onClick={handleOpen}
         disabled={disabled || !action.enable.status}
         // disabled={

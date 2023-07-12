@@ -31,7 +31,7 @@ export default function RollbackDialog({ action, aps, disabled, token }) {
   return (
     <Fragment>
       <Button
-        className="mt-6 min-w-full"
+        className="mt-3 min-w-full"
         onClick={() => setIsOpen(true)}
         disabled={disabled || !action.enable.status}
         // disabled={
