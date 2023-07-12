@@ -16,9 +16,9 @@ export default function Map(props) {
             <Title>{t("title")}</Title>
             {View}
           </Flex>
-          <Grid numItems={1} className="gap-4">
+          <div className="overflow-auto gap-4 mt-3">
             {Levels.reverse().map((level) => level)}
-          </Grid>
+          </div>
           <style jsx global>{`
             .l {
               height: 132px;
