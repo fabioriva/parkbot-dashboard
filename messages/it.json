@@ -210,7 +210,9 @@
   "History": {
     "title": "Storico delle operazioni",
     "search": "Filtra ricerca per tessera, stallo o dispositivo...",
-    "subtitle": "Dal {from} al {to}. Registrazioni {count}."
+    "subtitle": "Dal {from} al {to}. Registrazioni {count}.",
+    "view-list": "Lista",
+    "view-table": "Tabella"
   },
   "Home": {
     "title": "Pagina iniziale",

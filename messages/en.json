@@ -210,7 +210,9 @@
   "History": {
     "title": "Operations history",
     "search": "Filter results by card, stall or device...",
-    "subtitle": "From {from} to {to}. Logs {count}."
+    "subtitle": "From {from} to {to}. Logs {count}.",
+    "view-list": "List",
+    "view-table": "Table"
   },
   "Home": {
     "title": "Home page",

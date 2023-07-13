@@ -3,7 +3,8 @@
 import { format, isValid, endOfDay, startOfDay } from "date-fns";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Card, Text, Title, Flex } from "@tremor/react";
+import { ListBulletIcon, TableCellsIcon } from "@heroicons/react/24/solid";
+import { Card, Text, Title, Flex, Tab, TabList, TabGroup } from "@tremor/react";
 import List from "@/components/HistoryList";
 import Table from "@/components/HistoryTable";
 import { useDateRangePicker } from "@/hooks/useDateRangePicker";
@@ -13,6 +14,8 @@ export default function History({ aps, data, token }) {
   const t = useTranslations("History");
 
   const [history, setHistory] = useState(data);
+
+  const [view, setView] = useState(0); // 0=List view, 1=Table view
 
   const { dateRange, dateRangePicker } = useDateRangePicker();
 
@@ -49,7 +52,7 @@ export default function History({ aps, data, token }) {
     <Card className="p-3 sm:p-6">
       <div className="hidden sm:block">
         <Flex>
-          <div>
+          <div className="grow">
             <Title className="grow">{t("title")}</Title>
             <Text className="hidden sm:block grow truncate">
               {t("subtitle", {
@@ -58,6 +61,14 @@ export default function History({ aps, data, token }) {
                 count: history.count,
               })}
             </Text>
+          </div>
+          <div className="mr-3">
+            <TabGroup index={view} onIndexChange={(index) => setView(index)}>
+              <TabList variant="solid">
+                <Tab icon={ListBulletIcon}>{t("view-list")}</Tab>
+                <Tab icon={TableCellsIcon}>{t("view-table")}</Tab>
+              </TabList>
+            </TabGroup>
           </div>
           {dateRangePicker}
         </Flex>
@@ -84,13 +95,23 @@ export default function History({ aps, data, token }) {
         />
       </div>
       <div className="hidden sm:block">
-        <Table
-          data={
-            results.length === 0
-              ? history.query
-              : results.map(({ item }) => item)
-          }
-        />
+        {view === 0 ? (
+          <List
+            data={
+              results.length === 0
+                ? history.query
+                : results.map(({ item }) => item)
+            }
+          />
+        ) : (
+          <Table
+            data={
+              results.length === 0
+                ? history.query
+                : results.map(({ item }) => item)
+            }
+          />
+        )}
       </div>
     </Card>
   );
