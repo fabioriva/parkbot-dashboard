@@ -24,7 +24,7 @@ export default function HeaderTitle({ aps }) {
       </Link>
       <div className="truncate">
         <Title className="font-semibold text-xl tracking-tighter truncate">
-          <span className="text-transparent bg-clip-text bg-gradient-to-br from-orange-800 to-orange-500">
+          <span className="hidden sm:inline text-transparent bg-clip-text bg-gradient-to-br from-orange-800 to-orange-500">
             Parkbot
           </span>{" "}
           {pages.find((item) => item.role === page)?.role && t(page)}
