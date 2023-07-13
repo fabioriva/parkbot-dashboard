@@ -89,7 +89,9 @@ export default function MailingList({ aps, json, token, user }) {
                     <Text className="truncate">
                       <Bold>{item.name}</Bold>
                     </Text>
-                    <div className="truncate text-slate-50">{item.email}</div>
+                    <div className="truncate dark:text-slate-50">
+                      {item.email}
+                    </div>
                   </div>
                 </Flex>
                 <Button
