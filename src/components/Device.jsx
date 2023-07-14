@@ -20,7 +20,7 @@ const Led = ({ children, color, input }) => (
 
 export default function Device({ advanced, aps, data, token, user }) {
   // console.log(data);
-  const [more, setMore] = useState(true);
+  const [more, setMore] = useState(advanced);
   const t = useTranslations("Log");
   const { card, mode, motor, name, operation, size, stall, step, steps } =
     data.a;
@@ -51,13 +51,15 @@ export default function Device({ advanced, aps, data, token, user }) {
           <Led color="green" input={LS}>
             LS
           </Led>
-          <button
-            type="button"
-            className="hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
-            onClick={toggleAdvanced}
-          >
-            <Icon icon={more ? EyeIcon : EyeSlashIcon} />
-          </button>
+          {advanced && (
+            <button
+              type="button"
+              className="hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
+              onClick={toggleAdvanced}
+            >
+              <Icon icon={more ? EyeIcon : EyeSlashIcon} />
+            </button>
+          )}
         </div>
       </Flex>
 
