@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { Grid, Col } from "@tremor/react";
 import Device from "@/components/Device";
-// import Drive from "@/components/Drive";
 import Queue from "@/components/Queue";
 import { useData } from "@/hooks/useWebSocket";
 
@@ -18,22 +17,7 @@ export default function Overview({ aps, json, token, user }) {
   return (
     <Grid numItemsSm={1} numItemsLg={3} className="gap-6">
       <Col numColSpanLg={2}>
-        <Grid numItemsMd={1} numItemsLg={3} className="gap-6 items-stretch">
-          {overview.devices.flat().map((item, key) => (
-            <Device
-              advanced
-              aps={aps}
-              data={item}
-              token={token}
-              user={user}
-              key={key}
-            />
-          ))}
-          {/* {overview.drives.map((item, key) => (
-            <Drive item={item} key={key} />
-          ))} */}
-        </Grid>
-        {/* <div className="space-y-6">
+        <div className="space-y-6">
           {overview.devices.map((item, key) => (
             <Grid
               numItemsMd={1}
@@ -53,7 +37,7 @@ export default function Overview({ aps, json, token, user }) {
               ))}
             </Grid>
           ))}
-        </div> */}
+        </div>
       </Col>
       <Queue aps={aps} data={overview.exitQueue} token={token} user={user} />
     </Grid>

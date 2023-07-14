@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { EyeIcon, EyeSlashIcon, WrenchIcon } from "@heroicons/react/24/solid";
 import { Badge, Card, Flex, Title, Icon } from "@tremor/react";
-import Entry from "@/components/Entry"; // OperationDialog";
+import Entry from "@/components/Entry";
 import Info from "@/components/DeviceInfo";
 import Position from "@/components/Position";
 import Rollback from "@/components/Rollback";
@@ -22,9 +22,7 @@ export default function Device({ advanced, aps, data, token, user }) {
   // console.log(data);
   const [more, setMore] = useState(advanced);
   const t = useTranslations("Log");
-  const { card, mode, motor, name, operation, size, stall, step, steps } =
-    data.a;
-  // const { card, mode, motor, name, operation, size, stall, step, steps } = data;
+  const { card, mode, motor, name, operation, size, stall, step, steps } = data;
   const [LS, LC, LA] = data.c;
   const toggleAdvanced = (e) => {
     e.preventDefault();
@@ -62,10 +60,7 @@ export default function Device({ advanced, aps, data, token, user }) {
           )}
         </div>
       </Flex>
-
-      <Info alarms={data.alarms} device={data.a} />
-      {/* <Info alarms={data.alarms} device={data} /> */}
-
+      <Info alarms={data.alarms} device={data} />
       {advanced && more && data.b !== undefined && (
         <div className="mt-6">
           {data.b.map((item, key) => (
@@ -73,13 +68,8 @@ export default function Device({ advanced, aps, data, token, user }) {
           ))}
         </div>
       )}
-      {advanced && more && (
-        // data.views !== undefined &&
-        // data.views.length > 0 &&
-        <View data={data} />
-      )}
+      {advanced && more && <View data={data} />}
       {advanced &&
-        more &&
         data.d.map((action, key) => {
           switch (action.key) {
             case "action-entry":
@@ -88,9 +78,6 @@ export default function Device({ advanced, aps, data, token, user }) {
                   aps={aps}
                   action={action}
                   disabled={!user.rights.some((right) => right === "entry")}
-                  // id={data.a.id}
-                  // id={data.id}
-                  // operation="action-entry"
                   token={token}
                   key={key}
                 />

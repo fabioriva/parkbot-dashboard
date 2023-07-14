@@ -1,4 +1,3 @@
-// import Link from "next/link";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { ArrowUpIcon, UserIcon, TrashIcon } from "@heroicons/react/24/solid";
@@ -18,13 +17,11 @@ import Confirm from "@/components/ConfirmDialog";
 import Exit from "@/components/Exit";
 
 export default function Queue({ aps, data, token, user }) {
-  // console.log(data);
   const [isOpen, setIsOpen] = useState(false);
   const [queueItem, setQueueItem] = useState({ card: 0, index: 0 });
 
   const handleCancel = () => {
     setIsOpen(false);
-    // setQueueItem({ card: 0, index: 0 });
   };
 
   const handleConfirm = async () => {
@@ -93,10 +90,7 @@ export default function Queue({ aps, data, token, user }) {
         aps={aps}
         action={data.exitButton}
         disabled={!user.rights.some((right) => right === "exit")}
-        // id={0}
-        // operation="action-exit"
         token={token}
-        // user={user}
       />
     </Card>
   );
