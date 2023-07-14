@@ -25,7 +25,9 @@ export default function Menu({ aps, user }) {
         >
           <span
             className={
-              !user.roles.some((role) => role === item.role) && "text-slate-500"
+              user.roles.some((role) => role === item.role)
+                ? "text-slate-600"
+                : "text-slate-300"
             }
           >
             {t(item.role)}
