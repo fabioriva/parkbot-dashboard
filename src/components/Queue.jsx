@@ -15,7 +15,7 @@ import {
   Text,
 } from "@tremor/react";
 import Confirm from "@/components/ConfirmDialog";
-import Exit from "@/components/OperationDialog";
+import Exit from "@/components/Exit";
 
 export default function Queue({ aps, data, token, user }) {
   // console.log(data);
@@ -28,7 +28,7 @@ export default function Queue({ aps, data, token, user }) {
   };
 
   const handleConfirm = async () => {
-    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/system/queue/delete`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/queue/delete`;
     const res = await fetch(url, {
       method: "POST",
       headers: {
@@ -37,7 +37,7 @@ export default function Queue({ aps, data, token, user }) {
       },
       body: JSON.stringify({ card: queueItem.card, index: queueItem.index }),
     });
-    console.log(res);
+    console.log(res, await res.json());
     setIsOpen(false);
   };
 
@@ -94,7 +94,7 @@ export default function Queue({ aps, data, token, user }) {
         action={data.exitButton}
         disabled={!user.rights.some((right) => right === "exit")}
         // id={0}
-        operation="action-exit"
+        // operation="action-exit"
         token={token}
         // user={user}
       />

@@ -11,20 +11,19 @@ export default function RollbackDialog({ action, aps, disabled, token }) {
   const handleCancel = () => setIsOpen(false);
 
   const handleConfirm = async () => {
-    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/writeArea`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/operation/rollback`;
     const FALSE = Buffer.alloc(1, 0, "hex");
     const TRUE = Buffer.alloc(1, 1, "hex");
     const buffer = Buffer.alloc(1, TRUE, "hex").toJSON();
-    console.log(action, url, buffer);
-    // const res = await fetch(url, {
-    //   method: "POST",
-    //   headers: {
-    //     Authorization: "Bearer " + token,
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ conn: action.conn, buffer }),
-    // });
-    // console.log(res);
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + token,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ buffer, writeArea: action.writeArea }),
+    });
+    console.log(res);
     setIsOpen(false);
   };
 
@@ -34,10 +33,6 @@ export default function RollbackDialog({ action, aps, disabled, token }) {
         className="mt-3 min-w-full"
         onClick={() => setIsOpen(true)}
         disabled={disabled || !action.enable.status}
-        // disabled={
-        //   !user.rights.some((right) => right === operation) ||
-        //   !action.enable.status
-        // }
       >
         {t(action.key)}
       </Button>

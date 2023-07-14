@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { EyeIcon, EyeSlashIcon, WrenchIcon } from "@heroicons/react/24/solid";
 import { Badge, Card, Flex, Title, Icon } from "@tremor/react";
-import Entry from "@/components/OperationDialog";
+import Entry from "@/components/Entry"; // OperationDialog";
 import Info from "@/components/DeviceInfo";
 import Position from "@/components/Position";
 import Rollback from "@/components/Rollback";
@@ -89,7 +89,8 @@ export default function Device({ advanced, aps, data, token, user }) {
                   action={action}
                   disabled={!user.rights.some((right) => right === "entry")}
                   // id={data.a.id}
-                  operation="action-entry"
+                  // id={data.id}
+                  // operation="action-entry"
                   token={token}
                   key={key}
                 />
@@ -99,7 +100,7 @@ export default function Device({ advanced, aps, data, token, user }) {
                 <Rollback
                   aps={aps}
                   action={action}
-                  disabled={!user.rights.some((right) => right === "rollback")}
+                  disabled={!user.rights.some((right) => right === "exit")}
                   token={token}
                   key={key}
                 />

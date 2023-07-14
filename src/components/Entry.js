@@ -3,8 +3,7 @@ import { useTranslations } from "next-intl";
 import { Button, Flex, Text, TextInput } from "@tremor/react";
 import Dialog from "@/components/Dialog";
 
-export default function Operation({ action, aps, disabled, operation, token }) {
-  // console.log(action);
+export default function Operation({ action, aps, disabled, token }) {
   const t = useTranslations("Dialog");
 
   const [isOpen, setIsOpen] = useState(false);
@@ -12,19 +11,19 @@ export default function Operation({ action, aps, disabled, operation, token }) {
   const [value, setValue] = useState(1);
 
   const handleConfirm = async () => {
-    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/system/operation`;
-    console.log(action, id, url, token);
-    // const res = await fetch(url, {
-    //   method: "POST",
-    //   // withCredentials: true,
-    //   // credentials: "include",
-    //   headers: {
-    //     Authorization: "Bearer " + token,
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ card: value, id }),
-    // });
-    console.log(res);
+    console.log(action);
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/operation/entry`;
+    const res = await fetch(url, {
+      method: "POST",
+      // withCredentials: true,
+      // credentials: "include",
+      headers: {
+        Authorization: "Bearer " + token,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ card: value, writeArea: action.writeArea }),
+    });
+    console.log(res, await res.json());
     setIsOpen(false);
   };
 
@@ -40,25 +39,18 @@ export default function Operation({ action, aps, disabled, operation, token }) {
     setIsOpen(true);
   };
 
-  // const operation = id === 0 ? "action-exit" : "action-entry";
-
   return (
     <Fragment>
       <Button
         className="mt-3 min-w-full"
         onClick={handleOpen}
         disabled={disabled || !action.enable.status}
-        // disabled={
-        //   !user.rights.some((right) => right === operation) ||
-        //   !action.enable.status
-        // }
       >
-        {/* {t("button", { operation: t(operation) })} */}
         {t(action.key)}
       </Button>
       <Dialog
         isOpen={isOpen}
-        title={t("Operation.dialogTitle", { operation: t(operation) })}
+        title={t("Operation.dialogTitle", { operation: t(action.key) })}
       >
         <div className="mt-3">
           <Text>
