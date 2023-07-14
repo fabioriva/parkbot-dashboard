@@ -1,14 +1,16 @@
 "use client";
 
-import { format, isValid, endOfDay, startOfDay } from "date-fns";
-import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { format, isValid, endOfDay, startOfDay } from "date-fns";
+import { /*Fragment, */ useEffect, useState } from "react";
 import { ListBulletIcon, TableCellsIcon } from "@heroicons/react/24/solid";
 import { Card, Text, Title, Flex, Tab, TabList, TabGroup } from "@tremor/react";
 import List from "@/components/HistoryList";
 import Table from "@/components/HistoryTable";
 import { useDateRangePicker } from "@/hooks/useDateRangePicker";
 import { useFuzzySearch } from "@/hooks/useFuzzySearch";
+// import { useTimeoutFn } from "react-use";
+// import { Transition } from "@headlessui/react";
 
 export default function History({ aps, data, token }) {
   const t = useTranslations("History");
@@ -16,7 +18,8 @@ export default function History({ aps, data, token }) {
   const [history, setHistory] = useState(data);
 
   const [view, setView] = useState(0); // 0=List view, 1=Table view
-
+  // let [isShowing, setIsShowing] = useState(true);
+  // let [, , resetIsShowing] = useTimeoutFn(() => setIsShowing(true), 500);
   const { dateRange, dateRangePicker } = useDateRangePicker();
 
   useEffect(() => {
@@ -63,7 +66,14 @@ export default function History({ aps, data, token }) {
             </Text>
           </div>
           <div className="mr-3">
-            <TabGroup index={view} onIndexChange={(index) => setView(index)}>
+            <TabGroup
+              index={view}
+              onIndexChange={(index) => {
+                // setIsShowing(false);
+                // resetIsShowing();
+                setView(index);
+              }}
+            >
               <TabList variant="solid">
                 <Tab icon={ListBulletIcon}>{t("view-list")}</Tab>
                 <Tab icon={TableCellsIcon}>{t("view-table")}</Tab>
@@ -95,6 +105,24 @@ export default function History({ aps, data, token }) {
         />
       </div>
       <div className="hidden sm:block">
+        {/* <Transition
+          as={Fragment}
+          show={isShowing}
+          // enter="transition ease-out duration-100"
+          // enterFrom="transform opacity-0 scale-95"
+          // enterTo="transform opacity-100 scale-100"
+          // leave="transition ease-in duration-75"
+          // leaveFrom="transform opacity-100 scale-100"
+          // leaveTo="transform opacity-0 scale-95"
+          enter="transition-opacity duration-150"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="transition-opacity duration-0"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          {(ref) => (
+            <div ref={ref}> */}
         {view === 0 ? (
           <List
             data={
@@ -112,6 +140,9 @@ export default function History({ aps, data, token }) {
             }
           />
         )}
+        {/* </div>
+          )}
+        </Transition> */}
       </div>
     </Card>
   );
