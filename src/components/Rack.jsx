@@ -52,7 +52,9 @@ export default function Rack({ aps, nr, json }) {
           className="overflow-scroll relative bg-transparent shadow w-full h-96 flex items-center justify-center"
           id={`rack-${rack.nr}`}
         >
-          <span className="text-2xl">Simatic PLC Rack {nr}</span>
+          <span className="text-2xl dark:text-white font-medium">
+            Simatic PLC Rack {nr}
+          </span>
           {rack.cards.map((item, key) => {
             // console.log(item.module);
             const Module = componentList[item.module];
