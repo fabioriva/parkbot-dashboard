@@ -80,3 +80,4 @@ export default function View({ data }) {
       </TabPanels>
     </TabGroup>
   );
+}
