@@ -2,6 +2,7 @@ import { Fragment, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Button, Flex, Text, TextInput } from "@tremor/react";
 import Dialog from "@/components/Dialog";
+import fetch, { actionResponse } from "@/lib/fetch";
 
 export default function Operation({ action, aps, disabled, token }) {
   const t = useTranslations("Dialog");
@@ -13,7 +14,7 @@ export default function Operation({ action, aps, disabled, token }) {
   const handleConfirm = async () => {
     console.log(action);
     const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/operation/exit`;
-    const res = await fetch(url, {
+    const json = await fetch(url, {
       method: "POST",
       // withCredentials: true,
       // credentials: "include",
@@ -23,7 +24,7 @@ export default function Operation({ action, aps, disabled, token }) {
       },
       body: JSON.stringify({ card: value, writeArea: action.writeArea }),
     });
-    console.log(res, await res.json());
+    actionResponse(json);
     setIsOpen(false);
   };
 

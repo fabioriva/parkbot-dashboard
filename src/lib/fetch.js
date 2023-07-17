@@ -1,3 +1,23 @@
+import clsx from "clsx";
+import toast from "react-hot-toast";
+
+export function actionResponse({ message, severity }) {
+  toast.custom(
+    (t) => (
+      <div
+        className={clsx("px-6 py-3 shadow-md rounded text-sm", {
+          "bg-red-500": severity === "error",
+          "bg-green-500": severity === "success",
+          "bg-yellow-500": severity === "warning",
+        })}
+      >
+        {message}
+      </div>
+    ),
+    { position: "top-center" }
+  );
+}
+
 export default async function fetcher(...args) {
   try {
     const res = await fetch(...args);

@@ -15,6 +15,7 @@ import {
 } from "@tremor/react";
 import Confirm from "@/components/ConfirmDialog";
 import Exit from "@/components/Exit";
+import fetch, { actionResponse } from "@/lib/fetch";
 
 export default function Queue({ aps, data, token, user }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,7 @@ export default function Queue({ aps, data, token, user }) {
 
   const handleConfirm = async () => {
     const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/queue/delete`;
-    const res = await fetch(url, {
+    const json = await fetch(url, {
       method: "POST",
       headers: {
         Authorization: "Bearer " + token,
@@ -34,7 +35,7 @@ export default function Queue({ aps, data, token, user }) {
       },
       body: JSON.stringify({ card: queueItem.card, index: queueItem.index }),
     });
-    console.log(res, await res.json());
+    actionResponse(json);
     setIsOpen(false);
   };
 

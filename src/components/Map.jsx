@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { Text, TextInput, Flex, Button } from "@tremor/react";
 import Dialog from "@/components/Dialog";
 import Tooltip from "@/components/Tooltip";
+import fetch, { actionResponse } from "@/lib/fetch";
 
 const Stall = ({ aps, definitions, stall, token, user, view }) => {
   const t = useTranslations("Map");
@@ -15,9 +16,9 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
   const { cards, stalls, stallStatus } = definitions;
 
   const handleConfirm = async (data) => {
-    console.log(data);
+    // console.log(data);
     const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/map/edit`;
-    const res = await fetch(url, {
+    const json = await fetch(url, {
       method: "POST",
       // withCredentials: true,
       // credentials: "include",
@@ -27,6 +28,7 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
       },
       body: JSON.stringify({ card: data.status, stall: data.nr }),
     });
+    actionResponse(json);
     setIsOpen(false);
   };
 
