@@ -16,8 +16,6 @@ export default function Operation({ action, aps, disabled, token }) {
     const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/operation/exit`;
     const json = await fetch(url, {
       method: "POST",
-      // withCredentials: true,
-      // credentials: "include",
       headers: {
         Authorization: "Bearer " + token,
         "Content-Type": "application/json",
