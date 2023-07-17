@@ -50,7 +50,7 @@ export default function Dashboard({ aps, json, token, user }) {
   return (
     <Suspense fallback={<Loading />}>
       <Grid numItems={1} numItemsSm={2} numItemsLg={5} className="gap-3">
-        {dashboard.system.devices.flat().map((item, key) => (
+        {dashboard.system.map((item, key) => (
           <Device aps={aps} data={item} token={token} user={user} key={key} />
         ))}
       </Grid>
