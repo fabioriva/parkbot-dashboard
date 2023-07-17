@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
@@ -8,6 +8,7 @@ import { Grid, Col, Flex, Button, Card, Title } from "@tremor/react";
 import BarChart from "@/components/OperationsBarChart";
 import Device from "@/components/Device";
 import HistoryList from "@/components/HistoryList";
+import Loading from "@/components/Loading";
 import Occupancy from "@/components/Occupancy";
 import fetcher from "@/lib/fetch";
 import useSWR from "swr";
@@ -47,7 +48,7 @@ export default function Dashboard({ aps, json, token, user }) {
   useEffect(() => setDashboard(data), [data]);
 
   return (
-    <Fragment>
+    <Suspense fallback={<Loading />}>
       <Grid numItems={1} numItemsSm={2} numItemsLg={5} className="gap-3">
         {dashboard.system.devices.flat().map((item, key) => (
           <Device aps={aps} data={item} token={token} user={user} key={key} />
@@ -72,6 +73,6 @@ export default function Dashboard({ aps, json, token, user }) {
           </Card>
         </Col>
       </Grid>
-    </Fragment>
+    </Suspense>
   );
 }
