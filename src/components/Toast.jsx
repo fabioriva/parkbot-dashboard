@@ -73,6 +73,7 @@ export default function Toast({ message }) {
   return (
     <Toaster
       toastOptions={{
+        position: "bottom-left",
         style: {
           background: "black",
           borderRadius: "0.25rem" /* 4px */,
