@@ -21,7 +21,7 @@ export default function Overview({ aps, json, token, user }) {
           {overview.devices.map((item, key) => (
             <Grid
               numItemsMd={1}
-              numItemsLg={item.length}
+              numItemsLg={item.length <= 3 ? item.length : 3}
               className="gap-6 items-stretch"
               key={key}
             >
