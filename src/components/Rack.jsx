@@ -53,7 +53,7 @@ export default function Rack({ aps, nr, json }) {
           id={`rack-${rack.nr}`}
         >
           <span className="text-2xl dark:text-white font-medium">
-            Simatic PLC Rack {nr}
+            Simatic PLC Rack {rack.nr}
           </span>
           {rack.cards.map((item, key) => {
             // console.log(item.module);
