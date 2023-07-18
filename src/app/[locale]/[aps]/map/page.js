@@ -9,6 +9,7 @@ const mapList = {
   alumim: lazy(() => import("@/maps/alumim")),
   "18017K": lazy(() => import("@/maps/18017K")),
   bmc: lazy(() => import("@/maps/bmc")),
+  boi: lazy(() => import("@/maps/boi")),
   chandan: lazy(() => import("@/maps/chandan")),
   // chiattone: lazy(() => import("src/maps/chiattone")),
   // donini: lazy(() => import("src/maps/donini")),
