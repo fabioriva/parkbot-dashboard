@@ -33,11 +33,11 @@ export default function Device({ advanced, aps, data, token, user }) {
       <Flex>
         <Title>{name}</Title>
         <Badge
-          color={mode.id !== 8 ? "yellow" : "blue"}
-          icon={mode.id !== 8 && WrenchIcon}
+          color={mode?.id !== 8 ? "yellow" : "blue"}
+          icon={mode?.id !== 8 && WrenchIcon}
           // tooltip={t("device-mode")}
         >
-          {t(mode.key)}
+          {t(mode?.key)}
         </Badge>
         <div className="flex items-center justify-center space-x-1">
           <Led color="red" input={LA}>

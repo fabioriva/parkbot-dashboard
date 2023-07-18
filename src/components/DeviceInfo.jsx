@@ -36,7 +36,7 @@ export default function Info({ alarms, device }) {
         </div>
       ) : (
         <div className="mt-6">
-          {mode.id !== 8 && (
+          {mode?.id !== 8 && (
             <Callout
               className="mt-3"
               title={t("device-man")}
@@ -47,7 +47,7 @@ export default function Info({ alarms, device }) {
             //   {t("device-man")}
             // </Callout>
           )}
-          {mode.id === 8 && operation === 0 && (
+          {mode?.id === 8 && operation === 0 && (
             <Callout
               className="mt-3 py-3"
               title={t("device-auto")}
@@ -58,7 +58,7 @@ export default function Info({ alarms, device }) {
             //   {t("device-auto")}
             // </Callout>
           )}
-          {mode.id === 8 && operation === 1 && (
+          {mode?.id === 8 && operation === 1 && (
             <Callout
               className="mt-3"
               title={getInfo(device, t)}
@@ -69,7 +69,7 @@ export default function Info({ alarms, device }) {
             //   {getInfo(device, t)}
             // </Callout>
           )}
-          {mode.id === 8 && operation === 2 && (
+          {mode?.id === 8 && operation === 2 && (
             <Callout
               className="mt-3"
               title={getInfo(device, t)}
