@@ -1,6 +1,5 @@
 import { useTranslations } from "next-intl";
 import {
-  // ArrowsRightLeftIcon,
   CheckCircleIcon,
   ExclamationTriangleIcon,
   WrenchIcon,
@@ -22,16 +21,13 @@ export default function Info({ device }) {
             color="rose"
             icon={ExclamationTriangleIcon}
           >
-            {alarms.map((item, key) => {
-              // console.log(item);
-              return (
-                <span key={key}>
-                  AL{item.id}&nbsp;
-                  {getAlarm(item, t)}
-                  <br />
-                </span>
-              );
-            })}
+            {alarms.map((item, key) => (
+              <span key={key}>
+                AL{item.id}&nbsp;
+                {getAlarm(item, t)}
+                <br />
+              </span>
+            ))}
           </Callout>
         </div>
       ) : (
@@ -43,9 +39,6 @@ export default function Info({ device }) {
               color="yellow"
               icon={WrenchIcon}
             />
-            // <Callout className="mt-3" title={t("mode-man")} color="yellow">
-            //   {t("device-man")}
-            // </Callout>
           )}
           {mode?.id === 8 && operation === 0 && (
             <Callout
@@ -54,31 +47,16 @@ export default function Info({ device }) {
               color="emerald"
               icon={CheckCircleIcon}
             />
-            // <Callout className="mt-3" title={t("device-ready")} color="emerald">
-            //   {t("device-auto")}
-            // </Callout>
           )}
           {mode?.id === 8 && operation === 1 && (
-            <Callout
-              className="mt-3"
-              title={getInfo(device, t)}
-              color="sky"
-              // icon={ArrowsRightLeftIcon}
-            />
-            // <Callout className="mt-3" title={t("device-ce-0")} color="blue">
-            //   {getInfo(device, t)}
-            // </Callout>
+            <Callout className="mt-3" title={getInfo(device, t)} color="sky" />
           )}
           {mode?.id === 8 && operation === 2 && (
             <Callout
               className="mt-3"
               title={getInfo(device, t)}
               color="violet"
-              // icon={ArrowsRightLeftIcon}
             />
-            // <Callout className="mt-3" title={t("device-cu-0")} color="sky">
-            //   {getInfo(device, t)}
-            // </Callout>
           )}
         </div>
       )}
