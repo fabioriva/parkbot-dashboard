@@ -60,7 +60,7 @@ export default function Device({ advanced, aps, data, token, user }) {
           )}
         </div>
       </Flex>
-      <Info alarms={data.alarms} device={data} />
+      <Info device={data} />
       {advanced && more && data.b !== undefined && (
         <div className="mt-6">
           {data.b.map((item, key) => (

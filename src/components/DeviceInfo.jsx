@@ -8,9 +8,9 @@ import {
 import { Callout } from "@tremor/react";
 import { getAlarm, getInfo } from "@/lib/localize";
 
-export default function Info({ alarms, device }) {
+export default function Info({ device }) {
   const t = useTranslations("Log");
-  const { mode, operation } = device;
+  const { alarms, mode, operation } = device;
 
   return (
     <>
