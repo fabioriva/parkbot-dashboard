@@ -30,7 +30,7 @@ export default function HeaderInfo({
       >
         {alarms}
       </Badge>
-      <Link href={`${aps.ns}/overview`}>
+      <Link href={`/${aps.ns}/overview`}>
         <Badge
           className="cursor-pointer"
           icon={UserPlusIcon}
@@ -40,7 +40,7 @@ export default function HeaderInfo({
           {entries}
         </Badge>
       </Link>
-      <Link href={`${aps.ns}/overview`}>
+      <Link href={`/${aps.ns}/overview`}>
         <Badge
           className="cursor-pointer"
           icon={UserMinusIcon}
@@ -50,7 +50,7 @@ export default function HeaderInfo({
           {exits}
         </Badge>
       </Link>
-      <Link href={`${aps.ns}/map`}>
+      <Link href={`/${aps.ns}/map`}>
         <Badge
           className="cursor-pointer"
           icon={UserIcon}
