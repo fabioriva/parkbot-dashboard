@@ -12,7 +12,7 @@ export default function Index({ params }) {
         <div className="text-center">
           <div className="w-max mx-auto mb-10 py-1 border border-blue-500 rounded-full">
             <span className="px-3 text-sm text-slate-100 tracking-tighter">
-              UI redisigned from ground up. Dark mode by default.
+              UI redesigned from ground up
             </span>
           </div>
           <span className="font-extrabold text-7xl sm:text-9xl text-transparent bg-clip-text bg-gradient-to-br from-blue-500 to-blue-800 tracking-tight">
