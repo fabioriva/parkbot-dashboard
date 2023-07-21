@@ -33,18 +33,12 @@ export default function Motor({ item }) {
         </Flex>
       </AccordionHeader>
       <AccordionBody>
-        <div className="space-y-6">
-          {/* {item.drive !== undefined && <Drive item={item.drive} />} */}
-          <div>
-            {item.encoders !== undefined &&
-              item.encoders.map((item, key) => (
-                <Position item={item} key={key} />
-              ))}
-          </div>
-          <div className="grid grid-cols-6 gap-3">
-            {item.io !== undefined &&
-              item.io.map((item, key) => <Io item={item} key={key} />)}
-          </div>
+        {/* {item.drive !== undefined && <Drive item={item.drive} />} */}
+        {item.encoders !== undefined &&
+          item.encoders.map((item, key) => <Position item={item} key={key} />)}
+        <div className="grid grid-cols-6 gap-3 mt-3">
+          {item.io !== undefined &&
+            item.io.map((item, key) => <Io item={item} key={key} />)}
         </div>
       </AccordionBody>
     </Accordion>
