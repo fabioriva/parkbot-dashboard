@@ -935,6 +935,11 @@ export default function Map(props) {
               top: 2px;
               left: 617px;
             }
+            /* Level P7 (Transfer) */
+            #s-225 {
+              top: 2px;
+              left: 2px;
+            }
           `}</style>
         </Card>
       </Col>
