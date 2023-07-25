@@ -61,13 +61,6 @@ export default function Device({ advanced, aps, data, token, user }) {
         </div>
       </Flex>
       <Info device={data} />
-      {/* {advanced && more && data.b !== undefined && (
-        <div className="mt-6">
-          {data.b.map((item, key) => (
-            <Position item={item} key={key} />
-          ))}
-        </div>
-      )} */}
       {advanced && more && <View data={data} />}
       {advanced &&
         data.d.map((action, key) => {
