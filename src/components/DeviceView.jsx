@@ -16,6 +16,7 @@ import {
 import Drive from "@/components/DriveKPI";
 import Io from "@/components/DeviceIo";
 import Motor from "@/components/Motor";
+import Silomat from "@/components/Silomat";
 
 export default function View({ data }) {
   const t = useTranslations("Log");
@@ -34,6 +35,7 @@ export default function View({ data }) {
       <TabPanels className="mt-3">
         {data.views.map((view, key) => (
           <TabPanel key={key}>
+            {view.name === "view-sil" && <Silomat sensors={view.sensors} />}
             <AccordionList className="max-w-full mx-auto mt-3">
               {/* <Accordion className="text-sm">
                 <AccordionHeader>Header</AccordionHeader>
