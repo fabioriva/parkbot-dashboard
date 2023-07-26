@@ -8,7 +8,7 @@ export default function Io({ item }) {
       color={item.status ? "emerald" : "slate"}
       tooltip={`${item.addr} ${item.label} ${item.status ? "ON" : "OFF"}`}
     >
-      <span className="text-[0.7rem]">{item.label}</span>
+      <span className="text-[0.75rem]">{item.label}</span>
     </Badge>
   );
 }

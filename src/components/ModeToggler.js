@@ -1,32 +1,3 @@
-// import { useState, useEffect } from "react";
-// import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
-// import { Tab, TabList, TabGroup } from "@tremor/react";
-
-// export default function ModeToggler() {
-//   const [mode, setMode] = useState(0);
-//   // const [mode, setMode] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
-//   useEffect(() => {
-//     const element = document.querySelector("html");
-//     element.removeAttribute("class");
-//     console.log(mode, element.getAttribute("class"));
-//     element.classList.add(mode === 0 ? "dark" : "light");
-//     console.log(mode, element.getAttribute("class"));
-//   }, [mode]);
-
-//   return (
-//     <TabGroup
-//       className="hidden sm:inline-flex w-max ml-3"
-//       index={mode}
-//       onIndexChange={(mode) => setMode(mode)}
-//     >
-//       <TabList variant="solid">
-//         <Tab icon={MoonIcon} />
-//         <Tab icon={SunIcon} />
-//       </TabList>
-//     </TabGroup>
-//   );
-// }
-
 import { useEffect } from "react";
 
 export default function ModeToggler() {
@@ -43,11 +14,11 @@ export default function ModeToggler() {
       (!("theme" in localStorage) &&
         window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
-      console.log("is dark");
+      // console.log("is dark");
       themeToggleDarkIcon.classList.remove("hidden");
       document.documentElement.classList.add("dark");
     } else {
-      console.log("is light");
+      // console.log("is light");
       themeToggleLightIcon.classList.remove("hidden");
       document.documentElement.classList.remove("dark");
     }
@@ -69,11 +40,11 @@ export default function ModeToggler() {
       if (localStorage.getItem("theme") === "dark") {
         document.documentElement.classList.remove("dark");
         localStorage.setItem("theme", "light");
-        console.log("set light");
+        // console.log("set light");
       } else {
         document.documentElement.classList.add("dark");
         localStorage.setItem("theme", "dark");
-        console.log("set dark");
+        // console.log("set dark");
       }
 
       // if NOT set via local storage previously
@@ -81,11 +52,11 @@ export default function ModeToggler() {
       if (document.documentElement.classList.contains("dark")) {
         document.documentElement.classList.add("dark");
         localStorage.setItem("theme", "dark");
-        console.log("set dark");
+        // console.log("set dark");
       } else {
         document.documentElement.classList.remove("dark");
         localStorage.setItem("theme", "light");
-        console.log("set light");
+        // console.log("set light");
       }
     }
   };

@@ -1,6 +1,5 @@
 // import Image from "next/image";
 import clsx from "clsx";
-import { Card, Text } from "@tremor/react";
 import Tooltip from "./Tooltip";
 
 const Sensor = ({ name, sensor }) => (
@@ -25,8 +24,7 @@ export default function Silomat({ sensors }) {
   // const outputs = data.slice(8);
 
   return (
-    // <Card className="mt-3 p-3">
-    <div className="border-solid border mt-6 relative">
+    <div className="border border-solid mt-6 relative">
       <Sensor sensor={sensors[0]} name="mv" />
       <Sensor sensor={sensors[1]} name="mh" />
       <Sensor sensor={sensors[2]} name="es" />
@@ -37,7 +35,7 @@ export default function Silomat({ sensors }) {
       <Sensor sensor={sensors[6]} name="eah1" />
       <Sensor sensor={sensors[7]} name="ech" />
       <Sensor sensor={sensors[6]} name="eah2" />
-      <img src={"/Silomat.png"} alt="Silomat" height={"100%"} width={"100%"} />
+      <img src={"/silomat.png"} alt="Silomat" height={"100%"} width={"100%"} />
       <style jsx global>{`
         .mv {
           left: 38%;
@@ -81,6 +79,5 @@ export default function Silomat({ sensors }) {
         }
       `}</style>
     </div>
-    // </Card>
   );
 }
