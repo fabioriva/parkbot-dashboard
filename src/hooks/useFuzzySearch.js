@@ -5,7 +5,7 @@ import { TextInput } from "@tremor/react";
 export function useFuzzySearch(list, options, placeholder) {
   const [results, setResults] = useState([]);
 
-  const textInput = (
+  const fuzzySearchInput = (
     <TextInput
       icon={MagnifyingGlassIcon}
       placeholder={placeholder}
@@ -20,7 +20,7 @@ export function useFuzzySearch(list, options, placeholder) {
   );
 
   return {
+    fuzzySearchInput,
     results,
-    textInput,
   };
 }

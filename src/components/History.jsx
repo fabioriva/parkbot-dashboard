@@ -42,7 +42,7 @@ export default function History({ aps, data, token }) {
     }
   }, [dateRange, aps, token]);
 
-  const { results, textInput } = useFuzzySearch(
+  const { fuzzySearchInput, results } = useFuzzySearch(
     history.query,
     {
       includeScore: true,
@@ -94,7 +94,7 @@ export default function History({ aps, data, token }) {
           })}
         </Text>
       </div>
-      <div className="my-6">{textInput}</div>
+      <div className="my-6">{fuzzySearchInput}</div>
       <div className="block sm:hidden">
         <List
           data={
