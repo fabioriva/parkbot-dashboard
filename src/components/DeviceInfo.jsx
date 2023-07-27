@@ -35,7 +35,7 @@ export default function Info({ device }) {
           {mode?.id !== 8 && (
             <Callout
               className="mt-3"
-              title={t("device-man")}
+              title={t("Device.man")}
               color="yellow"
               icon={WrenchIcon}
             />
@@ -43,7 +43,7 @@ export default function Info({ device }) {
           {mode?.id === 8 && operation === 0 && (
             <Callout
               className="mt-3 py-3"
-              title={t("device-auto")}
+              title={t("Device.auto")}
               color="emerald"
               icon={CheckCircleIcon}
             />

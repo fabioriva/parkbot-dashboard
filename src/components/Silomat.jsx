@@ -1,6 +1,6 @@
 // import Image from "next/image";
 import clsx from "clsx";
-import Tooltip from "./Tooltip";
+import Tooltip from "@/components/Tooltip";
 
 const Sensor = ({ name, sensor }) => (
   <Tooltip

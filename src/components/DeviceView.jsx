@@ -20,7 +20,7 @@ import Motor from "@/components/Motor";
 import Silomat from "@/components/Silomat";
 
 export default function View({ data }) {
-  const t = useTranslations("Log");
+  const t = useTranslations("Log.Device");
 
   const [index, setIndex] = useState(0);
 

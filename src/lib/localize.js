@@ -66,17 +66,17 @@ export function getInfo(data, t) {
   if (mode.id === 8) {
     switch (operation) {
       case 1:
-        if (card !== 0 && stall !== 0) return t("device-ce-2", { card, stall });
-        if (card !== 0) return t("device-ce-1", { card });
-        return t("device-ce-0");
+        if (card !== 0 && stall !== 0) return t("Device.ce-2", { card, stall });
+        if (card !== 0) return t("Device.ce-1", { card });
+        return t("Device.ce-0");
       case 2:
-        if (card !== 0 && stall !== 0) return t("device-cu-2", { card, stall });
-        if (card !== 0) return t("device-cu-1", { card });
-        return t("device-cu-0");
+        if (card !== 0 && stall !== 0) return t("Device.cu-2", { card, stall });
+        if (card !== 0) return t("Device.cu-1", { card });
+        return t("Device.cu-0");
       default:
-        return t("device-auto");
+        return t("Device.auto");
     }
   } else {
-    return t("device-man");
+    return t("Device.man");
   }
 }

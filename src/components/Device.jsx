@@ -7,6 +7,7 @@ import Info from "@/components/DeviceInfo";
 import Position from "@/components/Position";
 import Rollback from "@/components/Rollback";
 import View from "@/components/DeviceView";
+import Tooltip from "@/components/Tooltip";
 import { getInfo } from "@/lib/localize";
 
 const Led = ({ children, color, input }) => (
@@ -35,7 +36,7 @@ export default function Device({ advanced, aps, data, token, user }) {
         <Badge
           color={mode?.id !== 8 ? "yellow" : "blue"}
           icon={mode?.id !== 8 && WrenchIcon}
-          // tooltip={t("device-mode")}
+          // tooltip={t("Device.mode")}
         >
           {t(mode?.key)}
         </Badge>
@@ -50,13 +51,17 @@ export default function Device({ advanced, aps, data, token, user }) {
             LS
           </Led>
           {advanced && (
-            <button
-              type="button"
-              className="hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
-              onClick={toggleAdvanced}
+            <Tooltip
+              tooltip={more ? t("Device.view-less") : t("Device.view-more")}
             >
-              <Icon icon={more ? EyeIcon : EyeSlashIcon} />
-            </button>
+              <button
+                type="button"
+                className="hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
+                onClick={toggleAdvanced}
+              >
+                <Icon icon={more ? EyeIcon : EyeSlashIcon} />
+              </button>
+            </Tooltip>
           )}
         </div>
       </Flex>
