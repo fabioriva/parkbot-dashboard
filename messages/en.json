@@ -1,16 +1,16 @@
 {
   "Log": {
     "al-active": "Active alarms {count}",
+    "al-fallback": "No description",
     "al-fc": "{motor} sensors {name1} {name2}",
-    "al-iv": "Inverter {{nr}}",
-    "al-pn": "Profinet node {{name}}",
+    "al-iv": "Inverter {nr}",
+    "al-pn": "Profinet node {name}",
     "al-th": "{motor} thermic {name}",
     "al-to": "{motor} motor time out",
 
-    "al-fs": "Safety {{name}}",
-    "al-id": "Alarm AL{{id}}",
-
-    "al-tl": "Contactor check {{name}}",
+    "al-fs": "Safety {name}",
+    "al-id": "Alarm AL{id}",
+    "al-tl": "Contactor check {name}",
     "al-fal": "Fire Alarm",
     "al-sil-01": "Silomat traveling time out",
     "al-sil-02": "Silomat hoisting time out",
