@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { Fragment, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Text, TextInput, Flex, Button } from "@tremor/react";
+import { Text, NumberInput, Flex, Button } from "@tremor/react";
 import Dialog from "@/components/Dialog";
 import Tooltip from "@/components/Tooltip";
 import fetch, { actionResponse } from "@/lib/fetch";
@@ -16,7 +16,7 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
   const { cards, stalls, stallStatus } = definitions;
 
   const handleConfirm = async (data) => {
-    // console.log(data);
+    console.log(data, typeof data.status, typeof data.nr);
     const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/map/edit`;
     const json = await fetch(url, {
       method: "POST",
@@ -41,7 +41,7 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
   };
 
   const handleOpen = () => {
-    console.log(stall);
+    // console.log(stall);
     if (user.rights.some((right) => right === "edit-stall")) {
       setIsOpen(true);
     }
@@ -94,13 +94,13 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
           <Text>{t("dialogText", { nr: stall.nr })}</Text>
         </div>
         {/* <pre className="mt-3">Stall: {JSON.stringify(stall, null, 2)}</pre> */}
-        <TextInput
+        <NumberInput
           className="mt-3"
           placeholder={t("dialogTextInput", {
             min: 1,
             max: stalls,
           })}
-          type="number"
+          enableStepper={false}
           error={error.status}
           errorMessage={error.message}
           min={1}
