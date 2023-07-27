@@ -16,14 +16,14 @@ export function useDateRangePicker() {
     to: new Date(),
   });
 
-  const params = useParams();
+  const { locale } = useParams();
   const t = useTranslations("DateRangePicker");
 
   const dateRangePicker = (
     <DateRangePicker
       className="max-w-sm"
-      locale={locales[params.locale]}
-      maxDate={addDays(dateRange.from, 30)}
+      locale={locales[locale]}
+      // maxDate={addDays(dateRange.from, 30)}
       // options={[
       //   {
       //     value: "tdy",
