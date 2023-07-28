@@ -1,16 +1,11 @@
 import clsx from "clsx";
-import Tooltip from "./Tooltip";
+import BitInfo from "@/components/BitInfo";
+import Tooltip from "@/components/Tooltip";
 
 function Bit({ item, nr }) {
   const { addr, label, status } = item;
   const bit = addr.slice(-1);
-  const tooltip = (
-    <ul>
-      <li>{addr}</li>
-      <li>{label}</li>
-      <li>{label} info</li>
-    </ul>
-  );
+  const tooltip = <BitInfo bit={item} />;
   return (
     <div className="cursor-default">
       <Tooltip tooltip={tooltip}>

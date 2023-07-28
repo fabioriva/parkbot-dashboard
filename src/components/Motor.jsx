@@ -3,13 +3,30 @@ import {
   Accordion,
   AccordionHeader,
   AccordionBody,
+  Badge,
   Card,
   Flex,
   Text,
 } from "@tremor/react";
-import Bit from "@/components/Bit";
+import BitInfo from "@/components/BitInfo";
 import Drive from "@/components/DriveKPI";
 import Position from "@/components/Position";
+import Tooltip from "@/components/Tooltip";
+
+function Bit({ bit }) {
+  const tooltip = <BitInfo bit={bit} />;
+  return (
+    <Tooltip tooltip={tooltip}>
+      <Badge
+        className="w-full"
+        color={bit.status ? "emerald" : "slate"}
+        // tooltip={tooltip}
+      >
+        <span className="text-[0.75rem]">{bit.label}</span>
+      </Badge>
+    </Tooltip>
+  );
+}
 
 export default function Motor({ item }) {
   // console.log(item);
