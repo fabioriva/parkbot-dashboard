@@ -5,10 +5,11 @@ import {
   WrenchIcon,
 } from "@heroicons/react/24/solid";
 import { Callout } from "@tremor/react";
-import { getAlarm, getInfo } from "@/lib/localize";
+import { getInfo } from "@/lib/localize";
+import Alarm from "@/components/Alarm";
 
 export default function Info({ device }) {
-  const t = useTranslations("Log");
+  const t = useTranslations("Device");
   const { alarms, mode, operation } = device;
 
   return (
@@ -22,11 +23,9 @@ export default function Info({ device }) {
             icon={ExclamationTriangleIcon}
           >
             {alarms.map((item, key) => (
-              <span key={key}>
-                AL{item.id}&nbsp;
-                {getAlarm(item, t)}
-                <br />
-              </span>
+              <p key={key}>
+                <Alarm alarm={item} />
+              </p>
             ))}
           </Callout>
         </div>
@@ -35,7 +34,7 @@ export default function Info({ device }) {
           {mode?.id !== 8 && (
             <Callout
               className="mt-3"
-              title={t("Device.man")}
+              title={t("man")}
               color="yellow"
               icon={WrenchIcon}
             />
@@ -43,7 +42,7 @@ export default function Info({ device }) {
           {mode?.id === 8 && operation === 0 && (
             <Callout
               className="mt-3 py-3"
-              title={t("Device.auto")}
+              title={t("auto")}
               color="emerald"
               icon={CheckCircleIcon}
             />

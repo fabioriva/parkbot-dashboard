@@ -13,7 +13,7 @@ import Position from "@/components/Position";
 
 export default function Motor({ item }) {
   // console.log(item);
-  const t = useTranslations("Log.Device");
+  const t = useTranslations("Device");
 
   return (
     <Accordion>

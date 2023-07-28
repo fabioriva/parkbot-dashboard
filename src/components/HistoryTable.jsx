@@ -9,14 +9,15 @@ import {
   TableBody,
   TableCell,
   Text,
-  Badge,
+  // Badge,
 } from "@tremor/react";
+import Alarm from "@/components/Alarm";
+import FunctionMode from "@/components/FunctionMode";
 // import Pagination from "@/components/HistoryTablePagination";
-import { getAlarm } from "@/lib/localize";
 
 export default function HistoryTable({ data }) {
   // console.log(data);
-  const t = useTranslations("Log");
+  const t = useTranslations("History.Table");
 
   const defaultPageSize = 15;
   const [currentPage, setCurrentPage] = useState(1);
@@ -51,13 +52,15 @@ export default function HistoryTable({ data }) {
                     </TableCell>
                     <TableCell className="py-3">{item.device.key}</TableCell>
                     <TableCell className="py-3">
-                      ({item.mode.id})&nbsp;{t(item.mode.key)}
+                      ({item.mode.id}) <FunctionMode mode={item.mode} />
                     </TableCell>
                     <TableCell className="py-3">
                       {/* {t(item.operation.key)} */}
-                      {item.alarm !== undefined
-                        ? getAlarm(item.alarm, t)
-                        : t(item.operation.key)}
+                      {item.alarm !== undefined ? (
+                        <Alarm alarm={item.alarm} />
+                      ) : (
+                        t(item.operation.key)
+                      )}
                     </TableCell>
                     <TableCell className="py-3">
                       {item.alarm !== undefined && (

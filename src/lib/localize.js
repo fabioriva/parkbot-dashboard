@@ -1,43 +1,31 @@
-export function getAlarm(alarm, t) {
-  if (alarm === undefined) {
-    return t("al-fallback");
+export function getInfo(data, t) {
+  const { card, mode, name, operation, size, stall } = data;
+  if (mode.id === 8) {
+    switch (operation) {
+      case 1:
+        if (card !== 0 && stall !== 0) return t("ce-2", { card, stall });
+        if (card !== 0) return t("ce-1", { card });
+        return t("ce-0");
+      case 2:
+        if (card !== 0 && stall !== 0) return t("cu-2", { card, stall });
+        if (card !== 0) return t("cu-1", { card });
+        return t("cu-0");
+      default:
+        return t("auto");
+    }
+  } else {
+    return t("man");
   }
-  return t(alarm.key, alarm.query);
-  // console.log(alarm);
-  // const { id, key, query } = alarm;
-  // switch (key) {
-  //   case "al-fc":
-  //     return t("al-fc", {
-  //       id,
-  //       name1: query.name1,
-  //       name2: query.name2,
-  //       motor: t(query.motor, { numMotor: query.numMotor }),
-  //     });
-  //   case "al-th":
-  //     return t("al-th", {
-  //       id,
-  //       name: query.name,
-  //       motor: t(query.motor),
-  //     });
-  //   case "al-to":
-  //     return t("al-to", {
-  //       id,
-  //       motor: t(query.motor, { numMotor: query.numMotor }),
-  //     });
-  //   default:
-  //     // return t("op-id-1", { id });
-  //     return t(key, query);
-  // }
 }
 
 export function getLog(log, t) {
   const { alarm, card, operation, mode, stall } = log;
   switch (operation.id) {
-    case 1:
-      // return t("op-id-1", { id: alarm.id });
-      return getAlarm(alarm, t);
-    case 2:
-      return t("op-id-2", { id: alarm.id });
+    // case 1:
+    //   return getAlarm(alarm, t);
+    //   // return t("op-id-1", { id: alarm.id });
+    // case 2:
+    //   return t("op-id-2", { id: alarm.id });
     case 3:
       return t("op-id-3", { id: mode.id, label: t(mode.key) });
     case 4:
@@ -58,25 +46,5 @@ export function getLog(log, t) {
       return t("op-id-11", { card });
     default:
       return `Operation ${operation.id}`;
-  }
-}
-
-export function getInfo(data, t) {
-  const { card, mode, name, operation, size, stall } = data;
-  if (mode.id === 8) {
-    switch (operation) {
-      case 1:
-        if (card !== 0 && stall !== 0) return t("Device.ce-2", { card, stall });
-        if (card !== 0) return t("Device.ce-1", { card });
-        return t("Device.ce-0");
-      case 2:
-        if (card !== 0 && stall !== 0) return t("Device.cu-2", { card, stall });
-        if (card !== 0) return t("Device.cu-1", { card });
-        return t("Device.cu-0");
-      default:
-        return t("Device.auto");
-    }
-  } else {
-    return t("Device.man");
   }
 }

@@ -4,7 +4,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { getLog } from "@/lib/localize";
 
 export default function Toast({ message }) {
-  const t = useTranslations("Log");
+  const t = useTranslations("History.List");
 
   useEffect(() => {
     // console.log(message);
