@@ -9,7 +9,7 @@ import {
   TableBody,
   TableCell,
   Text,
-  // Badge,
+  Badge,
 } from "@tremor/react";
 import Alarm from "@/components/Alarm";
 import FunctionMode from "@/components/FunctionMode";
@@ -52,10 +52,15 @@ export default function HistoryTable({ data }) {
                     </TableCell>
                     <TableCell className="py-3">{item.device.key}</TableCell>
                     <TableCell className="py-3">
-                      ({item.mode.id}) <FunctionMode mode={item.mode} />
+                      {/* ({item.mode.id}) <FunctionMode mode={item.mode} /> */}
+                      <Badge
+                        color={item.mode.id !== 8 ? "yellow" : "blue"}
+                        // icon={item.mode?.id !== 8 && WrenchIcon}
+                      >
+                        <FunctionMode mode={item.mode} />
+                      </Badge>
                     </TableCell>
                     <TableCell className="py-3">
-                      {/* {t(item.operation.key)} */}
                       {item.alarm !== undefined ? (
                         <Alarm alarm={item.alarm} />
                       ) : (
@@ -64,18 +69,20 @@ export default function HistoryTable({ data }) {
                     </TableCell>
                     <TableCell className="py-3">
                       {item.alarm !== undefined && (
-                        // <Badge color={item.operation.id === 1 ? "rose" : "emerald"}>
-                        //   AL{item.alarm.id}
-                        // </Badge>
-                        <span
-                          className={`${
-                            item.operation.id === 1
-                              ? "text-red-500"
-                              : "text-green-500"
-                          }`}
+                        <Badge
+                          color={item.operation.id === 1 ? "rose" : "emerald"}
                         >
                           AL{item.alarm.id}
-                        </span>
+                        </Badge>
+                        // <span
+                        //   className={`${
+                        //     item.operation.id === 1
+                        //       ? "text-red-500"
+                        //       : "text-green-500"
+                        //   }`}
+                        // >
+                        //   AL{item.alarm.id}
+                        // </span>
                       )}
                     </TableCell>
                     <TableCell className="py-3">{item.card}</TableCell>

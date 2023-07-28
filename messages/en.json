@@ -158,7 +158,7 @@
     "List": {
       "op-id-1": "Alarm {id} active",
       "op-id-2": "Alarm {id} cleared",
-      "op-id-3": "Switch to mode {id} - {label}",
+      "op-id-3": "Switch to function mode {id}",
       "op-id-4": "PIN changed for card {card}",
       "op-id-5": "Parked car {card}, stall {stall}",
       "op-id-6": "Unparked car {card}, stall {stall}",
