@@ -15,7 +15,6 @@ import {
 } from "@tremor/react";
 import Drive from "@/components/DriveKPI";
 import Garage from "@/components/Garage";
-import Io from "@/components/DeviceIo";
 import Motor from "@/components/Motor";
 import Silomat from "@/components/Silomat";
 
