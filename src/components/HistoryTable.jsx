@@ -12,7 +12,7 @@ import {
   Badge,
 } from "@tremor/react";
 // import Pagination from "@/components/HistoryTablePagination";
-import { getAlarm, getInfo } from "@/lib/localize";
+import { getAlarm } from "@/lib/localize";
 
 export default function HistoryTable({ data }) {
   // console.log(data);
