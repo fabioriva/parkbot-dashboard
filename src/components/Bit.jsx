@@ -1,19 +1,12 @@
 import { Badge } from "@tremor/react";
 import { useTranslations } from "next-intl";
-import Tooltip from "./Tooltip";
+import BitInfo from "@/components/BitInfo";
+import Tooltip from "@/components/Tooltip";
 
 export default function Bit({ bit }) {
   const t = useTranslations("Bit");
-  const tooltip = (
-    <ul>
-      <li>{bit.addr}</li>
-      <li>{bit.label}</li>
-      <li>{t(bit.label)}</li>
-      <li className={bit.status ? "text-green-500" : "text-red-500"}>
-        {bit.status ? "ON" : "OFF"}
-      </li>
-    </ul>
-  );
+  const tooltip = <BitInfo bit={bit} />;
+
   return (
     <Tooltip tooltip={tooltip}>
       <Badge

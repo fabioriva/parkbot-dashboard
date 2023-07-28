@@ -8,17 +8,20 @@ import {
   StopCircleIcon,
 } from "@heroicons/react/24/solid";
 import Bit from "@/components/Bit";
+import BitInfo from "@/components/BitInfo";
+import Tooltip from "@/components/Tooltip";
 import DirectionalPanel from "./DirectionalPanel";
-// import Tooltip from "./Tooltip";
 
 const Sensor = ({ name, sensor }) => (
-  <Badge
-    className={`${name} absolute`}
-    color={sensor.status ? "green" : "slate"}
-    tooltip={`${sensor.addr} ${sensor.label} ${sensor.status ? "ON" : "OFF"}`}
-  >
-    <span className="text-[0.75rem]">{sensor.label}</span>
-  </Badge>
+  <Tooltip tooltip={<BitInfo bit={sensor} />}>
+    <Badge
+      className={`${name} absolute`}
+      color={sensor.status ? "green" : "slate"}
+      // tooltip={`${sensor.addr} ${sensor.label} ${sensor.status ? "ON" : "OFF"}`}
+    >
+      <span className="text-[0.75rem]">{sensor.label}</span>
+    </Badge>
+  </Tooltip>
 );
 
 export default function Garage({ panel, sensors }) {
