@@ -7,8 +7,8 @@ import {
   Flex,
   Text,
 } from "@tremor/react";
+import Bit from "@/components/Bit";
 import Drive from "@/components/DriveKPI";
-import Io from "@/components/DeviceIo";
 import Position from "@/components/Position";
 
 export default function Motor({ item }) {
@@ -35,7 +35,7 @@ export default function Motor({ item }) {
           item.encoders.map((item, key) => <Position item={item} key={key} />)}
         <div className="mt-3 grid grid-cols-6 gap-3">
           {item.io !== undefined &&
-            item.io.map((item, key) => <Io item={item} key={key} />)}
+            item.io.map((item, key) => <Bit bit={item} key={key} />)}
         </div>
       </AccordionBody>
     </Accordion>

@@ -14,7 +14,7 @@ import {
 //   AccordionHeader,
 //   AccordionBody,
 // } from "@tremor/react";
-// import Io from "@/components/DeviceIo";
+// import Bit from "@/components/Bit";
 
 const Signal = ({ color, icon, output }) => (
   <Icon
@@ -50,7 +50,7 @@ export default function DirectionalPanel({ outputs }) {
     //   <AccordionBody>
     //     <div className="grid grid-cols-6 gap-3">
     //       {item.data.map((item, key) => (
-    //         <Io item={item} key={key} />
+    //         <Bit bit={item} key={key} />
     //       ))}
     //     </div>
     //   </AccordionBody>

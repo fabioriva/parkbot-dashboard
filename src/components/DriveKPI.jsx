@@ -2,12 +2,12 @@ import {
   Accordion,
   AccordionHeader,
   AccordionBody,
-  Badge,
   Flex,
   Tracker,
   Text,
   Title,
 } from "@tremor/react";
+import Bit from "@/components/Bit";
 
 export default function Drive({ item }) {
   // console.log(item);
@@ -26,14 +26,15 @@ export default function Drive({ item }) {
           <div className="w-full">{item.name}</div>
           <div>{item.speed}&nbsp;Hz</div>
           <div>{item.current}&nbsp;A</div>
-          <Badge
+          <Bit bit={enable} />
+          {/* <Badge
             color={enable.status ? "emerald" : "slate"}
             tooltip={`${enable.addr} ${enable.label} ${
               enable.status ? "ON" : "OFF"
             }`}
           >
             <span className="text-[0.7rem]">{enable.label}</span>
-          </Badge>
+          </Badge> */}
         </Flex>
       </AccordionHeader>
       <AccordionBody>

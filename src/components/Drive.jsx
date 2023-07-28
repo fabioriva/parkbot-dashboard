@@ -1,4 +1,5 @@
-import { Badge, Card, Flex, Tracker, Text, Title, Metric } from "@tremor/react";
+import { Card, Flex, Tracker, Text, Title, Metric } from "@tremor/react";
+import Bit from "@/components/Bit";
 
 export default function Drive({ item }) {
   // console.log(item);
@@ -7,14 +8,7 @@ export default function Drive({ item }) {
     <Card className="max-w-sm">
       <Flex>
         <Title>Drive {item.name}</Title>
-        <Badge
-          color={enable.status ? "emerald" : "slate"}
-          tooltip={`${enable.addr} ${enable.label} ${
-            enable.status ? "ON" : "OFF"
-          }`}
-        >
-          <span className="text-[0.7rem]">{enable.label}</span>
-        </Badge>
+        <Bit bit={enable} />
       </Flex>
       <Flex justifyContent="between" className="mt-3">
         <Text>0</Text>
