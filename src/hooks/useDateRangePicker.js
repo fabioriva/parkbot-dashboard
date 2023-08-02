@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useParams } from "next/navigation";
-import { addDays, subDays } from "date-fns";
+import { /*addDays,*/ subDays } from "date-fns";
 import { enUS, it } from "date-fns/locale";
 import { useTranslations } from "next-intl";
 import { DateRangePicker } from "@tremor/react";
@@ -45,7 +45,8 @@ export function useDateRangePicker() {
       // ]}
       selectPlaceholder={t("dateRangeDropdownPlaceholder")}
       placeholder={t("dateRangePlaceholder")}
-      defaultValue={dateRange}
+      // defaultValue={dateRange}
+      value={dateRange}
       onValueChange={setDateRange}
     />
   );
