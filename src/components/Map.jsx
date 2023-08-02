@@ -32,12 +32,13 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
     setIsOpen(false);
   };
 
-  const handleOnChange = (e) => {
-    const n = parseInt(e.target.value);
+  const handleOnValueChange = (value) => {
+    const n = parseInt(value);
     n < 1 || n > cards
       ? setError({ status: true, message: "Out of range" })
       : setError({ status: false, message: "" });
-    setValue(e.target.value);
+    console.log("onValueChange", value, n);
+    setValue(value);
   };
 
   const handleOpen = () => {
@@ -100,13 +101,12 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
             min: 1,
             max: stalls,
           })}
-          enableStepper={false}
           error={error.status}
           errorMessage={error.message}
           min={1}
           max={cards}
           value={value}
-          onChange={handleOnChange}
+          onValueChange={handleOnValueChange}
         />
         <Flex justifyContent="end" className="space-x-3 mt-6">
           <Button variant="secondary" onClick={() => setIsOpen(false)}>
