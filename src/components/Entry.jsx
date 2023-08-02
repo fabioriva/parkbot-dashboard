@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Button, Flex, Text, TextInput } from "@tremor/react";
+import { Button, Flex, Text, NumberInput } from "@tremor/react";
 import Dialog from "@/components/Dialog";
 import fetch, { actionResponse } from "@/lib/fetch";
 
@@ -26,12 +26,12 @@ export default function Operation({ action, aps, disabled, token }) {
     setIsOpen(false);
   };
 
-  const handleOnChange = (e) => {
-    const n = parseInt(e.target.value);
-    n < action.min || n > action.max
-      ? setError({ status: true, message: t("errorText") })
+  const handleOnValueChange = (value) => {
+    const n = parseInt(value);
+    n < 1 || n > cards
+      ? setError({ status: true, message: "errorText" })
       : setError({ status: false, message: "" });
-    setValue(e.target.value);
+    setValue(value);
   };
 
   const handleOpen = () => {
@@ -56,19 +56,18 @@ export default function Operation({ action, aps, disabled, token }) {
             {t("Operation.dialogText", { min: action.min, max: action.max })}
           </Text>
         </div>
-        <TextInput
+        <NumberInput
           className="mt-3"
           placeholder={t("Operation.dialogTextInput", {
             min: action.min,
             max: action.max,
           })}
-          type="number"
           error={error.status}
           errorMessage={error.message}
           min={action.min}
           max={action.max}
           value={value}
-          onChange={handleOnChange}
+          onValueChange={handleOnValueChange}
         />
         <Flex justifyContent="end" className="space-x-3 mt-6">
           <Button variant="secondary" onClick={() => setIsOpen(false)}>
