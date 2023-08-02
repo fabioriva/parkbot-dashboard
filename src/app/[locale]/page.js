@@ -2,7 +2,7 @@ import { Inter } from "next/font/google";
 import Link from "next-intl/link";
 import { useTranslations } from "next-intl";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export default function Index({ params }) {
   const t = useTranslations("Index");
@@ -12,7 +12,7 @@ export default function Index({ params }) {
         <div className="text-center">
           <div className="w-max mx-auto mb-10 py-1 border border-blue-500 rounded-full">
             <span className="px-3 text-sm text-slate-100 tracking-tighter">
-              UI redesigned from ground up
+              UI redesigned from ground up. Light/Dark theme.
             </span>
           </div>
           <span className="font-extrabold text-7xl sm:text-9xl text-transparent bg-clip-text bg-gradient-to-br from-blue-500 to-blue-800 tracking-tight">

@@ -1,9 +1,13 @@
 import "../globals.css";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import { useLocale } from "next-intl";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({
+//   subsets: ["latin"],
+//   display: "swap",
+//   variable: "--font-inter",
+// });
 
 export const metadata = {
   title: "parkbot",
@@ -20,7 +24,12 @@ export default function RootLayout({ children, params }) {
 
   return (
     <html lang={locale}>
-      <body className={inter.className}>{children}</body>
+      <body
+      // className={inter.className}
+      // className={`${inter.variable}`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
