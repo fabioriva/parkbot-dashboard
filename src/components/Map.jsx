@@ -37,7 +37,6 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
     n < 1 || n > cards
       ? setError({ status: true, message: "Out of range" })
       : setError({ status: false, message: "" });
-    console.log("onValueChange", value, n);
     setValue(value);
   };
 
