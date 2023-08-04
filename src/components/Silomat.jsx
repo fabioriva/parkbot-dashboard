@@ -1,11 +1,10 @@
 // import Image from "next/image";
 import clsx from "clsx";
+import BitInfo from "@/components/BitInfo";
 import Tooltip from "@/components/Tooltip";
 
 const Sensor = ({ name, sensor }) => (
-  <Tooltip
-    tooltip={`${sensor.addr} ${sensor.label} ${sensor.status ? "ON" : "OFF"}`}
-  >
+  <Tooltip tooltip={<BitInfo bit={sensor} />}>
     <div
       className={clsx(
         `${name} w-4 h-4 rounded-full border-solid border absolute`,

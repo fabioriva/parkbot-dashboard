@@ -1,5 +1,4 @@
 import { useTranslations } from "next-intl";
-import Tooltip from "./Tooltip";
 
 export default function BitInfo({ bit }) {
   const t = useTranslations("Bit");

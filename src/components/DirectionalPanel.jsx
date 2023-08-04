@@ -14,14 +14,14 @@ import {
 //   AccordionHeader,
 //   AccordionBody,
 // } from "@tremor/react";
-// import Bit from "@/components/Bit";
+import BitInfo from "@/components/BitInfo";
 
 const Signal = ({ color, icon, output }) => (
   <Icon
     // size="md"
     icon={icon}
     color={output.status ? color : "slate"}
-    tooltip={`${output.addr} ${output.label} ${output.status ? "ON" : "OFF"}`}
+    tooltip={<BitInfo bit={output} />}
   />
 );
 
