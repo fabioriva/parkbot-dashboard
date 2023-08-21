@@ -20,7 +20,7 @@ function ViewMore({ aps, role, roles }) {
   const t = useTranslations("Buttons");
 
   return (
-    <Flex className="mt-6 pt-4 border-t">
+    <Flex className="mt-6 pt-4">
       <Button
         size="xs"
         variant="light"
