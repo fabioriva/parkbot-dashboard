@@ -10,7 +10,7 @@
     "pm2": "NODE_ENV=production pm2 start npm --name parkbot-dashboard -- start"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.16",
+    "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
     "@tremor/react": "^3.6.0",
     "autoprefixer": "10.4.14",
