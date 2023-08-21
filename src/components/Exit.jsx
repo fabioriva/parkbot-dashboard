@@ -28,8 +28,8 @@ export default function Operation({ action, aps, disabled, token }) {
 
   const handleOnValueChange = (value) => {
     const n = parseInt(value);
-    n < 1 || n > cards
-      ? setError({ status: true, message: "errorText" })
+    n < action.min || n > action.max
+      ? setError({ status: true, message: t("Operation.errorText") })
       : setError({ status: false, message: "" });
     setValue(value);
   };

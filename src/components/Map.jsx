@@ -35,7 +35,7 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
   const handleOnValueChange = (value) => {
     const n = parseInt(value);
     n < 1 || n > cards
-      ? setError({ status: true, message: "Out of range" })
+      ? setError({ status: true, message: "card number out of range" })
       : setError({ status: false, message: "" });
     setValue(value);
   };

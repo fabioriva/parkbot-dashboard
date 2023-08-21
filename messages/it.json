@@ -356,7 +356,7 @@
       "dialogTitle": "{operation}",
       "dialogText": "Inserisci un numero di tessera {min} - {max}",
       "dialogTextInput": "Inserisci un numero di tessera {min} - {max}",
-      "errorText": "Nuomero di tessera fuori campo"
+      "errorText": "Numero di tessera fuori campo"
     },
     "Rollback": {
       "button": "Rollback",
