@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { Select, SelectItem } from "@tremor/react";
 import { ArrowLeftOnRectangleIcon } from "@heroicons/react/20/solid";
 import pages from "@/constants/pages";
+import { isAuthorized } from "@/lib/auth";
 
 export default function Menu({ aps, user }) {
   const router = useRouter();
@@ -17,7 +18,7 @@ export default function Menu({ aps, user }) {
     <Select className="max-w-xs ml-3" placeholder={t("selectPlaceholder")}>
       {pages.map((item, key) => (
         <SelectItem
-          disabled={!user.roles.some((role) => role === item.role)}
+          disabled={!isAuthorized(item.role, user.roles)}
           icon={item.icon}
           value={item.role}
           onClick={() => router.push(`/${aps.ns}/${item.role}`)}
@@ -25,7 +26,7 @@ export default function Menu({ aps, user }) {
         >
           <span
             className={
-              user.roles.some((role) => role === item.role)
+              isAuthorized(item.role, user.roles)
                 ? "text-slate-600 dark:text-slate-300"
                 : "text-slate-300 dark:text-slate-600"
             }

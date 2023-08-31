@@ -51,7 +51,13 @@ export function expireUserCookie(res) {
 }
 
 /**
- * Verifies user authorizations
+ * Verifies user rights
  */
-export const isAuthorized = (user, rights) =>
+export const isAllowed = (user, rights) =>
   rights.some((right) => user.rights.includes(right));
+
+/**
+ * Verifies user roles
+ */
+export const isAuthorized = (page, roles) =>
+  page === "settings" || roles.some((role) => role === page);

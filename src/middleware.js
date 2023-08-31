@@ -2,7 +2,7 @@ import createIntlMiddleware from "next-intl/middleware";
 import { NextResponse } from "next/server";
 import apsList from "@/constants/aps";
 import i18n from "@/constants/i18n";
-import { verifyAuth } from "@/lib/auth";
+import { isAuthorized, verifyAuth } from "@/lib/auth";
 
 const redirect = (req) => NextResponse.redirect(new URL("/", req.url));
 // const redirect = (req) =>
@@ -29,10 +29,7 @@ export async function middleware(request) {
     // verify aps
     if (verified.payload.aps !== aps.ns) return redirect(request);
     // verify page role
-    if (
-      segments[3] !== "home" &&
-      !verified.payload.roles.some((role) => role === segments[3]) // _page)
-    )
+    if (!isAuthorized(segments[3], verified.payload.roles))
       return redirect(request);
   }
   return response;

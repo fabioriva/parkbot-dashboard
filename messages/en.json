@@ -447,6 +447,7 @@
         "history": "Logs",
         "statistics": "Statistics",
         "notifications": "Notifications",
+        "settings": "Settings",
         "logout": "Logout",
         "selectPlaceholder": "Go to page"
       }

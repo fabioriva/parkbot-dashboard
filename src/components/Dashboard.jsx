@@ -10,6 +10,7 @@ import Device from "@/components/Device";
 import HistoryList from "@/components/HistoryList";
 import Loading from "@/components/Loading";
 import Occupancy from "@/components/Occupancy";
+import { isAuthorized } from "@/lib/auth";
 import fetcher from "@/lib/fetch";
 import useSWR from "swr";
 
@@ -26,7 +27,8 @@ function ViewMore({ aps, role, roles }) {
         variant="light"
         icon={ArrowRightIcon}
         iconPosition="right"
-        disabled={!roles.some((role) => role === role)}
+        // disabled={!roles.some((role) => role === role)}
+        disabled={!isAuthorized(role, roles)}
         onClick={() => router.push(`/${aps}/${role}`)}
       >
         {t("button-more")}
