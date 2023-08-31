@@ -21,8 +21,6 @@ export default function Settings({ aps, token, user }) {
   const [newPassword, setNewPassword] = useState(initialState);
   const [confirmPassword, setConfirmPassword] = useState(initialState);
 
-  // console.log(aps, token, user);
-
   const handleCurrentPassword = (e) => {
     setCurrentPassword({
       ...currentPassword,
@@ -34,7 +32,6 @@ export default function Settings({ aps, token, user }) {
   };
 
   const handleNewPassword = (e) => {
-    // setNewPassword({ ...newPassword, value: e.target.value });
     pattern.test(e.target.value)
       ? setNewPassword({
           ...newPassword,
@@ -54,7 +51,6 @@ export default function Settings({ aps, token, user }) {
   };
 
   const handleConfirmPassword = (e) => {
-    // setConfirmPassword({ ...newPassword, value: e.target.value });
     pattern.test(e.target.value)
       ? setConfirmPassword({
           ...confirmPassword,
