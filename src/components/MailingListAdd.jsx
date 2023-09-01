@@ -32,7 +32,6 @@ export default function MailingList({ aps, disabled, token }) {
       },
       body: JSON.stringify({ email: mail.value, name: name.value }),
     });
-    // console.log(res);
     setMail(initialState);
     setName(initialState);
   };
@@ -51,7 +50,7 @@ export default function MailingList({ aps, disabled, token }) {
       : setMail({
           ...mail,
           error: true,
-          errorMessage: t("xxx"),
+          errorMessage: t("mailError"),
           isValid: false,
           value: e.target.value,
         });
@@ -69,7 +68,7 @@ export default function MailingList({ aps, disabled, token }) {
       : setName({
           ...name,
           error: true,
-          errorMessage: t("yyy"),
+          errorMessage: t("nameError"),
           isValid: false,
           value: e.target.value,
         });
@@ -99,7 +98,6 @@ export default function MailingList({ aps, disabled, token }) {
       />
       <Button
         icon={UserPlusIcon}
-        // variant="light"
         onClick={handleAddItem}
         disabled={disabled || !mail.isValid || !name.isValid}
       >
