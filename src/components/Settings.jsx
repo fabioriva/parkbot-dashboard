@@ -4,19 +4,20 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Button, Text, TextInput, Title } from "@tremor/react";
 import { KeyIcon, UserIcon } from "@heroicons/react/20/solid";
+import fetch, { actionResponse } from "@/lib/fetch";
 
 const initialState = {
   error: false,
   errorMessage: "",
-  // isValid: false,
   value: "",
 };
 
-// Minimum eight characters, at least one letter, one number and one special character:
 const pattern =
-  /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+  /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-,;.:]).{8,}$/;
 
 export default function Settings({ aps, token, user }) {
+  const t = useTranslations("Settings");
+
   const [currentPassword, setCurrentPassword] = useState(initialState);
   const [newPassword, setNewPassword] = useState(initialState);
   const [confirmPassword, setConfirmPassword] = useState(initialState);
@@ -26,7 +27,6 @@ export default function Settings({ aps, token, user }) {
       ...currentPassword,
       error: false,
       errorMessage: "",
-      // isValid: true,
       value: e.target.value,
     });
   };
@@ -37,15 +37,12 @@ export default function Settings({ aps, token, user }) {
           ...newPassword,
           error: false,
           errorMessage: "",
-          // isValid: true,
           value: e.target.value,
         })
       : setNewPassword({
           ...newPassword,
           error: true,
-          errorMessage:
-            "Min 8 characters, 1 letter, 1 number and 1 special character",
-          // isValid: false,
+          errorMessage: t("errorStrength"),
           value: e.target.value,
         });
   };
@@ -56,28 +53,22 @@ export default function Settings({ aps, token, user }) {
           ...confirmPassword,
           error: false,
           errorMessage: "",
-          // isValid: true,
           value: e.target.value,
         })
       : setConfirmPassword({
           ...confirmPassword,
           error: true,
-          errorMessage:
-            "Min 8 characters, 1 letter, 1 number and 1 special character",
-          // isValid: false,
+          errorMessage: t("errorStrength"),
           value: e.target.value,
         });
   };
 
   const handleChangePassowrd = async () => {
-    console.log(currentPassword.value);
-    console.log(newPassword.value);
-    console.log(confirmPassword.value);
     if (currentPassword.value === "") {
       setCurrentPassword({
         ...currentPassword,
         error: true,
-        errorMessage: "Insert password",
+        errorMessage: t("errorRequired"),
       });
       return;
     }
@@ -85,7 +76,7 @@ export default function Settings({ aps, token, user }) {
       setNewPassword({
         ...newPassword,
         error: true,
-        errorMessage: "Insert password",
+        errorMessage: t("errorRequired"),
       });
       return;
     }
@@ -93,41 +84,34 @@ export default function Settings({ aps, token, user }) {
       setConfirmPassword({
         ...confirmPassword,
         error: true,
-        errorMessage: "Insert password",
+        errorMessage: t("errorRequired"),
       });
       return;
     }
-    // if (!pattern.test(newPassword)) {
-    //   setNewPassword({
-    //     ...newPassword,
-    //     error: true,
-    //     errorMessage:
-    //       "Min 8 characters, 1 letter, 1 number and 1 special character",
-    //     // isValid: false,
-    //   });
-    // }
     if (newPassword.value !== confirmPassword.value) {
       setConfirmPassword({
         ...confirmPassword,
         error: true,
-        errorMessage: "Password doesn't match",
-        // isValid: false,
+        errorMessage: t("errorMatch"),
       });
       return;
     }
-
-    console.log("ALL GOOD");
-    // const res = await global.fetch("/api/password", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({
-    //     username: user.username,
-    //     current: currentPassword.value,
-    //     password: newPassword.value,
-    //   }),
-    // });
-    // const json = await res.json();
-    // console.log(json);
+    const res = await global.fetch("/api/password", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: user.username,
+        current: currentPassword.value,
+        password: newPassword.value,
+      }),
+    });
+    const json = await res.json();
+    actionResponse({
+      message: res.ok
+        ? t("success", { username: user.username })
+        : json.message,
+      severity: res.ok ? "success" : "warning",
+    });
     resetAll();
   };
 
@@ -139,15 +123,17 @@ export default function Settings({ aps, token, user }) {
 
   return (
     <div className="max-w-sm mt-3">
-      <Text>
-        Change password for user{" "}
-        <span className="text-blue-500">{user.username}</span>
+      <Text className="text-black dark:text-white">
+        {t("text1")} <span className="text-blue-500">{user.username}</span>
+      </Text>
+      <Text className="mt-3">
+        {t("text2")}: <span>{t("text3")}</span>
       </Text>
       <TextInput
         className="mt-3"
         icon={KeyIcon}
         type="password"
-        placeholder="Current password"
+        placeholder={t("placeholderCurrent")}
         error={currentPassword.error}
         errorMessage={currentPassword.errorMessage}
         value={currentPassword.value}
@@ -157,7 +143,7 @@ export default function Settings({ aps, token, user }) {
         className="mt-3"
         icon={KeyIcon}
         // type="password"
-        placeholder="New password"
+        placeholder={t("placeholderNew")}
         error={newPassword.error}
         errorMessage={newPassword.errorMessage}
         value={newPassword.value}
@@ -167,7 +153,7 @@ export default function Settings({ aps, token, user }) {
         className="mt-3"
         icon={KeyIcon}
         // type="password"
-        placeholder="Confirm password"
+        placeholder={t("placeholderConfirm")}
         error={confirmPassword.error}
         errorMessage={confirmPassword.errorMessage}
         value={confirmPassword.value}
@@ -175,12 +161,12 @@ export default function Settings({ aps, token, user }) {
       />
       <Button
         className="mt-3 w-full"
-        // disabled={
-        //   currentPassword.error || newPassword.error || confirmPassword.error
-        // }
+        disabled={
+          currentPassword.error || newPassword.error || confirmPassword.error
+        }
         onClick={handleChangePassowrd}
       >
-        Change password
+        {t("buttonChange")}
       </Button>
     </div>
   );

@@ -518,6 +518,19 @@
       "dialogConfirm": "Confirm"
     }
   },
+  "Settings": {
+    "text1": "Change password for user",
+    "text2": "Password strength",
+    "text3": "Minimum eight characters, at least one letter, one number and one special character.",
+    "buttonChange": "Change password",
+    "placeholderConfirm": "Confirm new password",
+    "placeholderCurrent": "Enter current password",
+    "placeholderNew": "Enter new password",
+    "errorRequired": "Password is required",
+    "errorStrength": "Min 8 characters, 1 letter, 1 number and 1 special character",
+    "errorMatch": "Password doesn't match",
+    "success": "Password changed for user {username}"
+  },
   "Signin": {
     "title": "Sign in to your Parkbot account",
     "username": "Username",
