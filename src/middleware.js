@@ -5,32 +5,22 @@ import i18n from "@/constants/i18n";
 import { isAuthorized, verifyAuth } from "@/lib/auth";
 
 const redirect = (req) => NextResponse.redirect(new URL("/", req.url));
-// const redirect = (req) =>
-//   new NextResponse(
-//     JSON.stringify({ success: false, message: "authentication failed" }),
-//     { status: 401, headers: { "content-type": "application/json" } }
-//   );
 
 export async function middleware(request) {
   const handleI18nRouting = createIntlMiddleware(i18n);
   const response = handleI18nRouting(request);
   const segments = request.nextUrl.pathname.split("/");
   const aps = apsList.find((item) => item.ns === segments[2]);
-  // Check protected pages
   if (aps) {
-    // get token
     const token = request.cookies.get(process.env.USER_TOKEN);
     if (!token?.value) return redirect(request);
-    // verify token
     const verified = await verifyAuth(token.value).catch((e) =>
       console.error(e)
     );
     if (!verified) return redirect(request);
-    // verify aps
-    if (verified.payload.aps !== aps.ns) return redirect(request);
-    // verify page role
+    if (verified.payload.aps !== aps.ns) return redirect(request); // verify aps
     if (!isAuthorized(segments[3], verified.payload.roles))
-      return redirect(request);
+      return redirect(request); // verify page role
   }
   return response;
 }
