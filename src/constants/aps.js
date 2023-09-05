@@ -14,6 +14,7 @@ const apsList = [
   { ns: "kg", name: "Kaveri Gold, Mumbai, 🇮🇳" },
   { ns: "knl", name: "Kamla Nagar (Left), New Delhi, 🇮🇳" },
   { ns: "knr", name: "Kamla Nagar (Right), New Delhi, 🇮🇳" },
+  { ns: "matalon", name: "Matalon, Tel Aviv, 🇮🇱" },
   { ns: "mesacon", name: "Mesacon Jewel, Mumbai, 🇮🇳" },
   { ns: "muse", name: "The Muse, Miami, 🇺🇸" },
   { ns: "nhidcl", name: "NHIDCL, New Delhi, 🇮🇳" },

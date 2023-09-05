@@ -20,6 +20,7 @@ const mapList = {
   kg: lazy(() => import("@/maps/kg")),
   knl: lazy(() => import("@/maps/kn")),
   knr: lazy(() => import("@/maps/kn")),
+  matalon: lazy(() => import("@/maps/matalon")),
   mesacon: lazy(() => import("@/maps/mesacon")),
   muse: lazy(() => import("@/maps/muse")),
   nhidcl: lazy(() => import("@/maps/nhidcl")),
