@@ -4,7 +4,7 @@
     "al-fc": "{motor} sensori {name1} {name2}",
     "al-iv": "Inverter {nr}",
     "al-pn": "Profinet nodo {name}",
-    "al-th": "termica protezione {motor} {name}",
+    "al-th": "Termica protezione {name}",
     "al-to": "time out motore {motor}",
     "al-fs": "Safety {name}",
     "al-id": "Allarme AL{id}",
