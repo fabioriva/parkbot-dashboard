@@ -6,7 +6,7 @@ export default function Bit({ bit }) {
 
   return (
     <Badge
-      // className="w-full"
+      className="w-12"
       color={bit.status ? "emerald" : "slate"}
       tooltip={tooltip}
     >
