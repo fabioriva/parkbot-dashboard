@@ -1,3 +1,5 @@
+import Alarm from "@/components/Alarm";
+
 export function getInfo(data, t) {
   const { card, mode, name, operation, size, stall } = data;
   if (mode.id === 8) {
@@ -21,11 +23,12 @@ export function getInfo(data, t) {
 export function getLog(log, t) {
   const { alarm, card, operation, mode, stall } = log;
   switch (operation.id) {
-    // case 1:
-    //   return getAlarm(alarm, t);
-    //   // return t("op-id-1", { id: alarm.id });
-    // case 2:
-    //   return t("op-id-2", { id: alarm.id });
+    case 1:
+      // return t("op-id-1", { id: alarm.id });
+      return <Alarm alarm={alarm} />;
+    case 2:
+      // return t("op-id-2", { id: alarm.id });
+      return <Alarm alarm={alarm} />;
     case 3:
       // return t("op-id-3", { id: mode.id, label: t(mode.key) });
       return t("op-id-3", { id: mode.id });

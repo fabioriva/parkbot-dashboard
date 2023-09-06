@@ -10,7 +10,6 @@ import {
   WrenchScrewdriverIcon,
 } from "@heroicons/react/24/solid";
 import { Bold, Flex, Icon, List, ListItem, Text } from "@tremor/react";
-import Alarm from "@/components/Alarm";
 import FunctionMode from "@/components/FunctionMode";
 import { getLog } from "@/lib/localize";
 
@@ -107,13 +106,7 @@ export default function HistoryList({ data }) {
                       {item.device.key} - <FunctionMode mode={item.mode} />
                     </Bold>
                   </Text>
-                  <Text className="truncate">
-                    {item.alarm !== undefined ? (
-                      <Alarm alarm={item.alarm} />
-                    ) : (
-                      getLog(item, t)
-                    )}
-                  </Text>
+                  <Text className="truncate">{getLog(item, t)}</Text>
                 </div>
               </Flex>
               <Text className="text-right">
