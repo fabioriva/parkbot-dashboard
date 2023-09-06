@@ -8,7 +8,7 @@ import Level from "@/components/Map";
 export function useMap({ aps, json, token, user }) {
   // console.log(aps, json, token, user);
   const [map, setMap] = useState(json);
-  const [view, setView] = useState("1");
+  const [view, setView] = useState("2");
 
   const t = useTranslations("Map.SelectView");
 
