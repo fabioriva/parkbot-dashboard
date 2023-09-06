@@ -96,7 +96,7 @@ export default function Position({ item }) {
         </Flex>
       </Flex>
       <ProgressBar
-        // className="mt-1"
+        className="mt-1"
         value={state.percent}
         showAnimation={false}
       />
