@@ -22,16 +22,18 @@ export default function Info({ device }) {
             color="rose"
             icon={ExclamationTriangleIcon}
           >
-            {alarms.map((item, key) => (
-              <p key={key}>
-                <Alarm alarm={item} />
-              </p>
-            ))}
+            <ul className="list-none">
+              {alarms.map((item, key) => (
+                <li key={key}>
+                  <Alarm alarm={item} />
+                </li>
+              ))}
+            </ul>
           </Callout>
         </div>
       ) : (
         <div className="mt-6">
-          {mode?.id !== 8 && (
+          {mode.id !== 8 && (
             <Callout
               className="mt-3"
               title={t("man")}
@@ -39,7 +41,7 @@ export default function Info({ device }) {
               icon={WrenchIcon}
             />
           )}
-          {mode?.id === 8 && operation === 0 && (
+          {mode.id === 8 && operation === 0 && (
             <Callout
               className="mt-3 py-3"
               title={t("auto")}
@@ -47,10 +49,10 @@ export default function Info({ device }) {
               icon={CheckCircleIcon}
             />
           )}
-          {mode?.id === 8 && operation === 1 && (
+          {mode.id === 8 && operation === 1 && (
             <Callout className="mt-3" title={getInfo(device, t)} color="sky" />
           )}
-          {mode?.id === 8 && operation === 2 && (
+          {mode.id === 8 && operation === 2 && (
             <Callout
               className="mt-3"
               title={getInfo(device, t)}

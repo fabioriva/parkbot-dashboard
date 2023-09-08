@@ -34,8 +34,8 @@ export default function Device({ advanced, aps, data, token, user }) {
       <Flex>
         <Title>{name}</Title>
         <Badge
-          color={mode?.id !== 8 ? "yellow" : "blue"}
-          icon={mode?.id !== 8 && WrenchIcon}
+          color={mode.id !== 8 ? "yellow" : "blue"}
+          icon={mode.id !== 8 && WrenchIcon}
         >
           <FunctionMode mode={mode} />
         </Badge>
