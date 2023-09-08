@@ -14,6 +14,7 @@ const mapList = {
   // chiattone: lazy(() => import("src/maps/chiattone")),
   // donini: lazy(() => import("src/maps/donini")),
   // hdante: lazy(() => import("src/maps/hdante")),
+  herzel: lazy(() => import("@/maps/herzel")),
   ironbank: lazy(() => import("@/maps/ironbank")),
   // jhn: lazy(() => import("src/maps/jhn")),
   // jhs: lazy(() => import("src/maps/jhs")),
