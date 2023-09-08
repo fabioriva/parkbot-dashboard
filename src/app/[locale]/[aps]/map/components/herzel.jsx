@@ -22,7 +22,7 @@ export default function Map(props) {
           <style jsx global>{`
             .l {
               height: 222px;
-              width: 660px;
+              width: 661px;
             }
             #el-1 {
               top: 64px;
