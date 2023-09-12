@@ -315,6 +315,9 @@ export default function Module({ module }) {
           #card-10 {
             left: 805px;
           }
+          #card-11 {
+            left: 894px;
+          }
         `}
       </style>
     </div>

@@ -1,6 +1,8 @@
 // A list of all aps that are supported
 const apsList = [
   { ns: "alumim", name: "Alumim, Tel Aviv, 🇮🇱" },
+  { ns: "aminadav16", name: "Aminadav 16, Tel Aviv, 🇮🇱" },
+  { ns: "aminadav1820", name: "Aminadav 18, 20, Tel Aviv, 🇮🇱" },
   { ns: "18017K", name: "18017K, Bangkok, 🇹🇭" },
   { ns: "bmc", name: "BMC, Mumbai, 🇮🇳" },
   { ns: "boi", name: "Bank of India, Mumbai, 🇮🇳" },
