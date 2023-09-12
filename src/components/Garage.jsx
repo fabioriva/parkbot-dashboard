@@ -17,7 +17,8 @@ const Sensor = ({ name, sensor }) => (
     color={sensor.status ? "green" : "slate"}
     tooltip={<BitInfo bit={sensor} />}
   >
-    <span className="text-[0.75rem]">{sensor.label}</span>
+    {/* <span className="text-[0.75rem]">{sensor.label}</span> */}
+    <span className="text-[0.75rem]">{name}</span>
   </Badge>
 );
 
