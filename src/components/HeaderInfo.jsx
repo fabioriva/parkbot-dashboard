@@ -23,13 +23,16 @@ export default function HeaderInfo({
 
   return (
     <>
-      <Badge
-        icon={alarms > 0 ? BellAlertIcon : BellSlashIcon}
-        color={alarms > 0 ? "red" : "emerald"}
-        tooltip={t("alarms", { numAlarms: alarms })}
-      >
-        {alarms}
-      </Badge>
+      <Link href={`/${aps.ns}/overview`}>
+        <Badge
+          className="cursor-pointer"
+          icon={alarms > 0 ? BellAlertIcon : BellSlashIcon}
+          color={alarms > 0 ? "red" : "emerald"}
+          tooltip={t("alarms", { numAlarms: alarms })}
+        >
+          {alarms}
+        </Badge>
+      </Link>
       <Link href={`/${aps.ns}/overview`}>
         <Badge
           className="cursor-pointer"
@@ -60,13 +63,16 @@ export default function HeaderInfo({
           {cars}
         </Badge>
       </Link>
-      <Badge
-        icon={comm ? SignalIcon : SignalSlashIcon}
-        color={comm ? "emerald" : "red"}
-        tooltip={comm ? "ONLINE" : "OFFLINE"}
-      >
-        PLC
-      </Badge>
+      <Link href={`/${aps.ns}/racks`}>
+        <Badge
+          className="cursor-pointer"
+          icon={comm ? SignalIcon : SignalSlashIcon}
+          color={comm ? "emerald" : "red"}
+          tooltip={comm ? "ONLINE" : "OFFLINE"}
+        >
+          PLC
+        </Badge>
+      </Link>
     </>
   );
 }
