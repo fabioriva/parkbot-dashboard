@@ -1,12 +1,71 @@
 import { useTranslations } from "next-intl";
 import {
   CheckCircleIcon,
+  ExclamationCircleIcon,
   ExclamationTriangleIcon,
   WrenchIcon,
 } from "@heroicons/react/24/solid";
 import { Callout } from "@tremor/react";
 import { getInfo } from "@/lib/localize";
 import Alarm from "@/components/Alarm";
+
+function renderAut(device, t) {
+  switch (device.operation) {
+    case 1:
+      return (
+        <Callout className="mt-3" title={getInfo(device, t)} color="sky" />
+      );
+    case 2:
+      return (
+        <Callout className="mt-3" title={getInfo(device, t)} color="violet" />
+      );
+    // case 3:
+    default:
+      return (
+        <Callout
+          className="mt-3 py-3"
+          title={t("auto")}
+          color="emerald"
+          icon={CheckCircleIcon}
+        />
+      );
+  }
+}
+
+function renderInfo(device, t) {
+  const { mode, stall } = device;
+  switch (mode.id) {
+    case 0:
+      return (
+        <Callout
+          className="mt-3"
+          title={t("off")}
+          color="yellow"
+          icon={ExclamationCircleIcon}
+        />
+      );
+    case 6:
+      return (
+        <Callout
+          className="mt-3 py-3"
+          title={stall === 0 ? t("pp-0") : t("pp-1")}
+          color="yellow"
+          icon={WrenchIcon}
+        />
+      );
+    case 8:
+      return renderAut(device, t);
+    default:
+      return (
+        <Callout
+          className="mt-3"
+          title={t("man")}
+          color="yellow"
+          icon={WrenchIcon}
+        />
+      );
+  }
+}
 
 export default function Info({ device }) {
   const t = useTranslations("Device");
@@ -32,34 +91,7 @@ export default function Info({ device }) {
           </Callout>
         </div>
       ) : (
-        <div className="mt-6">
-          {mode.id !== 8 && (
-            <Callout
-              className="mt-3"
-              title={t("man")}
-              color="yellow"
-              icon={WrenchIcon}
-            />
-          )}
-          {mode.id === 8 && operation === 0 && (
-            <Callout
-              className="mt-3 py-3"
-              title={t("auto")}
-              color="emerald"
-              icon={CheckCircleIcon}
-            />
-          )}
-          {mode.id === 8 && operation === 1 && (
-            <Callout className="mt-3" title={getInfo(device, t)} color="sky" />
-          )}
-          {mode.id === 8 && operation === 2 && (
-            <Callout
-              className="mt-3"
-              title={getInfo(device, t)}
-              color="violet"
-            />
-          )}
-        </div>
+        <div className="mt-6">{renderInfo(device, t)}</div>
       )}
     </>
   );
