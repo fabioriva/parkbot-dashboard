@@ -12,6 +12,12 @@ export function getInfo(data, t) {
         if (card !== 0 && stall !== 0) return t("cu-2", { card, stall });
         if (card !== 0) return t("cu-1", { card });
         return t("cu-0");
+      case 3:
+        return t("idle-0");
+      case 4:
+        if (card !== 0 && stall !== 0) return t("swap-2", { card, stall });
+        if (card !== 0) return t("swap-1", { card });
+        return t("swap-0");
       default:
         return t("auto");
     }
@@ -30,7 +36,6 @@ export function getLog(log, t) {
       // return t("op-id-2", { id: alarm.id });
       return <Alarm alarm={alarm} />;
     case 3:
-      // return t("op-id-3", { id: mode.id, label: t(mode.key) });
       return t("op-id-3", { id: mode.id });
     case 4:
       return t("op-id-4", { card });

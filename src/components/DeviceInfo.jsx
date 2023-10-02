@@ -19,7 +19,14 @@ function renderAut(device, t) {
       return (
         <Callout className="mt-3" title={getInfo(device, t)} color="violet" />
       );
-    // case 3:
+    case 3:
+      return (
+        <Callout className="mt-3" title={getInfo(device, t)} color="emerald" />
+      );
+    case 4:
+      return (
+        <Callout className="mt-3" title={getInfo(device, t)} color="orange" />
+      );
     default:
       return (
         <Callout

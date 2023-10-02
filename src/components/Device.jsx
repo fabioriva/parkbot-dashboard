@@ -35,10 +35,11 @@ export default function Device({ advanced, aps, data, token, user }) {
         <Title>{name}</Title>
         <Badge
           color={mode.id !== 8 ? "yellow" : "blue"}
-          icon={mode.id !== 8 && WrenchIcon}
+          // icon={mode.id !== 8 && WrenchIcon}
         >
           <FunctionMode mode={mode} />
         </Badge>
+        {step !== 0 && <Badge color="fuchsia">{step}</Badge>}
         <div className="flex items-center justify-center space-x-1">
           <Led color="red" input={LA}>
             LA
