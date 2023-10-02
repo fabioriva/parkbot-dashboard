@@ -39,7 +39,7 @@ export default function Device({ advanced, aps, data, token, user }) {
         >
           <FunctionMode mode={mode} />
         </Badge>
-        {step !== 0 && <Badge color="fuchsia">{step}</Badge>}
+        {step !== 0 && <Badge color="orange">{step}</Badge>}
         <div className="flex items-center justify-center space-x-1">
           <Led color="red" input={LA}>
             LA
