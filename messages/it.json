@@ -274,6 +274,13 @@
     "TRB": "Silomat BWD",
     "UC": "Pulsante di conferma comando"
   },
+  "Profinet": {
+    "en": "Encoder {axis}",
+    "im": "Interface module",
+    "iv": "{nr, plural, =0 {Inverter} other {Inverter #}}",
+    "lh": "{nr, plural, =0 {Laser H} other {Laser H#}}",
+    "lv": "{nr, plural, =0 {Laser V} other {Laser V#}}"
+  },
   "Buttons": {
     "button-back": "Indietro",
     "button-more": "Visualizza"
@@ -454,6 +461,7 @@
         "history": "Storico",
         "statistics": "Statistiche",
         "notifications": "Notifiche",
+        "pn": "Profinet",
         "settings": "Impostazioni",
         "logout": "Esci",
         "selectPlaceholder": "Vai alla pagina"

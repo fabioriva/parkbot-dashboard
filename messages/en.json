@@ -274,6 +274,13 @@
     "TRB": "Silomat BWD",
     "UC": "Control confirmation push-button"
   },
+  "Profinet": {
+    "en": "Encoder {axis}",
+    "im": "Interface module",
+    "iv": "{nr, plural, =0 {Inverter} other {Inverter #}}",
+    "lh": "{nr, plural, =0 {Laser H} other {Laser H#}}",
+    "lv": "{nr, plural, =0 {Laser V} other {Laser V#}}"
+  },
   "Buttons": {
     "button-back": "Go back",
     "button-more": "View more"
@@ -454,6 +461,7 @@
         "history": "Logs",
         "statistics": "Statistics",
         "notifications": "Notifications",
+        "pn": "Profinet",
         "settings": "Settings",
         "logout": "Logout",
         "selectPlaceholder": "Go to page"
