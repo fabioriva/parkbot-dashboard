@@ -21,7 +21,7 @@ export default function Menu({ aps, user }) {
 
   return (
     <Select
-      className="max-w-xs ml-3"
+      className="max-w-xs ml-3 hidden sm:inline-flex"
       placeholder={t("selectPlaceholder")}
       value={value}
       onValueChange={setValue}
