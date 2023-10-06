@@ -38,13 +38,13 @@ function Back({ aps }) {
 }
 
 export default function Rack({ aps, nr, json }) {
-  // console.log(props);
   const [rack, setRack] = React.useState(json);
   const url = `${process.env.NEXT_PUBLIC_WEBSOCK_URL}/${aps}/racks/${nr}`;
   const { data } = useData(url, {
     initialData: rack,
   });
   React.useEffect(() => setRack(data), [data]);
+
   return (
     <>
       <Suspense fallback={<Loading />}>
@@ -56,7 +56,6 @@ export default function Rack({ aps, nr, json }) {
             Simatic PLC Rack {rack.nr}
           </span>
           {rack.cards.map((item, key) => {
-            // console.log(item.module);
             const Module = componentList[item.module];
             return (
               <React.Fragment key={key}>

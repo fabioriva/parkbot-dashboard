@@ -275,6 +275,7 @@
     "UC": "Pulsante di conferma comando"
   },
   "Profinet": {
+    "cpu": "Controllore",
     "en": "Encoder {axis}",
     "im": "Interface module",
     "iv": "{nr, plural, =0 {Inverter} other {Inverter #}}",

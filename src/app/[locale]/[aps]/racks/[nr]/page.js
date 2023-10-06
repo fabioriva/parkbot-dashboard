@@ -5,7 +5,7 @@ import fetch from "@/lib/fetch";
 
 export default async function Page({ params }) {
   const token = cookies().get(process.env.USER_TOKEN).value;
-  const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${params.aps}/rack/${params.nr}`;
+  const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${params.aps}/racks/${params.nr}`;
   const json = await fetch(url, {
     cache: "no-store",
     headers: { Authorization: "Bearer " + token },

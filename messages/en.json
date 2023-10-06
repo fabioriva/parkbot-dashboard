@@ -275,6 +275,7 @@
     "UC": "Control confirmation push-button"
   },
   "Profinet": {
+    "cpu": "Controller",
     "en": "Encoder {axis}",
     "im": "Interface module",
     "iv": "{nr, plural, =0 {Inverter} other {Inverter #}}",
