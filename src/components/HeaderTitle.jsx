@@ -27,7 +27,7 @@ export default function HeaderTitle({ aps }) {
           <span className="hidden sm:inline text-transparent bg-clip-text bg-gradient-to-br from-orange-800 to-orange-500">
             Parkbot
           </span>{" "}
-          {pages.some((item) => item.role === page)?.role && t(page)}
+          {pages.find((item) => item.role === page)?.role && t(page)}
         </Title>
         <Text className="truncate">{aps.name}</Text>
       </div>
