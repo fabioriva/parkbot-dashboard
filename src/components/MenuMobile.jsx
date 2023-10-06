@@ -20,7 +20,7 @@ export default function MainMenu({ aps, user }) {
 
   return (
     <Menu as="div" className="relative inline-block z-10 sm:hidden">
-      <Menu.Button className="inline-flex w-full justify-center rounded-md bg-opacity-20 px-2 py-2 hover:text-neutral-300 text-neutral-500 text-sm font-medium hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+      <Menu.Button className="inline-flex w-full justify-center rounded-md px-2 py-2 hover:text-neutral-300 text-neutral-500 text-sm font-medium hover:bg-opacity-30">
         {/* {user.username} */}
         <UserCircleIcon className="ml-1.5 -mr-1 h-6 w-6" aria-hidden="true" />
       </Menu.Button>
