@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import Error from "@/components/Error";
-import Racks from "@/components/Profinet"; // Racks";
+import Racks from "@/components/Racks";
 import fetch from "@/lib/fetch";
 
 export default async function Page({ params }) {

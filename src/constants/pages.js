@@ -4,7 +4,6 @@ import {
   CpuChipIcon,
   EnvelopeIcon,
   EyeIcon,
-  GlobeAltIcon,
   MapIcon,
   HomeIcon,
   ListBulletIcon,
@@ -27,10 +26,6 @@ const categories = [
   {
     icon: TagIcon,
     role: "cards",
-  },
-  {
-    icon: GlobeAltIcon,
-    role: "pn",
   },
   {
     icon: CpuChipIcon,

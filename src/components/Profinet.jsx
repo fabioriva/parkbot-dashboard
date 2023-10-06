@@ -27,7 +27,7 @@ function More({ href }) {
   );
 }
 
-function Pn({ aps, item }) {
+export default function Pn({ aps, item }) {
   const t = useTranslations("Profinet");
   const status = item.online !== undefined ? item.online.status : true;
   return (
@@ -61,20 +61,20 @@ function Pn({ aps, item }) {
   );
 }
 
-export default function Profinet({ aps, json }) {
-  const [devices, setDevices] = useState(json);
-  const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/racks`; // pn`;
-  const { data } = useSWR(url, fetcher, {
-    fallbackData: devices,
-    refreshInterval: 1000,
-  });
-  useEffect(() => setDevices(data), [data]);
+// export default function Profinet({ aps, json }) {
+//   const [devices, setDevices] = useState(json);
+//   const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/racks`; // pn`;
+//   const { data } = useSWR(url, fetcher, {
+//     fallbackData: devices,
+//     refreshInterval: 1000,
+//   });
+//   useEffect(() => setDevices(data), [data]);
 
-  return (
-    <Grid numItemsSm={2} numItemsMd={3} numItemsLg={4} className="gap-6 mt-6">
-      {data.map((item, key) => (
-        <Pn aps={aps} item={item} key={key} />
-      ))}
-    </Grid>
-  );
-}
+//   return (
+//     <Grid numItemsSm={2} numItemsMd={3} numItemsLg={4} className="gap-6 mt-6">
+//       {data.map((item, key) => (
+//         <Pn aps={aps} item={item} key={key} />
+//       ))}
+//     </Grid>
+//   );
+// }
