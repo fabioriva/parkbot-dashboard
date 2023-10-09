@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "rimraf .next && next build",
     "start": "next start",
+    "turbo": "next dev --turbo",
     "lint": "next lint",
     "pm2": "NODE_ENV=production pm2 start npm --name parkbot-dashboard -- start"
   },
