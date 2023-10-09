@@ -4,11 +4,11 @@ import { useTranslations } from "next-intl";
 import { Menu, Transition } from "@headlessui/react";
 import {
   ArrowLeftOnRectangleIcon,
-  // HomeIcon,
   UserCircleIcon,
 } from "@heroicons/react/20/solid";
 import { Icon } from "@tremor/react";
 import pages from "@/constants/pages";
+import { isAuthorized } from "@/lib/auth";
 
 export default function MainMenu({ aps, user }) {
   const router = useRouter();
@@ -37,7 +37,7 @@ export default function MainMenu({ aps, user }) {
           <div className="px-1 py-1">
             {pages.map((item, key) => (
               <Menu.Item
-                disabled={!user.roles.some((role) => role === item.role)}
+                disabled={!isAuthorized(item.role, user.roles)}
                 key={key}
               >
                 {({ active }) => (
@@ -45,10 +45,10 @@ export default function MainMenu({ aps, user }) {
                     className={`${
                       active
                         ? "bg-neutral-400 text-white"
-                        : user.roles.some((role) => role === item.role)
+                        : isAuthorized(item.role, user.roles)
                         ? "text-neutral-900"
                         : "text-neutral-200 cursor-default"
-                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    } group flex w-full items-center rounded-md px-2 py-2`}
                     onClick={() => router.push(`/${aps.ns}/${item.role}`)}
                     key={key}
                   >
@@ -77,7 +77,7 @@ export default function MainMenu({ aps, user }) {
                 <button
                   className={`${
                     active ? "bg-neutral-500 text-white" : "text-neutral-900"
-                  } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                  } group flex w-full items-center rounded-md px-2 py-2`}
                   onClick={handleLogout}
                 >
                   {active ? (
