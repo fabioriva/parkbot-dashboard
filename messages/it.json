@@ -282,6 +282,20 @@
     "lh": "{nr, plural, =0 {Laser H} other {Laser H#}}",
     "lv": "{nr, plural, =0 {Laser V} other {Laser V#}}"
   },
+  "Rack": {
+    "FLA": "Photocell car front length",
+    "FLAx": "Photocell car front length {nr, plural, =0 {} other {#}}",
+    "FLAy": "Photocell car front length {area, plural, =0 {} other {area #}}",
+    "FLAxy": "Photocell car front length {nr, plural, =0 {} other {#}} {area, plural, =0 {} other {area #}}",
+    "FLP": "Photocell car back length",
+    "FLPx": "Photocell car back length {nr, plural, =0 {} other {#}}",
+    "FLPy": "Photocell car back length {area, plural, =0 {} other {area #}}",
+    "FLPxy": "Photocell car back length {nr, plural, =0 {} other {#}} {area, plural, =0 {} other {area #}}",
+    "FTA": "Photocell car height",
+    "FTAx": "Photocell car height {nr, plural, =0 {} other {#}}",
+    "FTAy": "Photocell car height {area, plural, =0 {} other {area #}}",
+    "FTAxy": "Photocell car height {nr, plural, =0 {} other {#}} {area, plural, =0 {} other {area #}}"
+  },
   "Buttons": {
     "button-back": "Indietro",
     "button-more": "Visualizza"
