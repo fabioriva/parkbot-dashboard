@@ -142,7 +142,7 @@ export default function Settings({ aps, token, user }) {
       <TextInput
         className="mt-3"
         icon={KeyIcon}
-        // type="password"
+        type="password"
         placeholder={t("placeholderNew")}
         error={newPassword.error}
         errorMessage={newPassword.errorMessage}
@@ -152,7 +152,7 @@ export default function Settings({ aps, token, user }) {
       <TextInput
         className="mt-3"
         icon={KeyIcon}
-        // type="password"
+        type="password"
         placeholder={t("placeholderConfirm")}
         error={confirmPassword.error}
         errorMessage={confirmPassword.errorMessage}
