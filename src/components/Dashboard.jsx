@@ -4,7 +4,7 @@ import { Suspense, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
-import { Grid, Col, Button, Card, Title } from "@tremor/react";
+import { Button, Card, Title } from "@tremor/react";
 import BarChart from "@/components/OperationsBarChart";
 import Device from "@/components/Device";
 import HistoryList from "@/components/HistoryList";
@@ -46,13 +46,13 @@ export default function Dashboard({ aps, json, token, user }) {
 
   return (
     <Suspense fallback={<Loading />}>
-      <Grid numItems={1} numItemsSm={2} numItemsLg={5} className="gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
         {dashboard.system.map((item, key) => (
           <Device aps={aps} data={item} token={token} user={user} key={key} />
         ))}
-      </Grid>
+      </div>
       <div className="my-3" />
-      <Grid numItemsMd={2} numItemsLg={4} className="gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
         <Card className="p-3 sm:p-6 self-start">
           <Occupancy occupancy={dashboard.occupancy} />
           <More aps={aps} role="map" roles={user.roles} />
@@ -62,14 +62,14 @@ export default function Dashboard({ aps, json, token, user }) {
           <HistoryList data={dashboard.activity.documents} />
           <More aps={aps} role="history" roles={user.roles} />
         </Card>
-        <Col numColSpanMd={2}>
+        <div className="xl:col-span-2">
           <Card className="p-3 sm:p-6 self-start">
             <Title className="mb-3">{t("kpi-operations")}</Title>
             <BarChart data={dashboard.operations[0].data} stacked={true} />
             <More aps={aps} role="statistics" roles={user.roles} />
           </Card>
-        </Col>
-      </Grid>
+        </div>
+      </div>
     </Suspense>
   );
 }
