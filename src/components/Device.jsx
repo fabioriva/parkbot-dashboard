@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { EyeIcon, EyeSlashIcon, WrenchIcon } from "@heroicons/react/24/solid";
+import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 import { Badge, Card, Flex, Title, Icon } from "@tremor/react";
+import BitInfo from "@/components/BitInfo";
 import Entry from "@/components/Entry";
 import FunctionMode from "@/components/FunctionMode";
 import Info from "@/components/DeviceInfo";
@@ -10,17 +11,13 @@ import Rollback from "@/components/Rollback";
 import View from "@/components/DeviceView";
 import Tooltip from "@/components/Tooltip";
 
-const Led = ({ children, color, input }) => (
-  <Badge
-    color={input.status ? color : "slate"}
-    tooltip={`${input.addr} ${input.label} ${input.status ? "ON" : "OFF"}`}
-  >
+const Led = ({ children, bit, color }) => (
+  <Badge color={bit.status ? color : "slate"} tooltip={<BitInfo bit={bit} />}>
     {children}
   </Badge>
 );
 
 export default function Device({ advanced, aps, data, token, user }) {
-  // console.log(data);
   const [more, setMore] = useState(advanced);
   const t = useTranslations("Device");
   const { card, mode, motor, name, operation, size, stall, step, steps } = data;
@@ -33,21 +30,18 @@ export default function Device({ advanced, aps, data, token, user }) {
     <Card className="max-w-sm p-3 self-start">
       <Flex>
         <Title>{name}</Title>
-        <Badge
-          color={mode.id !== 8 ? "yellow" : "blue"}
-          // icon={mode.id !== 8 && WrenchIcon}
-        >
+        <Badge color={mode.id !== 8 ? "yellow" : "blue"}>
           <FunctionMode mode={mode} />
         </Badge>
         {step !== 0 && <Badge color="orange">{step}</Badge>}
         <div className="flex items-center justify-center space-x-1">
-          <Led color="red" input={LA}>
+          <Led bit={LA} color="red">
             LA
           </Led>
-          <Led color="yellow" input={LC}>
+          <Led bit={LC} color="yellow">
             LC
           </Led>
-          <Led color="green" input={LS}>
+          <Led bit={LS} color="green">
             LS
           </Led>
           {advanced && (
