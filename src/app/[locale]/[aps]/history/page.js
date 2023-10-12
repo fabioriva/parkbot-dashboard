@@ -21,5 +21,5 @@ export default async function Page({ params }) {
   if (!json) {
     return <Error />;
   }
-  return <History aps={params.aps} data={json} token={token} />;
+  return <History aps={params.aps} json={json} token={token} />;
 }

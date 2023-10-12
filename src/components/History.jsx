@@ -9,17 +9,12 @@ import List from "@/components/HistoryList";
 import Table from "@/components/HistoryTable";
 import { useDateRangePicker } from "@/hooks/useDateRangePicker";
 import { useFuzzySearch } from "@/hooks/useFuzzySearch";
-// import { useTimeoutFn } from "react-use";
-// import { Transition } from "@headlessui/react";
 
-export default function History({ aps, data, token }) {
+export default function History({ aps, json, token }) {
   const t = useTranslations("History");
 
-  const [history, setHistory] = useState(data);
-
+  const [history, setHistory] = useState(json);
   const [view, setView] = useState(0); // 0=List view, 1=Table view
-  // let [isShowing, setIsShowing] = useState(true);
-  // let [, , resetIsShowing] = useTimeoutFn(() => setIsShowing(true), 500);
   const { dateRange, dateRangePicker } = useDateRangePicker();
 
   useEffect(() => {
@@ -34,7 +29,6 @@ export default function History({ aps, data, token }) {
         headers: { Authorization: "Bearer " + token },
       });
       const json = await res.json();
-      // console.log(json);
       setHistory(json);
     }
     if (isValid(dateRange.from) && isValid(dateRange.to)) {
@@ -46,10 +40,13 @@ export default function History({ aps, data, token }) {
     history.query,
     {
       includeScore: true,
-      keys: ["card", "stall", "device.key"],
+      keys: ["alarm.id", "card", "stall", "device.key"],
     },
     t("search")
   );
+
+  const data = (history, results) =>
+    results.length === 0 ? history.query : results.map(({ item }) => item);
 
   return (
     <Card className="p-3 sm:p-6">
@@ -66,14 +63,7 @@ export default function History({ aps, data, token }) {
             </Text>
           </div>
           <div className="mr-3">
-            <TabGroup
-              index={view}
-              onIndexChange={(index) => {
-                // setIsShowing(false);
-                // resetIsShowing();
-                setView(index);
-              }}
-            >
+            <TabGroup index={view} onIndexChange={(index) => setView(index)}>
               <TabList variant="solid">
                 <Tab icon={ListBulletIcon}>{t("view-list")}</Tab>
                 <Tab icon={TableCellsIcon}>{t("view-table")}</Tab>
@@ -96,53 +86,14 @@ export default function History({ aps, data, token }) {
       </div>
       <div className="my-6">{fuzzySearchInput}</div>
       <div className="block sm:hidden">
-        <List
-          data={
-            results.length === 0
-              ? history.query
-              : results.map(({ item }) => item)
-          }
-        />
+        <List data={data(history, results)} />
       </div>
       <div className="hidden sm:block">
-        {/* <Transition
-          as={Fragment}
-          show={isShowing}
-          // enter="transition ease-out duration-100"
-          // enterFrom="transform opacity-0 scale-95"
-          // enterTo="transform opacity-100 scale-100"
-          // leave="transition ease-in duration-75"
-          // leaveFrom="transform opacity-100 scale-100"
-          // leaveTo="transform opacity-0 scale-95"
-          enter="transition-opacity duration-150"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="transition-opacity duration-0"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          {(ref) => (
-            <div ref={ref}> */}
         {view === 0 ? (
-          <List
-            data={
-              results.length === 0
-                ? history.query
-                : results.map(({ item }) => item)
-            }
-          />
+          <List data={data(history, results)} />
         ) : (
-          <Table
-            data={
-              results.length === 0
-                ? history.query
-                : results.map(({ item }) => item)
-            }
-          />
+          <Table data={data(history, results)} />
         )}
-        {/* </div>
-          )}
-        </Transition> */}
       </div>
     </Card>
   );
