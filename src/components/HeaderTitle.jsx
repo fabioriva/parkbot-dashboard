@@ -15,7 +15,7 @@ export default function HeaderTitle({ aps }) {
     <Flex justifyContent="start" alignItems="end">
       <Link href={`/${aps.ns}/dashboard`}>
         <Image
-          className="mr-1.5"
+          className="mr-3"
           src={bot}
           alt="Parkbot"
           height={48}

@@ -28,7 +28,7 @@ export default function Header({ aps, payload }) {
         <Title aps={aps} />
         <Flex className="justify-end">
           {/* Desktop */}
-          <div className="hidden sm:inline-flex sm:space-x-2">
+          <div className="hidden md:inline-flex sm:space-x-2">
             <Info
               aps={aps}
               alarms={alarms}
@@ -44,7 +44,7 @@ export default function Header({ aps, payload }) {
         </Flex>
       </Flex>
       {/* Mobile */}
-      <Flex className="inline-flex sm:hidden mt-3">
+      <Flex className="inline-flex md:hidden mt-3">
         <Info
           aps={aps}
           alarms={alarms}
