@@ -572,6 +572,9 @@
   },
   "Statistics": {
     "title": "Operazioni di parcheggio",
+    "devicesTotal": "Operazioni per dispositivo",
+    "devicesEntries": "Entrate per dispositivo",
+    "devicesExits": "Uscite per dispositivo",
     "dropdownItemDaily": "Giornaliero",
     "dropdownItemWeekly": "Settimanale",
     "dropdownItemMonthly": "Mensile",

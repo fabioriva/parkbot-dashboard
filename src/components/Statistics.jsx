@@ -3,17 +3,20 @@
 import { format, isValid } from "date-fns";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Card, Text, Title, Flex, Tab, TabList, TabGroup } from "@tremor/react";
+import { Card, Text, Title, Tab, TabList, TabGroup } from "@tremor/react";
 import BarChart from "@/components/OperationsBarChart";
-// import Table from "@/components/StatisticsTable";
+import Table from "@/components/OperationsTable";
 import { useDateRangePicker } from "@/hooks/useDateRangePicker";
 
+import Chart from "@/components/OperationsByDevicesChart";
+
 export default function Statistics({ aps, data, token }) {
-  const [operations, setOperations] = useState(data);
-  const [stack, setStack] = useState(false);
-  // const categories = ["entries", "exits", "total"];
-  // const colors = ["sky", "violet", "fuchsia"];
+  console.log(data);
+  const [devices, setDevices] = useState(data.devices);
+  const [operations, setOperations] = useState(data.operations);
+  const [stacked, setStacked] = useState(false);
   const { dateRange, dateRangePicker } = useDateRangePicker();
+
   const t = useTranslations("Statistics");
 
   useEffect(() => {
@@ -28,7 +31,8 @@ export default function Statistics({ aps, data, token }) {
       });
       const json = await res.json();
       // console.log(json);
-      setOperations(json);
+      setDevices(json.devices);
+      setOperations(json.operations);
     }
     // console.log(dateRange);
     if (isValid(dateRange.from) && isValid(dateRange.to)) {
@@ -36,37 +40,46 @@ export default function Statistics({ aps, data, token }) {
     }
   }, [dateRange, aps, token]);
 
+  const Toggler = () => (
+    <TabGroup
+      className="mx-6 w-fit"
+      index={stacked}
+      onIndexChange={(index) => setStacked(index)}
+    >
+      <TabList variant="solid">
+        <Tab>{t("toggleItemStandard")}</Tab>
+        <Tab>{t("toggleItemStacked")}</Tab>
+      </TabList>
+    </TabGroup>
+  );
+
   return (
-    <Card className="p-3 sm:p-6">
-      <div className="hidden sm:block">
-        <Flex>
-          <div>
-            <Title className="grow">{t("title")}</Title>
-            <Text>{operations.query.date}</Text>
-          </div>
-          {dateRangePicker}
-        </Flex>
-        <Flex className="mt-6 justify-end">
-          <TabGroup index={stack} onIndexChange={(index) => setStack(index)}>
-            <TabList variant="solid">
-              <Tab>{t("toggleItemStandard")}</Tab>
-              <Tab>{t("toggleItemStacked")}</Tab>
-            </TabList>
-            <div className="mt-6">
-              <BarChart data={operations.data} stacked={stack} />
+    <>
+      <Card className="p-3 sm:p-6">
+        <div className="hidden sm:block">
+          <div className="flex items-center">
+            <div className="grow">
+              <Title>{t("title")}</Title>
+              <Text>{operations.query.date}</Text>
             </div>
-          </TabGroup>
-        </Flex>
-      </div>
-      <div className="block sm:hidden">
-        {dateRangePicker}
-        <Title className="mt-6 grow">{t("title")}</Title>
-        <Text>{operations.query.date}</Text>
-        {/* <Table data={operations.data} /> */}
-        <div className="mt-6">
-          <BarChart data={operations.data} layout="vertical" stacked={true} />
+            <Toggler />
+            {dateRangePicker}
+          </div>
+          <BarChart data={operations.data} stacked={stacked} />
         </div>
+        <div className="block sm:hidden">
+          {dateRangePicker}
+          <Title className="mt-3">{t("title")}</Title>
+          <Text>{operations.query.date}</Text>
+          <Table data={operations.data} />
+          {/* <BarChart data={operations.data} layout="vertical" stacked={true} /> */}
+        </div>
+      </Card>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <Chart data={devices} category="total" title={t("devicesTotal")} />
+        <Chart data={devices} category="entries" title={t("devicesEntries")} />
+        <Chart data={devices} category="exits" title={t("devicesExits")} />
       </div>
-    </Card>
+    </>
   );
 }

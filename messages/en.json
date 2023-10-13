@@ -799,6 +799,9 @@
   },
   "Statistics": {
     "title": "Operations statistics",
+    "devicesTotal": "Operations by devices",
+    "devicesEntries": "Entries by devices",
+    "devicesExits": "Exits by devices",
     "dropdownItemDaily": "Daily",
     "dropdownItemWeekly": "Weekly",
     "dropdownItemMonthly": "Monthly",
