@@ -10,6 +10,7 @@ function get(label) {
     case "AF8":
     case "DB32":
     case "FE12":
+    case "K12":
     case "L1":
     case "L2":
     case "L3":
@@ -17,6 +18,7 @@ function get(label) {
     case "L5":
     case "RS12":
     case "RS3":
+    case "RT12":
     case "S1":
     case "S2":
     case "T10":
@@ -54,7 +56,6 @@ function get(label) {
 }
 
 export default function BitInfo({ bit }) {
-  // const t = useTranslations("Bit");
   const t = useTranslations("Rack");
   const { addr, label, status } = bit;
   const { key, query } = get(label);
@@ -65,7 +66,6 @@ export default function BitInfo({ bit }) {
       <li className={status ? "text-green-500" : "text-red-500"}>
         {status ? "ON" : "OFF"}
       </li>
-      {/* <li>{t(label)}</li> */}
       <li>{key && t(key, query)}</li>
     </ul>
   );
