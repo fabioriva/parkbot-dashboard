@@ -5,11 +5,11 @@ import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { Button, Card, Title } from "@tremor/react";
-import BarChart from "@/components/OperationsBarChart";
 import Device from "@/components/Device";
 import HistoryList from "@/components/HistoryList";
 import Loading from "@/components/Loading";
 import Occupancy from "@/components/Occupancy";
+import Operations from "@/components/OperationsChartView";
 import { isAuthorized } from "@/lib/auth";
 import fetcher from "@/lib/fetch";
 import useSWR from "swr";
@@ -65,7 +65,7 @@ export default function Dashboard({ aps, json, token, user }) {
         <div className="xl:col-span-2">
           <Card className="p-3 sm:p-6 self-start">
             <Title className="mb-3">{t("kpi-operations")}</Title>
-            <BarChart data={dashboard.operations[0].data} stacked={true} />
+            <Operations data={dashboard.operations[0].data} stacked={true} />
             <More aps={aps} role="statistics" roles={user.roles} />
           </Card>
         </div>

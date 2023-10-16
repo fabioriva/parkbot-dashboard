@@ -11,10 +11,10 @@ import {
   TabList,
   TabGroup,
   Legend,
-  BarChart,
   DonutChart,
 } from "@tremor/react";
-import Table from "@/components/OperationsTable";
+import Chart from "@/components/OperationsChartView";
+import Table from "@/components/OperationsTableView";
 import { useDateRangePicker } from "@/hooks/useDateRangePicker";
 
 function ByDevice(props) {
@@ -89,13 +89,7 @@ export default function Statistics({ aps, data, token }) {
           {dateRangePicker}
         </div>
         <div className="mt-3 hidden sm:block">
-          <BarChart
-            data={operations.data}
-            index="name"
-            categories={["entries", "exits", "total"]}
-            colors={["sky", "violet", "fuchsia"]}
-            stack={stacked}
-          />
+          <Chart data={operations.data} stacked={stacked} />
         </div>
         <div className="mt-3 block sm:hidden">
           <Table data={operations.data} />

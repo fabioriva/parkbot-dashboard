@@ -26,7 +26,7 @@ export default function Header({ aps, payload }) {
       <Toast message={message} />
       <Flex>
         <Title aps={aps} />
-        <Flex className="justify-end">
+        <Flex className="flex justify-end">
           {/* Desktop */}
           <div className="hidden md:inline-flex sm:space-x-2">
             <Info
