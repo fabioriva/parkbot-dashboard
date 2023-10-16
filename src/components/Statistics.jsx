@@ -11,11 +11,11 @@ import { useDateRangePicker } from "@/hooks/useDateRangePicker";
 import Chart from "@/components/OperationsByDevicesChart";
 
 export default function Statistics({ aps, data, token }) {
-  console.log(data);
+  // console.log(data);
   const [devices, setDevices] = useState(data.devices);
   const [operations, setOperations] = useState(data.operations);
   const [stacked, setStacked] = useState(false);
-  const { dateRange, dateRangePicker } = useDateRangePicker();
+  const { dateRange, dateRangePicker } = useDateRangePicker(2);
 
   const t = useTranslations("Statistics");
 

@@ -12,7 +12,7 @@ export default async function Page({ params }) {
   // const query = `dateString=${strDate}`;
   // const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${params.aps}/statistics?${query}`;
   // statistics by range
-  const strFrom = format(subDays(new Date(), 1), "yyyy-MM-dd");
+  const strFrom = format(subDays(new Date(), 2), "yyyy-MM-dd");
   const strTo = format(new Date(), "yyyy-MM-dd");
   const query = `dateFrom=${strFrom}&dateTo=${strTo}`;
   const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${params.aps}/statistics?${query}`;

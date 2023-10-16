@@ -10,9 +10,9 @@ const locales = {
   it,
 };
 
-export function useDateRangePicker() {
+export function useDateRangePicker(days) {
   const [dateRange, setDateRange] = useState({
-    from: subDays(new Date(), 1),
+    from: subDays(new Date(), days),
     to: new Date(),
   });
 

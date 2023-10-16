@@ -15,7 +15,7 @@ export default function History({ aps, json, token }) {
 
   const [history, setHistory] = useState(json);
   const [view, setView] = useState(0); // 0=List view, 1=Table view
-  const { dateRange, dateRangePicker } = useDateRangePicker();
+  const { dateRange, dateRangePicker } = useDateRangePicker(1);
 
   useEffect(() => {
     async function handleQuery() {
