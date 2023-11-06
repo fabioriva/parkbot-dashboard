@@ -2,7 +2,11 @@ import { useTranslations } from "next-intl";
 
 export default function Alarm({ alarm }) {
   const t = useTranslations("Alarm");
-  return <span>{t(alarm.key, alarm.query)}</span>;
+  return (
+    <span>
+      AL{alarm.id}&#9;{t(alarm.key, alarm.query)}
+    </span>
+  );
 }
 
 // export function getAlarm(alarm, t) {

@@ -80,8 +80,8 @@ export default function Info({ device }) {
 
   return (
     <>
-      {alarms !== undefined && alarms.length > 0 ? (
-        <div className="mt-6">
+      {alarms !== undefined && alarms.length > 0 && (
+        <div className="mt-3">
           <Callout
             className="mt-3"
             title={t("al-active", { count: alarms.length })}
@@ -97,9 +97,38 @@ export default function Info({ device }) {
             </ul>
           </Callout>
         </div>
-      ) : (
-        <div className="mt-6">{renderInfo(device, t)}</div>
       )}
+      <div className="mt-3">{renderInfo(device, t)}</div>
     </>
   );
 }
+
+// export default function Info({ device }) {
+//   const t = useTranslations("Device");
+//   const { alarms, mode, operation } = device;
+
+//   return (
+//     <>
+//       {alarms !== undefined && alarms.length > 0 ? (
+//         <div className="mt-3">
+//           <Callout
+//             className="mt-3"
+//             title={t("al-active", { count: alarms.length })}
+//             color="rose"
+//             icon={ExclamationTriangleIcon}
+//           >
+//             <ul className="list-none">
+//               {alarms.map((item, key) => (
+//                 <li key={key}>
+//                   <Alarm alarm={item} />
+//                 </li>
+//               ))}
+//             </ul>
+//           </Callout>
+//         </div>
+//       ) : (
+//         <div className="mt-3">{renderInfo(device, t)}</div>
+//       )}
+//     </>
+//   );
+// }
