@@ -60,4 +60,4 @@ export const isAllowed = (user, rights) =>
  * Verifies user roles
  */
 export const isAuthorized = (page, roles) =>
-  page === "settings" || roles.some((role) => role === page);
+  page === "mqtt" || page === "settings" || roles.some((role) => role === page);
