@@ -22,13 +22,9 @@ export default function Signin({ locales }) {
           password: event.target.password.value,
         }),
       });
-      console.log(res);
       if (res.ok) {
         const { aps, locale } = await res.json();
-        const url =
-          aps !== undefined
-            ? `/${locale || "en"}/${aps}/dashboard`
-            : `/${params.locale}`;
+        const url = aps !== undefined ? `/${aps}/dashboard` : "/";
         router.push(url);
       } else {
         throw new Error();
