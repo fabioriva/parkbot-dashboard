@@ -1,7 +1,7 @@
 "use client";
 
 import React, { lazy, Suspense } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next-intl/client";
 import { useTranslations } from "next-intl";
 import { ArrowLeftIcon } from "@heroicons/react/24/solid";
 import { Flex, Button } from "@tremor/react";
