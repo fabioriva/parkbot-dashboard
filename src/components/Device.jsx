@@ -67,7 +67,11 @@ export default function Device({ advanced, aps, data, token, user }) {
                 <Entry
                   aps={aps}
                   action={action}
-                  disabled={!user.rights.some((right) => right === "entry")}
+                  disabled={
+                    !user.rights.some(
+                      (right) => right === "entry" || right === "actions"
+                    )
+                  }
                   token={token}
                   key={key}
                 />
@@ -77,7 +81,7 @@ export default function Device({ advanced, aps, data, token, user }) {
                 <Rollback
                   aps={aps}
                   action={action}
-                  disabled={!user.rights.some((right) => right === "exit")}
+                  disabled={!user.rights.some((right) => right === "rollback")}
                   token={token}
                   key={key}
                 />
