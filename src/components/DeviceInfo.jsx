@@ -13,19 +13,27 @@ function renderAut(device, t) {
   switch (device.operation) {
     case 1:
       return (
-        <Callout className="mt-3" title={getInfo(device, t)} color="sky" />
+        <Callout className="mt-3" title={getInfo(device, t)} color="sky">
+          {device.message}
+        </Callout>
       );
     case 2:
       return (
-        <Callout className="mt-3" title={getInfo(device, t)} color="violet" />
+        <Callout className="mt-3" title={getInfo(device, t)} color="violet">
+          {device.message}
+        </Callout>
       );
     case 3:
       return (
-        <Callout className="mt-3" title={getInfo(device, t)} color="emerald" />
+        <Callout className="mt-3" title={getInfo(device, t)} color="emerald">
+          {device.message}
+        </Callout>
       );
     case 4:
       return (
-        <Callout className="mt-3" title={getInfo(device, t)} color="orange" />
+        <Callout className="mt-3" title={getInfo(device, t)} color="orange">
+          {device.message}
+        </Callout>
       );
     default:
       return (
@@ -34,7 +42,9 @@ function renderAut(device, t) {
           title={t("auto")}
           color="emerald"
           icon={CheckCircleIcon}
-        />
+        >
+          {device.message}
+        </Callout>
       );
   }
 }
@@ -49,7 +59,9 @@ function renderInfo(device, t) {
           title={t("off")}
           color="yellow"
           icon={ExclamationCircleIcon}
-        />
+        >
+          {device.message}
+        </Callout>
       );
     case 6:
       return (
@@ -58,7 +70,9 @@ function renderInfo(device, t) {
           title={stall === 0 ? t("pp-0") : t("pp-1")}
           color="yellow"
           icon={WrenchIcon}
-        />
+        >
+          {device.message}
+        </Callout>
       );
     case 8:
       return renderAut(device, t);
@@ -69,7 +83,9 @@ function renderInfo(device, t) {
           title={t("man")}
           color="yellow"
           icon={WrenchIcon}
-        />
+        >
+          {device.message}
+        </Callout>
       );
   }
 }
