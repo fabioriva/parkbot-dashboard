@@ -36,7 +36,7 @@ export default function Page({ params }) {
       </Text>
       <Text className="mt-3">Incoming messages:</Text>
       <div
-        className="bg-white dark:bg-slate-900 my-3 p-3 text-xs text-slate-700 dark:text-slate-50 overflow-auto border border-1 border-slate-300 dark:border-slate-800 rounded-lg h-[312px]"
+        className="bg-white dark:bg-slate-900 my-3 p-3 text-sm text-slate-700 dark:text-slate-50 overflow-auto border border-1 border-slate-300 dark:border-slate-800 rounded-lg h-[312px]"
         id="log"
       >
         {wsMessages.map(
@@ -48,7 +48,10 @@ export default function Page({ params }) {
               //   {m.message}
               // </pre>
               <pre key={Math.random()}>
-                {m.date}: {m.mesg}
+                <span className="mr-2">{m.date}</span>
+                <span className="mr-2 text-blue-500">{m.device}</span>
+                <span className="mr-2 text-yellow-500">{m.cycle}</span>
+                {m.message}
               </pre>
             )
         )}
