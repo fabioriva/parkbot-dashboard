@@ -41,6 +41,8 @@ function renderAut(device, t) {
 
 function renderInfo(device, t) {
   const { mode, stall } = device;
+  // const [LS, ,] = device.c;
+  // console.log(LS);
   switch (mode.id) {
     case 0:
       return (
@@ -55,7 +57,7 @@ function renderInfo(device, t) {
       return (
         <Callout
           className="mt-3"
-          title={stall === 0 ? t("pp-0") : t("pp-1")}
+          title={stall === 0 ? t("pp-0") : t("pp-1", { stall })}
           color="yellow"
           icon={WrenchIcon}
         />
