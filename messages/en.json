@@ -87,6 +87,7 @@
     "auto": "Waiting for operation request.",
     "man": "Manual mode activated.",
     "off": "System offline.",
+    "mode-no": "No mode activated",
     "mode": "Function mode",
     "motors": "Motors",
     "ready": "Device ready",

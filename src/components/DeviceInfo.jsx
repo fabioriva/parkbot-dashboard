@@ -41,38 +41,48 @@ function renderAut(device, t) {
 
 function renderInfo(device, t) {
   const { mode, stall } = device;
-  // const [LS, ,] = device.c;
-  // console.log(LS);
-  switch (mode.id) {
-    case 0:
-      return (
-        <Callout
-          className="mt-3"
-          title={t("off")}
-          color="yellow"
-          icon={ExclamationCircleIcon}
-        />
-      );
-    case 6:
-      return (
-        <Callout
-          className="mt-3"
-          title={stall === 0 ? t("pp-0") : t("pp-1", { stall })}
-          color="yellow"
-          icon={WrenchIcon}
-        />
-      );
-    case 8:
-      return renderAut(device, t);
-    default:
-      return (
-        <Callout
-          className="mt-3"
-          title={t("man")}
-          color="yellow"
-          icon={WrenchIcon}
-        />
-      );
+  const [LS, ,] = device.c;
+  if (!LS.status) {
+    return (
+      <Callout
+        className="mt-3"
+        title={t("off")}
+        color="yellow"
+        icon={ExclamationCircleIcon}
+      />
+    );
+  } else {
+    switch (mode.id) {
+      case 0:
+        return (
+          <Callout
+            className="mt-3"
+            title={t("mode-no")}
+            color="yellow"
+            icon={ExclamationCircleIcon}
+          />
+        );
+      case 6:
+        return (
+          <Callout
+            className="mt-3"
+            title={stall === 0 ? t("pp-0") : t("pp-1", { stall })}
+            color="yellow"
+            icon={WrenchIcon}
+          />
+        );
+      case 8:
+        return renderAut(device, t);
+      default:
+        return (
+          <Callout
+            className="mt-3"
+            title={t("man")}
+            color="yellow"
+            icon={WrenchIcon}
+          />
+        );
+    }
   }
 }
 

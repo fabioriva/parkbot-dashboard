@@ -87,6 +87,7 @@
     "auto": "In attesa di richiesta operazione.",
     "man": "Modalità manuale inserita.",
     "off": "Sistema spento.",
+    "mode-no": "Nessuna modalità attivata.",
     "mode": "Modalità di funzionamento",
     "motors": "Motori",
     "ready": "Dispositivo pronto",
