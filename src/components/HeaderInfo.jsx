@@ -1,4 +1,4 @@
-import Link from "next-intl/link";
+import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 import { Badge } from "@tremor/react";
 import {

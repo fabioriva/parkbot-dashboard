@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { useRouter } from "next-intl/client";
+import { useRouter } from "@/navigation";
 import { useTranslations } from "next-intl";
 import { Menu, Transition } from "@headlessui/react";
 import {

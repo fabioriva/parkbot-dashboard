@@ -1,13 +1,19 @@
 import createIntlMiddleware from "next-intl/middleware";
 import { NextResponse } from "next/server";
 import apsList from "@/constants/aps";
-import i18n from "@/constants/i18n";
+// import i18n from "@/constants/i18n";
 import { isAuthorized, verifyAuth } from "@/lib/auth";
+import { locales } from "./navigation";
 
 const redirect = (req) => NextResponse.redirect(new URL("/", req.url));
 
 export async function middleware(request) {
-  const handleI18nRouting = createIntlMiddleware(i18n);
+  // const handleI18nRouting = createIntlMiddleware(i18n);
+  const handleI18nRouting = createIntlMiddleware({
+    locales,
+    localePrefix: "always",
+    defaultLocale: "en",
+  });
   const response = handleI18nRouting(request);
   const segments = request.nextUrl.pathname.split("/");
   const aps = apsList.find((item) => item.ns === segments[2]);

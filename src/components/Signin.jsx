@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next-intl/client";
+// import { useRouter } from "next-intl/client";
+import { useRouter } from "@/navigation";
 import { useTranslations } from "next-intl";
 
 export default function Signin({ locales }) {
