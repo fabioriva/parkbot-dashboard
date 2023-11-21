@@ -6,7 +6,6 @@ import {
   Badge,
   Card,
   Flex,
-  Text,
 } from "@tremor/react";
 import Bit from "@/components/Bit";
 import Drive from "@/components/DriveKPI";
@@ -25,9 +24,9 @@ export default function Motor({ item }) {
           </div>
 
           {item.run.status ? (
-            <div className="text-right text-sm">{t(item.message)}</div>
+            <Badge color="yellow">{t(item.message)}</Badge>
           ) : (
-            <Text className="text-right">{t(item.message)}</Text>
+            <Badge color="slate">{t(item.message)}</Badge>
           )}
         </Flex>
       </AccordionHeader>

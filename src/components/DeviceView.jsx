@@ -9,9 +9,6 @@ import {
   Flex,
   Text,
   AccordionList,
-  // Accordion,
-  // AccordionHeader,
-  // AccordionBody,
 } from "@tremor/react";
 import Drive from "@/components/DriveKPI";
 import Garage from "@/components/Garage";
@@ -27,7 +24,7 @@ export default function View({ data }) {
 
   return (
     <TabGroup index={index} onIndexChange={(index) => setIndex(index)}>
-      <TabList className="mt-3 w-full">
+      <TabList className="mt-3 w-full" variant="solid">
         {data.views.map((view, key) => (
           <Tab key={key}>{t(view.name)}</Tab>
         ))}
@@ -40,10 +37,6 @@ export default function View({ data }) {
             )}
             {view.name === "view-sil" && <Silomat sensors={view.sensors} />}
             <AccordionList className="max-w-full mx-auto mt-3">
-              {/* <Accordion className="text-sm">
-                <AccordionHeader>Header</AccordionHeader>
-                <AccordionBody>Body</AccordionBody>
-              </Accordion> */}
               {view.drives !== undefined ? (
                 view.drives.map((item, key) => <Drive item={item} key={key} />)
               ) : (
