@@ -8,7 +8,6 @@ import {
   Flex,
 } from "@tremor/react";
 import Bit from "@/components/Bit";
-// import Drive from "@/components/DriveKPI";
 import Position from "@/components/Position";
 
 export default function Motor({ item }) {
