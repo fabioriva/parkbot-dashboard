@@ -1,39 +1,60 @@
-import { Card, Flex, Tracker, Text, Title, Metric } from "@tremor/react";
+import {
+  Accordion,
+  AccordionHeader,
+  AccordionBody,
+  Flex,
+  Tracker,
+  Text,
+  Title,
+} from "@tremor/react";
 import Bit from "@/components/Bit";
 
 export default function Drive({ item }) {
   // console.log(item);
   const { enable } = item;
+  const statusWord = [...(item.status >>> 0).toString(2).padEnd(16, "0")].map(
+    (b, key) => ({
+      color: b === "1" ? "emerald" : "slate",
+      tooltip: `Bit ${key}`,
+    })
+  );
+
   return (
-    <Card className="max-w-sm">
-      <Flex>
-        <Title>Drive {item.name}</Title>
-        <Bit bit={enable} />
-      </Flex>
-      <Flex justifyContent="between" className="mt-3">
-        <Text>0</Text>
-        <Text>status word</Text>
-        <Text>16</Text>
-      </Flex>
-      <Tracker data={data} className="mt-1" />
-      <div className="grid grid-cols-2 gap-3 mt-3">
-        <div>
-          <Text>{"Speed"}</Text>
-          <Metric>{item.speed}&nbsp;Hz</Metric>
+    <Accordion>
+      <AccordionHeader>
+        <Flex className="text-sm text-left space-x-3">
+          <div className="w-full">{item.name}</div>
+          <div>{item.speed}&nbsp;Hz</div>
+          <div>{item.current}&nbsp;A</div>
+          <Bit bit={enable} />
+        </Flex>
+      </AccordionHeader>
+      <AccordionBody>
+        <Flex justifyContent="between" className="mt-1">
+          <Text>0</Text>
+          <Text>status word</Text>
+          <Text>15</Text>
+        </Flex>
+        <Tracker data={statusWord} className="h-[0.5rem] mt-1" />
+        <div className="grid grid-cols-4 gap-3 mt-3">
+          <div>
+            <Text>{"Speed"}</Text>
+            <Title>{item.speed}&nbsp;Hz</Title>
+          </div>
+          <div>
+            <Text>{"Current"}</Text>
+            <Title>{item.current}&nbsp;A</Title>
+          </div>
+          <div>
+            <Text>{"Load"}</Text>
+            <Title>{item.load}&nbsp;%</Title>
+          </div>
+          <div>
+            <Text>{"Last trip"}</Text>
+            <Title>{item.trip}</Title>
+          </div>
         </div>
-        <div>
-          <Text>{"Current"}</Text>
-          <Metric>{item.current}&nbsp;A</Metric>
-        </div>
-        <div>
-          <Text>{"Load"}</Text>
-          <Metric>{item.load}&nbsp;%</Metric>
-        </div>
-        <div>
-          <Text>{"Last trip"}</Text>
-          <Metric>{item.trip}</Metric>
-        </div>
-      </div>
-    </Card>
+      </AccordionBody>
+    </Accordion>
   );
 }

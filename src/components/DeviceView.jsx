@@ -10,7 +10,7 @@ import {
   Text,
   AccordionList,
 } from "@tremor/react";
-import Drive from "@/components/DriveKPI";
+import Drive from "@/components/Drive";
 import Garage from "@/components/Garage";
 import Motor from "@/components/Motor";
 import Silomat from "@/components/Silomat";
