@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { BoltIcon } from "@heroicons/react/24/solid";
 import {
   Accordion,
   AccordionHeader,
@@ -23,7 +24,9 @@ export default function Motor({ item }) {
           </div>
 
           {item.run.status ? (
-            <Badge color="yellow">{t(item.message)}</Badge>
+            <Badge color="yellow" icon={BoltIcon}>
+              {t(item.message)}
+            </Badge>
           ) : (
             <Badge color="slate">{t(item.message)}</Badge>
           )}
