@@ -86,7 +86,7 @@
     "al-active": "Active alarms {count}",
     "auto": "Waiting for operation request.",
     "man": "Manual mode activated.",
-    "off": "System offline.",
+    "off": "System off.",
     "mode-no": "No mode activated",
     "mode": "Function mode",
     "motors": "Motors",
