@@ -5,6 +5,7 @@ import { Menu, Transition } from "@headlessui/react";
 import {
   ArrowLeftOnRectangleIcon,
   UserCircleIcon,
+  UserIcon,
 } from "@heroicons/react/20/solid";
 import { Icon } from "@tremor/react";
 import pages from "@/constants/pages";
@@ -34,9 +35,29 @@ export default function MainMenu({ aps, user }) {
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-          <div className="px-3 py-3">
+          <div className="px-1 py-1">
             <Menu.Item>
-              {({ active }) => <span>{user.username}</span>}
+              {({ active }) => (
+                <button
+                  className={`${
+                    active ? "bg-neutral-500 text-white" : "text-neutral-900"
+                  } group flex w-full items-center rounded-md px-2 py-2`}
+                  onClick={() => router.push(`/${aps.ns}/settings`)}
+                >
+                  {active ? (
+                    <UserIcon
+                      className="mr-2 h-5 w-5 text-neutral-100"
+                      aria-hidden="true"
+                    />
+                  ) : (
+                    <UserIcon
+                      className="mr-2 h-5 w-5 text-neutral-400"
+                      aria-hidden="true"
+                    />
+                  )}
+                  {user.username}
+                </button>
+              )}
             </Menu.Item>
           </div>
           <div className="px-1 py-1">

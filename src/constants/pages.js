@@ -1,6 +1,6 @@
 import {
   ChartBarIcon,
-  Cog6ToothIcon,
+  // Cog6ToothIcon,
   CpuChipIcon,
   EnvelopeIcon,
   EyeIcon,
@@ -43,10 +43,10 @@ const categories = [
     icon: EnvelopeIcon,
     role: "notifications",
   },
-  {
-    icon: Cog6ToothIcon,
-    role: "settings",
-  },
+  // {
+  //   icon: Cog6ToothIcon,
+  //   role: "settings",
+  // },
 ];
 
 export default categories;
