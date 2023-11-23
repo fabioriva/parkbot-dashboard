@@ -6,8 +6,8 @@ import Info from "@/components/HeaderInfo";
 import Mode from "@/components/ModeToggler";
 import Title from "@/components/HeaderTitle";
 import Toast from "@/components/Toast";
-import MenuDesktop from "@/components/Menu";
-import MenuMobile from "@/components/MenuMobile";
+// import MenuDesktop from "@/components/UserMenuSelect";
+import UserMenu from "@/components/UserMenu";
 import { useInfo } from "@/hooks/useWebSocket";
 
 export default function Header({ aps, payload }) {
@@ -39,8 +39,8 @@ export default function Header({ aps, payload }) {
             />
           </div>
           <Mode />
-          <MenuDesktop aps={aps} user={payload} />
-          <MenuMobile aps={aps} user={payload} />
+          {/* <MenuDesktop aps={aps} user={payload} /> */}
+          <UserMenu aps={aps} user={payload} />
         </Flex>
       </Flex>
       {/* Mobile */}
