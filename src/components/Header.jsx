@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { Flex } from "@tremor/react";
 import Info from "@/components/HeaderInfo";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
-import Mode from "@/components/ModeToggler";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 import Title from "@/components/HeaderTitle";
 import Toast from "@/components/Toast";
 // import MenuDesktop from "@/components/UserMenuSelect";
@@ -40,9 +40,9 @@ export default function Header({ aps, payload }) {
             />
           </div>
           <LocaleSwitcher />
-          <Mode />
-          {/* <MenuDesktop aps={aps} user={payload} /> */}
+          <ThemeSwitcher />
           <UserMenu aps={aps} user={payload} />
+          {/* <MenuDesktop aps={aps} user={payload} /> */}
         </Flex>
       </Flex>
       {/* Mobile */}

@@ -23,7 +23,7 @@ export default function MainMenu({ aps, user }) {
     // <Menu as="div" className="relative inline-block z-10 sm:hidden">
     <Menu as="div" className="relative inline-block z-10">
       <Menu.Button className="inline-flex w-full justify-center rounded-md px-2 py-2 hover:text-neutral-300 text-neutral-500 text-sm font-medium hover:bg-opacity-30">
-        <UserCircleIcon className="ml-1.5 -mr-1 h-6 w-6" aria-hidden="true" />
+        <UserCircleIcon className="h-6 w-6" aria-hidden="true" />
       </Menu.Button>
       <Transition
         as={Fragment}
