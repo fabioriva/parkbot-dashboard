@@ -29,7 +29,7 @@ export default function Header({ aps, payload }) {
         <Title aps={aps} />
         <Flex className="flex justify-end">
           {/* Desktop */}
-          <div className="hidden md:inline-flex md:space-x-2">
+          <div className="hidden md:inline-flex md:mr-3 md:space-x-2">
             <Info
               aps={aps}
               alarms={alarms}
@@ -39,8 +39,8 @@ export default function Header({ aps, payload }) {
               exits={exits}
             />
           </div>
-          <LocaleSwitcher />
           <ThemeSwitcher />
+          <LocaleSwitcher />
           <UserMenu aps={aps} user={payload} />
           {/* <MenuDesktop aps={aps} user={payload} /> */}
         </Flex>
