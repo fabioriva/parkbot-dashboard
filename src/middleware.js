@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import apsList from "@/constants/aps";
 // import i18n from "@/constants/i18n";
 import { isAuthorized, verifyAuth } from "@/lib/auth";
-import { locales } from "./navigation";
+import { locales } from "@/navigation";
 
 const redirect = (req) => NextResponse.redirect(new URL("/", req.url));
 

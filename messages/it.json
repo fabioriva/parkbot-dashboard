@@ -243,11 +243,8 @@
       }
     }
   },
-  "LocaleSwitcher": {
-    "switchLocale": "Switch to {locale, select, en {Inglese} other {Sconosciuto}"
-  },
   "Map": {
-    "title": "Mappa del parcheggio",
+    "title": "Mappa",
     "stallEmpty": "Posto {nr} libero",
     "stallBusy": "Posto {nr} occupato con tessera {card}{br}dal {date}",
     "stallLock": "Posto {nr} bloccato{br}dal {date}",

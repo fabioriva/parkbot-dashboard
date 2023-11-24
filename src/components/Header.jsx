@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Flex } from "@tremor/react";
 import Info from "@/components/HeaderInfo";
+import LocaleSwitcher from "@/components/LocaleSwitcher";
 import Mode from "@/components/ModeToggler";
 import Title from "@/components/HeaderTitle";
 import Toast from "@/components/Toast";
@@ -28,7 +29,7 @@ export default function Header({ aps, payload }) {
         <Title aps={aps} />
         <Flex className="flex justify-end">
           {/* Desktop */}
-          <div className="hidden md:inline-flex sm:space-x-2">
+          <div className="hidden md:inline-flex md:space-x-2">
             <Info
               aps={aps}
               alarms={alarms}
@@ -38,6 +39,7 @@ export default function Header({ aps, payload }) {
               exits={exits}
             />
           </div>
+          <LocaleSwitcher />
           <Mode />
           {/* <MenuDesktop aps={aps} user={payload} /> */}
           <UserMenu aps={aps} user={payload} />

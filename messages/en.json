@@ -243,9 +243,6 @@
       }
     }
   },
-  "LocaleSwitcher": {
-    "switchLocale": "Switch to {locale, select, en {English} other {Unknown}"
-  },
   "Map": {
     "title": "Parking map",
     "stallEmpty": "Slot {nr} free",
