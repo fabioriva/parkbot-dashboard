@@ -26,7 +26,7 @@ export default function Signin({ locales }) {
       if (res.ok) {
         const { aps, locale } = await res.json();
         const url = aps !== undefined ? `/${aps}/dashboard` : "/";
-        router.push(url);
+        router.push(url, { locale });
       } else {
         throw new Error();
       }
