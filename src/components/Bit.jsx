@@ -6,11 +6,11 @@ export default function Bit({ bit }) {
 
   return (
     <Badge
-      className="w-12"
+      className="w-11"
       color={bit.status ? "emerald" : "slate"}
       tooltip={tooltip}
     >
-      <span className="text-[0.75rem]">{bit.label}</span>
+      <span className="text-[0.70rem]">{bit.label}</span>
     </Badge>
   );
 }

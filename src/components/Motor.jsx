@@ -32,7 +32,7 @@ export default function Motor({ item }) {
         </Flex>
       </AccordionHeader>
       <AccordionBody>
-        <div className="grid grid-cols-6 gap-3">
+        <div className="grid grid-cols-6 gap-1">
           {item.io !== undefined &&
             item.io.map((item, key) => <Bit bit={item} key={key} />)}
         </div>
