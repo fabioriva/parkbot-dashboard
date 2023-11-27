@@ -22,7 +22,6 @@ export default function Motor({ item }) {
           <div className="text-sm">
             {t(item.name.key, { ...item.name.query })}
           </div>
-
           {item.run.status ? (
             <Badge color="yellow" icon={BoltIcon}>
               {t(item.message)}
@@ -33,12 +32,12 @@ export default function Motor({ item }) {
         </Flex>
       </AccordionHeader>
       <AccordionBody>
-        {item.encoders !== undefined &&
-          item.encoders.map((item, key) => <Position item={item} key={key} />)}
-        <div className="mt-3 grid grid-cols-6 gap-3">
+        <div className="grid grid-cols-6 gap-3">
           {item.io !== undefined &&
             item.io.map((item, key) => <Bit bit={item} key={key} />)}
         </div>
+        {item.encoders !== undefined &&
+          item.encoders.map((item, key) => <Position item={item} key={key} />)}
       </AccordionBody>
     </Accordion>
   );
