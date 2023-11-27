@@ -248,7 +248,7 @@
     "stallEmpty": "Slot {nr} free",
     "stallBusy": "Slot {nr} busy with card {card}{br}since {date}",
     "stallLock": "Slot {nr} locked{br}since {date}",
-    "dialogTitle": "Edit stall",
+    "dialogTitle": "Edit stall {nr}",
     "dialogText": "Edit stall number {nr}?",
     "dialogTextInput": "Insert card number {min} - {max}",
     "dialogCancel": "Cancel",

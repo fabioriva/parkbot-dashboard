@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { Fragment, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Text, NumberInput, Flex, Button } from "@tremor/react";
+import { Text, NumberInput, Button } from "@tremor/react";
 import Dialog from "@/components/Dialog";
 import Tooltip from "@/components/Tooltip";
 import fetch, { actionResponse } from "@/lib/fetch";
@@ -89,7 +89,7 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
           </span>
         </div>
       </Tooltip>
-      <Dialog isOpen={isOpen} title={t("dialogTitle")}>
+      <Dialog isOpen={isOpen} title={t("dialogTitle", { nr: stall.nr })}>
         <div className="mt-3">
           <Text>{t("dialogText", { nr: stall.nr })}</Text>
         </div>
@@ -107,21 +107,25 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
           value={value}
           onValueChange={handleOnValueChange}
         />
-        <Flex justifyContent="end" className="space-x-3 mt-6">
-          <Button variant="secondary" onClick={() => setIsOpen(false)}>
+        <div className="flex flex-col sm:flex-row sm:space-x-3">
+          <Button
+            className="flex-1 mt-3"
+            variant="secondary"
+            onClick={() => setIsOpen(false)}
+          >
             {t("dialogCancel")}
           </Button>
           <Button
+            className="flex-1 mt-3"
             color="red"
-            variant="primary"
             onClick={() => handleConfirm({ ...stall, status: value })}
             disabled={error.status}
           >
             {t("dialogCard")}
           </Button>
           <Button
+            className="flex-1 mt-3"
             color="emerald"
-            variant="primary"
             onClick={() =>
               handleConfirm({ ...stall, status: stallStatus.FREE })
             }
@@ -129,15 +133,15 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
             {t("dialogClear")}
           </Button>
           <Button
+            className="flex-1 mt-3"
             color="violet"
-            variant="primary"
             onClick={() =>
               handleConfirm({ ...stall, status: stallStatus.LOCK })
             }
           >
             {t("dialogLock")}
           </Button>
-        </Flex>
+        </div>
       </Dialog>
     </Fragment>
   );
