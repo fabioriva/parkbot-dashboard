@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Grid, Col } from "@tremor/react";
 import Device from "@/components/Device";
 import Queue from "@/components/Queue";
 import { useData } from "@/hooks/useWebSocket";
@@ -15,31 +14,34 @@ export default function Overview({ aps, json, token, user }) {
   useEffect(() => setOverview(data), [data]);
 
   return (
-    <Grid numItemsSm={1} numItemsLg={3} className="gap-6">
-      <Col numColSpanLg={2}>
-        <div className="space-y-6">
-          {overview.devices.map((item, key) => (
-            <Grid
-              numItemsMd={1}
-              numItemsLg={item.length <= 3 ? item.length : 3}
-              className="gap-6 items-stretch"
-              key={key}
-            >
-              {item.map((device, key) => (
-                <Device
-                  advanced
-                  aps={aps}
-                  data={device}
-                  token={token}
-                  user={user}
-                  key={key}
-                />
-              ))}
-            </Grid>
-          ))}
-        </div>
-      </Col>
+    <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-3">
+      <div className="xl:col-span-2 grid xl:grid-cols-2 2xl:grid-cols-3 items-stretch gap-3">
+        {overview.devices.flat(1).map((device, key) => (
+          <Device
+            advanced
+            aps={aps}
+            data={device}
+            token={token}
+            user={user}
+            key={key}
+          />
+        ))}
+      </div>
       <Queue aps={aps} data={overview.exitQueue} token={token} user={user} />
-    </Grid>
+    </div>
+
+    // <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+    //   {overview.devices.flat(1).map((device, key) => (
+    //     <Device
+    //       advanced
+    //       aps={aps}
+    //       data={device}
+    //       token={token}
+    //       user={user}
+    //       key={key}
+    //     />
+    //   ))}
+    //   <Queue aps={aps} data={overview.exitQueue} token={token} user={user} />
+    // </div>
   );
 }
