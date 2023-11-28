@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 import {
   CheckCircleIcon,
@@ -88,7 +89,14 @@ function renderInfo(device, t) {
 
 export default function Info({ device }) {
   const t = useTranslations("Device");
-  const { alarms, mode, operation } = device;
+  const { alarms, id, messages, mode, operation } = device;
+
+  useEffect(() => {
+    const div = document.getElementById(`mqtt-${id}`);
+    if (div) {
+      div.scrollTop = div.scrollHeight;
+    }
+  }, [messages]);
 
   return (
     <>
@@ -109,7 +117,18 @@ export default function Info({ device }) {
           </ul>
         </Callout>
       )}
-      {device.message && <Callout className="mt-3" title={device.message} />}
+      {/* {message && <Callout className="mt-3" title={device.message} />} */}
+      {messages.length > 0 && (
+        <Callout className="mt-3" title="MQTT messages" color="indigo">
+          <div className="h-10 overflow-y-scroll" id={`mqtt-${id}`}>
+            <ul className="list-none">
+              {messages.map((item, key) => (
+                <li key={key}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </Callout>
+      )}
     </>
   );
 }
