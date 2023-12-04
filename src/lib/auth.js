@@ -51,13 +51,7 @@ export function expireUserCookie(res) {
 }
 
 /**
- * Verifies user rights
- */
-export const isAllowed = (user, rights) =>
-  rights.some((right) => user.rights.includes(right));
-
-/**
  * Verifies user roles
  */
 export const isAuthorized = (page, roles) =>
-  page === "mqtt" || page === "settings" || roles.some((role) => role === page);
+  page === "settings" || roles.some((role) => role === page);

@@ -10,23 +10,40 @@ import { Callout } from "@tremor/react";
 import { getInfo } from "@/lib/localize";
 import Alarm from "@/components/Alarm";
 
-function renderAut(device, t) {
-  switch (device.operation) {
+function renderAut(device, t, user) {
+  const { id, messages, operation } = device;
+  switch (operation) {
     case 1:
       return (
-        <Callout className="mt-3" title={getInfo(device, t)} color="sky" />
+        <Callout className="mt-3" title={getInfo(device, t)} color="sky">
+          {user.rights.some((right) => right === "mqtt") && (
+            <MqttMessages id={id} messages={messages} />
+          )}
+        </Callout>
       );
     case 2:
       return (
-        <Callout className="mt-3" title={getInfo(device, t)} color="violet" />
+        <Callout className="mt-3" title={getInfo(device, t)} color="violet">
+          {user.rights.some((right) => right === "mqtt") && (
+            <MqttMessages id={id} messages={messages} />
+          )}
+        </Callout>
       );
     case 3:
       return (
-        <Callout className="mt-3" title={getInfo(device, t)} color="emerald" />
+        <Callout className="mt-3" title={getInfo(device, t)} color="emerald">
+          {user.rights.some((right) => right === "mqtt") && (
+            <MqttMessages id={id} messages={messages} />
+          )}
+        </Callout>
       );
     case 4:
       return (
-        <Callout className="mt-3" title={getInfo(device, t)} color="orange" />
+        <Callout className="mt-3" title={getInfo(device, t)} color="orange">
+          {user.rights.some((right) => right === "mqtt") && (
+            <MqttMessages id={id} messages={messages} />
+          )}
+        </Callout>
       );
     default:
       return (
@@ -40,8 +57,8 @@ function renderAut(device, t) {
   }
 }
 
-function renderInfo(device, t) {
-  const { mode, stall } = device;
+function renderInfo(device, t, user) {
+  const { id, messages, mode, stall } = device;
   const [LS, ,] = device.c;
   if (!LS.status) {
     return (
@@ -70,10 +87,14 @@ function renderInfo(device, t) {
             title={stall === 0 ? t("pp-0") : t("pp-1", { stall })}
             color="yellow"
             icon={WrenchIcon}
-          />
+          >
+            {user.rights.some((right) => right === "mqtt") && (
+              <MqttMessages id={id} messages={messages} />
+            )}
+          </Callout>
         );
       case 8:
-        return renderAut(device, t);
+        return renderAut(device, t, user);
       default:
         return (
           <Callout
@@ -87,10 +108,7 @@ function renderInfo(device, t) {
   }
 }
 
-export default function Info({ device }) {
-  const t = useTranslations("Device");
-  const { alarms, id, messages, mode, operation } = device;
-
+function MqttMessages({ id, messages }) {
   useEffect(() => {
     const div = document.getElementById(`mqtt-${id}`);
     if (div) {
@@ -100,7 +118,26 @@ export default function Info({ device }) {
 
   return (
     <>
-      <div className="mt-3">{renderInfo(device, t)}</div>
+      {messages !== undefined && messages.length > 0 && (
+        <div className="h-10 overflow-y-scroll" id={`mqtt-${id}`}>
+          <ul className="list-none">
+            {messages.map((item, key) => (
+              <li key={key}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </>
+  );
+}
+
+export default function Info({ device, user }) {
+  const t = useTranslations("Device");
+  const { alarms, id, messages, mode, operation } = device;
+
+  return (
+    <>
+      <div className="mt-3">{renderInfo(device, t, user)}</div>
       {alarms !== undefined && alarms.length > 0 && (
         <Callout
           className="mt-3"
@@ -117,16 +154,9 @@ export default function Info({ device }) {
           </ul>
         </Callout>
       )}
-      {/* {message && <Callout className="mt-3" title={device.message} />} */}
-      {messages.length > 0 && (
+      {user.rights.some((right) => right === "mqtt") && (
         <Callout className="mt-3" title="MQTT messages" color="indigo">
-          <div className="h-10 overflow-y-scroll" id={`mqtt-${id}`}>
-            <ul className="list-none">
-              {messages.map((item, key) => (
-                <li key={key}>{item}</li>
-              ))}
-            </ul>
-          </div>
+          <MqttMessages id={id} messages={messages} />
         </Callout>
       )}
     </>

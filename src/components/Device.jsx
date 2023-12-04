@@ -57,7 +57,7 @@ export default function Device({ advanced, aps, data, token, user }) {
           )}
         </div>
       </Flex>
-      <Info device={data} />
+      <Info device={data} user={user} />
       {advanced && more && <View data={data} />}
       {advanced &&
         data.d.map((action, key) => {
