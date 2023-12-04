@@ -74,7 +74,7 @@ export default function Queue({ aps, data, token, user }) {
             <Icon
               className="hover:cursor-pointer"
               icon={TrashIcon}
-              onClick={() => handleOpen(item.card, key)}
+              onClick={() => handleOpen(item.card, key + 1)}
             />
           </ListItem>
         ))}
