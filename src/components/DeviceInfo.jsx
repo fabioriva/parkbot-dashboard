@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import {
   CheckCircleIcon,
@@ -109,17 +109,22 @@ function renderInfo(device, t, user) {
 }
 
 function MqttMessages({ id, messages }) {
+  const [checked, setChecked] = useState(true);
   useEffect(() => {
     const div = document.getElementById(`mqtt-${id}`);
-    if (div) {
+    if (checked && div) {
       div.scrollTop = div.scrollHeight;
     }
-  }, [messages]);
+  }, [checked, id, messages]);
+
+  const handleChange = () => {
+    setChecked(!checked);
+  };
 
   return (
     <>
       {messages !== undefined && messages.length > 0 && (
-        <div className="h-10 overflow-y-scroll" id={`mqtt-${id}`}>
+        <div className="h-14 overflow-y-scroll" id={`mqtt-${id}`}>
           <ul className="list-none">
             {messages.map((item, key) => (
               <li key={key}>{item}</li>
@@ -127,6 +132,12 @@ function MqttMessages({ id, messages }) {
           </ul>
         </div>
       )}
+      <div className="mt-1">
+        <label className="flex items-center">
+          <input type="checkbox" checked={checked} onChange={handleChange} />
+          <span className="pl-1">Scroll to bottom</span>
+        </label>
+      </div>
     </>
   );
 }
