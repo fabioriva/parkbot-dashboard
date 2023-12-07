@@ -12,49 +12,68 @@ import Alarm from "@/components/Alarm";
 
 function renderAut(device, t, user) {
   const { id, messages, operation } = device;
-  switch (operation) {
-    case 1:
-      return (
-        <Callout className="mt-3" title={getInfo(device, t)} color="sky">
-          {user.rights.some((right) => right === "mqtt") && (
-            <MqttMessages id={id} messages={messages} />
-          )}
-        </Callout>
-      );
-    case 2:
-      return (
-        <Callout className="mt-3" title={getInfo(device, t)} color="violet">
-          {user.rights.some((right) => right === "mqtt") && (
-            <MqttMessages id={id} messages={messages} />
-          )}
-        </Callout>
-      );
-    case 3:
-      return (
-        <Callout className="mt-3" title={getInfo(device, t)} color="emerald">
-          {user.rights.some((right) => right === "mqtt") && (
-            <MqttMessages id={id} messages={messages} />
-          )}
-        </Callout>
-      );
-    case 4:
-      return (
-        <Callout className="mt-3" title={getInfo(device, t)} color="orange">
-          {user.rights.some((right) => right === "mqtt") && (
-            <MqttMessages id={id} messages={messages} />
-          )}
-        </Callout>
-      );
-    default:
-      return (
-        <Callout
-          className="mt-3"
-          title={t("auto")}
-          color="emerald"
-          icon={CheckCircleIcon}
-        />
-      );
-  }
+  return (
+    <Callout
+      className="mt-3"
+      title={getInfo(device, t)}
+      color={
+        operation === 1
+          ? "sky"
+          : operation === 2
+          ? "violet"
+          : operation === 4
+          ? "teal"
+          : "green"
+      }
+    >
+      {user.rights.some((right) => right === "mqtt") && (
+        <MqttMessages id={id} messages={messages} />
+      )}
+    </Callout>
+  );
+  // switch (operation) {
+  //   case 1:
+  //     return (
+  //       <Callout className="mt-3" title={getInfo(device, t)} color="sky">
+  //         {user.rights.some((right) => right === "mqtt") && (
+  //           <MqttMessages id={id} messages={messages} />
+  //         )}
+  //       </Callout>
+  //     );
+  //   case 2:
+  //     return (
+  //       <Callout className="mt-3" title={getInfo(device, t)} color="violet">
+  //         {user.rights.some((right) => right === "mqtt") && (
+  //           <MqttMessages id={id} messages={messages} />
+  //         )}
+  //       </Callout>
+  //     );
+  //   case 3:
+  //     return (
+  //       <Callout className="mt-3" title={getInfo(device, t)} color="emerald">
+  //         {user.rights.some((right) => right === "mqtt") && (
+  //           <MqttMessages id={id} messages={messages} />
+  //         )}
+  //       </Callout>
+  //     );
+  //   case 4:
+  //     return (
+  //       <Callout className="mt-3" title={getInfo(device, t)} color="orange">
+  //         {user.rights.some((right) => right === "mqtt") && (
+  //           <MqttMessages id={id} messages={messages} />
+  //         )}
+  //       </Callout>
+  //     );
+  //   default:
+  //     return (
+  //       <Callout
+  //         className="mt-3"
+  //         title={t("auto")}
+  //         color="emerald"
+  //         icon={CheckCircleIcon}
+  //       />
+  //     );
+  // }
 }
 
 function renderInfo(device, t, user) {
@@ -124,20 +143,26 @@ function MqttMessages({ id, messages }) {
   return (
     <>
       {messages !== undefined && messages.length > 0 && (
-        <div className="h-14 overflow-y-scroll" id={`mqtt-${id}`}>
-          <ul className="list-none">
-            {messages.map((item, key) => (
-              <li key={key}>{item}</li>
-            ))}
-          </ul>
-        </div>
+        <>
+          <div className="h-14 overflow-y-scroll" id={`mqtt-${id}`}>
+            <ul className="list-none">
+              {messages.map((item, key) => (
+                <li key={key}>{item.mesg}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="mt-1.5">
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                checked={checked}
+                onChange={handleChange}
+              />
+              <span className="pl-1">Scroll to bottom</span>
+            </label>
+          </div>
+        </>
       )}
-      <div className="mt-1">
-        <label className="flex items-center">
-          <input type="checkbox" checked={checked} onChange={handleChange} />
-          <span className="pl-1">Scroll to bottom</span>
-        </label>
-      </div>
     </>
   );
 }
