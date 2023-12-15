@@ -190,11 +190,11 @@ export default function Info({ device, user }) {
           </ul>
         </Callout>
       )}
-      {user.rights.some((right) => right === "mqtt") && (
+      {/* {user.rights.some((right) => right === "mqtt") && (
         <Callout className="mt-3" title="MQTT messages" color="indigo">
           <MqttMessages id={id} messages={messages} />
         </Callout>
-      )}
+      )} */}
     </>
   );
 }
