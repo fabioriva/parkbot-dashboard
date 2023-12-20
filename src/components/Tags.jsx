@@ -17,8 +17,6 @@ import {
   Flex,
   Grid,
   Badge,
-  BadgeDelta,
-  Button,
 } from "@tremor/react";
 import { useData } from "@/hooks/useWebSocket";
 import { useFuzzySearch } from "@/hooks/useFuzzySearch";
