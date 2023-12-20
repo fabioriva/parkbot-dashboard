@@ -27,19 +27,18 @@ function Tag({ item }) {
   // console.log(item);
   const t = useTranslations("Tags");
   const color = item.status === 0 ? "sky" : "violet";
+  const uid =
+    item.uid !== "" ? (
+      <span>UID {item.uid}</span>
+    ) : (
+      <span>{t("notIssued")}</span>
+    );
+
   return (
     <Card decoration="left" decorationColor={color}>
       <div className="space-y-1">
         <Flex alignItems="start">
-          <Text>
-            RFID tag{" "}
-            {item.uid !== undefined &&
-              (item.uid !== "" ? (
-                <span>UID {item.uid}</span>
-              ) : (
-                <span>{t("notIssued")}</span>
-              ))}
-          </Text>
+          {item.uid !== undefined && <Text> RFID tag {uid}</Text>}
           {item.uid !== undefined && <Badge icon={XCircleIcon}>Clear</Badge>}
         </Flex>
         <Flex>
