@@ -605,6 +605,7 @@
     "card": "Tessera # {nr}",
     "search": "Cerca tag per PIN o numero...",
     "stall": "Parcheggiata nel posto {nr}",
-    "valid": "Entrata dalle {from} alle {to}"
+    "valid": "Valido per l'ingresso {from} - {to}",
+    "notIssued": "non emesso"
   }
 }

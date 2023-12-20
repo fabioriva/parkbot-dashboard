@@ -605,6 +605,7 @@
     "card": "Card # {nr}",
     "search": "Search tag by PIN or number...",
     "stall": "Parked in slot {nr}",
-    "valid": "Enter from {from} to {to}"
+    "valid": "Valid for entry {from} - {to}",
+    "notIssued": "not issued"
   }
 }

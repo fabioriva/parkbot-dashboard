@@ -2,46 +2,95 @@
 
 import { Fragment, useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
-import { MagnifyingGlassIcon, TagIcon } from "@heroicons/react/24/solid";
-import { Card, Metric, Text, Bold, Icon, Flex, Grid } from "@tremor/react";
+import {
+  MagnifyingGlassIcon,
+  FingerPrintIcon,
+  // TagIcon,
+  XCircleIcon,
+} from "@heroicons/react/24/solid";
+import {
+  Card,
+  Metric,
+  Text,
+  Bold,
+  Icon,
+  Flex,
+  Grid,
+  Badge,
+  BadgeDelta,
+  Button,
+} from "@tremor/react";
 import { useData } from "@/hooks/useWebSocket";
 import { useFuzzySearch } from "@/hooks/useFuzzySearch";
 
 function Tag({ item }) {
+  // console.log(item);
   const t = useTranslations("Tags");
-
+  const color = item.status === 0 ? "sky" : "violet";
   return (
-    <Card
-      decoration="left"
-      decorationColor={item.status === 0 ? "indigo" : "amber"}
-    >
-      <Flex justifyContent="start" className="space-x-4">
-        <Icon
-          icon={TagIcon}
-          variant="light"
-          size="xl"
-          color={item.status === 0 ? "indigo" : "amber"}
-        />
-        <div className="truncate">
+    <Card decoration="left" decorationColor={color}>
+      <div className="space-y-1">
+        <Flex alignItems="start">
           <Text>
-            <Bold>{t("card", { nr: item.nr })}</Bold>
+            RFID tag{" "}
+            {item.uid !== undefined &&
+              (item.uid !== "" ? (
+                <span>UID {item.uid}</span>
+              ) : (
+                <span>{t("notIssued")}</span>
+              ))}
           </Text>
-          <Flex
-            justifyContent="start"
-            alignItems="baseline"
-            className="truncate space-x-3"
-          >
-            <Metric>{item.code}</Metric>
-            <Text className="truncate">
-              {item.status === 0
-                ? t("valid", { from: item.from, to: item.to })
-                : t("stall", { nr: item.status })}
-            </Text>
-          </Flex>
-        </div>
-      </Flex>
+          {item.uid !== undefined && <Badge icon={XCircleIcon}>Clear</Badge>}
+        </Flex>
+        <Flex>
+          <Metric>{t("card", { nr: item.nr })}</Metric>
+          {item.code !== "" && (
+            <Badge color={color} icon={FingerPrintIcon} size="xl">
+              <Bold>{item.code}</Bold>
+            </Badge>
+          )}
+        </Flex>
+        <Text>
+          {item.status === 0
+            ? t("valid", { from: item.from, to: item.to })
+            : t("stall", { nr: item.status })}
+        </Text>
+      </div>
     </Card>
   );
+
+  // return (
+  //   <Card
+  //     decoration="left"
+  //     decorationColor={item.status === 0 ? "indigo" : "amber"}
+  //   >
+  //     <Flex justifyContent="start" className="space-x-4">
+  //       <Icon
+  //         icon={TagIcon}
+  //         variant="light"
+  //         size="xl"
+  //         color={item.status === 0 ? "indigo" : "amber"}
+  //       />
+  //       <div className="truncate">
+  //         <Text>
+  //           <Bold>{t("card", { nr: item.nr })}</Bold>
+  //         </Text>
+  //         <Flex
+  //           justifyContent="start"
+  //           alignItems="baseline"
+  //           className="truncate space-x-3"
+  //         >
+  //           <Metric>{item.code}</Metric>
+  //           <Text className="truncate">
+  //             {item.status === 0
+  //               ? t("valid", { from: item.from, to: item.to })
+  //               : t("stall", { nr: item.status })}
+  //           </Text>
+  //         </Flex>
+  //       </div>
+  //     </Flex>
+  //   </Card>
+  // );
 }
 
 export default function Tags({ aps, json }) {
