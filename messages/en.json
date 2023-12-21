@@ -603,9 +603,14 @@
   },
   "Tags": {
     "card": "Card # {nr}",
-    "search": "Search tag by PIN or number...",
+    "search": "Search tag by PIN or number or UID...",
     "stall": "Parked in slot {nr}",
     "valid": "Valid for entry {from} - {to}",
-    "notIssued": "not issued"
+    "notIssued": "not issued",
+    "dialogTitle": "Edit card {nr}",
+    "dialogText": "Do you want to change the card {nr} PIN?",
+    "dialogTextInput": "Enter a PIN code, pattern: 3 digits, [a-fA-F0-9]}",
+    "dialogCancel": "Cancel",
+    "dialogEdit": "Edit"
   }
 }

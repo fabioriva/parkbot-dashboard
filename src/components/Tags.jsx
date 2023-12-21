@@ -4,7 +4,7 @@ import { Fragment, useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import {
   MagnifyingGlassIcon,
-  FingerPrintIcon,
+  PencilSquareIcon,
   // TagIcon,
   XCircleIcon,
 } from "@heroicons/react/24/solid";
@@ -12,47 +12,137 @@ import {
   Card,
   Metric,
   Text,
-  Bold,
   Icon,
-  Flex,
   Grid,
   Badge,
+  TextInput,
+  Button,
 } from "@tremor/react";
+import Dialog from "@/components/Dialog";
 import { useData } from "@/hooks/useWebSocket";
 import { useFuzzySearch } from "@/hooks/useFuzzySearch";
+import fetch, { actionResponse } from "@/lib/fetch";
 
 function Tag({ item }) {
   // console.log(item);
   const t = useTranslations("Tags");
   const color = item.status === 0 ? "sky" : "violet";
   const uid =
-    item.uid !== "" ? (
-      <span>UID {item.uid}</span>
+    item.uid !== "0" ? (
+      <span className="font-bold">{item.uid}</span>
     ) : (
       <span>{t("notIssued")}</span>
     );
 
+  const [isOpen, setIsOpen] = useState(false);
+  const [error, setError] = useState({ status: false, message: "" });
+  const [value, setValue] = useState(item.code);
+
+  const handleConfirm = async (data) => {
+    console.log(data, typeof data.code);
+    // const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/card/edit`;
+    // const json = await fetch(url, {
+    //   method: "POST",
+    //   // withCredentials: true,
+    //   // credentials: "include",
+    //   headers: {
+    //     Authorization: "Bearer " + token,
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({ card: data.status, stall: data.nr }),
+    // });
+    // actionResponse(json);
+    setIsOpen(false);
+  };
+
+  const handleOnValueChange = (value) => {
+    const regexp = /^[a-fA-F0-9]{3}$/; // new RegExp('^[a-fA-F0-9]{3}$')
+    !regexp.test(value) || value.length !== 3
+      ? setError({
+          status: true,
+          message: "Not valid pattern. 3 digits, [a-fA-F0-9]",
+        })
+      : setError({ status: false, message: "" });
+    setValue(value);
+  };
+
+  const handleOpen = () => {
+    // if (user.rights.some((right) => right === "edit-stall")) {
+    setIsOpen(true);
+    // }
+  };
+
   return (
     <Card decoration="left" decorationColor={color}>
-      <div className="space-y-1">
-        <Flex alignItems="start">
-          {item.uid !== undefined && <Text> RFID tag {uid}</Text>}
-          {item.uid !== undefined && <Badge icon={XCircleIcon}>Clear</Badge>}
-        </Flex>
-        <Flex>
-          <Metric>{t("card", { nr: item.nr })}</Metric>
-          {item.code !== "" && (
-            <Badge color={color} icon={FingerPrintIcon} size="xl">
-              <Bold>{item.code}</Bold>
-            </Badge>
-          )}
-        </Flex>
+      <div className="flex space-x-1">
+        <Text className="grow">
+          RFID tag {item.uid !== undefined && <span>UID {uid}</span>}
+        </Text>
+        {item.uid !== undefined && (
+          <Badge
+            className="cursor-pointer"
+            color={color}
+            icon={XCircleIcon}
+            onClick={() => console.log("Clear clicked")}
+            tooltip="Click to clear"
+          >
+            Clear
+          </Badge>
+        )}
+        <Badge
+          className="cursor-pointer"
+          color={color}
+          icon={PencilSquareIcon}
+          onClick={handleOpen}
+          tooltip="Click to edit PIN"
+        >
+          PIN
+        </Badge>
+      </div>
+      <div className="flex items-baseline space-x-3">
+        <Metric>{t("card", { nr: item.nr })}</Metric>
         <Text>
-          {item.status === 0
-            ? t("valid", { from: item.from, to: item.to })
-            : t("stall", { nr: item.status })}
+          PIN <span className="font-bold">{item.code}</span>
         </Text>
       </div>
+      <Text className="mt-3">
+        {item.status === 0
+          ? t("valid", { from: item.from, to: item.to })
+          : t("stall", { nr: item.status })}
+      </Text>
+      <Dialog isOpen={isOpen} title={t("dialogTitle", { nr: item.nr })}>
+        <div className="mt-3">
+          <Text>{t("dialogText", { nr: item.nr })}</Text>
+        </div>
+        {/* <pre className="mt-3">Card: {JSON.stringify(item, null, 2)}</pre> */}
+        <TextInput
+          className="mt-3"
+          placeholder={t("dialogTextInput", {
+            nr: item.nr,
+          })}
+          error={error.status}
+          errorMessage={error.message}
+          maxlength="3"
+          value={value}
+          onValueChange={handleOnValueChange}
+        />
+        <div className="flex flex-col sm:flex-row sm:space-x-3">
+          <Button
+            className="flex-1 mt-3"
+            variant="secondary"
+            onClick={() => setIsOpen(false)}
+          >
+            {t("dialogCancel")}
+          </Button>
+          <Button
+            className="flex-1 mt-3"
+            onClick={() => handleConfirm({ ...item, code: value })}
+            disabled={error.status}
+          >
+            {t("dialogEdit")}
+          </Button>
+        </div>
+      </Dialog>
     </Card>
   );
 
@@ -105,7 +195,7 @@ export default function Tags({ aps, json }) {
     cards,
     {
       includeScore: true,
-      keys: ["code", "nr"], // Search array in `code` and in `nr`
+      keys: ["code", "nr", "uid"], // Search array in `code` and in `nr` or `uid`
     },
     t("search")
   );

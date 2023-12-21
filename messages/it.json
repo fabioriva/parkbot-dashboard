@@ -603,9 +603,14 @@
   },
   "Tags": {
     "card": "Tessera # {nr}",
-    "search": "Cerca tag per PIN o numero...",
+    "search": "Cerca tag per PIN, UID o numero...",
     "stall": "Parcheggiata nel posto {nr}",
     "valid": "Valido per l'ingresso {from} - {to}",
-    "notIssued": "non emesso"
+    "notIssued": "non emesso",
+    "dialogTitle": "Modifica tessera {nr}",
+    "dialogText": "Vuoi modificare il PIN della tessera {nr}?",
+    "dialogTextInput": "Inserisci un codice PIN pattern: 3 digits, [a-fA-F0-9]}",
+    "dialogCancel": "Annulla",
+    "dialogEdit": "Modifica"
   }
 }
