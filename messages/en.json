@@ -174,7 +174,8 @@
       "op-id-8": "Moved car {card} from stall {stall}",
       "op-id-9": "Reserved stall {stall}",
       "op-id-10": "Exit request for card {card}",
-      "op-id-11": "Entry request for card {card}"
+      "op-id-11": "Entry request for card {card}",
+      "op-id-12": "Issued card {card}"
     },
     "Table": {
       "alarm": "Alarm Id",
@@ -611,6 +612,8 @@
     "dialogText": "Do you want to change the card {nr} PIN?",
     "dialogTextInput": "Enter a PIN code, pattern: 3 digits, [a-fA-F0-9]}",
     "dialogCancel": "Cancel",
-    "dialogEdit": "Edit"
+    "dialogEdit": "Edit",
+    "clearTooltip": "Click to clear tag",
+    "editTooltip": "Click to change PIN code"
   }
 }

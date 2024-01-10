@@ -27,7 +27,7 @@ export function getInfo(data, t) {
 }
 
 export function getLog(log, t) {
-  const { alarm, card, operation, mode, stall } = log;
+  const { alarm, card, operation, mode, stall, uid } = log;
   switch (operation.id) {
     case 1:
       // return t("op-id-1", { id: alarm.id });
@@ -53,6 +53,8 @@ export function getLog(log, t) {
       return t("op-id-10", { card });
     case 11:
       return t("op-id-11", { card });
+    case 12:
+      return t("op-id-12", { card });
     default:
       return `Operation ${operation.id}`;
   }

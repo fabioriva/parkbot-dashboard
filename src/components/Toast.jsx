@@ -63,6 +63,11 @@ export default function Toast({ message }) {
             icon: "👤",
           });
           return;
+        case 12:
+          toast(locale, {
+            icon: "🪪",
+          });
+          return;
         default:
           toast(locale, {
             icon: "💀",

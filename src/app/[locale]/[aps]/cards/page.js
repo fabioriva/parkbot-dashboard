@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import Error from "@/components/Error";
 import Tags from "@/components/Tags";
+import { verifyAuth } from "@/lib/auth";
 import fetch from "@/lib/fetch";
 
 export default async function Page({ params }) {
@@ -13,5 +14,6 @@ export default async function Page({ params }) {
   if (!json) {
     return <Error />;
   }
-  return <Tags aps={params.aps} json={json} />;
+  const { payload } = await verifyAuth(token);
+  return <Tags aps={params.aps} json={json} token={token} user={payload} />;
 }

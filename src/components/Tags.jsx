@@ -13,7 +13,6 @@ import {
   Metric,
   Text,
   Icon,
-  Grid,
   Badge,
   TextInput,
   Button,
@@ -23,35 +22,40 @@ import { useData } from "@/hooks/useWebSocket";
 import { useFuzzySearch } from "@/hooks/useFuzzySearch";
 import fetch, { actionResponse } from "@/lib/fetch";
 
-function Tag({ item }) {
-  // console.log(item);
+function Tag({ aps, item, token, user }) {
   const t = useTranslations("Tags");
-  const color = item.status === 0 ? "sky" : "violet";
+  const color =
+    Number(item.uid) === 0 ? "slate" : item.status === 0 ? "sky" : "violet";
+  // const uid =
+  //   item.uid !== "0" ? (
+  //     <span className="font-bold">{item.uid}</span>
+  //   ) : (
+  //     <span>{t("notIssued")}</span>
+  //   );
   const uid =
-    item.uid !== "0" ? (
-      <span className="font-bold">{item.uid}</span>
-    ) : (
+    Number(item.uid) === 0 ? (
       <span>{t("notIssued")}</span>
+    ) : (
+      <span className="font-bold">{item.uid}</span>
     );
-
   const [isOpen, setIsOpen] = useState(false);
   const [error, setError] = useState({ status: false, message: "" });
   const [value, setValue] = useState(item.code);
 
   const handleConfirm = async (data) => {
-    console.log(data, typeof data.code);
-    // const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/card/edit`;
-    // const json = await fetch(url, {
-    //   method: "POST",
-    //   // withCredentials: true,
-    //   // credentials: "include",
-    //   headers: {
-    //     Authorization: "Bearer " + token,
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ card: data.status, stall: data.nr }),
-    // });
-    // actionResponse(json);
+    // console.log(token, user, data, typeof data.code, typeof data.uid);
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/card/edit`;
+    const json = await fetch(url, {
+      method: "POST",
+      // withCredentials: true,
+      // credentials: "include",
+      headers: {
+        Authorization: "Bearer " + token,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ card: data.nr, code: data.code }),
+    });
+    actionResponse(json);
     setIsOpen(false);
   };
 
@@ -67,9 +71,9 @@ function Tag({ item }) {
   };
 
   const handleOpen = () => {
-    // if (user.rights.some((right) => right === "edit-stall")) {
-    setIsOpen(true);
-    // }
+    if (user.rights.some((right) => right === "edit-card")) {
+      setIsOpen(true);
+    }
   };
 
   return (
@@ -83,8 +87,8 @@ function Tag({ item }) {
             className="cursor-pointer"
             color={color}
             icon={XCircleIcon}
-            onClick={() => console.log("Clear clicked")}
-            tooltip="Click to clear"
+            onClick={() => handleConfirm({ ...item, code: -1 })} // write -1 to clear tag UID
+            tooltip={t("clearTooltip")}
           >
             Clear
           </Badge>
@@ -94,7 +98,7 @@ function Tag({ item }) {
           color={color}
           icon={PencilSquareIcon}
           onClick={handleOpen}
-          tooltip="Click to edit PIN"
+          tooltip={t("editTooltip")}
         >
           PIN
         </Badge>
@@ -180,9 +184,8 @@ function Tag({ item }) {
   // );
 }
 
-export default function Tags({ aps, json }) {
+export default function Tags({ aps, json, token, user }) {
   const t = useTranslations("Tags");
-
   const [cards, setCards] = useState(json);
 
   const url = `${process.env.NEXT_PUBLIC_WEBSOCK_URL}/${aps}/cards`;
@@ -203,11 +206,15 @@ export default function Tags({ aps, json }) {
   return (
     <Fragment>
       {fuzzySearchInput}
-      <Grid numItemsSm={2} numItemsMd={3} numItemsLg={4} className="gap-6 mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-6">
         {results.length === 0
-          ? cards.map((item, key) => <Tag item={item} key={key} />)
-          : results.map(({ item }, key) => <Tag item={item} key={key} />)}
-      </Grid>
+          ? cards.map((item, key) => (
+              <Tag aps={aps} item={item} token={token} user={user} key={key} />
+            ))
+          : results.map(({ item }, key) => (
+              <Tag aps={aps} item={item} token={token} user={user} key={key} />
+            ))}
+      </div>
     </Fragment>
   );
 }

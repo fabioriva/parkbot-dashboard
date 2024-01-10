@@ -174,7 +174,8 @@
       "op-id-8": "Trasferimento vettura {card} da stallo {stall}",
       "op-id-9": "Prenotato stallo {stall}",
       "op-id-10": "Richiesta di uscita per tessera {card}",
-      "op-id-11": "Richiesta di entrata per tessera {card}"
+      "op-id-11": "Richiesta di entrata per tessera {card}",
+      "op-id-12": "Emessa tessera {card}"
     },
     "Table": {
       "alarm": "Allarme",
@@ -611,6 +612,8 @@
     "dialogText": "Vuoi modificare il PIN della tessera {nr}?",
     "dialogTextInput": "Inserisci un codice PIN pattern: 3 digits, [a-fA-F0-9]}",
     "dialogCancel": "Annulla",
-    "dialogEdit": "Modifica"
+    "dialogEdit": "Modifica",
+    "clearTooltip": "Clicca per annullare la tessera",
+    "editTooltip": "Clicca per cambiare il codice PIN"
   }
 }
