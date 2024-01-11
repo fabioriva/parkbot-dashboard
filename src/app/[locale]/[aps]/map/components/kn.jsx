@@ -30,7 +30,7 @@ export default function Map(props) {
           <TabGroup>
             <TabList className="mt-3" variant="solid">
               {Levels.map((level, index) => (
-                <Tab key={index}>Basement {index + 1}</Tab>
+                <Tab key={index}>B{index + 2}</Tab>
               ))}
             </TabList>
             <TabPanels>
