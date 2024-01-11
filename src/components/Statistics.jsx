@@ -96,7 +96,7 @@ export default function Statistics({ aps, data, token }) {
         </div>
       </Card>
       {/* Operations by devices Pie Charts */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 mt-3">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 mt-3">
         <ByDevice data={devices} category="total" title={t("devicesTotal")} />
         <ByDevice
           data={devices}
@@ -104,7 +104,7 @@ export default function Statistics({ aps, data, token }) {
           title={t("devicesEntries")}
         />
         <ByDevice data={devices} category="exits" title={t("devicesExits")} />
-      </div>
+      </div> */}
     </>
   );
 
