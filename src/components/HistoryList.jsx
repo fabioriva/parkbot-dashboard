@@ -9,7 +9,7 @@ import {
   UserPlusIcon,
   WrenchScrewdriverIcon,
 } from "@heroicons/react/24/solid";
-import { Bold, Flex, Icon, List, ListItem, Text } from "@tremor/react";
+import { Bold, Icon, List, ListItem, Text } from "@tremor/react";
 import FunctionMode from "@/components/FunctionMode";
 import { getLog } from "@/lib/localize";
 
@@ -82,7 +82,7 @@ const icons = [
 ];
 
 export default function HistoryList({ data }) {
-  // console.log(data);
+  console.log(data);
   const t = useTranslations("History.List");
 
   return (
@@ -90,8 +90,35 @@ export default function HistoryList({ data }) {
       {data.length > 0 ? (
         <List>
           {data.map((item, key) => (
-            <ListItem key={key}>
-              <Flex justifyContent="start" className="truncate space-x-4">
+            <ListItem className="flex" key={key}>
+              <div className="grow">
+                <div className="flex space-x-4">
+                  <Icon
+                    size="md"
+                    variant="light"
+                    icon={
+                      icons.find((ico) => ico.id === item.operation.id)?.icon
+                    }
+                    color={
+                      icons.find((ico) => ico.id === item.operation.id)?.color
+                    }
+                  />
+                  <div className="truncate">
+                    <Text className="truncate">
+                      <Bold>
+                        {item.device.key} - <FunctionMode mode={item.mode} />
+                      </Bold>
+                    </Text>
+                    <Text className="truncate">{getLog(item, t)}</Text>
+                  </div>
+                </div>
+              </div>
+              <Text className="text-right">
+                {item.date.slice(0, 10)}
+                <br />
+                {item.date.slice(11, 19)}
+              </Text>
+              {/* <Flex justifyContent="start" className="truncate space-x-4">
                 <Icon
                   size="md"
                   variant="light"
@@ -113,7 +140,7 @@ export default function HistoryList({ data }) {
                 {item.date.slice(0, 10)}
                 <br />
                 {item.date.slice(11, 19)}
-              </Text>
+              </Text> */}
             </ListItem>
           ))}
         </List>

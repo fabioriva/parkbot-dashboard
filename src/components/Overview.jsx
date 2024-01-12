@@ -14,6 +14,30 @@ export default function Overview({ aps, json, token, user }) {
   useEffect(() => setOverview(data), [data]);
 
   return (
+    // <div className="grid lg:grid-cols-3 gap-3">
+    //   <div className="lg:col-span-2 space-y-3">
+    //     {overview.devices.map((devices, key) => (
+    //       <div
+    //         className={`grid lg:grid-cols-${
+    //           devices.length <= 3 ? devices.length : 3
+    //         }`}
+    //       >
+    //         {devices.map((device, key) => (
+    //           <Device
+    //             advanced
+    //             aps={aps}
+    //             data={device}
+    //             token={token}
+    //             user={user}
+    //             key={key}
+    //           />
+    //         ))}
+    //       </div>
+    //     ))}
+    //   </div>
+    //   <Queue aps={aps} data={overview.exitQueue} token={token} user={user} />
+    // </div>
+
     <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-3">
       <div className="xl:col-span-2 grid xl:grid-cols-2 2xl:grid-cols-3 items-stretch gap-3">
         {overview.devices.flat(1).map((device, key) => (
