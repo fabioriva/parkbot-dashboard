@@ -123,6 +123,8 @@
     "pos-unlocked": "libero",
     "pos-closed": "chiusa",
     "pos-opened": "aperta",
+    "sil-mov-bwd": "traslazione BWD",
+    "sil-mov-fwd": "traslazione FWD",
     "sil-mov-home": "verso centro",
     "sil-mov-stall": "verso stallo",
     "sil-mov-up": "solleva",

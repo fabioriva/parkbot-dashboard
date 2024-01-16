@@ -123,6 +123,8 @@
     "pos-unlocked": "unlocked",
     "pos-closed": "closed",
     "pos-opened": "opened",
+    "sil-mov-bwd": "traveling BWD",
+    "sil-mov-fwd": "traveling FWD",
     "sil-mov-home": "move home",
     "sil-mov-stall": "move in stall",
     "sil-mov-up": "rising",
