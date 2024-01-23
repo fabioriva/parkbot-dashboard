@@ -112,6 +112,7 @@ export default function Tags({ aps, json, token, user }) {
       body: JSON.stringify({ card: data.nr, code: data.code }),
     });
     actionResponse(json);
+    setIsOpenDismiss(false);
     setIsOpenPin(false);
   };
 
