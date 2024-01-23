@@ -2,106 +2,65 @@
 
 import { Fragment, useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
-import {
-  MagnifyingGlassIcon,
-  PencilSquareIcon,
-  // TagIcon,
-  XCircleIcon,
-} from "@heroicons/react/24/solid";
-import {
-  Card,
-  Metric,
-  Text,
-  Icon,
-  Badge,
-  TextInput,
-  Button,
-} from "@tremor/react";
-import Dialog from "@/components/Dialog";
-import { useData } from "@/hooks/useWebSocket";
 import { useFuzzySearch } from "@/hooks/useFuzzySearch";
+import { useData } from "@/hooks/useWebSocket";
+import { Card, Metric, Text, Icon } from "@tremor/react";
+import {
+  BoltIcon,
+  BoltSlashIcon,
+  PencilSquareIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/solid";
+import Confirm from "@/components/ConfirmDialog";
+import Pin from "@/components/EditPin";
 import fetch, { actionResponse } from "@/lib/fetch";
 
-function Tag({ aps, item, token, user }) {
+function Tag({ item, handlePin, handleType, handleDismiss }) {
   const t = useTranslations("Tags");
   const color =
     Number(item.uid) === 0 ? "slate" : item.status === 0 ? "sky" : "violet";
-  // const uid =
-  //   item.uid !== "0" ? (
-  //     <span className="font-bold">{item.uid}</span>
-  //   ) : (
-  //     <span>{t("notIssued")}</span>
-  //   );
-  const uid =
-    Number(item.uid) === 0 ? (
-      <span>{t("notIssued")}</span>
-    ) : (
-      <span className="font-bold">{item.uid}</span>
-    );
-  const [isOpen, setIsOpen] = useState(false);
-  const [error, setError] = useState({ status: false, message: "" });
-  const [value, setValue] = useState(item.code);
-
-  const handleConfirm = async (data) => {
-    // console.log(token, user, data, typeof data.code, typeof data.uid);
-    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/card/edit`;
-    const json = await fetch(url, {
-      method: "POST",
-      // withCredentials: true,
-      // credentials: "include",
-      headers: {
-        Authorization: "Bearer " + token,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ card: data.nr, code: data.code }),
-    });
-    actionResponse(json);
-    setIsOpen(false);
-  };
-
-  const handleOnValueChange = (value) => {
-    const regexp = /^[a-fA-F0-9]{3}$/; // new RegExp('^[a-fA-F0-9]{3}$')
-    !regexp.test(value) || value.length !== 3
-      ? setError({
-          status: true,
-          message: "Not valid pattern. 3 digits, [a-fA-F0-9]",
-        })
-      : setError({ status: false, message: "" });
-    setValue(value);
-  };
-
-  const handleOpen = () => {
-    if (user.rights.some((right) => right === "edit-card")) {
-      setIsOpen(true);
-    }
-  };
 
   return (
     <Card decoration="left" decorationColor={color}>
-      <div className="flex space-x-1">
+      <div className="flex items-center space-x-3">
         <Text className="grow">
-          RFID tag {item.uid !== undefined && <span>UID {uid}</span>}
+          RFID Tag{" "}
+          {item.uid !== undefined && Number(item.uid) === 0 ? (
+            <span>{t("notIssued")}</span>
+          ) : (
+            <span>
+              UID <span className="font-bold">{item.uid}</span>
+            </span>
+          )}
         </Text>
-        {item.uid !== undefined && (
-          <Badge
-            className="cursor-pointer"
-            color={color}
-            icon={XCircleIcon}
-            onClick={() => handleConfirm({ ...item, code: -1 })} // write -1 to clear tag UID
-            tooltip={t("clearTooltip")}
-          >
-            Clear
-          </Badge>
-        )}
-        <Badge
+        <Icon
           className="cursor-pointer"
           color={color}
           icon={PencilSquareIcon}
-          onClick={handleOpen}
-          tooltip={t("editTooltip")}
-        >
-          PIN
-        </Badge>
+          onClick={() => handlePin(item)}
+          tooltip={t("editPinTooltip")}
+          variant="solid"
+        />
+        {item.type !== undefined && (
+          <Icon
+            className="cursor-pointer"
+            color={color}
+            icon={item.type === 0 ? BoltSlashIcon : BoltIcon}
+            onClick={() => handleType(item)}
+            tooltip={t("editTypeTooltip")}
+            variant="solid"
+          />
+        )}
+        {item.uid !== undefined && (
+          <Icon
+            className="cursor-pointer"
+            color={color}
+            icon={XMarkIcon}
+            onClick={() => handleDismiss(item)}
+            tooltip={t("dismissTooltip")}
+            variant="solid"
+          />
+        )}
       </div>
       <div className="flex items-baseline space-x-3">
         <Metric>{t("card", { nr: item.nr })}</Metric>
@@ -114,74 +73,8 @@ function Tag({ aps, item, token, user }) {
           ? t("valid", { from: item.from, to: item.to })
           : t("stall", { nr: item.status })}
       </Text>
-      <Dialog isOpen={isOpen} title={t("dialogTitle", { nr: item.nr })}>
-        <div className="mt-3">
-          <Text>{t("dialogText", { nr: item.nr })}</Text>
-        </div>
-        {/* <pre className="mt-3">Card: {JSON.stringify(item, null, 2)}</pre> */}
-        <TextInput
-          className="mt-3"
-          placeholder={t("dialogTextInput", {
-            nr: item.nr,
-          })}
-          error={error.status}
-          errorMessage={error.message}
-          maxlength="3"
-          value={value}
-          onValueChange={handleOnValueChange}
-        />
-        <div className="flex flex-col sm:flex-row sm:space-x-3">
-          <Button
-            className="flex-1 mt-3"
-            variant="secondary"
-            onClick={() => setIsOpen(false)}
-          >
-            {t("dialogCancel")}
-          </Button>
-          <Button
-            className="flex-1 mt-3"
-            onClick={() => handleConfirm({ ...item, code: value })}
-            disabled={error.status}
-          >
-            {t("dialogEdit")}
-          </Button>
-        </div>
-      </Dialog>
     </Card>
   );
-
-  // return (
-  //   <Card
-  //     decoration="left"
-  //     decorationColor={item.status === 0 ? "indigo" : "amber"}
-  //   >
-  //     <Flex justifyContent="start" className="space-x-4">
-  //       <Icon
-  //         icon={TagIcon}
-  //         variant="light"
-  //         size="xl"
-  //         color={item.status === 0 ? "indigo" : "amber"}
-  //       />
-  //       <div className="truncate">
-  //         <Text>
-  //           <Bold>{t("card", { nr: item.nr })}</Bold>
-  //         </Text>
-  //         <Flex
-  //           justifyContent="start"
-  //           alignItems="baseline"
-  //           className="truncate space-x-3"
-  //         >
-  //           <Metric>{item.code}</Metric>
-  //           <Text className="truncate">
-  //             {item.status === 0
-  //               ? t("valid", { from: item.from, to: item.to })
-  //               : t("stall", { nr: item.status })}
-  //           </Text>
-  //         </Flex>
-  //       </div>
-  //     </Flex>
-  //   </Card>
-  // );
 }
 
 export default function Tags({ aps, json, token, user }) {
@@ -198,10 +91,45 @@ export default function Tags({ aps, json, token, user }) {
     cards,
     {
       includeScore: true,
-      keys: ["code", "nr", "uid"], // Search array in `code` and in `nr` or `uid`
+      keys: ["code", "nr", "type", "uid"], // Search array in `code` and ...
     },
     t("search")
   );
+
+  const [tag, setTag] = useState({});
+
+  const [isOpenDismiss, setIsOpenDismiss] = useState(false);
+  const [isOpenPin, setIsOpenPin] = useState(false);
+
+  const handleConfirm = async (data) => {
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/card/edit`;
+    const json = await fetch(url, {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + token,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ card: data.nr, code: data.code }),
+    });
+    actionResponse(json);
+    setIsOpenPin(false);
+  };
+
+  const handleDismiss = (tag) => {
+    setTag(tag);
+    if (user.rights.some((right) => right === "edit-card")) {
+      setIsOpenDismiss(true);
+    }
+  };
+
+  const handlePin = (tag) => {
+    setTag(tag);
+    if (user.rights.some((right) => right === "edit-card")) {
+      setIsOpenPin(true);
+    }
+  };
+
+  const handleType = (tag) => console.log(tag);
 
   return (
     <Fragment>
@@ -209,12 +137,38 @@ export default function Tags({ aps, json, token, user }) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-6">
         {results.length === 0
           ? cards.map((item, key) => (
-              <Tag aps={aps} item={item} token={token} user={user} key={key} />
+              <Tag
+                item={item}
+                handlePin={handlePin}
+                handleType={handleType}
+                handleDismiss={handleDismiss}
+                key={key}
+              />
             ))
           : results.map(({ item }, key) => (
-              <Tag aps={aps} item={item} token={token} user={user} key={key} />
+              <Tag
+                item={item}
+                handlePin={handlePin}
+                handleType={handleType}
+                handleDismiss={handleDismiss}
+                key={key}
+              />
             ))}
       </div>
+      <Confirm
+        handleCancel={() => setIsOpenDismiss(false)}
+        handleConfirm={() => handleConfirm({ ...tag, code: -1 })} // write -1 to clear tag UID
+        isOpen={isOpenDismiss}
+        title={t("dismissTitle", { nr: tag.nr })}
+      >
+        <Text>{t("dismissText", { nr: tag.nr })}</Text>
+      </Confirm>
+      <Pin
+        handleConfirm={handleConfirm}
+        isOpen={isOpenPin}
+        setIsOpen={setIsOpenPin}
+        tag={tag}
+      />
     </Fragment>
   );
 }

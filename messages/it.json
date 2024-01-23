@@ -610,12 +610,15 @@
     "stall": "Parcheggiata nel posto {nr}",
     "valid": "Valido per l'ingresso {from} - {to}",
     "notIssued": "non emesso",
-    "dialogTitle": "Modifica tessera {nr}",
-    "dialogText": "Vuoi modificare il PIN della tessera {nr}?",
-    "dialogTextInput": "Inserisci un codice PIN pattern: 3 digits, [a-fA-F0-9]}",
+    "editPinTitle": "Modifica tessera {nr}",
+    "editPinText": "Vuoi modificare il PIN della tessera {nr}?",
+    "editPinTextInput": "Inserisci un codice PIN pattern: 3 digits, [a-fA-F0-9]}",
+    "editPinTooltip": "Modifica PIN",
     "dialogCancel": "Annulla",
-    "dialogEdit": "Modifica",
-    "clearTooltip": "Clicca per annullare la tessera",
-    "editTooltip": "Clicca per cambiare il codice PIN"
+    "dialogConfirm": "Conferma",
+    "dismissText": "Sei sicuro di voler annullare la tessera {nr}?",
+    "dismissTitle": "Annulla tessera {nr}",
+    "dismissTooltip": "Annulla",
+    "editTypeTooltip": "Cambia tipo EV"
   }
 }

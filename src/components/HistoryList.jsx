@@ -82,7 +82,7 @@ const icons = [
 ];
 
 export default function HistoryList({ data }) {
-  console.log(data);
+  // console.log(data);
   const t = useTranslations("History.List");
 
   return (
