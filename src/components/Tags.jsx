@@ -22,7 +22,7 @@ function Tag({ item, handlePin, handleType, handleDismiss }) {
 
   return (
     <Card decoration="left" decorationColor={color}>
-      <div className="flex items-center space-x-3">
+      <div className="flex items-center space-x-1.5">
         <Text className="grow">
           RFID Tag{" "}
           {item.uid !== undefined && Number(item.uid) === 0 ? (
