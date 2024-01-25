@@ -16,7 +16,6 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
   const { cards, stalls, stallStatus } = definitions;
 
   const handleConfirm = async (data) => {
-    console.log(data, typeof data.status, typeof data.nr);
     const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/map/edit`;
     const json = await fetch(url, {
       method: "POST",
@@ -41,7 +40,6 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
   };
 
   const handleOpen = () => {
-    // console.log(stall);
     if (user.rights.some((right) => right === "edit-stall")) {
       setIsOpen(true);
     }
@@ -172,7 +170,6 @@ const Level = ({ aps, definitions, level, token, user, view }) => {
             aps={aps}
             definitions={definitions}
             stall={stall}
-            // stallStatus={stallStatus}
             token={token}
             user={user}
             view={view}
