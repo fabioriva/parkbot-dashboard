@@ -26,32 +26,32 @@ function get(label) {
       return { key: label, query: {} };
 
     default:
-      // if (label) {
-      let array = label.split("");
-      const dash = array[array.length - 2];
-      if (dash === "-") {
-        const last = parseInt(array[array.length - 3]);
+      if (label) {
+        let array = label.split("");
+        const dash = array[array.length - 2];
+        if (dash === "-") {
+          const last = parseInt(array[array.length - 3]);
+          if (!isNaN(last)) {
+            return {
+              key: array.slice(0, -3).join("").concat("x"),
+              query: { nr: last },
+            };
+          } else {
+            return { key: label.slice(0, -2), query: {} };
+          }
+        }
+        const last = parseInt(array[array.length - 1]);
         if (!isNaN(last)) {
           return {
-            key: array.slice(0, -3).join("").concat("x"),
+            key: array.slice(0, -1).join("").concat("x"),
             query: { nr: last },
           };
         } else {
-          return { key: label.slice(0, -2), query: {} };
+          return { key: label, query: {} };
         }
-      }
-      const last = parseInt(array[array.length - 1]);
-      if (!isNaN(last)) {
-        return {
-          key: array.slice(0, -1).join("").concat("x"),
-          query: { nr: last },
-        };
       } else {
-        return { key: label, query: {} };
+        return { key: "label", query: {} };
       }
-    // } else {
-    //   return { key: "label", query: {} };
-    // }
   }
 }
 

@@ -382,6 +382,9 @@ export default function Module({ module }) {
           #card-8 {
             left: 970px;
           }
+          #card-9 {
+            left: 1108px;
+          }
         `}
       </style>
     </div>
