@@ -1,10 +1,11 @@
 "use client";
 
 import React, { lazy, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { useRouter } from "@/navigation";
 import { useTranslations } from "next-intl";
 import { ArrowLeftIcon } from "@heroicons/react/24/solid";
-import { Flex, Button } from "@tremor/react";
+import { Flex, Button, Title } from "@tremor/react";
 import Loading from "@/components/Loading";
 import { useData } from "@/hooks/useWebSocket";
 
@@ -38,6 +39,10 @@ function Back({ aps }) {
 }
 
 export default function Rack({ aps, nr, json }) {
+  const searchParams = useSearchParams();
+  const deviceName = searchParams.get("deviceName");
+  const deviceNr = searchParams.get("deviceNr");
+
   const [rack, setRack] = React.useState(json);
   const url = `${process.env.NEXT_PUBLIC_WEBSOCK_URL}/${aps}/racks/${nr}`;
   const { data } = useData(url, {
@@ -47,6 +52,9 @@ export default function Rack({ aps, nr, json }) {
 
   return (
     <>
+      <Title className="font-medium mb-1">
+        Rack #{deviceNr} {deviceName}
+      </Title>
       <Suspense fallback={<Loading />}>
         <div
           className="overflow-scroll relative bg-transparent shadow w-full h-96 flex items-center justify-center"

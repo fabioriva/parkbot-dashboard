@@ -55,7 +55,13 @@ export default function Pn({ aps, item }) {
       >
         <Metric>{item.deviceName}</Metric>
         <Text className="grow">{t(item.key, item.query)}</Text>
-        {item?.rack && <More href={`/${aps}/racks/${item.rack.nr - 1}`} />}
+        {item?.rack && (
+          <More
+            href={`/${aps}/racks/${item.rack.nr - 1}?deviceName=${
+              item.deviceName
+            }&deviceNr=${item.deviceNr}`}
+          />
+        )}
       </Flex>
     </Card>
   );
