@@ -15,6 +15,7 @@ const mapList = {
   chandan: lazy(() => import("@/maps/chandan")),
   // chiattone: lazy(() => import("src/maps/chiattone")),
   // donini: lazy(() => import("src/maps/donini")),
+  ehad: lazy(() => import("@/maps/ehad")),
   // hdante: lazy(() => import("src/maps/hdante")),
   herzel: lazy(() => import("@/maps/herzel")),
   ironbank: lazy(() => import("@/maps/ironbank")),
