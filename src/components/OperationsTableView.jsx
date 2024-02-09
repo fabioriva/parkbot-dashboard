@@ -47,6 +47,30 @@ export default function Statistics({ data }) {
                 </TableCell>
               </TableRow>
             ))}
+            <TableRow>
+              <TableCell>Total</TableCell>
+              <TableCell className="text-center">
+                <span className={`font-medium text-${sky}-500`}>
+                  {data.reduce((accumulator, object) => {
+                    return accumulator + object.entries;
+                  }, 0)}
+                </span>
+              </TableCell>
+              <TableCell className="text-center">
+                <span className={`font-medium text-${violet}-500`}>
+                  {data.reduce((accumulator, object) => {
+                    return accumulator + object.exits;
+                  }, 0)}
+                </span>
+              </TableCell>
+              <TableCell className="text-center">
+                <span className={`font-medium text-${fuchsia}-500`}>
+                  {data.reduce((accumulator, object) => {
+                    return accumulator + object.total;
+                  }, 0)}
+                </span>
+              </TableCell>
+            </TableRow>
           </TableBody>
         </Table>
       ) : (

@@ -5,36 +5,39 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import {
   Card,
+  Grid,
+  // Col,
+  Metric,
   Text,
   Title,
   Tab,
   TabList,
   TabGroup,
-  Legend,
-  DonutChart,
+  // Legend,
+  // DonutChart,
 } from "@tremor/react";
 import Chart from "@/components/OperationsChartView";
 import Table from "@/components/OperationsTableView";
 import { useDateRangePicker } from "@/hooks/useDateRangePicker";
 
-function ByDevice(props) {
-  const { data, query } = props.data;
+// function ByDevice(props) {
+//   const { data, query } = props.data;
 
-  return (
-    <Card className="p-3 sm:p-6">
-      <Title>{props.title}</Title>
-      <DonutChart
-        className="mt-3"
-        category={props.category}
-        data={data}
-        index="name"
-        valueFormatter={(n) => Intl.NumberFormat("en-US").format(n)}
-        showAnimation
-      />
-      <Legend className="mt-3" categories={data.map((d) => d.name)} />
-    </Card>
-  );
-}
+//   return (
+//     <Card className="p-3 sm:p-6">
+//       <Title>{props.title}</Title>
+//       <DonutChart
+//         className="mt-3"
+//         category={props.category}
+//         data={data}
+//         index="name"
+//         valueFormatter={(n) => Intl.NumberFormat("en-US").format(n)}
+//         showAnimation
+//       />
+//       <Legend className="mt-3" categories={data.map((d) => d.name)} />
+//     </Card>
+//   );
+// }
 
 export default function Statistics({ aps, data, token }) {
   // console.log(data);
@@ -66,16 +69,30 @@ export default function Statistics({ aps, data, token }) {
     }
   }, [dateRange, aps, token]);
 
+  // const sum = (data) => {
+  //   return {
+  //     entries: data.reduce((accumulator, object) => {
+  //       return accumulator + object.entries;
+  //     }, 0),
+  //     exits: data.reduce((accumulator, object) => {
+  //       return accumulator + object.exits;
+  //     }, 0),
+  //     total: data.reduce((accumulator, object) => {
+  //       return accumulator + object.total;
+  //     }, 0),
+  //   };
+  // };
+
   return (
     <>
       {/* Operations Bar Chart */}
-      <Card className="p-3 sm:p-6">
-        <div className="sm:flex items-center">
-          <div className="hidden sm:block grow">
+      <Card className="p-3 md:p-6">
+        <div className="md:flex items-center">
+          <div className="hidden md:block grow">
             <Title>{t("title")}</Title>
             <Text>{operations.query.date}</Text>
           </div>
-          <div className="hidden sm:block mr-3">
+          <div className="hidden md:block mr-3">
             <TabGroup
               index={stacked}
               onIndexChange={(index) => setStacked(index)}
@@ -88,10 +105,36 @@ export default function Statistics({ aps, data, token }) {
           </div>
           {dateRangePicker}
         </div>
-        <div className="mt-3 hidden sm:block">
+        <div className="mt-3 hidden md:block">
           <Chart data={operations.data} stacked={stacked} />
+          <Grid numItems={3} className="gap-2">
+            <Card>
+              <Text>Entries</Text>
+              <Metric>
+                {operations.data.reduce((accumulator, object) => {
+                  return accumulator + object.entries;
+                }, 0)}
+              </Metric>
+            </Card>
+            <Card>
+              <Text>Exits</Text>
+              <Metric>
+                {operations.data.reduce((accumulator, object) => {
+                  return accumulator + object.exits;
+                }, 0)}
+              </Metric>
+            </Card>
+            <Card>
+              <Text>Total</Text>
+              <Metric>
+                {operations.data.reduce((accumulator, object) => {
+                  return accumulator + object.total;
+                }, 0)}
+              </Metric>
+            </Card>
+          </Grid>
         </div>
-        <div className="mt-3 block sm:hidden">
+        <div className="mt-3 block md:hidden">
           <Table data={operations.data} />
         </div>
       </Card>
