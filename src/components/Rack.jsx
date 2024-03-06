@@ -10,13 +10,13 @@ import Loading from "@/components/Loading";
 import { useData } from "@/hooks/useWebSocket";
 
 const componentList = {
-  et200m16: lazy(() => import("src/components/ET200M16")),
-  et200m32: lazy(() => import("src/components/ET200M32")),
-  et200s16: lazy(() => import("src/components/ET200S16")),
-  et200s8: lazy(() => import("src/components/ET200S08")),
-  et200m08f: lazy(() => import("src/components/ET200M08_FS")),
-  et200m16f: lazy(() => import("src/components/ET200M16_FS")),
-  et200s8f: lazy(() => import("src/components/ET200S08_FS")),
+  et200m16: lazy(() => import("@/components/ET200M16")),
+  et200m32: lazy(() => import("@/components/ET200M32")),
+  et200s16: lazy(() => import("@/components/ET200S16")),
+  et200s8: lazy(() => import("@/components/ET200S08")),
+  et200m08f: lazy(() => import("@/components/ET200M08_FS")),
+  et200m16f: lazy(() => import("@/components/ET200M16_FS")),
+  et200s8f: lazy(() => import("@/components/ET200S08_FS")),
 };
 
 function Back({ aps }) {

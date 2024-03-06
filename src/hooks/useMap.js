@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Select, SelectItem } from "@tremor/react";
-import { useData } from "src/hooks/useWebSocket";
+import { useData } from "@/hooks/useWebSocket";
 import OccupancyKPI from "@/components/Occupancy";
 import Level from "@/components/Map";
 

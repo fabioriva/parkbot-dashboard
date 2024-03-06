@@ -1,6 +1,6 @@
 import { SignJWT, jwtVerify } from "jose";
 import { nanoid } from "nanoid";
-import { getJwtSecretKey } from "src/constants/auth";
+import { getJwtSecretKey } from "@/constants/auth";
 
 export class AuthError extends Error {}
 
