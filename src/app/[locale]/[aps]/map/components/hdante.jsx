@@ -32,37 +32,11 @@ export default function Map(props) {
           </Grid>
           <style jsx global>{`
             .l {
-              // position: relative;
-              // background-color: rgb(234, 238, 243);
-              // border: 1px solid rgba(0, 0, 0, 0.26);
-              // margin-bottom: 16px;
-              height: 68px;
+              height: 67px;
               width: 374px;
             }
-            .el {
-              position: absolute;
-              background-color: #c0c0c0;
-              border: 1px solid #000;
-              font-weight: bold;
-              height: 30px;
-              width: 40px;
-              text-align: center;
-              vertical-align: middle;
-              line-height: 32px;
-            }
-            .sh {
-              position: absolute;
-              background-color: #c0c0c0;
-              border: 1px solid #000;
-              font-weight: bold;
-              height: 30px;
-              width: 54px;
-              text-align: center;
-              vertical-align: middle;
-              line-height: 30px;
-            }
             #el {
-              top: 34px;
+              top: 33px;
               left: 2px;
             }
             #s-1 {
