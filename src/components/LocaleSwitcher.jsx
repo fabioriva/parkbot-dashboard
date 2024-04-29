@@ -66,7 +66,7 @@ export default function LocaleSwitcher() {
                     } group flex w-full items-center rounded-md px-2 py-2 uppercase`}
                     onClick={() => onSelectChange(cur)}
                   >
-                    {active ? (
+                    {/* {active ? (
                       <LanguageIcon
                         className="mr-2 h-5 w-5 text-neutral-100"
                         aria-hidden="true"
@@ -76,7 +76,15 @@ export default function LocaleSwitcher() {
                         className="mr-2 h-5 w-5 text-neutral-400"
                         aria-hidden="true"
                       />
-                    )}
+                    )} */}
+                    {
+                      <LanguageIcon
+                        className={`mr-2 h-5 w-5 ${
+                          active ? "text-neutral-100" : "text-neutral-400"
+                        }`}
+                        aria-hidden="true"
+                      />
+                    }
                     {cur}
                   </button>
                 )}

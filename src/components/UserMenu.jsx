@@ -10,6 +10,12 @@ import {
 import { Icon } from "@tremor/react";
 import pages from "@/constants/pages";
 import { isAuthorized } from "@/lib/auth";
+import {
+  // RiCarFill,
+  // RiNotificationOffLine,
+  // RiNotification4Line,
+  RiLogoutBoxLine,
+} from "@remixicon/react";
 
 export default function MainMenu({ aps, user }) {
   const router = useRouter();
@@ -106,17 +112,25 @@ export default function MainMenu({ aps, user }) {
                   } group flex w-full items-center rounded-md px-2 py-2`}
                   onClick={handleLogout}
                 >
-                  {active ? (
-                    <ArrowLeftOnRectangleIcon
+                  {/* {active ? (
+                    <RiLogoutBoxLine
                       className="mr-2 h-5 w-5 text-neutral-100"
                       aria-hidden="true"
                     />
                   ) : (
-                    <ArrowLeftOnRectangleIcon
+                    <RiLogoutBoxLine
                       className="mr-2 h-5 w-5 text-neutral-400"
                       aria-hidden="true"
                     />
-                  )}
+                  )} */}
+                  {
+                    <RiLogoutBoxLine
+                      className={`mr-2 h-5 w-5 ${
+                        active ? "text-neutral-100" : "text-neutral-400"
+                      }`}
+                      aria-hidden="true"
+                    />
+                  }
                   {t("logout")}
                 </button>
               )}
