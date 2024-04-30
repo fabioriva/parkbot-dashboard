@@ -8,6 +8,7 @@ const apsList = [
   { ns: "boi", name: "Bank of India, Mumbai, 🇮🇳" },
   { ns: "chandan", name: "Chandan Society, Mumbai, 🇮🇳" },
   { ns: "chiattone", name: "P.zzo Chiattone, Lugano, 🇨🇭" },
+  { ns: "daman", name: "Daman, Dubai, 🇦🇪" },
   { ns: "donini", name: "P.zzo Donini, Lugano, 🇨🇭" },
   { ns: "ehad", name: "Ehad, Tel Aviv, 🇮🇱" },
   { ns: "hdante", name: "Hotel Dante, Lugano, 🇨🇭" },
