@@ -168,8 +168,8 @@
     "List": {
       "op-id-1": "Allarme {id} attivo",
       "op-id-2": "Allarme {id} annullato",
-      "op-id-3": "Cambio modalità di funzionamento {id}",
-      "op-id-4": "Modificato PIN per tessera {card}",
+      "op-id-3": "Cambio funzione {id}",
+      "op-id-4": "Modificato PIN tessera {card}",
       "op-id-5": "Entrata {card}, stallo {stall}",
       "op-id-6": "Uscita {card}, stallo {stall}",
       "op-id-7": "Trasferimento vettura {card} in stallo {stall}",
