@@ -66,7 +66,7 @@ export default function BitInfo({ bit }) {
       <li className={status ? "text-green-500" : "text-red-500"}>
         {status ? "ON" : "OFF"}
       </li>
-      <li>{key && t(key, query)}</li>
+      <li>{label ? key && t(key, query) : ""}</li>
     </ul>
   );
   return tooltip;
