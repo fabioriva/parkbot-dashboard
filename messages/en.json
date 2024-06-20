@@ -1,7 +1,7 @@
 {
   "Alarm": {
     "al-fallback": "No description",
-    "al-fc": "{motor} sensors {name1} {name2}",
+    "al-fc": "Sensors {fc1} {fc2}",
     "al-iv": "Inverter {nr}",
     "al-pn": "Profinet node {name}",
     "al-th": "Thermic {name}",
