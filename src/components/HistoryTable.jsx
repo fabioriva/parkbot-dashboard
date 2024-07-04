@@ -1,16 +1,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import {
-  Card,
-  Table,
-  TableHead,
-  TableRow,
-  TableHeaderCell,
-  TableBody,
-  TableCell,
-  Text,
-  Badge,
-} from "@tremor/react";
+import clsx from "clsx";
+import { Card, Text } from "@tremor/react";
 import Alarm from "@/components/Alarm";
 import FunctionMode from "@/components/FunctionMode";
 // import Pagination from "@/components/HistoryTablePagination";
@@ -28,77 +19,86 @@ export default function HistoryTable({ data }) {
   return (
     <Card>
       {data.length > 0 ? (
-        <>
-          <Table className="mt-0">
-            <TableHead>
-              <TableRow>
-                <TableHeaderCell>{t("date")}</TableHeaderCell>
-                <TableHeaderCell>{t("device")}</TableHeaderCell>
-                <TableHeaderCell>{t("mode")}</TableHeaderCell>
-                <TableHeaderCell>{t("operation")}</TableHeaderCell>
-                <TableHeaderCell>{t("alarm")}</TableHeaderCell>
-                <TableHeaderCell>{t("card")}</TableHeaderCell>
-                <TableHeaderCell>{t("stall")}</TableHeaderCell>
-                <TableHeaderCell>{t("size")}</TableHeaderCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {data
-                // .slice(startIndex, endIndex)
-                .map((item, key) => (
-                  <TableRow key={key}>
-                    <TableCell className="py-3">
-                      {item.date.slice(0, 10) + " " + item.date.slice(11, 19)}
-                    </TableCell>
-                    <TableCell className="py-3">{item.device.key}</TableCell>
-                    <TableCell className="py-3">
-                      {/* ({item.mode.id}) <FunctionMode mode={item.mode} /> */}
-                      <Badge
-                        color={item.mode.id !== 8 ? "yellow" : "blue"}
-                        // icon={item.mode?.id !== 8 && WrenchIcon}
-                      >
-                        <FunctionMode mode={item.mode} />
-                      </Badge>
-                    </TableCell>
-                    <TableCell className="py-3">
-                      {item.alarm !== undefined ? (
-                        <Alarm alarm={item.alarm} />
-                      ) : (
-                        t(item.operation.key)
-                      )}
-                    </TableCell>
-                    <TableCell className="py-3">
-                      {item.alarm !== undefined && (
-                        <Badge
-                          color={item.operation.id === 1 ? "rose" : "emerald"}
-                        >
-                          AL{item.alarm.id}
-                        </Badge>
-                        // <span
-                        //   className={`${
-                        //     item.operation.id === 1
-                        //       ? "text-red-500"
-                        //       : "text-green-500"
-                        //   }`}
-                        // >
-                        //   AL{item.alarm.id}
-                        // </span>
-                      )}
-                    </TableCell>
-                    <TableCell className="py-3">{item.card}</TableCell>
-                    <TableCell className="py-3">{item.stall}</TableCell>
-                    <TableCell className="py-3">{item.size}</TableCell>
-                  </TableRow>
-                ))}
-            </TableBody>
-          </Table>
+        <div className="relative overflow-x-auto">
+          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+              <tr>
+                <th scope="col" className="px-6 py-3">
+                  {t("date")}
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  {t("device")}
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  {t("mode")}
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  {t("operation")}
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  {t("alarm")}
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  {t("card")}
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  {t("stall")}
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  {t("size")}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((item, key) => (
+                <tr
+                  className={clsx(
+                    "border-b dark:bg-gray-800 dark:border-gray-800",
+                    {
+                      "bg-red-100 dark:bg-gray-800 text-red-500":
+                        item.operation.id === 1,
+                      "bg-green-100 dark:bg-gray-800 text-green-500":
+                        item.operation.id === 2,
+                      "bg-amber-100 dark:bg-gray-800 text-amber-500":
+                        item.operation.id === 3,
+                    }
+                  )}
+                  key={key}
+                >
+                  <th
+                    scope="row"
+                    className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  >
+                    {item.date.slice(0, 10) + " " + item.date.slice(11, 19)}
+                  </th>
+                  <td className="px-6 py-2">{item.device.key}</td>
+                  <td className="px-6 py-2">
+                    <FunctionMode mode={item.mode} />
+                  </td>
+                  <td className="px-6 py-2">
+                    {item.alarm !== undefined ? (
+                      <Alarm alarm={item.alarm} />
+                    ) : (
+                      t(item.operation.key)
+                    )}
+                  </td>
+                  <td className="px-6 py-2">
+                    {item.alarm !== undefined && <span>AL{item.alarm.id}</span>}
+                  </td>
+                  <td className="px-6 py-2">{item.card}</td>
+                  <td className="px-6 py-2">{item.stall}</td>
+                  <td className="px-6 py-2">{item.size}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
           {/* <Pagination
             currentPage={currentPage}
             dataLength={data.length}
             defaultPageSize={defaultPageSize}
             handleChangePage={(value) => setCurrentPage(currentPage + value)}
           /> */}
-        </>
+        </div>
       ) : (
         <Text className="border border-dotted p-10 text-center">No data</Text>
       )}
