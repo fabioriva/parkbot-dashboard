@@ -15,6 +15,10 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
 
   const { cards, stalls, stallStatus } = definitions;
 
+  const minCard = definitions.minCard !== undefined ? definitions.minCard : 1;
+  const maxCard =
+    definitions.maxCard !== undefined ? definitions.maxCard : cards;
+
   const handleConfirm = async (data) => {
     const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/map/edit`;
     const json = await fetch(url, {
@@ -33,7 +37,7 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
 
   const handleOnValueChange = (value) => {
     const n = parseInt(value);
-    n < 1 || n > cards
+    n < minCard || n > maxCard
       ? setError({ status: true, message: "card number out of range" })
       : setError({ status: false, message: "" });
     setValue(value);
@@ -95,13 +99,13 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
         <NumberInput
           className="mt-3"
           placeholder={t("dialogTextInput", {
-            min: 1,
-            max: cards,
+            min: minCard,
+            max: maxCard,
           })}
           error={error.status}
           errorMessage={error.message}
-          min={1}
-          max={cards}
+          min={minCard}
+          max={maxCard}
           value={value}
           onValueChange={handleOnValueChange}
         />
