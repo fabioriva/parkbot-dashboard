@@ -96,7 +96,7 @@ const Stall = ({ aps, definitions, stall, token, user, view }) => {
           className="mt-3"
           placeholder={t("dialogTextInput", {
             min: 1,
-            max: stalls,
+            max: cards,
           })}
           error={error.status}
           errorMessage={error.message}
