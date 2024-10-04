@@ -9,10 +9,10 @@ export default function Operation({ action, aps, disabled, token }) {
 
   const [isOpen, setIsOpen] = useState(false);
   const [error, setError] = useState({ status: false, message: "" });
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState(action.min);
 
   const handleConfirm = async () => {
-    console.log(action);
+    // console.log(action);
     const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${aps}/operation/exit`;
     const json = await fetch(url, {
       method: "POST",
