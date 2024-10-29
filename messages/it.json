@@ -177,7 +177,8 @@
       "op-id-9": "Prenotato stallo {stall}",
       "op-id-10": "Richiesta di uscita per tessera {card}",
       "op-id-11": "Richiesta di entrata per tessera {card}",
-      "op-id-12": "Emessa tessera {card}"
+      "op-id-12": "Richiesta di swap per tessera {card}",
+      "op-id-13": "Emessa tessera {card}"
     },
     "Table": {
       "alarm": "Allarme",
@@ -200,7 +201,9 @@
       "op-shuffle-out": "Scambio out",
       "op-stall-rsv": "Stallo prenotato",
       "op-req-entry": "Richiesta di entrata",
-      "op-req-exit": "Richiesta di uscita"
+      "op-req-exit": "Richiesta di uscita",
+      "op-req-swap": "Richiesta di spostamento",
+      "op-card-issued": "Tessera emessa"
     }
   },
   "Home": {

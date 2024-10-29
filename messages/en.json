@@ -177,7 +177,8 @@
       "op-id-9": "Reserved stall {stall}",
       "op-id-10": "Exit request for card {card}",
       "op-id-11": "Entry request for card {card}",
-      "op-id-12": "Issued card {card}"
+      "op-id-12": "Swap request for card {card}",
+      "op-id-13": "Issued card {card}"
     },
     "Table": {
       "alarm": "Alarm Id",
@@ -200,7 +201,9 @@
       "op-shuffle-out": "Shuffle out",
       "op-stall-rsv": "Stall reserved",
       "op-req-entry": "Entry request",
-      "op-req-exit": "Exit request"
+      "op-req-exit": "Exit request",
+      "op-req-swap": "Swap request",
+      "op-card-issued": "Card issued"
     }
   },
   "Home": {
