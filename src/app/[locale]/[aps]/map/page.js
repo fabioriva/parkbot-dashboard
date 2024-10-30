@@ -12,6 +12,7 @@ const mapList = {
   "18017K": lazy(() => import("@/maps/18017K")),
   bmc: lazy(() => import("@/maps/bmc")),
   boi: lazy(() => import("@/maps/boi")),
+  bugrashov: lazy(() => import("@/maps/bugrashov")),
   chandan: lazy(() => import("@/maps/chandan")),
   chiattone: lazy(() => import("@/maps/chiattone")),
   donini: lazy(() => import("@/maps/donini")),

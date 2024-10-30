@@ -6,6 +6,7 @@ const apsList = [
   { ns: "18017K", name: "18017K, Bangkok, 🇹🇭" },
   { ns: "bmc", name: "BMC, Mumbai, 🇮🇳" },
   { ns: "boi", name: "Bank of India, Mumbai, 🇮🇳" },
+  { ns: "bugrashov", name: "Bugrashov, Tel Aviv, 🇮🇱" },
   { ns: "chandan", name: "Chandan Society, Mumbai, 🇮🇳" },
   { ns: "chiattone", name: "P.zzo Chiattone, Lugano, 🇨🇭" },
   { ns: "daman", name: "Daman, Dubai, 🇦🇪" },
