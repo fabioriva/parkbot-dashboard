@@ -58,7 +58,7 @@ export function getLog(log, t) {
     case 13:
       return t("op-id-13", { card });
     case 14:
-      return t("op-id-13", { card });
+      return t("op-id-14", { card });
     default:
       return `Operation ${operation.id}`;
   }
