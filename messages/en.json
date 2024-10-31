@@ -178,7 +178,8 @@
       "op-id-10": "Exit request for card {card}",
       "op-id-11": "Entry request for card {card}",
       "op-id-12": "Swap request for card {card}",
-      "op-id-13": "Issued card {card}"
+      "op-id-13": "Re-park initiated for card {card}",
+      "op-id-14": "Issued card {card}"
     },
     "Table": {
       "alarm": "Alarm Id",
@@ -203,6 +204,7 @@
       "op-req-entry": "Entry request",
       "op-req-exit": "Exit request",
       "op-req-swap": "Swap request",
+      "op-req-repark": "Re-park initiated",
       "op-card-issued": "Card issued"
     }
   },
