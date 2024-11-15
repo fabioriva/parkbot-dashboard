@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { Link } from "@/navigation";
+import { Link } from "@/i18n/routing";
 import { Fragment, useEffect, useState } from "react";
 import { Grid, Flex, Card, Text, Metric, Badge } from "@tremor/react";
 import Pn from "@/components/Pn";

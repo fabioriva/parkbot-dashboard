@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
-import { useRouter } from "@/navigation";
+import { useRouter } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { Fragment, useEffect, useState } from "react";
 import { Grid, Flex, Card, Text, Metric, Badge, Button } from "@tremor/react";

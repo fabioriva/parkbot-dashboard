@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense, useEffect, useState } from "react";
-import { useRouter } from "@/navigation";
+import { useRouter } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { Button, Card, Title } from "@tremor/react";

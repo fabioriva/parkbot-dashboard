@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Link } from "@/navigation";
-import { usePathname } from "@/navigation";
+import { Link } from "@/i18n/routing";
+import { usePathname } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { Title, Text, Flex } from "@tremor/react";
 import pages from "@/constants/pages";

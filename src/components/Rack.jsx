@@ -2,7 +2,7 @@
 
 import React, { lazy, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { useRouter } from "@/navigation";
+import { useRouter } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { ArrowLeftIcon } from "@heroicons/react/24/solid";
 import { Flex, Button, Title } from "@tremor/react";

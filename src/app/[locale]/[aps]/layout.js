@@ -2,18 +2,21 @@ import { cookies } from "next/headers";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 import Header from "@/components/Header";
 import apsList from "@/constants/aps";
 import { verifyAuth } from "@/lib/auth";
 
 export default async function Layout({ children, params }) {
-  let messages;
-  try {
-    messages = (await import(`../../../../messages/${params.locale}.json`))
-      .default;
-  } catch (error) {
-    notFound();
-  }
+  // let messages;
+  // try {
+  //   messages = (await import(`../../../../messages/${params.locale}.json`))
+  //     .default;
+  // } catch (error) {
+  //   notFound();
+  // }
+
+  const messages = await getMessages();
 
   const aps = apsList.find((aps) => aps.ns === params.aps);
   const token = cookies().get(process.env.USER_TOKEN).value;

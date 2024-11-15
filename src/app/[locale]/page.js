@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import { Link } from "@/navigation";
+import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });

@@ -2,8 +2,8 @@ import { useLocale } from "next-intl";
 import { Fragment, useTransition } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { LanguageIcon } from "@heroicons/react/20/solid";
-import { useRouter, usePathname } from "@/navigation";
-import { locales } from "@/navigation";
+import { useRouter, usePathname } from "@/i18n/routing";
+import { locales } from "@/i18n/routing";
 
 export default function LocaleSwitcher() {
   const locale = useLocale();

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { usePathname, useRouter } from "@/navigation";
+import { usePathname, useRouter } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { Select, SelectItem } from "@tremor/react";
 import { ArrowLeftOnRectangleIcon } from "@heroicons/react/20/solid";
