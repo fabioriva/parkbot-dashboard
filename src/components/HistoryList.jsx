@@ -4,6 +4,7 @@ import {
   BellAlertIcon,
   BellSlashIcon,
   BookmarkIcon,
+  BugAntIcon,
   TagIcon,
   UserMinusIcon,
   UserPlusIcon,
@@ -102,10 +103,12 @@ export default function HistoryList({ data }) {
                     size="md"
                     variant="light"
                     icon={
-                      icons.find((ico) => ico.id === item.operation.id)?.icon
+                      icons.find((ico) => ico.id === item.operation.id)?.icon ||
+                      BugAntIcon
                     }
                     color={
-                      icons.find((ico) => ico.id === item.operation.id)?.color
+                      icons.find((ico) => ico.id === item.operation.id)
+                        ?.color || "slate"
                     }
                   />
                   <div className="truncate">
