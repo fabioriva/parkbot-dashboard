@@ -178,7 +178,8 @@
       "op-id-10": "Richiesta di uscita per tessera {card}",
       "op-id-11": "Richiesta di entrata per tessera {card}",
       "op-id-12": "Richiesta di swap per tessera {card}",
-      "op-id-13": "Emessa tessera {card}"
+      "op-id-13": "Funzione di riparcheggio tessera {card}",
+      "op-id-14": "Emessa tessera {card}"
     },
     "Table": {
       "alarm": "Allarme",
@@ -203,6 +204,7 @@
       "op-req-entry": "Richiesta di entrata",
       "op-req-exit": "Richiesta di uscita",
       "op-req-swap": "Richiesta di spostamento",
+      "op-req-repark": "Funzione di riparcheggio iniziata",
       "op-card-issued": "Tessera emessa"
     }
   },

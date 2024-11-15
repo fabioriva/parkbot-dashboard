@@ -79,6 +79,11 @@ const icons = [
     icon: BookmarkIcon,
     color: "amber",
   },
+  {
+    id: 14,
+    icon: BookmarkIcon,
+    color: "amber",
+  },
 ];
 
 export default function HistoryList({ data }) {
