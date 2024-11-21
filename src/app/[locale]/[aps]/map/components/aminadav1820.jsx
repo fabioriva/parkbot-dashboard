@@ -24,11 +24,11 @@ export default function Map(props) {
               height: 98px;
               width: 609px;
             }
-            #eu-1 {
+            #eu-2 {
               top: 33px;
               left: 104px;
             }
-            #eu-2 {
+            #eu-1 {
               top: 33px;
               left: 427px;
             }
