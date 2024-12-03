@@ -19,6 +19,7 @@ import {
   // RiUserReceivedLine,
   // RiUserSharedLine,
 } from "@remixicon/react";
+import { isAuthorized } from "@/lib/auth";
 
 export default function HeaderInfo({
   aps,
@@ -27,9 +28,9 @@ export default function HeaderInfo({
   comm,
   entries,
   exits,
+  user,
 }) {
   const t = useTranslations("Layout.Header");
-
   return (
     <>
       <Link href={`/${aps.ns}/overview`}>
@@ -75,9 +76,21 @@ export default function HeaderInfo({
           {cars}
         </Badge>
       </Link>
-      <Link href={`/${aps.ns}/racks`}>
+      {isAuthorized("racks", user.roles) ? (
+        <Link href={`/${aps.ns}/racks`}>
+          <Badge
+            className="cursor-pointer"
+            // icon={comm ? SignalIcon : SignalSlashIcon}
+            icon={comm ? RiRouterLine : RiRouterLine}
+            color={comm ? "emerald" : "red"}
+            tooltip={comm ? "ONLINE" : "OFFLINE"}
+          >
+            PLC
+          </Badge>
+        </Link>
+      ) : (
         <Badge
-          className="cursor-pointer"
+          // className="cursor-pointer"
           // icon={comm ? SignalIcon : SignalSlashIcon}
           icon={comm ? RiRouterLine : RiRouterLine}
           color={comm ? "emerald" : "red"}
@@ -85,7 +98,7 @@ export default function HeaderInfo({
         >
           PLC
         </Badge>
-      </Link>
+      )}
     </>
   );
 }

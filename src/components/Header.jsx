@@ -37,6 +37,7 @@ export default function Header({ aps, payload }) {
               comm={comm}
               entries={entries}
               exits={exits}
+              user={payload}
             />
           </div>
           <ThemeSwitcher />
@@ -54,6 +55,7 @@ export default function Header({ aps, payload }) {
           comm={comm}
           entries={entries}
           exits={exits}
+          user={payload}
         />
       </Flex>
     </header>
