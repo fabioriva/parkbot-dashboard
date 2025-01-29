@@ -37,6 +37,7 @@ const apsList = [
   { ns: "vl", name: "Vaibhab Lakshmi, Mumbai, 🇮🇳" },
   { ns: "wallstreet", name: "Spire, Seattle, 🇺🇸" },
   { ns: "washingtonblvd", name: "Washington Blvd 8888, LA, 🇺🇸" },
+  { ns: "wblvd", name: "Washington Blvd, Tel Aviv, 🇮🇱" },
   { ns: "wolfson", name: "Wolfson, Tel Aviv, 🇮🇱" },
   { ns: "xian", name: "Xian, 🇨🇳" },
 ];

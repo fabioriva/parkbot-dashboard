@@ -41,6 +41,7 @@ const mapList = {
   vl: lazy(() => import("@/maps/vl")),
   wallstreet: lazy(() => import("@/maps/wallstreet")),
   washingtonblvd: lazy(() => import("@/maps/8888")),
+  wblvd: lazy(() => import("@/maps/wblvd")),
   wolfson: lazy(() => import("@/maps/wolfson")),
   // xian: lazy(() => import("src/maps/xian")),
 };
