@@ -12,6 +12,7 @@ const apsList = [
   { ns: "daman", name: "Daman, Dubai, 🇦🇪" },
   { ns: "donini", name: "P.zzo Donini, Lugano, 🇨🇭" },
   { ns: "ehad", name: "Ehad, Tel Aviv, 🇮🇱" },
+  { ns: "gazit", name: "Gazit, Tel Aviv, 🇮🇱" },
   { ns: "hdante", name: "Hotel Dante, Lugano, 🇨🇭" },
   { ns: "herzel", name: "Herzel, Tel Aviv, 🇮🇱" },
   { ns: "ironbank", name: "Iron Bank, Auckland, 🇳🇿" },
