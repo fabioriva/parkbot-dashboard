@@ -21,8 +21,8 @@ export default function Map(props) {
           </Grid>
           <style jsx global>{`
             .l {
-              height: 98px;
-              width: 210px;
+              height: 99px;
+              width: 211px;
             }
             #el {
               top: 64px;
