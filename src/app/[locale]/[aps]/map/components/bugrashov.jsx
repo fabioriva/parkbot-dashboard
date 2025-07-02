@@ -978,7 +978,7 @@ export default function Map(props) {
               top: 2px;
               left: 289px;
             }
-            #el-2 {
+            #el-2-p4 {
               top: 126px;
               left: 289px;
             }

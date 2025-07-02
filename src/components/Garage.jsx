@@ -26,12 +26,12 @@ export default function Garage({ panel, sensors }) {
   // console.log(sensors);
   const [EPZ, FPE, FLA, FLP, FDL, FDR] = sensors;
   const extra = sensors.slice(6);
-
+  console.log(EPZ);
   return (
     <div className="grid grid-cols-3 gap-3">
       <div className="border border-solid border-gray-200 dark:border-gray-800 col-span-2 relative">
         <img src={"/car.png"} alt="car" height={"100%"} width={"100%"} />
-        <Sensor sensor={EPZ} name="EPZ" />
+        {EPZ.name === "EPZ" && <Sensor sensor={EPZ} name="EPZ" />}
         <Sensor sensor={FPE} name="FPE" />
         <Sensor sensor={FLA} name="FLA" />
         <Sensor sensor={FLP} name="FLP" />
