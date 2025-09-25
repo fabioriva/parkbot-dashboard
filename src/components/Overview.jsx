@@ -15,7 +15,7 @@ export default function Overview({ aps, json, token, user }) {
 
   if (aps === "bugrashov")
     return (
-      <div className="grid lg:grid-cols-2 xl:grid-cols-4 items-stretch gap-3">
+      <div className="grid lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 items-stretch gap-3">
         {overview.devices.flat(1).map((device, key) => (
           <Device
             advanced
