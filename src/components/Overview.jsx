@@ -13,6 +13,23 @@ export default function Overview({ aps, json, token, user }) {
   });
   useEffect(() => setOverview(data), [data]);
 
+  if (aps === "bugrashov")
+    return (
+      <div className="grid lg:grid-cols-2 xl:grid-cols-4 items-stretch gap-3">
+        {overview.devices.flat(1).map((device, key) => (
+          <Device
+            advanced
+            aps={aps}
+            data={device}
+            token={token}
+            user={user}
+            key={key}
+          />
+        ))}
+        <Queue aps={aps} data={overview.exitQueue} token={token} user={user} />
+      </div>
+    );
+
   return (
     // <div className="grid lg:grid-cols-3 gap-3">
     //   <div className="lg:col-span-2 space-y-3">
