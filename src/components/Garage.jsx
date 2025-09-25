@@ -26,7 +26,6 @@ export default function Garage({ panel, sensors }) {
   // console.log(sensors);
   const [EPZ, FPE, FLA, FLP, FDL, FDR] = sensors;
   const extra = sensors.slice(6);
-  console.log(EPZ);
   return (
     <div className="grid grid-cols-3 gap-3">
       <div className="border border-solid border-gray-200 dark:border-gray-800 col-span-2 relative">
