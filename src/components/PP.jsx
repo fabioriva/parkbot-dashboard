@@ -53,14 +53,14 @@ export default function Operation({ action, aps, disabled, token }) {
   const [dest, setDest] = useState(0);
   // Confirm dialog
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
-  const [value, setValue] = useState({ key: "", value: "" });
+  const [value, setValue] = useState({ device: "", key: "", value: "" });
 
   const handleConfirm = async (item) => {
-    // console.log(item);
+    console.log(item);
     if (item.key === "B") {
-      setValue({ key: item.key, value: item.value });
+      setValue({ device: action.device, key: item.key, value: item.value });
     } else {
-      setValue({ key: item.key, value: dest });
+      setValue({ device: action.device, key: item.key, value: dest });
     }
     setIsOpen(false);
     setIsConfirmOpen(true);
