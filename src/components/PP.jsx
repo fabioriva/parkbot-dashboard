@@ -94,7 +94,7 @@ export default function Operation({ action, aps, disabled, token }) {
         onClose={() => console.log("close")}
       >
         <Divider />
-        <div className="flex gap-3 mt-6">
+        <div className="grid grid-cols-8 gap-1 mt-6">
           {action.buttons.map((item, key) => {
             if (item.key === "B")
               return (
@@ -133,7 +133,7 @@ export default function Operation({ action, aps, disabled, token }) {
                     onClick={() => handleConfirm(item)}
                     disabled={error.status}
                   >
-                    DEST + {item.key}
+                    DESTINATION + {item.key}
                   </Button>
                 </Tooltip>
               );
