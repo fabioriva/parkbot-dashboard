@@ -139,6 +139,7 @@
   "Dialog": {
     "action-entry": "Entry",
     "action-exit": "Exit",
+    "action-pp": "Step by step",
     "action-rollback": "Rollback",
     "cancel": "Cancel",
     "confirm": "Confirm",
@@ -148,6 +149,12 @@
       "dialogText": "Insert card number {min} - {max}",
       "dialogTextInput": "Insert card number {min} - {max}",
       "errorText": "Card number out of range"
+    },
+    "PP": {
+      "dialogTitle": "{operation} oeprations",
+      "dialogText": "Destination {min} - {max}",
+      "dialogTextInput": "Insert destination number {min} - {max}",
+      "errorText": "Destination number out of range"
     },
     "Rollback": {
       "button": "Rollback",

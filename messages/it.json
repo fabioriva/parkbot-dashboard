@@ -139,6 +139,7 @@
   "Dialog": {
     "action-entry": "Entrata",
     "action-exit": "Uscita",
+    "action-pp": "Passo Passo",
     "action-rollback": "Rollback",
     "cancel": "Annulla",
     "confirm": "Conferma",
@@ -148,6 +149,12 @@
       "dialogText": "Inserisci un numero di tessera {min} - {max}",
       "dialogTextInput": "Inserisci un numero di tessera {min} - {max}",
       "errorText": "Numero di tessera fuori campo"
+    },
+    "PP": {
+      "dialogTitle": "Operazioni di passo-passo",
+      "dialogText": "Destinazione {min} - {max}",
+      "dialogTextInput": "Inserisci destinazione {min} - {max}",
+      "errorText": "Numero di destinazione fuori campo"
     },
     "Rollback": {
       "button": "Rollback",

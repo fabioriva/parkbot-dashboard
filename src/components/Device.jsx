@@ -7,6 +7,7 @@ import Entry from "@/components/Entry";
 import FunctionMode from "@/components/FunctionMode";
 import Info from "@/components/DeviceInfo";
 import Position from "@/components/Position";
+import PP from "@/components/PP";
 import Rollback from "@/components/Rollback";
 import View from "@/components/DeviceView";
 import Tooltip from "@/components/Tooltip";
@@ -61,6 +62,7 @@ export default function Device({ advanced, aps, data, token, user }) {
       {advanced && more && <View data={data} />}
       {advanced &&
         data.d.map((action, key) => {
+          // console.log(action);
           switch (action.key) {
             case "action-entry":
               return (
@@ -82,6 +84,20 @@ export default function Device({ advanced, aps, data, token, user }) {
                   aps={aps}
                   action={action}
                   disabled={!user.rights.some((right) => right === "rollback")}
+                  token={token}
+                  key={key}
+                />
+              );
+            case "action-pp":
+              return (
+                <PP
+                  aps={aps}
+                  action={action}
+                  disabled={
+                    !user.rights.some(
+                      (right) => right === "exit" || right === "actions"
+                    )
+                  }
                   token={token}
                   key={key}
                 />
