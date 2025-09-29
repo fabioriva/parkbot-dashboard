@@ -96,7 +96,7 @@ export default function Operation({ action, aps, disabled, token }) {
             {action.buttons.map((item, key) => {
               if (item.key === "B")
                 return (
-                  <Tooltip tooltip={item.tooltip}>
+                  <Tooltip tooltip={item.tooltip} key={key}>
                     <Button
                       variant="primary"
                       onClick={() => handleConfirm(item)}
@@ -128,7 +128,7 @@ export default function Operation({ action, aps, disabled, token }) {
               {action.buttons.map((item, key) => {
                 if (item.key === "D" || item.key === "E" || item.key === "F")
                   return (
-                    <Tooltip tooltip={item.tooltip}>
+                    <Tooltip tooltip={item.tooltip} key={key}>
                       <Button
                         variant="primary"
                         onClick={() => handleConfirm(item)}
