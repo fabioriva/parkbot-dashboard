@@ -151,7 +151,8 @@
       "errorText": "Card number out of range"
     },
     "PP": {
-      "dialogTitle": "{operation} operations",
+      "confirmDialogTitle": "Confirm operation for {device}?",
+      "dialogTitle": "{operation} operations for {device}",
       "dialogText": "Destination {min} - {max}",
       "dialogTextInput": "Insert destination number {min} - {max}",
       "errorText": "Destination number out of range"

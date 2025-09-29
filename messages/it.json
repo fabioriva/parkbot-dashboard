@@ -151,7 +151,8 @@
       "errorText": "Numero di tessera fuori campo"
     },
     "PP": {
-      "dialogTitle": "Operazioni di passo-passo",
+      "confirmDialogTitle": "Confermi l'operazione per {device}?",
+      "dialogTitle": "Operazioni di passo-passo per {device}",
       "dialogText": "Destinazione {min} - {max}",
       "dialogTextInput": "Inserisci destinazione {min} - {max}",
       "errorText": "Numero di destinazione fuori campo"

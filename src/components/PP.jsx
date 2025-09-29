@@ -5,7 +5,7 @@ import Dialog from "@/components/Dialog";
 import Tooltip from "@/components/Tooltip";
 import fetch, { actionResponse } from "@/lib/fetch";
 
-const Confirm = ({ aps, isOpen, setIsOpen, token, value }) => {
+const Confirm = ({ aps, device, isOpen, setIsOpen, token, value }) => {
   const t = useTranslations("Dialog");
   const handleConfirm = async () => {
     // console.log("Confirm", value);
@@ -22,11 +22,7 @@ const Confirm = ({ aps, isOpen, setIsOpen, token, value }) => {
     setIsOpen(false);
   };
   return (
-    <Dialog
-      isOpen={isOpen}
-      title="Confirm"
-      // title={t("PP.dialogTitle", { operation: t(action.key) })}
-    >
+    <Dialog isOpen={isOpen} title={t("PP.confirmDialogTitle", { device })}>
       <Text className="mt-6">
         Send request for step by step operation{" "}
         <span className="font-bold">
@@ -46,7 +42,7 @@ const Confirm = ({ aps, isOpen, setIsOpen, token, value }) => {
   );
 };
 
-export default function Operation({ action, aps, disabled, token }) {
+export default function Operation({ action, aps, device, disabled, token }) {
   const t = useTranslations("Dialog");
   const [isOpen, setIsOpen] = useState(false);
   const [error, setError] = useState({ status: false, message: "" });
@@ -89,7 +85,7 @@ export default function Operation({ action, aps, disabled, token }) {
       </Button>
       <Dialog
         isOpen={isOpen}
-        title={t("PP.dialogTitle", { operation: t(action.key) })}
+        title={t("PP.dialogTitle", { operation: t(action.key), device })}
       >
         {action.buttons.some((b) => b.key === "B") && (
           <div className="grid grid-cols-8 gap-1 mt-6">
@@ -152,6 +148,7 @@ export default function Operation({ action, aps, disabled, token }) {
       </Dialog>
       <Confirm
         aps={aps}
+        device={device}
         isOpen={isConfirmOpen}
         setIsOpen={setIsConfirmOpen}
         token={token}

@@ -93,6 +93,7 @@ export default function Device({ advanced, aps, data, token, user }) {
                 <PP
                   aps={aps}
                   action={action}
+                  device={data.name}
                   disabled={
                     !user.rights.some(
                       (right) => right === "exit" || right === "actions"
