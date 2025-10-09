@@ -139,7 +139,8 @@
   "Dialog": {
     "action-entry": "Entry",
     "action-exit": "Exit",
-    "action-pp": "Step by step",
+    "action-pp": "Step-by-Step",
+    "action-pp-reset": "Reset",
     "action-rollback": "Rollback",
     "cancel": "Cancel",
     "confirm": "Confirm",

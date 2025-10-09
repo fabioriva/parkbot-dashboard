@@ -60,51 +60,56 @@ export default function Device({ advanced, aps, data, token, user }) {
       </Flex>
       <Info device={data} user={user} />
       {advanced && more && <View data={data} />}
-      {advanced &&
-        data.d.map((action, key) => {
-          // console.log(action);
-          switch (action.key) {
-            case "action-entry":
-              return (
-                <Entry
-                  aps={aps}
-                  action={action}
-                  disabled={
-                    !user.rights.some(
-                      (right) => right === "entry" || right === "actions"
-                    )
-                  }
-                  token={token}
-                  key={key}
-                />
-              );
-            case "action-rollback":
-              return (
-                <Rollback
-                  aps={aps}
-                  action={action}
-                  disabled={!user.rights.some((right) => right === "rollback")}
-                  token={token}
-                  key={key}
-                />
-              );
-            case "action-pp":
-              return (
-                <PP
-                  aps={aps}
-                  action={action}
-                  device={data.name}
-                  disabled={
-                    !user.rights.some(
-                      (right) => right === "exit" || right === "actions"
-                    )
-                  }
-                  token={token}
-                  key={key}
-                />
-              );
-          }
-        })}
+      <div className={`grid grid-cols-${data.d.length} gap-3 mt-3`}>
+        {advanced &&
+          data.d.map((action, key) => {
+            // console.log(action);
+            switch (action.key) {
+              case "action-entry":
+                return (
+                  <Entry
+                    aps={aps}
+                    action={action}
+                    disabled={
+                      !user.rights.some(
+                        (right) => right === "entry" || right === "actions"
+                      )
+                    }
+                    token={token}
+                    key={key}
+                  />
+                );
+              case "action-rollback":
+                return (
+                  <Rollback
+                    aps={aps}
+                    action={action}
+                    disabled={
+                      !user.rights.some((right) => right === "rollback")
+                    }
+                    token={token}
+                    key={key}
+                  />
+                );
+              case "action-pp":
+              case "action-pp-reset":
+                return (
+                  <PP
+                    aps={aps}
+                    action={action}
+                    device={data.name}
+                    disabled={
+                      !user.rights.some(
+                        (right) => right === "pp" || right === "actions"
+                      )
+                    }
+                    token={token}
+                    key={key}
+                  />
+                );
+            }
+          })}
+      </div>
     </Card>
   );
 }

@@ -76,21 +76,17 @@ export default function Operation({ action, aps, device, disabled, token }) {
 
   return (
     <Fragment>
-      <Button
-        className="mt-3 min-w-full"
-        onClick={handleOpen}
-        disabled={disabled || !action.enable.status}
-      >
+      <Button onClick={handleOpen} disabled={disabled || !action.enable.status}>
         {t(action.key)}
       </Button>
       <Dialog
         isOpen={isOpen}
         title={t("PP.dialogTitle", { operation: t(action.key), device })}
       >
-        {action.buttons.some((b) => b.key === "B") && (
+        {action.buttons.some((b) => b.key === "A" || b.key === "B") && (
           <div className="grid grid-cols-8 gap-1 mt-6">
             {action.buttons.map((item, key) => {
-              if (item.key === "B")
+              if (item.key === "A" || item.key === "B")
                 return (
                   <Tooltip tooltip={item.tooltip} key={key}>
                     <Button
@@ -104,7 +100,7 @@ export default function Operation({ action, aps, device, disabled, token }) {
             })}
           </div>
         )}
-        {action.buttons.some((b) => b.key !== "B") && (
+        {action.buttons.some((b) => b.key !== "A" && b.key !== "B") && (
           <div className="mt-6">
             {/* <Text className="mt-6">{t("PP.dialogText", { min: action.min, max: action.max })}</Text> */}
             <NumberInput
