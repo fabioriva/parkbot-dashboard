@@ -37,7 +37,7 @@ export default function Garage({ panel, sensors }) {
         <Sensor sensor={FDL} name="FDL" />
         <Sensor sensor={FDR} name="FDR" />
         <style jsx global>{`
-          .FLA {
+          .FDL {
             left: 41%;
             top: 8%;
           }
@@ -51,15 +51,15 @@ export default function Garage({ panel, sensors }) {
             left: 41%;
             top: 45%;
           }
-          .FLP {
+          .FDR {
             left: 41%;
             top: 85%;
           }
-          .FDL {
+          .FLP {
             left: 5%;
             top: 45%;
           }
-          .FDR {
+          .FLA {
             left: 78%;
             top: 45%;
           }
