@@ -15,6 +15,7 @@ const mapList = {
   bugrashov: lazy(() => import("@/maps/bugrashov")),
   chandan: lazy(() => import("@/maps/chandan")),
   chiattone: lazy(() => import("@/maps/chiattone")),
+  daman: lazy(() => import("@/maps/daman-n")),
   donini: lazy(() => import("@/maps/donini")),
   ehad: lazy(() => import("@/maps/ehad")),
   gazit: lazy(() => import("@/maps/gazit")),
