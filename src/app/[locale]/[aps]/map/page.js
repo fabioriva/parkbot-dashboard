@@ -9,6 +9,7 @@ const mapList = {
   alumim: lazy(() => import("@/maps/alumim")),
   aminadav16: lazy(() => import("@/maps/aminadav16")),
   aminadav1820: lazy(() => import("@/maps/aminadav1820")),
+  amore: lazy(() => import("@/maps/amore")),
   "18017K": lazy(() => import("@/maps/18017K")),
   bmc: lazy(() => import("@/maps/bmc")),
   boi: lazy(() => import("@/maps/boi")),
