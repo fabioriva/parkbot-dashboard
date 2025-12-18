@@ -39,6 +39,7 @@ const mapList = {
   parshvnath: lazy(() => import("@/maps/parshvnath")),
   // qihe1: lazy(() => import("src/maps/qihe")),
   // qihe2: lazy(() => import("src/maps/qihe")),
+  sdmc: lazy(() => import("@/maps/sdmc")),
   smoritz: lazy(() => import("@/maps/smoritz")),
   teenmurty: lazy(() => import("@/maps/teenmurty")),
   trumpeldor: lazy(() => import("@/maps/trumpeldor")),
