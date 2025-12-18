@@ -28,6 +28,7 @@ const mapList = {
   kg: lazy(() => import("@/maps/kg")),
   knl: lazy(() => import("@/maps/kn")),
   knr: lazy(() => import("@/maps/kn")),
+  krishna: lazy(() => import("@/maps/krishna")),
   matalon: lazy(() => import("@/maps/matalon")),
   menloa: lazy(() => import("@/maps/menloa")),
   menlob: lazy(() => import("@/maps/menlob")),
