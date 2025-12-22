@@ -4,7 +4,7 @@ export default function Alarm({ alarm }) {
   const t = useTranslations("Alarm");
   return (
     <span>
-      AL{alarm.id}&#9;{t(alarm.key, alarm.query)}
+      AL{alarm?.id}&#9;{t(alarm?.key, alarm?.query)}
     </span>
   );
 }
