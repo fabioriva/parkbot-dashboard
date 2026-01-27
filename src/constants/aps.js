@@ -10,7 +10,7 @@ const apsList = [
   { ns: "bugrashov", name: "Bugrashov, Tel Aviv, 🇮🇱" },
   { ns: "chandan", name: "Chandan Society, Mumbai, 🇮🇳" },
   { ns: "chiattone", name: "P.zzo Chiattone, Lugano, 🇨🇭" },
-  { ns: "daman", name: "Daman, Dubai, 🇦🇪" },
+  { ns: "daman-n", name: "Daman (North), Dubai, 🇦🇪" },
   { ns: "donini", name: "P.zzo Donini, Lugano, 🇨🇭" },
   { ns: "ehad", name: "Ehad, Tel Aviv, 🇮🇱" },
   { ns: "gazit", name: "Kaplan 8, Tel Aviv, 🇮🇱" },
