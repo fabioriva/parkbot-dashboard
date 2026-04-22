@@ -1,5 +1,7 @@
 // A list of all aps that are supported
 const apsList = [
+  { ns: "aa", name: "Africa Avenue Defence, Mumbai, 🇮🇳" },
+  { ns: "agami", name: "Agami, Mumbai, 🇮🇳" },
   { ns: "alumim", name: "Alumim, Tel Aviv, 🇮🇱" },
   { ns: "aminadav16", name: "Aminadav 16, Tel Aviv, 🇮🇱" },
   { ns: "aminadav1820", name: "Aminadav 18, 20, Tel Aviv, 🇮🇱" },
@@ -17,6 +19,7 @@ const apsList = [
   { ns: "hdante", name: "Hotel Dante, Lugano, 🇨🇭" },
   { ns: "herzel", name: "Herzel, Tel Aviv, 🇮🇱" },
   { ns: "ironbank", name: "Iron Bank, Auckland, 🇳🇿" },
+  { ns: "kgmarg", name: "KG Marg Defence, Mumbai, 🇮🇳" },
   { ns: "krishna", name: "Krishna Kunj, Mumbai, 🇮🇳" },
   { ns: "jhn", name: "Jameson House (North), Vancouver, 🇨🇦" },
   { ns: "jhs", name: "Jameson House (South), Vancouver, 🇨🇦" },
