@@ -7,6 +7,7 @@ import fetch from "@/lib/fetch";
 
 const mapList = {
   aa: lazy(() => import("@/maps/aa")),
+  agami: lazy(() => import("@/maps/agami")),
   alumim: lazy(() => import("@/maps/alumim")),
   aminadav16: lazy(() => import("@/maps/aminadav16")),
   aminadav1820: lazy(() => import("@/maps/aminadav1820")),
@@ -27,6 +28,7 @@ const mapList = {
   // jhn: lazy(() => import("src/maps/jhn")),
   // jhs: lazy(() => import("src/maps/jhs")),
   kg: lazy(() => import("@/maps/kg")),
+  kgmarg: lazy(() => import("@/maps/kgmarg")),
   knl: lazy(() => import("@/maps/kn")),
   knr: lazy(() => import("@/maps/kn")),
   krishna: lazy(() => import("@/maps/krishna")),
